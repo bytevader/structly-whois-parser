@@ -1,0 +1,196 @@
+google.com - downloaded - different -
+microsoft.com - downloaded - different -
+wikipedia.com - downloaded -
+baidu.cn - downloaded -
+jd.cn - downloaded -
+tencent.cn - downloaded -
+sap.de - downloaded -
+siemens.de - downloaded -
+spiegel.de - downloaded -
+cloudflare.net - downloaded -
+speedtest.net
+slideshare.net - downloaded -
+bbc.co.uk - downloaded -
+gov.uk - downloaded -
+guardian.co.uk - downloaded -
+wikipedia.org - downloaded -
+archive.org - downloaded -
+icann.org - downloaded -
+rabobank.nl - downloaded -
+ah.nl - downloaded -
+marktplaats.nl - downloaded -
+yandex.ru - downloaded -
+mail.ru - downloaded -
+ria.ru - downloaded -
+whois.info - downloaded -
+cisco.info - downloaded -
+nintendo.info - downloaded -
+google.xyz - downloaded -
+openai.xyz - downloaded - INVALID
+abc.xyz - downloaded -
+google.com.br - downloaded -
+uol.com.br - downloaded -
+globo.com.br - downloaded -
+abc.net.au - downloaded -
+ato.gov.au - downloaded -
+anz.com.au - downloaded -
+orange.fr - downloaded -
+airfrance.fr - downloaded -
+insee.fr - downloaded -
+europa.eu - downloaded -
+eurid.eu - downloaded -
+echa.europa.eu - downloaded - INVALID
+unicredit.it - downloaded -
+enel.it - downloaded -
+poste.it - downloaded -
+rbc.ca - downloaded -
+cra-arc.gc.ca - downloaded - NOT FOUND
+tdsb.on.ca - downloaded -
+twitter.co - downloaded - NOT FOUND
+coca-cola.co - downloaded -
+claro.com.co - downloaded - NOT FOUND
+allegro.pl - downloaded -
+onet.pl - NOT DOWNLOADED
+gov.pl - NOT DOWNLOADED
+usa.gov - downloaded -
+senate.gov - downloaded -
+nasa.gov - downloaded -
+swisscom.ch - downloaded - INVALID
+admin.ch - downloaded - INVALID
+migros.ch - downloaded - INVALID
+bbva.es - downloaded - NOT FOUND
+mapfre.es - downloaded - NOT FOUND
+renfe.es - downloaded - NOT FOUND
+ikea.se - downloaded -
+volvo.se - downloaded -
+skatteverket.se - downloaded -
+vg.no - downloaded -
+nav.no - downloaded -
+nrk.no - downloaded -
+bpost.be - downloaded -
+ing.be - downloaded -
+belgium.be - downloaded -
+sbi.co.in - downloaded -
+nic.in - downloaded -
+aadhaar.gov.in - downloaded - INVALID
+rakuten.co.jp - downloaded -
+sony.jp - downloaded -
+nhk.or.jp - downloaded -
+samsung.co.kr - downloaded -
+lg.co.kr - downloaded -
+yonhapnews.co.kr - downloaded -
+banamex.com.mx - downloaded -
+gob.mx - downloaded -
+milenio.com - downloaded -
+woolworths.co.za - downloaded -
+fnb.co.za - downloaded -
+gov.za - downloaded -
+tokopedia.co.id - downloaded -
+telkomsel.co.id - downloaded -
+kominfo.go.id - downloaded -
+
+
+
+google.ai - DOWNLOADED
+about.us - DOWNLOADED
+abv.bg - DOWNLOADED
+afip.gob.ar - DOWNLOADED
+google.at - DOWNLOADED
+cyberciti.biz - DOWNLOADED
+drupalcamp.by - DOWNLOADED
+nyan.cat - NOT DOWNLOADED
+google.cl - DOWNLOADED
+google.co.cr - DOWNLOADED
+google.do - DOWNLOADED
+druid.fi - DOWNLOADED
+sbc.org.hk - DOWNLOADED
+google.hn - DOWNLOADED
+google.hu - DOWNLOADED
+google.ie - DOWNLOADED
+google.co.il - DOWNLOADED
+seal.jobs - DOWNLOADED - INVALID
+brainly.lat - NOT DOWNLOADED
+liechtenstein.li - NOT DOWNLOADED - INVALID
+nic.live - DOWNLOADED
+google.lu - DOWNLOADED
+google.lv - DOWNLOADED
+davidwalsh.name - DOWNLOADED
+yahoo.co.nz - DOWNLOADED
+google.com.pe - DOWNLOADED
+sapo.pt - NOT DOWNLOADED
+google.ro - DOWNLOADED
+google.com.sa - DOWNLOADED
+google.com.sg - DOWNLOADED
+google.sk - DOWNLOADED
+google.com.tr - DOWNLOADED - INVALID
+google.com.tw - DOWNLOADED
+google.com.ua - DOWNLOADED
+google.co.ve - DOWNLOADED
+
+
+
+• Coverage snapshot (top‑30 mix from Verisign Domain Industry Brief, ICANN, CENTR) — 26/30 now have fresh samples in
+  tests/samples/new:
+
+  1. .com – still over 160 M domains; non‑negotiable.
+  2. .cn – China’s ccTLD, back over 20 M.
+  3. .de – Germany, ~17 M.
+  4. .net – ~13 M legacy gTLD.
+  5. .uk – combined .uk stack (~10 M).
+  6. .org – ~11 M non‑profit/commercial mix.
+  7. .nl – Netherlands, ~6 M.
+  8. .ru – Russia, ~5 M even with recent churn.
+  9. .info – legacy gTLD (~4 M).
+  10. .xyz – biggest “new gTLD” (~4 M).
+  11. .com.br – Brazil’s ccTLD (~5 M).
+  12. .au – Australia (.com.au and second‑level .au).
+  13. .fr – France.
+  14. .eu – pan‑European union registry.
+  15. .it – Italy.
+  16. .ca – Canada.
+  17. .co – Colombia but widely used as generic.
+  18. .pl – Poland.
+  19. .us – United States ccTLD.
+  20. .ch – Switzerland.
+  21. .es – Spain.
+  22. .se – Sweden.
+  23. .no – Norway.
+  24. .be – Belgium (already in your overrides).
+  25. .in – India, growing fast.
+  26. .jp – Japan (also in your overrides).
+  27. .kr – South Korea (in overrides).
+  28. .mx – Mexico.
+  29. .za – South Africa (.co.za).
+  30. .id – Indonesia.
+
+  Regional coverage:
+
+  - Americas: .com, .org, .net, .com.br, .ca, .co, .us, .mx, .za (Africa but similar policies), .info, .xyz.
+  - Europe: .de, .uk, .nl, .fr, .eu, .it, .pl, .ch, .es, .se, .no, .be; pending: .pt (sapo.pt).
+  - Asia-Pacific: .cn, .jp, .kr, .au, .in, .id, .ru (Eurasia); .sg/.hk now covered through google.com.sg and sbc.org.hk.
+  - Latin America: .com.br, .mx, .co, plus .ar sample (afip.gob.ar) now downloaded.
+  - Africa: .za covers the largest ccTLD; consider .ng or .ma once higher-priority backfills finish.
+
+  Remaining gaps / restrictions:
+
+  - .cat (nyan.cat) — Fundació puntCAT requires accredited contact; still pending.
+  - .lat (brainly.lat) — registry throttling the default whois client, need alternate source.
+  - .li (liechtenstein.li) — SWITCH returns only contact placeholders; treat as invalid until alternative sample.
+  - .pt (sapo.pt) — busy server throttles scripted pulls; retry via registrar or cached WHOIS.
+
+
+covered
+
+- .in
+- .au
+- .xyz
+- .us
+- .fr
+- .pl
+- .org
+- .cn
+- .mx
+- .uk
+- .es ????
+- .be
+-
