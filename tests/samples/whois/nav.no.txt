@@ -1,0 +1,93 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.norid.no
+
+domain:       NO
+
+organisation: Norid A/S
+address:      Abelsgate 5
+address:      Trondheim N-7465
+address:      Norway
+
+contact:      administrative
+name:         Hilde Thunem
+organisation: Norid A/S
+address:      Postboks 4769 Torgarden
+address:      Trondheim  NO-7465
+address:      Norway
+phone:        +47 73 55 73 55
+e-mail:       hilde.thunem@norid.no
+
+contact:      technical
+name:         Jarle Greipsland
+organisation: Norid A/S
+address:      Postboks 4769 Torgarden
+address:      Trondheim  NO-7465
+address:      Norway
+phone:        +47 73 55 73 55
+e-mail:       jarle@norid.no
+
+nserver:      I.NIC.NO 194.146.106.6 2001:67c:1010:1:0:0:0:53
+nserver:      NJET.NORID.NO 156.154.101.12
+nserver:      NOT.NORID.NO 156.154.100.12 2001:502:ad09:0:0:0:0:12
+nserver:      X.NIC.NO 128.39.8.40 2001:700:0:412f:0:0:0:40
+nserver:      Y.NIC.NO 193.75.4.22 2001:8c0:8200:1:0:0:0:2
+nserver:      Z.NIC.NO 158.38.8.133 2001:700:0:52d:158:38:8:133
+ds-rdata:     38032 13 2 6d374d769d1e4388b1a549a6da2f7d89371db6abaa53d20eec70844db4062e51
+
+whois:        whois.norid.no
+
+status:       ACTIVE
+remarks:      Registration information: http://www.norid.no
+
+created:      1987-03-17
+changed:      2022-01-14
+source:       IANA
+
+# whois.norid.no
+
+% By looking up information in the domain registration directory
+% service, you confirm that you accept the terms and conditions of the
+% service:
+% https://www.norid.no/en/domeneoppslag/vilkar/
+%
+% Norid AS holds the copyright to the lookup service, content,
+% layout and the underlying collections of information used in the
+% service (cf. the Act on Intellectual Property of May 2, 1961, No.
+% 2). Any commercial use of information from the service, including
+% targeted marketing, is prohibited. Using information from the domain
+% registration directory service in violation of the terms and
+% conditions may result in legal prosecution.
+%
+% The whois service at port 43 is intended to contribute to resolving
+% technical problems where individual domains threaten the
+% functionality, security and stability of other domains or the
+% internet as an infrastructure. It does not give any information
+% about who the holder of a domain is. To find information about a
+% domain holder, please visit our website:
+% https://www.norid.no/en/domeneoppslag/
+
+Domain Information
+
+NORID Handle...............: NAV658D-NORID
+Domain Name................: nav.no
+Registrar Handle...........: REG766-NORID
+Tech-c Handle..............: TH61R-NORID
+Name Server Handle.........: DOMA16H-NORID
+Name Server Handle.........: DOMA17H-NORID
+DNSSEC.....................: Signed
+DS Key Tag     1...........: 33136
+Algorithm      1...........: 8
+Digest Type    1...........: 2
+Digest         1...........: c63d860ad605fcdf76fc2dae45f8a11e2e72b1d5d39b941b993bffe2437936ef
+Key Flags      1...........: 257
+Key Protocol   1...........: 3
+Key Algorithm  1...........: 8
+Key Public     1...........: AwEAAZ+pyAxpCRoWDmGqBTXmH1Rv43G4spLY6Ajytjf01iJCz3TFfL2z8aHA7CepoUQKX7J+Yeq99Y+Iy2SgznAH/ZI4VcejBL9BieIRDBj+fa0iM4kpnMVsji/0Mlc2o8uKz3tEyqPe4UCR89OUiyDmhOr+jFQw86CZFX3RjnS1nKofYO9QJt/Yd8/sL6n7iDXzWaNTe4EdHRkqYwh9vXaIzJM3Foitn2A5WZuU6u0CbM6RVmZ+gJ0FTDnOwaXggGAE/awbr4CxjqB9jI5V3A4vlhZcOHp5DrNPERKWdjef9d/Oq0s+1IJdHZjvl27ojTl6BdDAnqqJld4HEb+RWbufbfc=
+
+Additional information:
+Created:         1999-11-15
+Last updated:    2025-11-15
+

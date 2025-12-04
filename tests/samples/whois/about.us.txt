@@ -1,0 +1,126 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.nic.us
+
+domain:       US
+
+organisation: Registry Services, LLC
+address:      100 S. Mill Ave, Suite 1600
+address:      Tempe AZ 85281
+address:      United States of America (the)
+
+contact:      administrative
+name:         IANA Contact
+organisation: Registry Services, LLC
+address:      100 S. Mill Ave, Suite 1600
+address:      Tempe AZ 85281
+address:      United States of America (the)
+phone:        +1 480 505 8800
+fax-no:       +1 480 393 4275
+e-mail:       iana@about.us
+
+contact:      technical
+name:         IANA Contact
+organisation: Registry Services, LLC
+address:      100 S. Mill Ave, Suite 1600
+address:      Tempe AZ 85281
+address:      United States of America (the)
+phone:        +1 480 505 8800
+fax-no:       +1 480 393 4275
+e-mail:       iana@about.us
+
+nserver:      B.CCTLD.US 156.154.125.70 2001:502:ad09:0:0:0:0:29
+nserver:      F.CCTLD.US 2001:500:3682:0:0:0:0:11 209.173.58.70
+nserver:      K.CCTLD.US 156.154.128.70 2001:503:e239:0:0:0:3:1
+nserver:      M.CCTLD.US 204.74.105.1 2610:a1:3180:0:0:0:0:53
+nserver:      N.CCTLD.US 204.74.107.1 2610:a1:3280:0:0:0:0:53
+nserver:      W.CCTLD.US 2001:dcd:1:0:0:0:0:15 37.209.192.15
+nserver:      X.CCTLD.US 2001:dcd:2:0:0:0:0:15 37.209.194.15
+nserver:      Y.CCTLD.US 2001:dcd:3:0:0:0:0:15 37.209.196.15
+ds-rdata:     59017 8 2 7daf469d42b5d8e5537fd4dd4b6057710e9a61f72c32eb7fb6526f52277ec2b0
+
+whois:        whois.nic.us
+
+status:       ACTIVE
+remarks:      Registration information: http://www.nic.us
+
+created:      1985-02-15
+changed:      2024-08-29
+source:       IANA
+
+# whois.nic.us
+
+Domain Name: about.us
+Registry Domain ID: D651466-US
+Registrar WHOIS Server:
+Registrar URL: https://www.about.us/
+Updated Date: 2025-06-02T00:00:13Z
+Creation Date: 2002-04-18T15:16:22Z
+Registry Expiry Date: 2026-04-17T23:59:59Z
+Registrar: .us Registry Services LLC
+Registrar IANA ID: 1111112
+Registrar Abuse Contact Email: abuse@about.us
+Registrar Abuse Contact Phone:
+Domain Status: serverDeleteProhibited https://icann.org/epp#serverDeleteProhibited
+Domain Status: serverTransferProhibited https://icann.org/epp#serverTransferProhibited
+Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+Domain Status: clientDeleteProhibited https://icann.org/epp#clientDeleteProhibited
+Registry Registrant ID: C37639215-US
+Registrant Name: .US Registration Policy
+Registrant Organization: Registry Services, LLC
+Registrant Street: 100 S. Mill Ave
+Registrant Street: Suite 1600
+Registrant Street:
+Registrant City: Tempe
+Registrant State/Province: AZ
+Registrant Postal Code: 85281
+Registrant Country: US
+Registrant Phone: +1.4806519999
+Registrant Phone Ext:
+Registrant Fax:
+Registrant Fax Ext:
+Registrant Email: help@about.us
+Registrant Application Purpose: P5
+Registrant Nexus Category: C21
+Registry Admin ID: C37639215-US
+Admin Name: .US Registration Policy
+Admin Organization: Registry Services, LLC
+Admin Street: 100 S. Mill Ave
+Admin Street: Suite 1600
+Admin Street:
+Admin City: Tempe
+Admin State/Province: AZ
+Admin Postal Code: 85281
+Admin Country: US
+Admin Phone: +1.4806519999
+Admin Phone Ext:
+Admin Fax:
+Admin Fax Ext:
+Admin Email: help@about.us
+Admin Application Purpose: P5
+Admin Nexus Category: C21
+Registry Tech ID: C37639215-US
+Tech Name: .US Registration Policy
+Tech Organization: Registry Services, LLC
+Tech Street: 100 S. Mill Ave
+Tech Street: Suite 1600
+Tech Street:
+Tech City: Tempe
+Tech State/Province: AZ
+Tech Postal Code: 85281
+Tech Country: US
+Tech Phone: +1.4806519999
+Tech Phone Ext:
+Tech Fax:
+Tech Fax Ext:
+Tech Email: help@about.us
+Tech Application Purpose: P5
+Tech Nexus Category: C21
+Name Server: ns1.usatfus.about.us
+Name Server: ns2.usatfus.about.us
+DNSSEC: unsigned
+URL of the ICANN Whois Inaccuracy Complaint Form: https://www.icann.org/wicf/
+>>> Last update of WHOIS database: 2025-11-24T13:37:06Z <<<
+

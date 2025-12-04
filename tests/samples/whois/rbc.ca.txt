@@ -1,0 +1,121 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.cira.ca
+
+domain:       CA
+
+organisation: Canadian Internet Registration Authority (CIRA) Autorité Canadienne pour les enregistrements Internet (ACEI)
+address:      979 Bank Street, Suite 400
+address:      Ottawa ON K1S 5K5
+address:      Canada
+
+contact:      administrative
+name:         Chief Information Officer
+organisation: CIRA
+address:      979 Bank Street, Suite 400
+address:      Ottawa ON K1S 5K5
+address:      Canada
+phone:        +1 613 237 5335
+fax-no:       +1 613 237 0534
+e-mail:       chief.information.officer@cira.ca
+
+contact:      technical
+name:         DNS Admin
+organisation: CIRA
+address:      979 Bank Street, Suite 400
+address:      Ottawa ON K1S 5K5
+address:      Canada
+phone:        +1 613 237 5335
+fax-no:       +1 613 237 0534
+e-mail:       admin-dns@cira.ca
+
+nserver:      ANY.CA-SERVERS.CA 199.4.144.2 2001:500:a7:0:0:0:0:2
+nserver:      C.CA-SERVERS.CA 185.159.196.2 2620:10a:8053:0:0:0:0:2
+nserver:      D.CA-SERVERS.CA 2a0e:dbc0:0:0:0:0:0:101 45.142.220.101
+nserver:      J.CA-SERVERS.CA 198.182.167.1 2001:500:83:0:0:0:0:1
+ds-rdata:     26384 13 2 77ea11d2be58cbba58bf8ecd60f4c7e72d1feb31b5993e7c55809440cb5f78b0
+
+whois:        whois.cira.ca
+
+status:       ACTIVE
+remarks:      Registration information: http://www.cira.ca/
+
+created:      1987-05-14
+changed:      2025-11-18
+source:       IANA
+
+# whois.cira.ca
+
+Domain Name: rbc.ca
+Registry Domain ID: D6767-CIRA
+Registrar WHOIS Server: https://gcd.com/whois
+Registrar URL: gcd.com
+Updated Date: 2025-06-22T23:01:53Z
+Creation Date: 2000-10-12T23:12:24Z
+Registry Expiry Date: 2026-07-23T04:00:00Z
+Registrar: GoDaddy Corporate Domains Canada, Ltd.
+Registrar IANA ID: not applicable
+Registrar Abuse Contact Email: abuse@gcd.com
+Registrar Abuse Contact Phone: +1.5189669187
+Registrar Abuse Contact Phone Ext:
+Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+Registry Registrant ID: 111486449-CIRA
+Registrant Name: Royal Bank of Canada
+Registrant Organization: Royal Bank of Canada
+Registrant Street: 330 Front Street West, 8th Floor
+Registrant City: Toronto
+Registrant State/Province: ON
+Registrant Postal Code: M5V0G5
+Registrant Country: CA
+Registrant Phone: +1.4163485121
+Registrant Phone Ext:
+Registrant Fax:
+Registrant Fax Ext:
+Registrant Email: rbcdomainreg@rbc.com
+Registry Admin ID: 111486346-CIRA
+Admin Name: Tom Blazsovics
+Admin Organization: Royal Bank of Canada
+Admin Street: 330 Front Street West, 8th Floor
+Admin City: Toronto
+Admin State/Province: ON
+Admin Postal Code: M5V0G5
+Admin Country: CA
+Admin Phone: +1.4163485121
+Admin Phone Ext:
+Admin Fax:
+Admin Fax Ext:
+Admin Email: rbcdomainreg@rbc.com
+Registry Tech ID: 111486347-CIRA
+Tech Name: Tom Blazsovics
+Tech Organization: Royal Bank of Canada
+Tech Street: 330 Front Street West, 8th Floor
+Tech City: Toronto
+Tech State/Province: ON
+Tech Postal Code: M5V0G5
+Tech Country: CA
+Tech Phone: +1.4163485121
+Tech Phone Ext:
+Tech Fax:
+Tech Fax Ext:
+Tech Email: rbcdomainreg@rbc.com
+Registry Billing ID:
+Billing Name:
+Billing Organization:
+Billing Street:
+Billing City:
+Billing State/Province:
+Billing Postal Code:
+Billing Country:
+Billing Phone:
+Billing Phone Ext:
+Billing Fax:
+Billing Fax Ext:
+Billing Email:
+Name Server: ns03.gcd-dns.com
+Name Server: ns04.gcd-dns.com
+DNSSEC: unsigned
+URL of the ICANN Whois Inaccuracy Complaint Form: https://www.icann.org/wicf/
+>>> Last update of WHOIS database: 2025-11-24T12:44:30Z <<<
+

@@ -1,0 +1,109 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.kr
+
+domain:       KR
+
+organisation: Korea Internet & Security Agency (KISA)
+address:      9, Jinheung-gil
+address:      Naju-si Jeollanam-do 58324
+address:      Korea (the Republic of)
+
+contact:      administrative
+name:         Kilnam Chon
+organisation: Korea Network Information Center (KRNIC)
+address:      9, Jinheung-gil
+address:      Naju-si Jeollanam-do 58324
+address:      Korea (the Republic of)
+phone:        +82 10 8581 3514
+fax-no:       +82 61 820 2611
+e-mail:       chonkn@gmail.com
+
+contact:      technical
+name:         KRNIC Tech Team Manager
+organisation: Korea Internet & Security Agency (KISA)
+address:      9, Jinheung-gil
+address:      Naju-si Jeollanam-do 58324
+address:      Korea (the Republic of)
+phone:        +82 61 820 1161
+fax-no:       +82 61 820 2611
+e-mail:       techc@kisa.or.kr
+
+nserver:      B.DNS.KR 210.101.60.1
+nserver:      C.DNS.KR 210.101.61.1
+nserver:      D.DNS.KR 2001:dcc:4:0:0:0:0:1 203.83.159.1
+nserver:      E.DNS.KR 2001:dcc:5:0:0:0:0:100 202.30.124.100
+nserver:      F.DNS.KR 2001:dcc:6:0:0:0:0:1 210.101.62.1
+nserver:      G.DNS.KR 2001:dc5:a:0:0:0:0:1 202.31.190.1
+ds-rdata:     61615 8 2 ed570aadc88713ce2775fb8affb2ad782d056ea21d0677e147f2fb7bf54404da
+
+whois:        whois.kr
+
+status:       ACTIVE
+remarks:      Registration information: http://www.nic.or.kr/
+
+created:      1986-09-29
+changed:      2020-07-16
+source:       IANA
+
+# whois.kr
+
+query : yonhapnews.co.kr
+
+
+# KOREAN(UTF8)
+
+도메인이름                  : yonhapnews.co.kr
+등록인                      : (주)연합뉴스
+등록인 주소                 : 서울 종로구 율곡로2길 25 &nbsp;
+등록인 우편번호             : 03143
+책임자                      : (주)연합뉴스
+책임자 전자우편             : domain@yna.co.kr
+책임자 전화번호             : +82.23983059
+등록일                      : 1996. 04. 24.
+최근 정보 변경일            : 2019. 11. 07.
+사용 종료일                 : 2026. 10. 15.
+정보공개여부                : Y
+등록대행자                  : (주)가비아(http://www.gabia.co.kr)
+DNSSEC                      : 미서명
+
+1차 네임서버 정보
+   호스트이름               : dns.yonhapnews.co.kr
+   IP 주소                  : 203.234.152.20
+
+2차 네임서버 정보
+   호스트이름               : ns2.kornet.ne.kr
+   IP 주소                  : 211.216.50.160
+
+네임서버 이름이 .kr이 아닌 경우는 IP주소가 보이지 않습니다.
+
+
+# ENGLISH
+
+Domain Name                 : yonhapnews.co.kr
+Registrant                  : Yonhapnews Agency
+Registrant Address          : 25, Yulgok-ro 2-gil, Jongno-gu, Seoul, &nbsp;
+Registrant Zip Code         : 03143
+Administrative Contact(AC)  : Agency Yonhapnews
+AC E-Mail                   : domain@yna.co.kr
+AC Phone Number             : +82.23983059
+Registered Date             : 1996. 04. 24.
+Last Updated Date           : 2019. 11. 07.
+Expiration Date             : 2026. 10. 15.
+Publishes                   : Y
+Authorized Agency           : Gabia, Inc.(http://www.gabia.co.kr)
+DNSSEC                      : unsigned
+
+Primary Name Server
+   Host Name                : dns.yonhapnews.co.kr
+   IP Address               : 203.234.152.20
+
+Secondary Name Server
+   Host Name                : ns2.kornet.ne.kr
+   IP Address               : 211.216.50.160
+
+
+- KISA/KRNIC WHOIS Service -
+

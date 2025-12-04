@@ -1,0 +1,139 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.nic.ai
+
+domain:       AI
+
+organisation: Government of Anguilla
+address:      Coronation Avenue, PO Box 60
+address:      The Valley AI2640
+address:      Anguilla
+
+contact:      administrative
+name:         Telecommunications Officer
+organisation: Government of Anguilla, Ministry of Infrastructure, Communications and Utilities
+address:      Coronation Avenue, PO Box 60
+address:      The Valley AI2640
+address:      Anguilla
+phone:        +1 264 497 5233
+e-mail:       telecommunications.office@gov.ai
+
+contact:      technical
+name:         Telecommunications Officer
+organisation: Government of Anguilla
+address:      Coronation Avenue, PO Box 60
+address:      The Valley AI2640
+address:      Anguilla
+phone:        +12644975233
+e-mail:       telecommunications.office@gov.ai
+
+nserver:      V0N0.NIC.AI 199.115.152.1 2001:500:a0:0:0:0:0:1
+nserver:      V0N1.NIC.AI 199.115.153.1 2001:500:a1:0:0:0:0:1
+nserver:      V0N2.NIC.AI 199.115.154.1 2001:500:a2:0:0:0:0:1
+nserver:      V0N3.NIC.AI 199.115.155.1 2001:500:a3:0:0:0:0:1
+nserver:      V2N0.NIC.AI 199.115.156.1 2001:500:a4:0:0:0:0:1
+nserver:      V2N1.NIC.AI 199.115.157.1 2001:500:a5:0:0:0:0:1
+ds-rdata:     3799 8 2 8a8030d4661ae6fcf417349682ac058648371002e70e717e4cf2f11f83543385
+
+whois:        whois.nic.ai
+
+status:       ACTIVE
+remarks:      Registration information: https://nic.ai
+
+created:      1995-02-16
+changed:      2025-02-11
+source:       IANA
+
+# whois.nic.ai
+
+Domain Name: google.ai
+Registry Domain ID: 6eddd132ab114b12bd2bd4cf9c492a04-DONUTS
+Registrar WHOIS Server: whois.markmonitor.com
+Registrar URL: http://www.markmonitor.com
+Updated Date: 2025-08-29T10:15:37Z
+Creation Date: 2017-12-16T05:37:20Z
+Registry Expiry Date: 2027-09-25T05:37:20Z
+Registrar: MarkMonitor Inc.
+Registrar IANA ID: 292
+Registrar Abuse Contact Email: abusecomplaints@markmonitor.com
+Registrar Abuse Contact Phone: +1.2083895740
+Domain Status: clientDeleteProhibited https://icann.org/epp#clientDeleteProhibited
+Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+Domain Status: clientUpdateProhibited https://icann.org/epp#clientUpdateProhibited
+Registry Registrant ID: 93b24aca40c6451785c486627aa03267-DONUTS
+Registrant Name: Domain Administrator
+Registrant Organization: Google LLC
+Registrant Street: 1600 Amphitheatre Parkway
+Registrant City: Mountain View
+Registrant State/Province: CA
+Registrant Postal Code: 94043
+Registrant Country: US
+Registrant Phone: +1.6502530000
+Registrant Phone Ext: 
+Registrant Fax: +1.6502530001
+Registrant Fax Ext: 
+Registrant Email: dns-admin@google.com
+Registry Admin ID: 93b24aca40c6451785c486627aa03267-DONUTS
+Admin Name: Domain Administrator
+Admin Organization: Google LLC
+Admin Street: 1600 Amphitheatre Parkway
+Admin City: Mountain View
+Admin State/Province: CA
+Admin Postal Code: 94043
+Admin Country: US
+Admin Phone: +1.6502530000
+Admin Phone Ext: 
+Admin Fax: +1.6502530001
+Admin Fax Ext: 
+Admin Email: dns-admin@google.com
+Registry Tech ID: 93b24aca40c6451785c486627aa03267-DONUTS
+Tech Name: Domain Administrator
+Tech Organization: Google LLC
+Tech Street: 1600 Amphitheatre Parkway
+Tech City: Mountain View
+Tech State/Province: CA
+Tech Postal Code: 94043
+Tech Country: US
+Tech Phone: +1.6502530000
+Tech Phone Ext: 
+Tech Fax: +1.6502530001
+Tech Fax Ext: 
+Tech Email: dns-admin@google.com
+Name Server: ns2.zdns.google
+Name Server: ns3.zdns.google
+Name Server: ns4.zdns.google
+Name Server: ns1.zdns.google
+DNSSEC: unsigned
+URL of the ICANN Whois Inaccuracy Complaint Form: https://icann.org/wicf/
+>>> Last update of WHOIS database: 2025-11-24T13:36:26Z <<<
+
+# whois.markmonitor.com
+
+Domain Name: google.ai
+Registry Domain ID: 6eddd132ab114b12bd2bd4cf9c492a04-DONUTS
+Registrar WHOIS Server: whois.markmonitor.com
+Registrar URL: http://www.markmonitor.com
+Updated Date: 2025-08-24T10:14:47+0000
+Creation Date: 2009-09-23T21:51:54+0000
+Registrar Registration Expiration Date: 2027-09-25T00:00:00+0000
+Registrar: MarkMonitor, Inc.
+Registrar IANA ID: 292
+Registrar Abuse Contact Email: abusecomplaints@markmonitor.com
+Registrar Abuse Contact Phone: +1.2086851750
+Domain Status: clientUpdateProhibited (https://www.icann.org/epp#clientUpdateProhibited)
+Domain Status: clientTransferProhibited (https://www.icann.org/epp#clientTransferProhibited)
+Domain Status: clientDeleteProhibited (https://www.icann.org/epp#clientDeleteProhibited)
+Registrant Organization: Google LLC
+Registrant Country: US
+Registrant Email: Select Request Email Form at https://domains.markmonitor.com/whois/google.ai
+Tech Email: Select Request Email Form at https://domains.markmonitor.com/whois/google.ai
+Name Server: ns2.zdns.google
+Name Server: ns3.zdns.google
+Name Server: ns1.zdns.google
+Name Server: ns4.zdns.google
+DNSSEC: unsigned
+URL of the ICANN WHOIS Data Problem Reporting System: http://wdprs.internic.net/
+>>> Last update of WHOIS database: 2025-11-24T13:36:26+0000 <<<
+

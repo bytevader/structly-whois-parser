@@ -1,0 +1,110 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.nic.it
+
+domain:       IT
+
+organisation: IIT - CNR
+address:      Via Moruzzi, 1
+address:      Pisa I-56124
+address:      Italy
+
+contact:      administrative
+name:         Andrea Passarella
+organisation: IIT - CNR
+address:      Via Moruzzi, 1
+address:      Pisa I-56124
+address:      Italy
+phone:        +39 050 315 2112
+e-mail:       direttore@iit.cnr.it
+
+contact:      technical
+name:         Maurizio Martinelli
+organisation: IIT - CNR
+address:      Via Moruzzi, 1
+address:      Pisa I-56124
+address:      Italy
+phone:        +39 050 315 2087
+e-mail:       maurizio.martinelli@iit.cnr.it
+
+nserver:      A.DNS.IT 194.0.16.215 2001:678:12:0:194:0:16:215
+nserver:      DNS.NIC.IT 192.12.192.5 2a00:d40:1:1:0:0:0:5
+nserver:      M.DNS.IT 2001:1ac0:0:200:0:a5d1:6004:2 217.29.76.4
+nserver:      NAMESERVER.CNR.IT 194.119.192.34 2a00:1620:c0:220:194:119:192:34
+nserver:      R.DNS.IT 193.206.141.46 2001:760:ffff:ffff:0:0:0:ca
+nserver:      V.DNS.IT 194.0.25.44 2001:678:20:0:0:0:0:44
+ds-rdata:     41901 10 2 47f7f7ba21e48591f6172eed13e35b66b93ad9f2880fc9bada64f68ce28ebb90
+
+whois:        whois.nic.it
+
+status:       ACTIVE
+remarks:      Registration information: https://www.nic.it/
+
+created:      1987-12-23
+changed:      2025-01-28
+source:       IANA
+
+# whois.nic.it
+
+
+*********************************************************************
+* Please note that the following result could be a subgroup of      *
+* the data contained in the database.                               *
+*                                                                   *
+* Additional information can be visualized at:                      *
+* http://web-whois.nic.it                                           *
+*********************************************************************
+
+Domain:             enel.it
+Status:             ok
+Signed:             no
+Created:            1996-01-29 00:00:00
+Last Update:        2025-02-25 01:00:21
+Expire Date:        2026-02-09
+
+Registrant
+  Organization:     ENEL S.p.A.
+  Address:          Viale Regina Margherita 137
+                    Roma
+                    00198
+                    RM
+                    IT
+  Created:          2023-12-29 12:32:49
+  Last Update:      2023-12-29 12:32:49
+
+Admin Contact
+  Name:             Giovanna Maria Faillace
+  Organization:     ENEL S.p.A.
+  Address:          Viale Regina Margherita 137
+                    Roma
+                    00198
+                    RM
+                    IT
+  Created:          2023-12-29 12:32:49
+  Last Update:      2023-12-29 12:32:49
+
+Technical Contacts
+  Name:             gTLD Contact
+  Organization:     Aruba Business srl
+  Address:          Via Gulinelli 21/A
+                    Ferrara
+                    44122
+                    FE
+                    IT
+  Created:          2023-12-29 12:32:50
+  Last Update:      2023-12-29 12:32:50
+
+Registrar
+  Organization:     Aruba Business s.r.l.
+  Name:             WIDE-REG
+  Web:              https://www.arubabusiness.it
+  DNSSEC:           yes
+
+
+Nameservers
+  dns.enel.it
+  bdns.enel.it
+  cdns.enel.it
+

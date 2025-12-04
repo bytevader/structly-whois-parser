@@ -1,0 +1,33 @@
+[build-system]
+requires = ["hatchling>=1.18"]
+build-backend = "hatchling.build"
+
+[project]
+name = "structly-whois-parser"
+version = "0.1.0"
+description = "DNS/WHOIS parser powered by structly"
+readme = "README.md"
+requires-python = ">=3.9"
+license = { file = "LICENSE" }
+authors = [
+  { name = "Nikola Stankovic" }
+]
+dependencies = [
+  "dateparser>=1.2",
+  "msgspec>=0.18",
+  "structly>=1.0.1",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.2",
+]
+
+[tool.pytest.ini_options]
+pythonpath = [
+  "src",
+]
+testpaths = [
+  "tests",
+]
+addopts = "-ra"

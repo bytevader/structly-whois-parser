@@ -1,0 +1,98 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.nic.ve
+
+domain:       VE
+
+organisation: Comisión Nacional de Telecomunicaciones (CONATEL)
+address:      Av. Veracruz, Edif. CONATEL, Las Mercedes
+address:      Caracas Miranda 1060
+address:      Venezuela (Bolivarian Republic of)
+
+contact:      administrative
+name:         Ms. Meylin Guillen
+organisation: NIC.VE
+address:      Calle Cali, Edif. NIC.VE, Las Mercedes
+address:      Caracas Miranda 1060
+address:      Venezuela (Bolivarian Republic of)
+phone:        +584166225906
+fax-no:       +582129090435
+e-mail:       manager@nic.ve
+
+contact:      technical
+name:         Mr. Gredinson Ramirez
+organisation: NIC.VE
+address:      Calle Cali, Edif. NIC.VE, Las Mercedes
+address:      Caracas Miranda 1060
+address:      Venezuela (Bolivarian Republic of)
+phone:        +584166225906
+fax-no:       +58 212 9090435
+e-mail:       technical@nic.ve
+
+nserver:      A.LACTLD.ORG 200.0.68.10 2801:14:a000:0:0:0:0:10
+nserver:      NS3.NIC.VE 190.9.129.56
+nserver:      NS4.NIC.VE 190.202.128.43
+nserver:      NS5.NIC.VE 2801:18:8800:3:18ba:beff:fe61:d08b 45.175.22.88
+nserver:      NS6.NIC.VE 2801:18:8800:1:0:0:0:4 45.175.22.4
+nserver:      SSDNS-TLD.NIC.CL 200.7.5.14 2001:1398:276:0:200:7:5:14
+ds-rdata:     26677 8 2 d26b98c08be23d276334cae7b38284c835aeaa7865b873c854ff87958aab05d4
+
+whois:        whois.nic.ve
+
+status:       ACTIVE
+remarks:      Registration information: https://nic.ve/
+
+created:      1991-03-07
+changed:      2025-07-07
+source:       IANA
+
+# whois.nic.ve
+
+%  Servidor whois del Centro de Información de Red de Venezuela (NIC.VE)
+%  Este servidor contiene información autoritativa exclusivamente de dominios .ve
+% 
+% Whoisd Server Version: 3.12.1
+% Timestamp: Mon Nov 24 09:53:11 2025
+
+domain:       google.co.ve
+registrant:   CON000020360
+admin-c:      CON000020108
+nsset:        DNS000106493
+registrar:    NIC-VE
+registered:   05.03.2003 20:00:00
+expire:       07.05.2026
+
+contact:      CON000020360
+org:          Google Llc
+address:      1600 Amphitheatre Parkway
+address:      Mountain View
+address:      94043
+address:      Ca
+address:      US
+registrar:    NIC-VE
+created:      04.08.2019 15:14:51
+changed:      24.04.2020 12:52:39
+
+contact:      CON000020108
+org:          Markmonitor Inc.
+address:      2150 S Bonito Way Suite 150
+address:      Meridian
+address:      83642
+address:      Id
+address:      US
+registrar:    NIC-VE
+created:      04.08.2019 15:12:24
+changed:      11.03.2021 15:09:19
+
+nsset:        DNS000106493
+nserver:      ns1.google.com 
+nserver:      ns2.google.com 
+nserver:      ns3.google.com 
+nserver:      ns4.google.com 
+tech-c:       CON000020108
+registrar:    NIC-VE
+created:      08.08.2019 15:04:03
+
+

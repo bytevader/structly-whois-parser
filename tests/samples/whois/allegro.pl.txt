@@ -1,0 +1,81 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.dns.pl
+
+domain:       PL
+
+organisation: Research and Academic Computer Network
+address:      Kolska 12
+address:      Warsaw 01-045
+address:      Poland
+
+contact:      administrative
+name:         NASK Admin-C
+organisation: Research and Academic Computer Network
+address:      Kolska 12
+address:      Warsaw 01-045
+address:      Poland
+phone:        +48 22 380 8200
+fax-no:       +48 22 380 8201
+e-mail:       pl-admin@dns.pl
+
+contact:      technical
+name:         NASK Tech-C
+organisation: Research and Academic Computer Network
+address:      Kolska 12
+address:      Warsaw 01-045
+address:      Poland
+phone:        +48 22 380 8200
+fax-no:       +48 22 380 8201
+e-mail:       pl-tech@dns.pl
+
+nserver:      A-DNS.PL 192.102.225.53 2001:7f9:0:0:0:0:0:53
+nserver:      B-DNS.PL 192.195.72.53 2001:7f9:c:0:0:0:0:53
+nserver:      D-DNS.PL 185.159.197.48 2620:10a:80aa:0:0:0:0:48
+nserver:      F-DNS.PL 194.0.25.29 2001:678:20:0:0:0:0:29
+nserver:      H-DNS.PL 185.159.198.48 2620:10a:80ab:0:0:0:0:48
+nserver:      J-DNS.PL 2001:500:14:7004:ad:0:0:1 204.61.217.4
+ds-rdata:     35456 8 2 c1fcc88c73ccbafaa2d6d68575b01ed753786cd733a4a239324d56097f17930b
+
+whois:        whois.dns.pl
+
+status:       ACTIVE
+remarks:      Registration information: https://www.dns.pl/en/
+
+created:      1990-07-30
+changed:      2025-04-03
+source:       IANA
+
+# whois.dns.pl
+
+DOMAIN NAME:                    allegro.pl
+registrant type:                organization
+nameservers:                    dns1.allegro.pl. [91.194.188.132][2a02:dcc:20::5]
+                                dns2.allegro.pl. [91.207.14.244][2a02:dc8:20::5]
+                                dns3.allegro.pl. [178.21.153.53][2a02:dcc:22::53]
+                                dns4.allegro.pl. [193.203.223.37][2a02:dc8:22::53]
+created:                        1999.10.27 13:00:00
+last modified:                  2025.10.17 07:02:04
+renewal date:                   2026.10.26 14:00:00
+
+option created:                 2020.06.02 23:44:16
+option expiration date:         2026.06.02 23:44:16
+
+dnssec:                         Unsigned
+
+REGISTRAR:
+Corporation Service Company
+251 Little Falls Drive
+19808 Wilmington
+Delaware
+Stany Zjednoczone/United States
+Tel: +1.3026365400
+Fax: +1.3026365454
+registryrelations@cscinfo.com
+
+WHOIS database responses:       https://dns.pl/en/whois
+
+WHOIS displays data with a delay not exceeding 15 minutes in relation to the .pl Registry system
+

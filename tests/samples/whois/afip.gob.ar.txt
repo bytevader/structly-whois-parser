@@ -1,0 +1,84 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.nic.ar
+
+domain:       AR
+
+organisation: Presidencia de la Nación , Secretaría Legal y Técnica
+address:      Balcarce no. 50, Planta Baja
+address:      Buenos Aires C1064AAB
+address:      Argentina
+
+contact:      administrative
+name:         Director Nacional del Registro de Dominios de Internet
+organisation: Dirección Nacional del Registro de Nombres de Dominio de Internet - NIC Argentina
+address:      Suipacha 767 3rd floor
+address:      Buenos Aires CABA C1008AAO
+address:      Argentina
+phone:        +54 11 5238 1350
+e-mail:       direccion@nic.ar
+
+contact:      technical
+name:         Director Nacional del Registro de Dominios de Internet
+organisation: Dirección Nacional del Registro de Nombres de Dominio de Internet - NIC Argentina
+address:      Suipacha 767 3rd floor
+address:      Buenos Aires CABA C1008AAO
+address:      Argentina
+phone:        +54 11 5238 1350
+e-mail:       contacto_dgsi@nic.ar
+
+nserver:      A.LACTLD.ORG 200.0.68.10 2801:14:a000:0:0:0:0:10
+nserver:      C.DNS.AR 200.108.148.50 2801:140:10:0:0:0:0:10
+nserver:      D.DNS.AR 192.140.126.50 2801:140:dddd:0:0:0:0:50
+nserver:      E.DNS.AR 170.238.66.50 2801:140:eeee:0:0:0:0:50
+nserver:      F.DNS.AR 130.59.31.20 2001:620:0:ff:0:0:0:20
+ds-rdata:     19606 8 2 4415cf1a2cf10de94b92bc020f21d1bf4163b2e90f2a6f6a5d2a1740339d566c
+
+whois:        whois.nic.ar
+
+status:       ACTIVE
+remarks:      Registration information: https://nic.ar
+
+created:      1987-09-23
+changed:      2025-04-17
+source:       IANA
+
+# whois.nic.ar
+
+% La información a la que estás accediendo se provee exclusivamente para
+% fines relacionados con operaciones sobre nombres de dominios y DNS,
+% quedando absolutamente prohibido su uso para otros fines.
+%
+% La DIRECCIÓN NACIONAL DEL REGISTRO DE DOMINIOS DE INTERNET es depositaria
+% de la información que los usuarios declaran con la sola finalidad de
+% registrar nombres de dominio en ‘.ar’, para ser publicada en el sitio web
+% de NIC Argentina.
+%
+% La información personal que consta en la base de datos generada a partir
+% del sistema de registro de nombres de dominios se encuentra amparada por
+% la Ley N° 25326 “Protección de Datos Personales” y el Decreto
+% Reglamentario 1558/01.
+
+domain:		afip.gob.ar
+registrant:	33693450239
+registrar:	nicar
+registered:	1997-05-26 00:00:00
+changed:	2025-05-22 12:55:01.160240
+expire:		2026-05-26 00:00:00
+
+contact:	33693450239
+name:		ADMINISTRACION FEDERAL DE INGRESOS PUBLICOS
+registrar:	nicar
+created:	2013-10-30 00:00:00
+changed:	2025-11-19 11:11:01.673892
+
+nserver:	ns1s.afip.gob.ar (201.131.79.10/32)
+nserver:	ns1.afip.gob.ar (200.1.116.10/32)
+nserver:	ns2.afip.gob.ar (200.1.116.11/32)
+nserver:	ns2s.afip.gob.ar (201.131.79.11/32)
+registrar:	nicar
+created:	2016-06-30 22:15:47.314461
+
+

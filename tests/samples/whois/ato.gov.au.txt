@@ -1,0 +1,86 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.auda.org.au
+
+domain:       AU
+
+organisation: .au Domain Administration (auDA)
+address:      Level 19
+address:      8 Exhibition Street
+address:      Melbourne VIC 3000
+address:      Australia
+
+contact:      administrative
+name:         Chief Operating Officer
+organisation: .au Domain Administration (auDA)
+address:      Level 19
+address:      8 Exhibition Street
+address:      Melbourne VIC 3000
+address:      Australia
+phone:        + 61 03 8341 4111
+fax-no:       + 61 03 8341 4112
+e-mail:       coo@auda.org.au
+
+contact:      technical
+name:         Chief Technical Officer
+organisation: .au Domain Administration (auDA)
+address:      Level 19
+address:      8 Exhibition Street
+address:      Melbourne VIC 3000
+address:      Australia
+phone:        +61 (0)3 8341 4111
+fax-no:       +61 (0)3 8341 4112
+e-mail:       auda.iana@auda.org.au
+
+nserver:      A.AU 2407:6e00:254:0:0:0:0:1 58.65.254.1
+nserver:      Q.AU 2a01:8840:be:0:0:0:0:1 65.22.196.1
+nserver:      R.AU 2a01:8840:bf:0:0:0:0:1 65.22.197.1
+nserver:      S.AU 2a01:8840:c0:0:0:0:0:1 65.22.198.1
+nserver:      T.AU 2a01:8840:c1:0:0:0:0:1 65.22.199.1
+ds-rdata:     32902 8 2 e80a9f8eca018ade79925da724a0cb0dbcf03c9a7049d20c9fb74b716ab7d329
+
+whois:        whois.auda.org.au
+
+status:       ACTIVE
+remarks:      Registration information:
+remarks:      https://www.auda.org.au/domains/au-domains/
+
+created:      1986-03-05
+changed:      2025-11-13
+source:       IANA
+
+# whois.auda.org.au
+
+Domain Name: ato.gov.au
+Registry Domain ID: 162aee01443d4d348ea945bacc064c96-AU
+Registrar WHOIS Server: whois.auda.org.au
+Registrar URL: http://whois.auda.org.au
+Last Modified: 2025-05-21T00:00:56Z
+Registrar Name: Department of Finance
+Registrar Abuse Contact Email: registrar@domainname.gov.au
+Registrar Abuse Contact Phone: +61.262152222
+Reseller Name: 
+Status: clientDeleteProhibited https://identitydigital.au/whois-status-codes#clientDeleteProhibited
+Status: serverDeleteProhibited https://identitydigital.au/whois-status-codes#serverDeleteProhibited
+Status: serverRenewProhibited https://identitydigital.au/whois-status-codes#serverRenewProhibited
+Status Reason: Not Currently Eligible For Renewal
+Status: serverTransferProhibited https://identitydigital.au/whois-status-codes#serverTransferProhibited
+Status: clientUpdateProhibited https://identitydigital.au/whois-status-codes#clientUpdateProhibited
+Status: serverUpdateProhibited https://identitydigital.au/whois-status-codes#serverUpdateProhibited
+Registrant Contact ID: 24ae33d69870401c98e20f097e186c7c-AU
+Registrant Contact Name: The Manager
+Tech Contact ID: a750a7413dbe4ab484611761829f6a1b-AU
+Tech Contact Name: The Manager
+Name Server: a1-75.akam.net
+Name Server: a11-66.akam.net
+Name Server: a12-67.akam.net
+Name Server: a18-64.akam.net
+Name Server: a7-65.akam.net
+Name Server: a8-66.akam.net
+DNSSEC: unsigned
+Registrant: Australian Taxation Office (ATO)
+Eligibility Type: Other
+>>> Last update of WHOIS database: 2025-11-24T12:09:33Z <<<
+

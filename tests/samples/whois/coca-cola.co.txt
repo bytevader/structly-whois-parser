@@ -1,0 +1,107 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.registry.co
+
+domain:       CO
+
+organisation: Ministry of Information and Communications Technologies (MinTIC)
+address:      Edificio Murillo Toro
+address:      Cra.8 #Entre Calles 12A y 12B
+address:      Bogotá D.C. Cundinamarca 111711
+address:      Colombia
+
+contact:      administrative
+name:         Thiago Grijo Dal-Toe
+organisation: Ministry of Information and Communications Technologies (MinTIC)
+address:      Edificio Murillo Toro
+address:      Cra.8 #Entre Calles 12A y 12B
+address:      Bogotá D.C. Cundinamarca 111711
+address:      Colombia
+phone:        +57 (601) 344 3460
+fax-no:       +57 (601) 344 2248
+e-mail:       cctld.co@mintic.gov.co
+
+contact:      technical
+name:         CTO
+organisation: CentralNic
+address:      Saddlers House, 4th Floor
+address:      44 Gutter Lane
+address:      London EC2V 6BR
+address:      United Kingdom of Great Britain and Northern Ireland (the)
+phone:        +44 20 33 88 0600
+fax-no:       +44 20 33 88 0601
+e-mail:       tld.ops@centralnic.com
+
+nserver:      A.REGISTRYDNS.CO 194.169.218.57 2001:67c:13cc:0:0:0:1:57
+nserver:      B.REGISTRYDNS.CO 185.24.64.57 2a04:2b00:13cc:0:0:0:1:57
+nserver:      C.REGISTRYDNS.CO 212.18.248.57 2a04:2b00:13ee:0:0:0:0:57
+nserver:      D.REGISTRYDNS.CO 212.18.249.57 2a04:2b00:13ff:0:0:0:0:57
+ds-rdata:     62110 8 2 4857ee1a85e661c92156ad09b40139dae7d5be37d117a1223289f0e20cf9d654
+ds-rdata:     7786 8 2 eb84f864cbe86e913796d2c8dd81933aa2c94bbcfb73419a42250bc4650b081b
+
+whois:        whois.registry.co
+
+status:       ACTIVE
+remarks:      Registration information: http://www.registry.co
+
+created:      1991-12-24
+changed:      2025-10-08
+source:       IANA
+
+# whois.registry.co
+
+Domain Name: COCA-COLA.CO
+Registry Domain ID: D150644-CNIC
+Registrar WHOIS Server: whois.markmonitor.com
+Registrar URL: http://www.markmonitor.com
+Updated Date: 2025-10-22T14:14:32.0Z
+Creation Date: 2010-02-24T23:30:59.0Z
+Registry Expiry Date: 2026-02-23T23:59:59.0Z
+Registrar: MarkMonitor, Inc.
+Registrar IANA ID: 292
+Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+Domain Status: clientUpdateProhibited https://icann.org/epp#clientUpdateProhibited
+Domain Status: clientDeleteProhibited https://icann.org/epp#clientDeleteProhibited
+Registrant Email: Please query the RDDS service of the Registrar of Record identified in this output for information on how to contact the Registrant, Admin, or Tech contact of the queried domain name.
+Admin Email: Please query the RDDS service of the Registrar of Record identified in this output for information on how to contact the Registrant, Admin, or Tech contact of the queried domain name.
+Tech Email: Please query the RDDS service of the Registrar of Record identified in this output for information on how to contact the Registrant, Admin, or Tech contact of the queried domain name.
+Name Server: NS3-09.AZURE-DNS.ORG
+Name Server: NS4-09.AZURE-DNS.INFO
+Name Server: NS2-09.AZURE-DNS.NET
+Name Server: NS1-09.AZURE-DNS.COM
+DNSSEC: unsigned
+Registrar Abuse Contact Email: abusecomplaints@markmonitor.com
+Registrar Abuse Contact Phone: +1.2083895740
+URL of the ICANN Whois Inaccuracy Complaint Form: https://www.icann.org/wicf/
+>>> Last update of WHOIS database: 2025-11-24T12:47:28.0Z <<<
+
+# whois.markmonitor.com
+
+Domain Name: coca-cola.co
+Registry Domain ID: D150644-CNIC
+Registrar WHOIS Server: whois.markmonitor.com
+Registrar URL: http://www.markmonitor.com
+Updated Date: 2025-10-22T14:14:31+0000
+Creation Date: 2010-02-24T23:30:59+0000
+Registrar Registration Expiration Date: 2026-02-23T00:00:00+0000
+Registrar: MarkMonitor, Inc.
+Registrar IANA ID: 292
+Registrar Abuse Contact Email: abusecomplaints@markmonitor.com
+Registrar Abuse Contact Phone: +1.2086851750
+Domain Status: clientUpdateProhibited (https://www.icann.org/epp#clientUpdateProhibited)
+Domain Status: clientTransferProhibited (https://www.icann.org/epp#clientTransferProhibited)
+Domain Status: clientDeleteProhibited (https://www.icann.org/epp#clientDeleteProhibited)
+Registrant Organization: The Coca-Cola Company
+Registrant Country: US
+Registrant Email: Select Request Email Form at https://domains.markmonitor.com/whois/coca-cola.co
+Tech Email: Select Request Email Form at https://domains.markmonitor.com/whois/coca-cola.co
+Name Server: ns1-09.azure-dns.com
+Name Server: ns3-09.azure-dns.org
+Name Server: ns2-09.azure-dns.net
+Name Server: ns4-09.azure-dns.info
+DNSSEC: unsigned
+URL of the ICANN WHOIS Data Problem Reporting System: http://wdprs.internic.net/
+>>> Last update of WHOIS database: 2025-11-24T12:47:29+0000 <<<
+
