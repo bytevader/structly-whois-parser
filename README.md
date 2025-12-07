@@ -1,5 +1,8 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/bytevader/structly-whois-parser/main/docs/structly_whois.svg" alt="structly_whois" width="320">
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="docs/structly_whois.svg">
+    <img src="https://github.com/bytevader/structly-whois-parser/raw/main/docs/structly_whois.svg" alt="structly_whois" width="320">
+  </picture>
 </p>
 <p align="center">
     <em>Structly-powered WHOIS parsing.</em>
