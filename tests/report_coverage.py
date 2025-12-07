@@ -1,20 +1,21 @@
 #!/usr/bin/env python3
 """Generate per-TLD field coverage statistics for the WHOIS samples."""
+
 from __future__ import annotations
 
 import argparse
 import sys
 from collections import Counter, defaultdict
+from collections.abc import Callable, Iterable
 from pathlib import Path
-from typing import Callable, Iterable
 
-from structly_whois_parser import WhoisParser
+from structly_whois import WhoisParser
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from tests.sample_utils import SKIPPED_SAMPLES, WHOIS_ROOT
+from tests.sample_utils import SKIPPED_SAMPLES, WHOIS_ROOT  # noqa: E402
 
 FieldExtractor = Callable[[dict], bool]
 

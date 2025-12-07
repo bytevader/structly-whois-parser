@@ -1,12 +1,11 @@
 from __future__ import annotations
 
 import copy
-from datetime import datetime
+from datetime import datetime, timezone
 
 import pytest
 
-from structly_whois_parser.records import build_whois_record
-
+from structly_whois.records import _apply_timezone, _prepare_list, build_whois_record, parse_datetime
 
 BASE_PAYLOAD = {
     "admin_email": None,
@@ -75,7 +74,6 @@ def test_build_whois_record_validates_types(payload: dict[str, object]) -> None:
         build_whois_record("RAW", payload)
 
 
-
 def test_build_whois_record_marks_rate_limited(payload: dict[str, object]) -> None:
     raw = "WHOIS LIMIT EXCEEDED"
     record = build_whois_record(raw, payload)
@@ -94,3 +92,47 @@ def test_whois_record_to_dict_serializes_contacts(payload: dict[str, object]) ->
 
     trimmed = record.to_dict(include_raw_text=False)
     assert "raw_text" not in trimmed
+
+
+def test_build_whois_record_handles_date_parser_value_error(payload: dict[str, object]) -> None:
+    def flaky_parser(_: str) -> datetime:
+        raise ValueError("nope")
+
+    payload["creation_date"] = "mystery date"
+
+    record = build_whois_record("RAW", payload, date_parser=flaky_parser)
+
+    assert record.registered_at == "mystery date"
+
+
+def test_build_whois_record_raises_for_unexpected_date_parser_exception(payload: dict[str, object]) -> None:
+    def bad_parser(_: str) -> datetime:
+        raise RuntimeError("boom")
+
+    payload["creation_date"] = "another mystery"
+
+    with pytest.raises(RuntimeError):
+        build_whois_record("RAW", payload, date_parser=bad_parser)
+
+
+def test_parse_datetime_handles_missing_values() -> None:
+    assert parse_datetime("") == ""
+    assert parse_datetime("   ") == "   "
+
+
+def test_parse_datetime_applies_known_timezone() -> None:
+    result = parse_datetime("2024-01-01 00:00:00 (JST)")
+    assert isinstance(result, datetime)
+    assert result.tzinfo is not None
+
+
+def test_apply_timezone_with_numeric_offset() -> None:
+    dt = datetime(2024, 1, 1, tzinfo=timezone.utc)
+    adjusted = _apply_timezone(dt, "+0900")
+    assert adjusted.tzinfo is not None
+
+
+def test_prepare_list_deduplicates_and_lowercases() -> None:
+    values = ["NS1.EXAMPLE.COM", None, "ns1.example.com", "NS2.EXAMPLE.COM"]
+    prepared = _prepare_list(values, lowercase=True)
+    assert prepared == ["ns1.example.com", "ns2.example.com"]

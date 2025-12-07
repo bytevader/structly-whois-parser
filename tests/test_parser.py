@@ -1,8 +1,13 @@
 import ast
-from pprint import pprint
+from collections import defaultdict
+from collections.abc import Iterable
+from datetime import datetime
 
-from structly_whois_parser import WhoisParser
+import pytest
+from structly import FieldPattern
 
+from structly_whois import WhoisParser
+from structly_whois import domain_inference as domain_mod
 from tests.sample_utils import EXPECTED_ROOT, SKIPPED_SAMPLES, WHOIS_ROOT
 
 
@@ -10,6 +15,7 @@ def _read_sample(domain: str) -> str:
     """Load a WHOIS sample payload."""
     path = WHOIS_ROOT / f"{domain}.txt"
     return path.read_text(encoding="utf-8", errors="ignore")
+
 
 SIMPLE_WHOIS = """Domain Name: example.dev
 Registrar: Example Registrar
@@ -44,6 +50,21 @@ def test_parse_many_can_return_records() -> None:
     assert records[0].name_servers == ["ns1.example.com", "ns2.example.com"]
 
 
+def test_parser_accepts_extra_tld_overrides() -> None:
+    overrides = {
+        "demo": {
+            "domain_name": {
+                "patterns": [FieldPattern.regex(r"(?i)^demo:\s*(?P<val>[a-z0-9._-]+)$")],
+            }
+        }
+    }
+    parser = WhoisParser(preload_tlds=(), extra_tld_overrides=overrides)
+
+    result = parser.parse("Demo: custom.demo", tld="demo")
+
+    assert result["domain_name"] == "custom.demo"
+
+
 def test_com_br_override_extracts_owner_fields() -> None:
     raw = _read_sample("google.com.br")
     parser = WhoisParser(preload_tlds=("com.br",))
@@ -56,6 +77,7 @@ def test_com_br_override_extracts_owner_fields() -> None:
     assert record.name_servers[:2] == ["ns1.google.com", "ns2.google.com"]
     assert record.statuses == ["published"]
 
+
 def test_com_br_override_extracts_owner_fields2() -> None:
     domain = "globo.com.br"
     raw = _read_sample(domain)
@@ -65,8 +87,6 @@ def test_com_br_override_extracts_owner_fields2() -> None:
         expected = {}
     parser = WhoisParser()
     record = parser.parse_record(raw, domain=domain).to_dict(include_raw_text=False)
-    print(record)
-    pprint(record, indent=2)
     assert record == expected
 
 
@@ -82,3 +102,125 @@ def test_all_samples_match_expected() -> None:
         expected = ast.literal_eval(expected_path.read_text(encoding="utf-8"))
         record = parser.parse_record(raw, domain=domain).to_dict(include_raw_text=False)
         assert record == expected, f"parsed WHOIS payload for {domain} does not match expected fixture"
+
+
+@pytest.mark.parametrize(
+    "domain",
+    [
+        "abc.xyz",  # base patterns
+        "google.com.br",
+        "rakuten.co.jp",
+        "nav.no",
+        "samsung.co.kr",
+        "belgium.be",
+        "airfrance.fr",
+        "allegro.pl",
+        "banamex.com.mx",
+        "bbc.co.uk",
+    ],
+)
+def test_parse_record_infers_domain_when_missing(domain: str) -> None:
+    parser = WhoisParser()
+    raw = (WHOIS_ROOT / f"{domain}.txt").read_text(encoding="utf-8", errors="ignore")
+    expected = ast.literal_eval((EXPECTED_ROOT / f"{domain}.txt").read_text(encoding="utf-8"))
+
+    record = parser.parse_record(raw).to_dict(include_raw_text=False)
+
+    assert record == expected
+
+
+def test_parse_many_matches_expected_samples() -> None:
+    parser = WhoisParser()
+    batches: dict[str, list[tuple[str, str]]] = defaultdict(list)
+    for sample_path in sorted(WHOIS_ROOT.glob("*.txt")):
+        domain = sample_path.stem
+        if domain in SKIPPED_SAMPLES:
+            continue
+        batches[parser._select_tld(None, domain)].append(  # type: ignore[attr-defined]
+            (domain, sample_path.read_text(encoding="utf-8", errors="ignore"))
+        )
+
+    for tld, entries in batches.items():
+        payloads = [raw for _, raw in entries]
+        records = parser.parse_many(payloads, tld=tld or None, to_records=True)
+        assert len(records) == len(entries)
+        for (domain, _), record in zip(entries, records):
+            expected_path = EXPECTED_ROOT / f"{domain}.txt"
+            expected = ast.literal_eval(expected_path.read_text(encoding="utf-8"))
+            assert record.to_dict(include_raw_text=False) == expected, domain
+
+
+def test_register_tld_requires_label() -> None:
+    parser = WhoisParser(preload_tlds=())
+    with pytest.raises(ValueError):
+        parser.register_tld("", {})
+
+
+def test_register_tld_preload_false_drops_cached_parser() -> None:
+    parser = WhoisParser(preload_tlds=("dev",))
+    overrides = {
+        "domain_name": {
+            "patterns": [FieldPattern.regex(r"(?i)^domain:\s*(?P<val>.+)$")],
+        }
+    }
+    parser.register_tld("dev", overrides, preload=True)
+    assert "dev" in parser._parsers  # type: ignore[attr-defined]
+    parser.register_tld("dev", overrides, preload=False)
+    assert "dev" not in parser._parsers  # type: ignore[attr-defined]
+
+
+def test_parse_many_detects_mismatched_results(monkeypatch: pytest.MonkeyPatch) -> None:
+    parser = WhoisParser(preload_tlds=("com",))
+
+    class StubStructly:
+        def parse_many(self, iterable: Iterable[str]) -> list[dict[str, str]]:
+            list(iterable)
+            return [{}]
+
+    monkeypatch.setattr(parser, "_get_parser_for_tld", lambda _: StubStructly())  # type: ignore[attr-defined]
+    with pytest.raises(RuntimeError):
+        parser.parse_many([SIMPLE_WHOIS, SIMPLE_WHOIS], tld="com", to_records=True)
+
+
+def test_infer_domain_from_text_uses_regex() -> None:
+    text = "Domain Name: Example.com\n"
+    assert domain_mod.infer_domain_from_text(text) == "Example.com"
+
+
+def test_infer_domain_from_text_fallback_to_prefix(monkeypatch: pytest.MonkeyPatch) -> None:
+    registry = domain_mod.get_domain_registry()
+    monkeypatch.setattr(registry, "regexes", ())
+    monkeypatch.setattr(registry, "prefixes", ("Domain Name:",))
+    text = "Domain Name: fallback.example\n"
+    assert domain_mod.infer_domain_from_text(text) == "fallback.example"
+
+
+def test_parse_record_marks_rate_limited(sample_payloads: dict[str, str]) -> None:
+    parser = WhoisParser(preload_tlds=())
+
+    record = parser.parse_record(sample_payloads["rate_limited"], domain="example.com")
+
+    assert record.is_rate_limited is True
+    assert record.statuses == []
+
+
+def test_parse_record_uses_date_parser_hook(sample_payloads: dict[str, str]) -> None:
+    def _parser(value: str) -> datetime:
+        return datetime.fromisoformat(value.replace("Z", "+00:00"))
+
+    parser = WhoisParser(preload_tlds=("com",), date_parser=_parser)
+
+    record = parser.parse_record(sample_payloads["com"], domain="example.com")
+
+    assert isinstance(record.registered_at, datetime)
+    assert record.registered_at.tzinfo is not None
+
+
+def test_parse_chunks_yields_expected_batch_sizes(sample_payloads: dict[str, str]) -> None:
+    parser = WhoisParser(preload_tlds=("com",))
+    payloads = [sample_payloads["com"]] * 5
+
+    chunks = list(parser.parse_chunks(payloads, domain="example.com", chunk_size=2))
+
+    assert len(chunks) == 3
+    assert [len(chunk) for chunk in chunks] == [2, 2, 1]
