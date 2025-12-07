@@ -1,0 +1,68 @@
+services:
+  zookeeper:
+    image: zookeeper:3.9.4
+    container_name: whois-zookeeper
+    restart: unless-stopped
+    environment:
+      ZOO_4LW_COMMANDS_WHITELIST: "ruok,stat"
+      ZOO_TICK_TIME: 2000
+      ZOO_INIT_LIMIT: 5
+      ZOO_SYNC_LIMIT: 2
+      ZOO_MAX_CLIENT_CNXNS: 60
+    ports:
+      - "2181:2181"
+
+  kafka:
+    image: confluentinc/cp-kafka:7.6.1
+    container_name: whois-kafka
+    restart: unless-stopped
+    depends_on:
+      - zookeeper
+    ports:
+      - "9094:9094"
+    environment:
+      KAFKA_BROKER_ID: 1
+      KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
+
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT
+      KAFKA_LISTENERS: PLAINTEXT://0.0.0.0:9092,PLAINTEXT_HOST://0.0.0.0:9094
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://kafka:9092,PLAINTEXT_HOST://localhost:9094
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT
+
+      KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_REPLICATION_FACTOR: 1
+      KAFKA_TRANSACTION_STATE_LOG_MIN_ISR: 1
+      KAFKA_AUTO_CREATE_TOPICS_ENABLE: "true"
+
+  redpanda-console:
+    image: docker.redpanda.com/redpandadata/console:v3.3.2
+    container_name: whois-redpanda-console
+    restart: unless-stopped
+    depends_on:
+      - kafka
+    environment:
+      CONFIG_FILEPATH: /config/console-config.yml
+    volumes:
+      - ./console-config.yml:/config/console-config.yml
+    ports:
+      - "8080:8080"
+
+  whois-parser:
+    build:
+      context: ..
+      dockerfile: benchmarks/Dockerfile.consumer
+    container_name: structly-whois-parser
+    restart: unless-stopped
+    depends_on:
+      - kafka
+    command:
+      - --bootstrap-servers=kafka:9092
+      - --raw-topic=whois_raw
+      - --parsed-topic=whois_parsed
+      - --group-id=structly-parser
+      - --idle-timeout=15
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 500M

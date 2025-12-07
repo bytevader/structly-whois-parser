@@ -1,0 +1,86 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.auda.org.au
+
+domain:       AU
+
+organisation: .au Domain Administration (auDA)
+address:      Level 19
+address:      8 Exhibition Street
+address:      Melbourne VIC 3000
+address:      Australia
+
+contact:      administrative
+name:         Chief Operating Officer
+organisation: .au Domain Administration (auDA)
+address:      Level 19
+address:      8 Exhibition Street
+address:      Melbourne VIC 3000
+address:      Australia
+phone:        + 61 03 8341 4111
+fax-no:       + 61 03 8341 4112
+e-mail:       coo@auda.org.au
+
+contact:      technical
+name:         Chief Technical Officer
+organisation: .au Domain Administration (auDA)
+address:      Level 19
+address:      8 Exhibition Street
+address:      Melbourne VIC 3000
+address:      Australia
+phone:        +61 (0)3 8341 4111
+fax-no:       +61 (0)3 8341 4112
+e-mail:       auda.iana@auda.org.au
+
+nserver:      A.AU 2407:6e00:254:0:0:0:0:1 58.65.254.1
+nserver:      Q.AU 2a01:8840:be:0:0:0:0:1 65.22.196.1
+nserver:      R.AU 2a01:8840:bf:0:0:0:0:1 65.22.197.1
+nserver:      S.AU 2a01:8840:c0:0:0:0:0:1 65.22.198.1
+nserver:      T.AU 2a01:8840:c1:0:0:0:0:1 65.22.199.1
+ds-rdata:     32902 8 2 e80a9f8eca018ade79925da724a0cb0dbcf03c9a7049d20c9fb74b716ab7d329
+
+whois:        whois.auda.org.au
+
+status:       ACTIVE
+remarks:      Registration information:
+remarks:      https://www.auda.org.au/domains/au-domains/
+
+created:      1986-03-05
+changed:      2025-11-13
+source:       IANA
+
+# whois.auda.org.au
+
+Domain Name: abc.net.au
+Registry Domain ID: 9b768bcecc1448078a741b301dbe0a1e-AU
+Registrar WHOIS Server: whois.auda.org.au
+Registrar URL: https://www.instra.com/en/about-us/contact-us
+Last Modified: 2025-11-21T17:10:36Z
+Registrar Name: Domain Directors Pty Ltd trading as Instra
+Registrar Abuse Contact Email: abuse@key-systems.net
+Registrar Abuse Contact Phone: +49.68949396850
+Reseller Name: 
+Status: serverRenewProhibited https://identitydigital.au/whois-status-codes#serverRenewProhibited
+Status Reason: Not Currently Eligible For Renewal
+Registrant Contact ID: 77a709b7f45e467c9ce530ead37074f9-AU
+Registrant Contact Name: Domain Administrator
+Tech Contact ID: c3a645b28f9d45b8878ebf862fe7fe86-AU
+Tech Contact Name: Domain Administrator
+Name Server: asia1.akam.net
+Name Server: eur2.akam.net
+Name Server: eur3.akam.net
+Name Server: eur5.akam.net
+Name Server: ns1-129.akam.net
+Name Server: ns1-31.akam.net
+Name Server: usw1.akam.net
+Name Server: usw5.akam.net
+DNSSEC: unsigned
+Registrant: AUSTRALIAN BROADCASTING CORPORATION
+Registrant ID: ABN 52429278345
+Eligibility Type: Commonwealth entity
+Eligibility Name: AUSTRALIAN BROADCASTING CORPORATION
+Eligibility ID: ABN 52429278345
+>>> Last update of WHOIS database: 2025-11-24T12:09:00Z <<<
+

@@ -1,0 +1,182 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.nic.fr
+
+domain:       FR
+
+organisation: Association Française pour le Nommage Internet en Coopération (A.F.N.I.C.)
+address:      7, avenue du 8 mai 1945
+address:      Guyancourt 78280
+address:      France
+
+contact:      administrative
+name:         TLD Admin Contact
+organisation: Association Française pour le Nommage Internet en Coopération (A.F.N.I.C.)
+address:      7, avenue du 8 mai 1945
+address:      Guyancourt 78280
+address:      France
+phone:        +33 1 39 30 83 05
+fax-no:       +33 1 39 30 83 01
+e-mail:       tld-admin@nic.fr
+
+contact:      technical
+name:         TLD Technical Contact
+organisation: Association Française pour le Nommage Internet en Coopération (A.F.N.I.C.)
+address:      7, avenue du 8 mai 1945
+address:      Guyancourt 78280
+address:      France
+phone:        +33 1 39 30 83 00
+fax-no:       +33 1 39 30 83 01
+e-mail:       tld-tech@nic.fr
+
+nserver:      D.NIC.FR 194.0.9.1 2001:678:c:0:0:0:0:1
+nserver:      F.EXT.NIC.FR 194.146.106.46 2001:67c:1010:11:0:0:0:53
+nserver:      G.EXT.NIC.FR 194.0.36.1 2001:678:4c:0:0:0:0:1
+ds-rdata:     65381 13 2 8163abf45792942cf4ee38cca31f6a6832fcdc6d402338fc687827690c4132f6
+
+whois:        whois.nic.fr
+
+status:       ACTIVE
+remarks:      Registration information: https://www.nic.fr
+
+created:      1986-09-02
+changed:      2025-07-31
+source:       IANA
+
+# whois.nic.fr
+
+%%
+%% This is the AFNIC Whois server.
+%%
+%% complete date format: YYYY-MM-DDThh:mm:ssZ
+%%
+%% Rights restricted by copyright.
+%% See https://www.afnic.fr/en/domain-names-and-support/everything-there-is-to-know-about-domain-names/find-a-domain-name-or-a-holder-using-whois/
+%%
+%%
+
+domain:                        insee.fr
+status:                        ACTIVE
+eppstatus:                     serverUpdateProhibited
+eppstatus:                     serverTransferProhibited
+eppstatus:                     serverDeleteProhibited
+eppstatus:                     serverRecoverProhibited
+hold:                          NO
+holder-c:                      I60306-FRNIC
+admin-c:                       DA59995-FRNIC
+tech-c:                        SI14377-FRNIC
+registrar:                     CSC CORPORATE DOMAINS INC.
+Expiry Date:                   2026-10-28T16:21:19Z
+created:                       1996-05-06T22:00:00Z
+last-update:                   2025-10-29T05:23:59.753282Z
+source:                        FRNIC
+
+nserver:                       ns1.insee.fr
+nserver:                       ns2.insee.fr
+nserver:                       nsa.perf1.fr
+nserver:                       nsb.perf1.com
+nserver:                       nsc.perf1.com
+source:                        FRNIC
+
+key1-tag:                      65071
+key1-algo:                     14 [ECDSAP384SHA384]
+key1-dgst-t:                   2 [SHA256]
+key1-dgst:                     24B75547B0946415E450C5DC0D2FC604F85ECB9B205055248882B90390112DDA
+source:                        FRNIC
+
+key2-tag:                      35076
+key2-algo:                     14 [ECDSAP384SHA384]
+key2-dgst-t:                   2 [SHA256]
+key2-dgst:                     A5017A59ED366E13E46A9F2ACB4FB77AE4D2472E6B66BADBCF9FB80BC54DE3AF
+source:                        FRNIC
+
+registrar:                     CSC CORPORATE DOMAINS INC.
+address:                       251 Little Falls Drive
+address:                       DE 19808 WILMINGTON
+country:                       US
+phone:                         +1.3026365400
+fax-no:                        +1.3026365454
+e-mail:                        tldsupport@cscglobal.com
+website:                       https://www.cscdigitalbrand.services
+anonymous:                     No
+registered:                    2006-10-16T00:00:00Z
+source:                        FRNIC
+
+nic-hdl:                       I60306-FRNIC
+type:                          ORGANIZATION
+contact:                       INSEE
+address:                       INSEE
+address:                       18, boulevard Adolphe Pinard
+address:                       92240 Paris
+country:                       FR
+phone:                         +33.14117661
+fax-no:                        +33.1411766
+e-mail:                        dg75-pilotage-des-reseaux@insee.fr
+registrar:                     CSC CORPORATE DOMAINS INC.
+anonymous:                     NO
+obsoleted:                     NO
+eppstatus:                     serverUpdateProhibited
+eppstatus:                     associated
+eligstatus:                    ok
+eligsource:                    REGISTRAR
+eligdate:                      2020-01-21T00:00:00Z
+reachstatus:                   ok
+reachmedia:                    email
+reachsource:                   REGISTRAR
+reachdate:                     2020-01-21T00:00:00Z
+source:                        FRNIC
+
+nic-hdl:                       DA59995-FRNIC
+type:                          ORGANIZATION
+contact:                       Domain Administrator
+address:                       INSEE
+address:                       18, boulevard A. Pinard
+address:                       Timbre C440
+address:                       75675 Paris
+country:                       FR
+phone:                         +33.14117615
+fax-no:                        +33.14117523
+e-mail:                        dg75-pilotage-des-reseaux@insee.fr
+registrar:                     CSC CORPORATE DOMAINS INC.
+anonymous:                     NO
+obsoleted:                     NO
+eppstatus:                     associated
+eppstatus:                     active
+eligstatus:                    ok
+eligsource:                    REGISTRAR
+eligdate:                      2019-10-28T00:00:00Z
+reachstatus:                   ok
+reachmedia:                    email
+reachsource:                   REGISTRAR
+reachdate:                     2019-10-28T00:00:00Z
+source:                        FRNIC
+
+nic-hdl:                       SI14377-FRNIC
+type:                          ORGANIZATION
+contact:                       SERVICE INFORMATIQUE
+address:                       INSEE
+address:                       18 bld Adolphe Pinard
+address:                       Timbre C440
+address:                       75675 Paris
+country:                       FR
+phone:                         +33.14117615
+fax-no:                        +33.14117615
+e-mail:                        dg75-pilotage-des-reseaux@insee.fr
+registrar:                     CSC CORPORATE DOMAINS INC.
+anonymous:                     NO
+obsoleted:                     NO
+eppstatus:                     associated
+eppstatus:                     active
+eligstatus:                    ok
+eligsource:                    REGISTRAR
+eligdate:                      2019-10-28T00:00:00Z
+reachstatus:                   ok
+reachmedia:                    email
+reachsource:                   REGISTRAR
+reachdate:                     2019-10-28T00:00:00Z
+source:                        FRNIC
+
+>>> Last update of WHOIS database: 2025-11-24T12:15:13.36854Z <<<
+

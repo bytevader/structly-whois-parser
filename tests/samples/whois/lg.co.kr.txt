@@ -1,0 +1,109 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.kr
+
+domain:       KR
+
+organisation: Korea Internet & Security Agency (KISA)
+address:      9, Jinheung-gil
+address:      Naju-si Jeollanam-do 58324
+address:      Korea (the Republic of)
+
+contact:      administrative
+name:         Kilnam Chon
+organisation: Korea Network Information Center (KRNIC)
+address:      9, Jinheung-gil
+address:      Naju-si Jeollanam-do 58324
+address:      Korea (the Republic of)
+phone:        +82 10 8581 3514
+fax-no:       +82 61 820 2611
+e-mail:       chonkn@gmail.com
+
+contact:      technical
+name:         KRNIC Tech Team Manager
+organisation: Korea Internet & Security Agency (KISA)
+address:      9, Jinheung-gil
+address:      Naju-si Jeollanam-do 58324
+address:      Korea (the Republic of)
+phone:        +82 61 820 1161
+fax-no:       +82 61 820 2611
+e-mail:       techc@kisa.or.kr
+
+nserver:      B.DNS.KR 210.101.60.1
+nserver:      C.DNS.KR 210.101.61.1
+nserver:      D.DNS.KR 2001:dcc:4:0:0:0:0:1 203.83.159.1
+nserver:      E.DNS.KR 2001:dcc:5:0:0:0:0:100 202.30.124.100
+nserver:      F.DNS.KR 2001:dcc:6:0:0:0:0:1 210.101.62.1
+nserver:      G.DNS.KR 2001:dc5:a:0:0:0:0:1 202.31.190.1
+ds-rdata:     61615 8 2 ed570aadc88713ce2775fb8affb2ad782d056ea21d0677e147f2fb7bf54404da
+
+whois:        whois.kr
+
+status:       ACTIVE
+remarks:      Registration information: http://www.nic.or.kr/
+
+created:      1986-09-29
+changed:      2020-07-16
+source:       IANA
+
+# whois.kr
+
+query : lg.co.kr
+
+
+# KOREAN(UTF8)
+
+도메인이름                  : lg.co.kr
+등록인                      : 주식회사 엘지
+등록인 주소                 : 서울시 영등포구 여의도동 20 LG트윈타워
+등록인 우편번호             : 150721
+책임자                      : 도메인관리자
+책임자 전자우편             : young@lg.com
+책임자 전화번호             : 02-3773-2322
+등록일                      : 1995. 03. 20.
+최근 정보 변경일            : 2014. 08. 26.
+사용 종료일                 : 2033. 10. 15.
+정보공개여부                : Y
+등록대행자                  : (주)후이즈(http://whois.co.kr)
+DNSSEC                      : 미서명
+
+1차 네임서버 정보
+   호스트이름               : prmns.lg.co.kr
+   IP 주소                  : 165.243.5.15
+
+2차 네임서버 정보
+   호스트이름               : secns.lg.co.kr
+   IP 주소                  : 27.122.242.230
+
+네임서버 이름이 .kr이 아닌 경우는 IP주소가 보이지 않습니다.
+
+
+# ENGLISH
+
+Domain Name                 : lg.co.kr
+Registrant                  : LG Corp.
+Registrant Address          : LG Twintower 20, Youido-dong, Youngdeungpo-gu,, Seoul
+Registrant Zip Code         : 150721
+Administrative Contact(AC)  : Domain-Manager
+AC E-Mail                   : young@lg.com
+AC Phone Number             : 02-3773-2322
+Registered Date             : 1995. 03. 20.
+Last Updated Date           : 2014. 08. 26.
+Expiration Date             : 2033. 10. 15.
+Publishes                   : Y
+Authorized Agency           : Whois Corp.(http://whois.co.kr)
+DNSSEC                      : unsigned
+
+Primary Name Server
+   Host Name                : prmns.lg.co.kr
+   IP Address               : 165.243.5.15
+
+Secondary Name Server
+   Host Name                : secns.lg.co.kr
+   IP Address               : 27.122.242.230
+
+
+- KISA/KRNIC WHOIS Service -
+

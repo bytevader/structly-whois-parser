@@ -1,0 +1,68 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.register.bg
+
+domain:       BG
+
+organisation: Register.BG
+address:      40, Slivnitsa blvd
+address:      Varna 9000
+address:      Bulgaria
+
+contact:      administrative
+name:         Dragomir Slavov
+organisation: Register.BG
+address:      40, Slivnitsa blvd
+address:      Varna 9000
+address:      Bulgaria
+phone:        +359 52 702562
+fax-no:       +359 52 702561
+e-mail:       dhs@digsys.bg
+
+contact:      technical
+name:         Daniel Kalchev
+organisation: Register.BG
+address:      40, Slivnitsa blvd
+address:      Varna 9000
+address:      Bulgaria
+phone:        +359 52 702563
+fax-no:       +359 52 702561
+e-mail:       daniel@digsys.bg
+
+nserver:      A.NIC.BG 192.92.129.99 2a02:6a80:0:0:192:92:129:99
+nserver:      B.NIC.BG 193.68.3.232 2a02:6a80:0:0:193:68:3:232
+nserver:      C.NIC.BG 193.68.99.99 2a02:6a80:0:0:193:68:99:99
+nserver:      D.NIC.BG 194.0.32.1 2001:678:3c:0:0:0:0:1
+nserver:      E.NIC.BG 185.143.80.1 2a02:6a80:530e:0:0:0:0:1
+nserver:      P.NIC.BG 2001:500:14:6110:ad:0:0:1 204.61.216.110
+ds-rdata:     58606 8 2 305151ebb808cfa54a262403982d4c27e081b1c4accdad4b4d83ce091188b1a0
+
+whois:        whois.register.bg
+
+status:       ACTIVE
+remarks:      Registration information: http://www.register.bg
+
+created:      1995-01-03
+changed:      2021-02-24
+source:       IANA
+
+# whois.register.bg
+
+DOMAIN NAME: abv.bg (abv.bg)
+registration status: busy, active
+
+NAME SERVER INFORMATION:
+ns.netinfo.bg 
+ns1.netinfo.bg 
+
+DNSSEC: inactive
+
+According to REGULATION (EU) 2016/679 OF THE EUROPEAN PARLIAMENT AND
+OF THE COUNCIL (GDPR) personal data is not published.
+
+If you would like to contact the persons responsible for the domain
+name, please, use the online WHOIS contact form from the "Info / Whois" menu
+at www.register.bg.
+

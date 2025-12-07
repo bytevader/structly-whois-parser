@@ -1,0 +1,70 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.cnnic.cn
+
+domain:       CN
+
+organisation: China Internet Network Information Center (CNNIC)
+address:      Building 4, No.9 Beijing Auto Museum West Road, Fengtai District
+address:      Beijing 100070
+address:      China
+
+contact:      administrative
+name:         Yulin Liu
+organisation: China Internet Network Information Center (CNNIC)
+address:      Building 4, No.9 West Road , Automobile Museum, Fengtai District
+address:      Beijing 100070
+address:      China
+phone:        +8610-58813000
+fax-no:       +8610-59116190
+e-mail:       ceo@cnnic.cn
+
+contact:      technical
+name:         Anlei Hu
+organisation: China Internet Network Information Center (CNNIC)
+address:      Building 4, No.9 West Road , Automobile Museum, Fengtai District
+address:      Beijing 100070
+address:      China
+phone:        +8610-59116801
+fax-no:       +8610-59116190
+e-mail:       tech@cnnic.cn
+
+nserver:      A.DNS.CN 2001:dc7:0:0:0:0:0:1 203.119.25.1
+nserver:      B.DNS.CN 2001:dc7:1:0:0:0:0:1 203.119.26.1
+nserver:      C.DNS.CN 2001:dc7:2:0:0:0:0:1 203.119.27.1
+nserver:      D.DNS.CN 2001:dc7:1000:0:0:0:0:1 203.119.28.1
+nserver:      E.DNS.CN 2001:dc7:3:0:0:0:0:1 203.119.29.1
+nserver:      NS.CERNET.NET 202.112.0.44
+ds-rdata:     33094 8 2 cccf13ed73a83244f7d2936f0b6c3507d85c3ebc5e1be4fb644064bc5b5fe3b2
+
+whois:        whois.cnnic.cn
+
+status:       ACTIVE
+remarks:      Registration information: http://www.cnnic.cn/
+
+created:      1990-11-28
+changed:      2025-07-17
+source:       IANA
+
+# whois.cnnic.cn
+
+Domain Name: jd.cn
+ROID: 20030310s10001s00021701-cn
+Domain Status: clientDeleteProhibited
+Domain Status: serverDeleteProhibited
+Domain Status: clientUpdateProhibited
+Domain Status: serverUpdateProhibited
+Domain Status: clientTransferProhibited
+Domain Status: serverTransferProhibited
+Registrant: 北京京东叁佰陆拾度电子商务有限公司
+Registrant Contact Email: jdym@jd.com
+Sponsoring Registrar: 北京新网数码信息技术有限公司
+Name Server: ns1.jdcache.com
+Name Server: ns4.jdcache.com
+Name Server: ns2.jdcache.com
+Name Server: ns3.jdcache.com
+Registration Time: 2003-03-10 20:17:44
+Expiration Time: 2028-07-05 16:31:10
+DNSSEC: unsigned

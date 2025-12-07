@@ -1,0 +1,64 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.cctld.by
+
+domain:       BY
+
+organisation: Belarusian Cloud Technologies LLC
+address:      C. Zetkin str. 24, office 602
+address:      Minsk 220004
+address:      Belarus
+
+contact:      administrative
+name:         Head of Sector
+organisation: The Operational and Analytical Center under the Aegis of the President of the Republic of Belarus
+address:      49 Kirova Str.
+address:      Minsk 220030
+address:      Belarus
+phone:        +375 17 3092473
+fax-no:       +375 17 3636824
+e-mail:       admin-c@oac.gov.by
+
+contact:      technical
+name:         General Director
+organisation: Belarusian Cloud Technologies LLC
+address:      C. Zetkin Str. 24, office 602
+address:      Minsk 220004
+address:      Belarus
+phone:        +375 17 287 11 34
+fax-no:       +375 17 287 11 01
+e-mail:       info@cctld.by
+
+nserver:      DNS1.TLD.BECLOUDBY.COM 2a00:c827:a:2:0:0:0:2 93.125.25.72
+nserver:      DNS2.TLD.BECLOUDBY.TECH 2a00:c827:a:3:0:0:0:2 93.125.25.73
+nserver:      DNS3.TLD.BECLOUDBY.TECH 185.98.83.4 2a01:ba80:e:c:1:0:0:4c
+nserver:      DNS4.TLD.BECLOUDBY.TECH 2a0e:b81:8001:1001:0:0:0:2 31.44.1.137
+nserver:      DNS7.TLD.BECLOUDBY.COM 31.44.5.245
+ds-rdata:     495 13 2 2d14284f8e47b53f839bd8068d438680b4b6c7a645769c9d89b47df0c5359b7b
+
+whois:        whois.cctld.by
+
+status:       ACTIVE
+remarks:      Registration information: https://cctld.by
+
+created:      1994-05-10
+changed:      2025-01-09
+source:       IANA
+
+# whois.cctld.by
+
+Domain name: drupalcamp.by
+Registrar: Reliable Software, Ltd
+Person: HIDDEN!
+Email: HIDDEN! Details are available at https://whois.cctld.by
+Name Server: u1.hoster.by
+Name Server: u2.hoster.by
+Update Date: 2025-08-20
+Creation Date: 2020-08-20
+Expiration Date: 2026-08-20
+
+-------------------------------------------
+Service provided by Belarusian Cloud Technologies LLC
+

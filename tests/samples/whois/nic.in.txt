@@ -1,0 +1,114 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.nixiregistry.in
+
+domain:       IN
+
+organisation: National Internet Exchange of India
+address:      6C, 6D, 6E Hansalaya Building 15, Barakhamba Road
+address:      New Delhi 110 001
+address:      India
+
+contact:      administrative
+name:         Rajiv Kumar
+organisation: National Internet Exchange of India
+address:      6C, 6D, 6E Hansalaya Building 15, Barakhamba Road
+address:      New Delhi 110 001
+address:      India
+phone:        +91 11 48202011
+fax-no:       +91 11 48202013
+e-mail:       registry@nixi.in
+
+contact:      technical
+name:         Rajiv Kumar
+organisation: National Internet Exchange of India
+address:      6C, 6D, 6E Hansalaya Building 15, Barakhamba Road
+address:      New Delhi 110 001
+address:      India
+phone:        +91 11 48202011
+fax-no:       +91 11 48202013
+e-mail:       rajiv@nixi.in
+
+nserver:      NS01.TRS-DNS.COM 2620:57:4001:0:0:0:0:1 64.96.1.1
+nserver:      NS01.TRS-DNS.NET 2620:57:4002:0:0:0:0:1 64.96.2.1
+nserver:      NS10.TRS-DNS.INFO 2620:171:812:1534:8:0:0:1 64.78.204.1
+nserver:      NS10.TRS-DNS.ORG 2620:171:813:1534:8:0:0:1 64.78.205.1
+ds-rdata:     10094 13 2 5824ee9a55ed72f0d46d2c3a511f393f05efc27e73cbd1005bebbc73402b6186
+
+whois:        whois.nixiregistry.in
+
+status:       ACTIVE
+remarks:      Registration information: https://registry.in
+
+created:      1989-05-08
+changed:      2025-07-22
+source:       IANA
+
+# whois.nixiregistry.in
+
+Domain Name: nic.in
+Registry Domain ID: D12482-IN
+Registrar URL: http://registry.gov.in
+Updated Date: 2025-05-28T14:04:17.834Z
+Creation Date: 2004-12-23T20:45:40.828Z
+Registry Expiry Date: 2025-12-23T20:45:40.070Z
+Registrar: National Informatics Centre
+Registrar IANA ID: 800111
+Registrar Abuse Contact Email: sunita.singh@nic.in
+Registrar Abuse Contact Phone: +91.1124305395
+Domain Status: ok https://icann.org/epp#ok
+Registry Registrant ID: REDACTED FOR PRIVACY
+Registrant Name: REDACTED FOR PRIVACY
+Registrant Organization: 
+Registrant Street: REDACTED FOR PRIVACY
+Registrant City: REDACTED FOR PRIVACY
+Registrant State/Province: Delhi
+Registrant Postal Code: REDACTED FOR PRIVACY
+Registrant Country: IN
+Registrant Phone: REDACTED FOR PRIVACY
+Registrant Fax: REDACTED FOR PRIVACY
+Registrant Email: Please query the RDDS service of the Registrar of Record identified in this output for information on how to contact the Registrant, Admin, or Tech contact of the queried domain name.
+Registry Admin ID: REDACTED FOR PRIVACY
+Admin Name: REDACTED FOR PRIVACY
+Admin Organization: REDACTED FOR PRIVACY
+Admin Street: REDACTED FOR PRIVACY
+Admin City: REDACTED FOR PRIVACY
+Admin State/Province: REDACTED FOR PRIVACY
+Admin Postal Code: REDACTED FOR PRIVACY
+Admin Country: REDACTED FOR PRIVACY
+Admin Phone: REDACTED FOR PRIVACY
+Admin Fax: REDACTED FOR PRIVACY
+Admin Email: Please query the RDDS service of the Registrar of Record identified in this output for information on how to contact the Registrant, Admin, or Tech contact of the queried domain name.
+Registry Tech ID: REDACTED FOR PRIVACY
+Tech Name: REDACTED FOR PRIVACY
+Tech Organization: REDACTED FOR PRIVACY
+Tech Street: REDACTED FOR PRIVACY
+Tech City: REDACTED FOR PRIVACY
+Tech State/Province: REDACTED FOR PRIVACY
+Tech Postal Code: REDACTED FOR PRIVACY
+Tech Country: REDACTED FOR PRIVACY
+Tech Phone: REDACTED FOR PRIVACY
+Tech Fax: REDACTED FOR PRIVACY
+Tech Email: Please query the RDDS service of the Registrar of Record identified in this output for information on how to contact the Registrant, Admin, or Tech contact of the queried domain name.
+Registry Billing ID: REDACTED FOR PRIVACY
+Billing Name: REDACTED FOR PRIVACY
+Billing Organization: REDACTED FOR PRIVACY
+Billing Street: REDACTED FOR PRIVACY
+Billing City: REDACTED FOR PRIVACY
+Billing State/Province: REDACTED FOR PRIVACY
+Billing Postal Code: REDACTED FOR PRIVACY
+Billing Country: REDACTED FOR PRIVACY
+Billing Phone: REDACTED FOR PRIVACY
+Billing Fax: REDACTED FOR PRIVACY
+Billing Email: Please query the RDDS service of the Registrar of Record identified in this output for information on how to contact the Registrant, Admin, or Tech contact of the queried domain name.
+Name Server: ns6.nic.in
+Name Server: ns8.nic.in
+Name Server: nicnet.nic.in
+Name Server: ns4.nic.in
+DNSSEC: signedDelegation
+URL of the ICANN RDDS Inaccuracy Complaint Form: https://icann.org/wicf
+
+>>> Last update of WHOIS database: 2025-11-24T13:11:37.526Z <<<
+

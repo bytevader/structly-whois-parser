@@ -1,0 +1,115 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.nic.do
+
+domain:       DO
+
+organisation: Pontificia Universidad Catolica Madre y Maestra, Recinto Santo Tomas de Aquino
+address:      Ave. Abraham Lincoln Esq. Romulo Betancourt
+address:      Santo Domingo 2748
+address:      Dominican Republic (the)
+
+contact:      administrative
+name:         VICERRECTORIA DE ADMINISTRACION Y FINANZAS
+organisation: Pontificia Universidad Catolica Madre y Maestra Campus Santo Tomas de Aquino
+address:      Ave. Abraham Lincoln Esq. Romulo Betancourt
+address:      Santo Domingo 2748
+address:      Dominican Republic (the)
+phone:        +1 809 535-0111 # 2141
+fax-no:       +1 809 534-7060
+e-mail:       adm-iana@nic.do
+
+contact:      technical
+name:         Clara Collado
+organisation: Pontificia Universidad Catolica Madre y Maestra
+address:      Ave. Abraham Lincoln Esq. Romulo Betancourt
+address:      Santo Domingo 2748
+address:      Dominican Republic (the)
+phone:        +1 809 535-0111 #2049
+fax-no:       +1 809 286-0012
+e-mail:       claracollado@pucmm.edu.do
+
+nserver:      A.LACTLD.ORG 200.0.68.10 2801:14:a000:0:0:0:0:10
+nserver:      NS.NIC.DO 190.113.72.177 2001:13e0:85d0:106:0:0:0:177
+nserver:      NS1.NIC.DO 190.113.72.178 2001:13e0:85d0:106:0:0:0:178
+nserver:      NS2.NIC.DO 190.113.65.12 2001:13e0:0:1:0:0:0:12
+nserver:      NS4.NIC.DO 2001:500:14:6124:ad:0:0:1 204.61.216.124
+nserver:      NS5.NIC.DO 190.113.65.13 2001:13e0:0:1:0:0:0:13
+nserver:      PHLOEM.UOREGON.EDU 128.223.32.35 2001:468:d01:20:0:0:80df:2023
+
+whois:        whois.nic.do
+
+status:       ACTIVE
+remarks:      Registration information: http://www.nic.do
+
+created:      1991-08-25
+changed:      2025-08-21
+source:       IANA
+
+# whois.nic.do
+
+Domain Name: google.do
+Registrar URL: 
+Updated Date: 2025-02-10T21:13:05.365Z
+Creation Date: 2010-03-08T04:00:00.0Z
+Registry Expiry Date: 2026-03-08T04:00:00.0Z
+Registrar Registration Expiration Date: 2026-03-08T04:00:00.0Z
+Domain Status: ok https://icann.org/epp#ok
+Registry Registrant ID: Redacted | Registry Policy
+Registrant Name: GOOGLE LLC
+Registrant Organization: GOOGLE LLC
+Registrant Street: Redacted | Registry Policy
+Registrant City: Redacted | Registry Policy
+Registrant State/Province: Redacted | Registry Policy
+Registrant Postal Code: Redacted | Registry Policy
+Registrant Country: Redacted | Registry Policy
+Registrant Phone: Redacted | Registry Policy
+Registrant Fax: Redacted | Registry Policy
+Registrant Email: Redacted | Registry Policy
+Registry Admin ID: Redacted | Registry Policy
+Admin Name: Google LLC
+Admin Organization: GOOGLE LLC
+Admin Street: Redacted | Registry Policy
+Admin City: Redacted | Registry Policy
+Admin State/Province: Redacted | Registry Policy
+Admin Postal Code: Redacted | Registry Policy
+Admin Country: Redacted | Registry Policy
+Admin Phone: Redacted | Registry Policy
+Admin Fax: Redacted | Registry Policy
+Admin Email: Redacted | Registry Policy
+Registry Tech ID: Redacted | Registry Policy
+Tech Name: Google LLC
+Tech Organization: Google LLC
+Tech Street: Redacted | Registry Policy
+Tech City: Redacted | Registry Policy
+Tech State/Province: Redacted | Registry Policy
+Tech Postal Code: Redacted | Registry Policy
+Tech Country: Redacted | Registry Policy
+Tech Phone: Redacted | Registry Policy
+Tech Fax: Redacted | Registry Policy
+Tech Email: Redacted | Registry Policy
+Registry Billing ID: 5jT3X-1AQTq
+Billing Name: MARKMONITOR
+Billing Organization: MARKMONITOR
+Billing Street: Redacted | Registry Policy
+Billing Street: Redacted | Registry Policy
+Billing City: Redacted | Registry Policy
+Billing State/Province: Redacted | Registry Policy
+Billing Postal Code: Redacted | Registry Policy
+Billing Country: Redacted | Registry Policy
+Billing Phone: Redacted | Registry Policy
+Billing Fax: Redacted | Registry Policy
+Billing Email: Redacted | Registry Policy
+Registrar: Registrar NIC .DO (midominio.do)
+Registrar Country: DO
+Registrar Phone: 8095350111
+Registrar Fax: 8092860012
+Registrar Customer Service Contact: info@nic.do
+Registrar Customer Service Email: info@nic.do
+Name Server: ns1.google.com
+Name Server: ns2.google.com
+DNSSEC: unsigned
+>>> Last update of WHOIS database: 2025-11-24T13:38:33.812Z <<<
+

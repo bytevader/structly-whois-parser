@@ -1,0 +1,16 @@
+{'abuse': {'email': None, 'telephone': None},
+ 'admin': {'email': None, 'name': 'EURid vzw', 'organization': None, 'telephone': None},
+ 'dnssec': None,
+ 'domain': 'eurid.eu',
+ 'expires_at': None,
+ 'is_rate_limited': False,
+ 'name_servers': ['nsx.eurid.eu', 'ns1.eurid.eu', 'ns3.eurid.eu', 'nsp.netnod.se'],
+ 'registered_at': None,
+ 'registrant': {'email': 'tech@eurid.eu', 'name': None, 'organization': None, 'telephone': None},
+ 'registrar': None,
+ 'registrar_id': None,
+ 'registrar_url': 'https://www.eurid.eu',
+ 'statuses': ['KSK protocol:3 algorithm:RSA_SHA256 '
+              'pubKey:AwEAAcOQldGtC33GLx8s335UscKMPlWjDXCqbhR2QyAYcfS4CZS6YHg3A1Zz/K3VurTZF68aSaRkNupZuEgt4jozE3v4+t+2qOfiATvoOCrf74hWduBPwk9Go0z7FVlDkok1/qMQmqOtih8TFP85b+w6F/uyLMZS1JowMDUzRurmHJVoT4lW9+OCdrhuQFK9vU24Y8BmacoRy6mWBCFlysizlOIodwmquOf5A+3Nz0B3TLCK4fIYJYVxCUVlpRJ7uaBS+GLD7afuxkEesReYHgPWZFSDMbXk9Ugh+qUi8tEKKFls9TM3lK9BPBcciXUhI1bRJSHftqcNpMmLqg/79SwoWGc='],
+ 'tech': {'email': None, 'name': None, 'organization': None, 'telephone': None},
+ 'updated_at': None}

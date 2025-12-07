@@ -1,0 +1,111 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.nic.it
+
+domain:       IT
+
+organisation: IIT - CNR
+address:      Via Moruzzi, 1
+address:      Pisa I-56124
+address:      Italy
+
+contact:      administrative
+name:         Andrea Passarella
+organisation: IIT - CNR
+address:      Via Moruzzi, 1
+address:      Pisa I-56124
+address:      Italy
+phone:        +39 050 315 2112
+e-mail:       direttore@iit.cnr.it
+
+contact:      technical
+name:         Maurizio Martinelli
+organisation: IIT - CNR
+address:      Via Moruzzi, 1
+address:      Pisa I-56124
+address:      Italy
+phone:        +39 050 315 2087
+e-mail:       maurizio.martinelli@iit.cnr.it
+
+nserver:      A.DNS.IT 194.0.16.215 2001:678:12:0:194:0:16:215
+nserver:      DNS.NIC.IT 192.12.192.5 2a00:d40:1:1:0:0:0:5
+nserver:      M.DNS.IT 2001:1ac0:0:200:0:a5d1:6004:2 217.29.76.4
+nserver:      NAMESERVER.CNR.IT 194.119.192.34 2a00:1620:c0:220:194:119:192:34
+nserver:      R.DNS.IT 193.206.141.46 2001:760:ffff:ffff:0:0:0:ca
+nserver:      V.DNS.IT 194.0.25.44 2001:678:20:0:0:0:0:44
+ds-rdata:     41901 10 2 47f7f7ba21e48591f6172eed13e35b66b93ad9f2880fc9bada64f68ce28ebb90
+
+whois:        whois.nic.it
+
+status:       ACTIVE
+remarks:      Registration information: https://www.nic.it/
+
+created:      1987-12-23
+changed:      2025-01-28
+source:       IANA
+
+# whois.nic.it
+
+
+*********************************************************************
+* Please note that the following result could be a subgroup of      *
+* the data contained in the database.                               *
+*                                                                   *
+* Additional information can be visualized at:                      *
+* http://web-whois.nic.it                                           *
+*********************************************************************
+
+Domain:             poste.it
+Status:             ok
+Signed:             no
+Created:            2000-05-29 00:00:00
+Last Update:        2025-08-07 00:42:06
+Expire Date:        2026-07-22
+
+Registrant
+  Organization:     POSTE ITALIANE SPA
+  Address:          VIALE EUROPA 190
+                    ROMA
+                    00144
+                    RM
+                    IT
+  Created:          2022-02-28 10:49:11
+  Last Update:      2022-03-30 16:57:38
+
+Admin Contact
+  Name:             POSTE ITALIANE SPA
+  Organization:     POSTE ITALIANE SPA
+  Address:          VIALE EUROPA 190
+                    ROMA
+                    00144
+                    RM
+                    IT
+  Created:          2022-02-28 10:49:11
+  Last Update:      2022-03-30 16:57:38
+
+Technical Contacts
+  Name:             POSTE ITALIANE SPA
+  Organization:     POSTE ITALIANE SPA
+  Address:          VIALE EUROPA 190
+                    ROMA
+                    00144
+                    RM
+                    IT
+  Created:          2022-02-28 10:49:11
+  Last Update:      2022-03-30 16:57:38
+
+Registrar
+  Organization:     Fastweb s.p.a.
+  Name:             FASTWEB-REG
+  Web:              https://www.fastweb.it/
+  DNSSEC:           no
+
+
+Nameservers
+  dns4.poste.it
+  dns5.poste.it
+  dns6.poste.it
+  dns7.poste.it
+

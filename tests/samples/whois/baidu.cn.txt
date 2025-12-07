@@ -1,0 +1,65 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.cnnic.cn
+
+domain:       CN
+
+organisation: China Internet Network Information Center (CNNIC)
+address:      Building 4, No.9 Beijing Auto Museum West Road, Fengtai District
+address:      Beijing 100070
+address:      China
+
+contact:      administrative
+name:         Yulin Liu
+organisation: China Internet Network Information Center (CNNIC)
+address:      Building 4, No.9 West Road , Automobile Museum, Fengtai District
+address:      Beijing 100070
+address:      China
+phone:        +8610-58813000
+fax-no:       +8610-59116190
+e-mail:       ceo@cnnic.cn
+
+contact:      technical
+name:         Anlei Hu
+organisation: China Internet Network Information Center (CNNIC)
+address:      Building 4, No.9 West Road , Automobile Museum, Fengtai District
+address:      Beijing 100070
+address:      China
+phone:        +8610-59116801
+fax-no:       +8610-59116190
+e-mail:       tech@cnnic.cn
+
+nserver:      A.DNS.CN 2001:dc7:0:0:0:0:0:1 203.119.25.1
+nserver:      B.DNS.CN 2001:dc7:1:0:0:0:0:1 203.119.26.1
+nserver:      C.DNS.CN 2001:dc7:2:0:0:0:0:1 203.119.27.1
+nserver:      D.DNS.CN 2001:dc7:1000:0:0:0:0:1 203.119.28.1
+nserver:      E.DNS.CN 2001:dc7:3:0:0:0:0:1 203.119.29.1
+nserver:      NS.CERNET.NET 202.112.0.44
+ds-rdata:     33094 8 2 cccf13ed73a83244f7d2936f0b6c3507d85c3ebc5e1be4fb644064bc5b5fe3b2
+
+whois:        whois.cnnic.cn
+
+status:       ACTIVE
+remarks:      Registration information: http://www.cnnic.cn/
+
+created:      1990-11-28
+changed:      2025-07-17
+source:       IANA
+
+# whois.cnnic.cn
+
+Domain Name: baidu.cn
+ROID: 20030312s10001s00062053-cn
+Domain Status: clientDeleteProhibited
+Domain Status: clientUpdateProhibited
+Domain Status: clientTransferProhibited
+Registrant: 北京百度网讯科技有限公司
+Registrant Contact Email: eric@baidu.com
+Sponsoring Registrar: 互联网域名系统北京市工程研究中心有限公司
+Name Server: proxy.baidu.com
+Name Server: dns.baidu.com
+Registration Time: 2003-03-17 12:20:05
+Expiration Time: 2029-03-17 12:48:36
+DNSSEC: unsigned

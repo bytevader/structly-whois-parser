@@ -1,0 +1,101 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.registro.br
+
+domain:       BR
+
+organisation: Comite Gestor da Internet no Brasil
+address:      Av. das Nações Unidas, 11541, 7. andar
+address:      São Paulo SP 04578-000
+address:      Brazil
+
+contact:      administrative
+name:         Demi Getschko
+organisation: Comite Gestor da Internet no Brasil
+address:      Av. das Nações Unidas, 11541, 7. andar
+address:      São Paulo SP 04578-000
+address:      Brazil
+phone:        +55 11 5509 3505
+fax-no:       +55 11 5509 3501
+e-mail:       demi@registro.br
+
+contact:      technical
+name:         Frederico Augusto de Carvalho Neves
+organisation: Registro .br
+address:      Av. das Nações Unidas, 11541, 7. andar
+address:      São Paulo SP 04578-000
+address:      Brazil
+phone:        +55 11 5509 3505
+fax-no:       +55 11 5509 3501
+e-mail:       fneves@registro.br
+
+nserver:      A.DNS.BR 200.219.148.10 2001:12f8:6:0:0:0:0:10
+nserver:      B.DNS.BR 200.189.41.10 2001:12f8:8:0:0:0:0:10
+nserver:      C.DNS.BR 200.192.233.10 2001:12f8:a:0:0:0:0:10
+nserver:      D.DNS.BR 200.219.154.10 2001:12f8:4:0:0:0:0:10
+nserver:      E.DNS.BR 200.229.248.10 2001:12f8:2:0:0:0:0:10
+nserver:      F.DNS.BR 200.219.159.10 2001:12f8:c:0:0:0:0:10
+ds-rdata:     38298 13 2 9f2d4993f47b0f2751de0007d70a2754ee532fe373761154d9ea7a8cb9d8ea18
+
+whois:        whois.registro.br
+
+status:       ACTIVE
+remarks:      Registration information: http://registro.br/
+
+created:      1989-04-18
+changed:      2023-11-14
+source:       IANA
+
+# whois.registro.br
+
+% Copyright (c) Nic.br - Use of this data is governed by the Use and
+% Privacy Policy at https://registro.br/upp . Distribution,
+% commercialization, reproduction, and use for advertising or similar
+% purposes are expressly prohibited.
+% 2025-11-24T09:08:28-03:00 - 188.120.114.92
+
+domain:      globo.com.br
+owner:       Globo Comunica��o e Participa�oes SA
+ownerid:     27.865.757/0021-48
+responsible: CLARISSA KEDE
+country:     BR
+owner-c:     CLKED1
+tech-c:      CTG6
+nserver:     ns01.oghost.com.br
+nsstat:      20251123 AA
+nslastaa:    20251123
+nserver:     ns02.oghost.com.br
+nsstat:      20251123 AA
+nslastaa:    20251123
+nserver:     ns03.oghost.com.br
+nsstat:      20251123 AA
+nslastaa:    20251123
+nserver:     ns04.oghost.com.br
+nsstat:      20251123 AA
+nslastaa:    20251123
+created:     19961025 #20320
+changed:     20191012
+expires:     20291025
+status:      published
+
+nic-hdl-br:  CLKED1
+person:      Clarissa Kede
+e-mail:      registro.br@g.globo
+country:     BR
+created:     20190729
+changed:     20240404
+
+nic-hdl-br:  CTG6
+person:      Contato T�cnico - Globo.com
+e-mail:      registro.br@g.globo
+country:     BR
+created:     20000619
+changed:     20240111
+
+% Security and mail abuse issues should also be addressed to cert.br,
+% respectivelly to cert@cert.br and mail-abuse@cert.br
+%
+% whois.registro.br only accepts exact match queries for domains,
+% registrants, contacts, tickets, providers, IPs, and ASNs.

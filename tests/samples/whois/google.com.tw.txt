@@ -1,0 +1,85 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.twnic.net.tw
+
+domain:       TW
+
+organisation: Taiwan Network Information Center (TWNIC)
+address:      3F., No. 123, Sec. 4, Bade Rd.
+address:      Songshan Dist.
+address:      Taipei 105
+address:      Taiwan
+
+contact:      administrative
+name:         Jofan Yu
+organisation: Taiwan Network Information Center (TWNIC)
+address:      3F., No. 123, Sec. 4, Bade Rd.
+address:      Songshan Dist.
+address:      Taipei 105
+address:      Taiwan
+phone:        +886 2 2528 9696
+fax-no:       +886 2 2528 7756
+e-mail:       tw-admin@twnic.tw
+
+contact:      technical
+name:         Technical Director
+organisation: Taiwan Network Information Center (TWNIC)
+address:      3F., No. 123, Sec. 4, Bade Rd.
+address:      Songshan Dist.
+address:      Taipei 105
+address:      Taiwan
+phone:        +886 2 2528 9696
+fax-no:       +886 2 2528 7756
+e-mail:       tech-admin@twnic.tw
+
+nserver:      A.DNS.TW 2001:45b1:0:5:0:0:0:25 203.73.24.25
+nserver:      ANYTLD.APNIC.NET 2001:dd8:12:0:0:0:0:53 202.12.31.53
+nserver:      B.DNS.TW 210.201.138.58 2404:0:10a0:0:0:0:0:58
+nserver:      C.DNS.TW 2001:b020:0:77:0:0:0:1 203.66.87.201
+nserver:      D.DNS.TW 2001:4541:9010:7:0:0:0:186 60.199.165.186
+nserver:      E.DNS.TW 2001:b000:1e0:c000:0:0:0:11 211.20.231.11
+nserver:      F.DNS.TW 40.65.125.222
+nserver:      G.DNS.TW 34.141.111.176
+nserver:      H.DNS.TW 2001:500:14:6119:ad:0:0:1 204.61.216.119
+ds-rdata:     51277 8 2 462da9af501d2b1eef6725522db5972f8cd2490b51d92088ff1e3d2de0ec7bcd
+
+whois:        whois.twnic.net.tw
+
+status:       ACTIVE
+remarks:      Registration information: http://rs.twnic.net.tw
+
+created:      1989-07-31
+changed:      2025-07-15
+source:       IANA
+
+# whois.twnic.net.tw
+
+Domain Name: google.com.tw
+   Domain Status: clientUpdateProhibited,clientTransferProhibited,clientDeleteProhibited
+   Registrant:
+      
+      Google LLC
+      dns-admin@google.com
+      US
+      (Redacted for privacy)
+
+   Administrative Contact:
+      (Redacted for privacy)
+
+   Technical Contact:
+      (Redacted for privacy)
+
+   Record expires on 2026-11-09 00:00:00 (UTC+8)
+   Record created on 2000-08-29 10:22:50 (UTC+8)
+
+   Domain servers in listed order:
+      ns1.google.com     
+      ns2.google.com     
+      ns3.google.com     
+      ns4.google.com     
+
+Registration Service Provider: Markmonitor, Inc.
+Registration Service URL: http://www.markmonitor.com/
+Provided by Registry Services, LLC. Registry Gateway Services

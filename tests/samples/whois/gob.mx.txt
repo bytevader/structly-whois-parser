@@ -1,0 +1,151 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.mx
+
+domain:       MX
+
+organisation: NIC-Mexico
+organisation: ITESM - Campus Monterrey
+address:      Av. Revolucion 2703 1
+address:      Nuevo Sur, Torre 2, Piso 3
+address:      Col. Ladrillera
+address:      Monterrey Nuevo Leon 64830
+address:      Mexico
+
+contact:      administrative
+name:         POC ADM IANA
+organisation: NIC-Mexico, ITESM - Campus Monterrey
+address:      Av. Revolucion 2703 1
+address:      Nuevo Sur, Torre 2, Piso 3
+address:      Col. Ladrillera
+address:      Monterrey Nuevo Leon 64830
+address:      Mexico
+phone:        +52 (81) 8864 2600
+e-mail:       adm-iana@nic.mx
+
+contact:      technical
+name:         POC TECH IANA
+organisation: NIC-Mexico, ITESM - Campus Monterrey
+address:      Av. Revolucion 2703 1
+address:      Nuevo Sur, Torre 2, Piso 3
+address:      Col. Ladrillera
+address:      Monterrey Nuevo Leon 64830
+address:      Mexico
+phone:        +52 (81) 8864 2600
+e-mail:       tech-iana@nic.mx
+
+nserver:      C.MX-NS.MX 192.100.224.1 2001:1258:0:0:0:0:0:1
+nserver:      E.MX-NS.MX 189.201.244.1 2801:c4:c0:0:0:0:0:1
+nserver:      I.MX-NS.MX 207.248.68.1 2801:c4:d0:0:0:0:0:1
+nserver:      M.MX-NS.MX 200.94.176.1 2001:13c7:7000:0:0:0:0:1
+nserver:      O.MX-NS.MX 200.23.1.1 2001:1201:0:0:0:0:0:1
+nserver:      X.MX-NS.MX 2001:1201:10:0:0:0:0:1 201.131.252.1
+ds-rdata:     12884 8 2 250b2b75df2df867e7b8e362c52ee6e994d8aa0e4f850dd8bb94099daef2461d
+
+whois:        whois.mx
+
+status:       ACTIVE
+remarks:      Registration information: http://www.registry.mx/
+
+created:      1989-02-01
+changed:      2025-02-21
+source:       IANA
+
+# whois.mx
+
+
+Domain Name:       gob.mx
+
+Created On:        1991-02-28
+Expiration Date:   2026-02-27
+Last Updated On:   2025-04-15
+Registrar:         Registry .MX
+URL:               http://www.registry.mx
+
+Registrant:
+   Name:           Network Information Center, S.A. de C.V.
+   City:           Monterrey
+   State:          Nuevo Leon
+   Country:        Mexico
+
+Administrative Contact:
+   Name:           Network Information Center, S.A. de C.V.
+   City:           Monterrey
+   State:          Nuevo Leon
+   Country:        Mexico
+
+Technical Contact:
+   Name:           Network Information Center, S.A. de C.V.
+   City:           Monterrey
+   State:          Nuevo Leon
+   Country:        Mexico
+
+Billing Contact:
+   Name:           Network Information Center, S.A. de C.V.
+   City:           Monterrey
+   State:          Nuevo Leon
+   Country:        Mexico
+
+Name Servers:
+   DNS:            m.mx-ns.mx       200.94.176.1
+   DNS:            e.mx-ns.mx       189.201.244.1
+   DNS:            x.mx-ns.mx       201.131.252.1
+   DNS:            i.mx-ns.mx       207.248.68.1
+   DNS:            c.mx-ns.mx       192.100.224.1, 2001:1258:0:0:0:0:0:1
+   DNS:            o.mx-ns.mx       200.23.1.1
+
+DNSSEC DS Records:
+
+
+% NOTICE: The expiration date displayed in this record is the date the
+% registrar's sponsorship of the domain name registration in the registry is
+% currently set to expire. This date does not necessarily reflect the
+% expiration date of the domain name registrant's agreement with the sponsoring
+% registrar. Users may consult the sponsoring registrar's Whois database to
+% view the registrar's reported date of expiration for this registration.
+
+% The requested information ("Information") is provided only for the delegation
+% of domain names and the operation of the DNS administered by NIC Mexico.
+
+% It is absolutely prohibited to use the Information for other purposes, 
+% including sending not requested emails for advertising or promoting products
+% and services purposes (SPAM) without the authorization of the owners of the
+% Information and NIC Mexico.
+
+% The database generated from the delegation system is protected by the
+% intellectual property laws and all international treaties on the matter.
+
+% If you need more information on the records displayed here, please contact us
+% by email at ayuda@nic.mx .
+
+% If you want notify the receipt of SPAM or unauthorized access, please send a
+% email to abuse@nic.mx .
+
+% NOTA: La fecha de expiracion mostrada en esta consulta es la fecha que el
+% registrar tiene contratada para el nombre de dominio en el registry. Esta
+% fecha no necesariamente refleja la fecha de expiracion del nombre de dominio
+% que el registrante tiene contratada con el registrar. Puede consultar la base
+% de datos de Whois del registrar para ver la fecha de expiracion reportada por
+% el registrar para este nombre de dominio.
+
+% La informacion que ha solicitado se provee exclusivamente para fines
+% relacionados con la delegacion de nombres de dominio y la operacion del DNS
+% administrado por NIC Mexico.
+
+% Queda absolutamente prohibido su uso para otros propositos, incluyendo el
+% envio de Correos Electronicos no solicitados con fines publicitarios o de
+% promocion de productos y servicios (SPAM) sin mediar la autorizacion de los
+% afectados y de NIC Mexico.
+
+% La base de datos generada a partir del sistema de delegacion, esta protegida
+% por las leyes de Propiedad Intelectual y todos los tratados internacionales
+% sobre la materia.
+
+% Si necesita mayor informacion sobre los registros aqui mostrados, favor de
+% comunicarse a ayuda@nic.mx.
+
+% Si desea notificar sobre correo no solicitado o accesos no autorizados, favor
+% de enviar su mensaje a abuse@nic.mx.
+
