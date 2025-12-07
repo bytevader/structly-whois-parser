@@ -1,18 +1,15 @@
 <p align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="docs/structly_whois.svg">
-     <img src="https://raw.githubusercontent.com/nstankovic/structly-whois-parser/master/docs/structly_whois.svg" alt="structly_whois">
-  </picture>
+  <img src="https://raw.githubusercontent.com/bytevader/structly-whois-parser/main/docs/structly_whois.svg" alt="structly_whois" width="320">
 </p>
 <p align="center">
     <em>Structly-powered WHOIS parsing.</em>
 </p>
 <p align="center">
-<a href="https://github.com/nstankovic/structly-whois-parser/actions/workflows/ci.yml?query=branch%3Amain" target="_blank">
-    <img src="https://github.com/nstankovic/structly-whois-parser/actions/workflows/ci.yml/badge.svg?branch=main" alt="Main CI">
+<a href="https://github.com/bytevader/structly-whois-parser/actions/workflows/ci.yml?query=branch%3Amain" target="_blank">
+    <img src="https://github.com/bytevader/structly-whois-parser/actions/workflows/ci.yml/badge.svg?branch=main" alt="Main CI">
 </a>
-<a href="https://coverage-badge.samuelcolvin.workers.dev/nstankovic/structly-whois-parser.svg?branch=main" target="_blank">
-    <img src="https://coverage-badge.samuelcolvin.workers.dev/nstankovic/structly-whois-parser.svg?branch=main" alt="Coverage">
+<a href="https://coverage-badge.samuelcolvin.workers.dev/bytevader/structly-whois-parser.svg?branch=main" target="_blank">
+    <img src="https://coverage-badge.samuelcolvin.workers.dev/bytevader/structly-whois-parser.svg?branch=main" alt="Coverage">
 </a>
 <a href="https://pypi.org/project/structly-whois" target="_blank">
     <img src="https://img.shields.io/pypi/v/structly-whois?color=%2334D058&label=pypi%20package" alt="PyPI">
