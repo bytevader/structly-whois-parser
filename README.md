@@ -4,7 +4,6 @@
     <img src="https://github.com/bytevader/structly-whois-parser/raw/main/docs/structly_whois.svg" alt="structly_whois" width="320">
   </picture>
 </p>
-
 <p align="center">
     <em>Structly-powered WHOIS parsing.</em>
 </p>
