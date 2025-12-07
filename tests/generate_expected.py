@@ -1,20 +1,21 @@
 #!/usr/bin/env python3
 """Utility to (re)generate WHOIS expected fixtures from the parser output."""
+
 from __future__ import annotations
 
 import argparse
 import pprint
 import sys
+from collections.abc import Iterable
 from pathlib import Path
-from typing import Iterable
 
-from structly_whois_parser import WhoisParser
+from structly_whois import WhoisParser
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 if str(SCRIPT_DIR) not in sys.path:
     sys.path.insert(0, str(SCRIPT_DIR))
 
-from sample_utils import EXPECTED_ROOT, SKIPPED_SAMPLES, WHOIS_ROOT
+from sample_utils import EXPECTED_ROOT, SKIPPED_SAMPLES, WHOIS_ROOT  # noqa: E402
 
 
 def _iter_sample_domains(include_skipped: bool, only: set[str] | None) -> Iterable[str]:

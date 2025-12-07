@@ -1,6 +1,6 @@
-from structly import FieldPattern, Mode, ReturnShape
+from structly import FieldPattern
 
-from structly_whois_parser import StructlyConfigFactory, WhoisParser
+from structly_whois import StructlyConfigFactory, WhoisParser
 
 
 def test_custom_base_field_overwrite() -> None:
@@ -56,9 +56,7 @@ def test_extra_tld_overrides_extend_patterns_without_preload() -> None:
 def test_register_tld_with_replace_overrides_patterns() -> None:
     factory = StructlyConfigFactory(
         base_field_definitions={
-            "domain_name": {
-                "patterns": [FieldPattern.regex(r"(?i)^domain:\s*(?P<val>[a-z0-9._-]+)$")]
-            }
+            "domain_name": {"patterns": [FieldPattern.regex(r"(?i)^domain:\s*(?P<val>[a-z0-9._-]+)$")]}
         },
         tld_overrides={},
     )

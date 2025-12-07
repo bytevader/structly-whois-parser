@@ -1,7 +1,8 @@
 from __future__ import annotations
 
+from collections.abc import Iterable, Mapping, MutableMapping
 from types import MappingProxyType
-from typing import Any, Dict, Iterable, Mapping, MutableMapping, Tuple
+from typing import Any
 
 from structly import FieldPattern, FieldSpec, Mode, ReturnShape, StructlyConfig
 
@@ -14,11 +15,11 @@ def rx(pattern: str) -> FieldPattern:
     return FieldPattern.regex(pattern)
 
 
-FieldDefinition = Dict[str, Any]
-FieldOverride = Dict[str, Any]
+FieldDefinition = dict[str, Any]
+FieldOverride = dict[str, Any]
 
 
-BASE_FIELD_DEFINITIONS: Dict[str, FieldDefinition] = {
+BASE_FIELD_DEFINITIONS: dict[str, FieldDefinition] = {
     "domain_name": {
         "patterns": [
             sw("Domain Name:"),
@@ -294,7 +295,7 @@ BASE_FIELD_DEFINITIONS: Dict[str, FieldDefinition] = {
 }
 
 
-TLD_OVERRIDES: Dict[str, Dict[str, FieldOverride]] = {
+TLD_OVERRIDES: dict[str, dict[str, FieldOverride]] = {
     "com.br": {
         "domain_name": {
             "patterns": [
@@ -680,16 +681,14 @@ class StructlyConfigFactory:
         self,
         *,
         base_field_definitions: Mapping[str, FieldDefinition] | None = None,
-        tld_overrides: Mapping[str, Dict[str, FieldOverride]] | None = None,
+        tld_overrides: Mapping[str, dict[str, FieldOverride]] | None = None,
     ) -> None:
-        self._base_fields: Dict[str, FieldDefinition] = {
+        self._base_fields: dict[str, FieldDefinition] = {
             name: _clone_field_definition(defn)
             for name, defn in (base_field_definitions or BASE_FIELD_DEFINITIONS).items()
         }
-        self._tld_overrides: Dict[str, Dict[str, FieldOverride]] = {
-            _normalize_tld(tld): {
-                field: _clone_field_override(override) for field, override in overrides.items()
-            }
+        self._tld_overrides: dict[str, dict[str, FieldOverride]] = {
+            _normalize_tld(tld): {field: _clone_field_override(override) for field, override in overrides.items()}
             for tld, overrides in (tld_overrides or TLD_OVERRIDES).items()
         }
 
@@ -698,11 +697,11 @@ class StructlyConfigFactory:
         return MappingProxyType(self._base_fields)
 
     @property
-    def tld_overrides(self) -> Mapping[str, Dict[str, FieldOverride]]:
+    def tld_overrides(self) -> Mapping[str, dict[str, FieldOverride]]:
         return MappingProxyType(self._tld_overrides)
 
     @property
-    def known_tlds(self) -> Tuple[str, ...]:
+    def known_tlds(self) -> tuple[str, ...]:
         return tuple(sorted(self._tld_overrides.keys()))
 
     def get_base_field(self, name: str) -> FieldDefinition:

@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from typing import Dict, Iterable, List, Mapping
+from collections.abc import Iterable, Mapping
 
 _COLLAPSIBLE_HEADERS = {
     "domain name:",
@@ -26,7 +26,7 @@ def _slice_latest_section(raw_text: str) -> str:
     return raw_text
 
 
-def _collapse_wrapped_fields(lines: Iterable[str]) -> List[str]:
+def _collapse_wrapped_fields(lines: Iterable[str]) -> list[str]:
     """Collapse "header" lines whose value sits on the next line."""
     collapsed: list[str] = []
     buffer = list(lines)
@@ -74,15 +74,15 @@ def normalize_raw_text(raw_text: str) -> str:
     return _inject_afnic_contacts(sliced)
 
 
-def _is_afnic_payload(lines: List[str]) -> bool:
+def _is_afnic_payload(lines: list[str]) -> bool:
     """Detect AFNIC WHOIS payloads that need contact normalization."""
     marker = "this is the afnic whois server"
     return any(marker in line.lower() for line in lines)
 
 
-def _extract_afnic_handles(lines: List[str]) -> Dict[str, str]:
+def _extract_afnic_handles(lines: list[str]) -> dict[str, str]:
     """Collect holder/admin/tech handles from the header section."""
-    handles: Dict[str, str] = {}
+    handles: dict[str, str] = {}
     for line in lines:
         lower = line.lower()
         if lower.startswith("holder-c:"):
@@ -94,9 +94,9 @@ def _extract_afnic_handles(lines: List[str]) -> Dict[str, str]:
     return handles
 
 
-def _extract_afnic_contact_blocks(lines: List[str]) -> Dict[str, Dict[str, str]]:
+def _extract_afnic_contact_blocks(lines: list[str]) -> dict[str, dict[str, str]]:
     """Parse nic-hdl sections into a mapping keyed by handle."""
-    blocks: Dict[str, Dict[str, str]] = {}
+    blocks: dict[str, dict[str, str]] = {}
     idx = 0
     total = len(lines)
     while idx < total:
@@ -105,7 +105,7 @@ def _extract_afnic_contact_blocks(lines: List[str]) -> Dict[str, Dict[str, str]]
         if lower.startswith("nic-hdl:"):
             handle = line.split(":", 1)[1].strip()
             idx += 1
-            attrs: Dict[str, str] = {}
+            attrs: dict[str, str] = {}
             while idx < total:
                 current = lines[idx]
                 current_lower = current.lower()
@@ -129,9 +129,9 @@ def _extract_afnic_contact_blocks(lines: List[str]) -> Dict[str, Dict[str, str]]
     return blocks
 
 
-def _build_afnic_contact_lines(label: str, attrs: Mapping[str, str]) -> List[str]:
+def _build_afnic_contact_lines(label: str, attrs: Mapping[str, str]) -> list[str]:
     """Produce canonical contact lines (Registrant/Admin/Tech) from a block."""
-    lines: List[str] = []
+    lines: list[str] = []
     contact = attrs.get("contact")
     contact_type = (attrs.get("type") or "").lower()
     if contact:
@@ -165,7 +165,7 @@ def _inject_afnic_contacts(text: str) -> str:
         "admin": "Admin",
         "tech": "Tech",
     }
-    extras: List[str] = []
+    extras: list[str] = []
     for role, label in role_labels.items():
         handle = handles.get(role)
         if not handle:

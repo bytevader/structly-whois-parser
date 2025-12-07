@@ -1,4 +1,6 @@
-"""Public package interface for structly_whois_parser."""
+from __future__ import annotations
+
+from .__about__ import __version__
 from .config import DEFAULT_TLDS, StructlyConfigFactory, build_structly_config_for_tld
 from .normalization import normalize_raw_text
 from .parser import WhoisParser
@@ -14,6 +16,7 @@ from .records import (
 )
 
 __all__ = [
+    "__version__",
     "DEFAULT_TLDS",
     "WhoisParser",
     "WhoisRecord",
