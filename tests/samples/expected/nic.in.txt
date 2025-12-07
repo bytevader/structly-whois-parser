@@ -1,0 +1,28 @@
+{'abuse': {'email': 'sunita.singh@nic.in', 'telephone': '+91.1124305395'},
+ 'admin': {'email': 'Please query the RDDS service of the Registrar of Record identified in this output for '
+                    'information on how to contact the Registrant, Admin, or Tech contact of the queried domain name.',
+           'name': 'REDACTED FOR PRIVACY',
+           'organization': 'REDACTED FOR PRIVACY',
+           'telephone': 'REDACTED FOR PRIVACY'},
+ 'dnssec': 'signedDelegation',
+ 'domain': 'nic.in',
+ 'expires_at': '2025-12-23T20:45:40.070000Z',
+ 'is_rate_limited': False,
+ 'name_servers': ['ns6.nic.in', 'ns8.nic.in', 'nicnet.nic.in', 'ns4.nic.in'],
+ 'registered_at': '2004-12-23T20:45:40.828000Z',
+ 'registrant': {'email': 'Please query the RDDS service of the Registrar of Record identified in this output for '
+                         'information on how to contact the Registrant, Admin, or Tech contact of the queried domain '
+                         'name.',
+                'name': 'REDACTED FOR PRIVACY',
+                'organization': None,
+                'telephone': 'REDACTED FOR PRIVACY'},
+ 'registrar': 'National Informatics Centre',
+ 'registrar_id': '800111',
+ 'registrar_url': 'http://registry.gov.in',
+ 'statuses': ['ok'],
+ 'tech': {'email': 'Please query the RDDS service of the Registrar of Record identified in this output for information '
+                   'on how to contact the Registrant, Admin, or Tech contact of the queried domain name.',
+          'name': 'REDACTED FOR PRIVACY',
+          'organization': 'REDACTED FOR PRIVACY',
+          'telephone': 'REDACTED FOR PRIVACY'},
+ 'updated_at': '2025-05-28T14:04:17.834000Z'}

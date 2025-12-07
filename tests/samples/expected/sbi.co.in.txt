@@ -1,0 +1,28 @@
+{'abuse': {'email': 'sudhakar.mani@sifycorp.com', 'telephone': '+91.442254077'},
+ 'admin': {'email': 'Please query the RDDS service of the Registrar of Record identified in this output for '
+                    'information on how to contact the Registrant, Admin, or Tech contact of the queried domain name.',
+           'name': 'REDACTED FOR PRIVACY',
+           'organization': 'REDACTED FOR PRIVACY',
+           'telephone': 'REDACTED FOR PRIVACY'},
+ 'dnssec': 'unsigned',
+ 'domain': 'sbi.co.in',
+ 'expires_at': '2028-10-30T19:05:33.503000Z',
+ 'is_rate_limited': False,
+ 'name_servers': ['pdns.satyam.net.in', 'sdns.satyam.net.in'],
+ 'registered_at': '2002-10-30T19:05:33Z',
+ 'registrant': {'email': 'Please query the RDDS service of the Registrar of Record identified in this output for '
+                         'information on how to contact the Registrant, Admin, or Tech contact of the queried domain '
+                         'name.',
+                'name': 'REDACTED FOR PRIVACY',
+                'organization': 'State Bank of India',
+                'telephone': 'REDACTED FOR PRIVACY'},
+ 'registrar': 'Sify Digital Services Limited',
+ 'registrar_id': '800148',
+ 'registrar_url': 'http://www.sify.com',
+ 'statuses': ['ok'],
+ 'tech': {'email': 'Please query the RDDS service of the Registrar of Record identified in this output for information '
+                   'on how to contact the Registrant, Admin, or Tech contact of the queried domain name.',
+          'name': 'REDACTED FOR PRIVACY',
+          'organization': 'REDACTED FOR PRIVACY',
+          'telephone': 'REDACTED FOR PRIVACY'},
+ 'updated_at': '2022-09-28T07:09:25.857000Z'}

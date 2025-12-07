@@ -1,0 +1,87 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.auda.org.au
+
+domain:       AU
+
+organisation: .au Domain Administration (auDA)
+address:      Level 19
+address:      8 Exhibition Street
+address:      Melbourne VIC 3000
+address:      Australia
+
+contact:      administrative
+name:         Chief Operating Officer
+organisation: .au Domain Administration (auDA)
+address:      Level 19
+address:      8 Exhibition Street
+address:      Melbourne VIC 3000
+address:      Australia
+phone:        + 61 03 8341 4111
+fax-no:       + 61 03 8341 4112
+e-mail:       coo@auda.org.au
+
+contact:      technical
+name:         Chief Technical Officer
+organisation: .au Domain Administration (auDA)
+address:      Level 19
+address:      8 Exhibition Street
+address:      Melbourne VIC 3000
+address:      Australia
+phone:        +61 (0)3 8341 4111
+fax-no:       +61 (0)3 8341 4112
+e-mail:       auda.iana@auda.org.au
+
+nserver:      A.AU 2407:6e00:254:0:0:0:0:1 58.65.254.1
+nserver:      Q.AU 2a01:8840:be:0:0:0:0:1 65.22.196.1
+nserver:      R.AU 2a01:8840:bf:0:0:0:0:1 65.22.197.1
+nserver:      S.AU 2a01:8840:c0:0:0:0:0:1 65.22.198.1
+nserver:      T.AU 2a01:8840:c1:0:0:0:0:1 65.22.199.1
+ds-rdata:     32902 8 2 e80a9f8eca018ade79925da724a0cb0dbcf03c9a7049d20c9fb74b716ab7d329
+
+whois:        whois.auda.org.au
+
+status:       ACTIVE
+remarks:      Registration information:
+remarks:      https://www.auda.org.au/domains/au-domains/
+
+created:      1986-03-05
+changed:      2025-11-13
+source:       IANA
+
+# whois.auda.org.au
+
+Domain Name: anz.com.au
+Registry Domain ID: b0cb3a3263de4d239dfe1ca22f542fc9-AU
+Registrar WHOIS Server: whois.auda.org.au
+Registrar URL: https://www.instra.com/en/about-us/contact-us
+Last Modified: 2025-10-22T00:00:38Z
+Registrar Name: Domain Directors Pty Ltd trading as Instra
+Registrar Abuse Contact Email: abuse@key-systems.net
+Registrar Abuse Contact Phone: +49.68949396850
+Reseller Name: 
+Status: clientDeleteProhibited https://identitydigital.au/whois-status-codes#clientDeleteProhibited
+Status: serverDeleteProhibited https://identitydigital.au/whois-status-codes#serverDeleteProhibited
+Status Reason: Registry Lock
+Status: serverTransferProhibited https://identitydigital.au/whois-status-codes#serverTransferProhibited
+Status Reason: Registry Lock
+Status: serverUpdateProhibited https://identitydigital.au/whois-status-codes#serverUpdateProhibited
+Status Reason: Registry Lock
+Registrant Contact ID: 9490dda46ce4492aae2b414274a073fd-AU
+Registrant Contact Name: AUSTRALIA AND NEW ZEALAND BANKING GROUP LIMITED
+Tech Contact ID: 3567fe27a3dc4ea3a381c0c11d733f04-AU
+Tech Contact Name: mr Technical Department BrandShelter
+Name Server: a1-206.akam.net
+Name Server: a16-67.akam.net
+Name Server: a28-67.akam.net
+Name Server: a7-66.akam.net
+Name Server: a8-67.akam.net
+Name Server: a9-67.akam.net
+DNSSEC: unsigned
+Registrant: AUSTRALIA AND NEW ZEALAND BANKING GROUP LIMITED
+Registrant ID: OTHER 11005357522
+Eligibility Type: Company
+>>> Last update of WHOIS database: 2025-11-24T12:13:25Z <<<
+

@@ -1,0 +1,72 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.id
+
+domain:       ID
+
+organisation: Perkumpulan Pengelola Nama Domain Internet Indonesia (PANDI)
+address:      Icon Business Park, Unit L1-L2
+address:      Jalan Raya Cisauk - LAPAN
+address:      Tangerang Banten 15345
+address:      Indonesia
+
+contact:      administrative
+name:         Admin Contact
+organisation: Perkumpulan Pengelola Nama Domain Internet Indonesia (PANDI)
+address:      Icon Business Park, Unit L1-L2
+address:      Jalan Raya Cisauk - LAPAN
+address:      Tangerang Banten 15345
+address:      Indonesia
+phone:        +62 82111610360
+fax-no:       +62 21 3005 5789
+e-mail:       admin@pandi.id
+
+contact:      technical
+name:         Tech Contact
+organisation: Perkumpulan Pengelola Nama Domain Internet Indonesia (PANDI)
+address:      Icon Business Park, Unit L1-L2
+address:      Jalan Raya Cisauk - LAPAN
+address:      Tangerang Banten 15345
+address:      Indonesia
+phone:        +62 817758377
+fax-no:       +62 21 3005 5789
+e-mail:       tech@pandi.id
+
+nserver:      B.DNS.ID 103.19.179.179 2402:ee80:b:0:0:0:0:b
+nserver:      C.DNS.ID 103.19.178.178 2402:ee80:c:0:0:0:0:c
+nserver:      D.DNS.ID 2402:ee80:d:0:0:0:0:d 45.126.57.57
+nserver:      E.DNS.ID 103.19.177.177 2001:df5:4000:4:0:0:0:4
+nserver:      NS4.APNIC.NET 2001:dd8:12:0:0:0:0:53 202.12.31.53
+ds-rdata:     26887 8 2 28be22003a1afb1ed9a7bb82482274e2db5f09a6c50702c731e040d2257347ea
+
+whois:        whois.id
+
+status:       ACTIVE
+remarks:      Registration information: https://pandi.id
+
+created:      1993-02-27
+changed:      2023-11-22
+source:       IANA
+
+# whois.id
+
+Domain Name: TOKOPEDIA.CO.ID
+Registry Domain ID: 38736_DOMAIN_ID-ID
+Registrar WHOIS Server: 
+Registrar URL: www.digitalregistra.co.id
+Updated Date: 2025-09-07T14:22:27Z
+Creation Date: 2009-10-09T13:23:17Z
+Registry Expiry Date: 2026-10-10T23:59:59Z
+Registrar: PT Digital Registra Indonesia
+Registrar IANA ID: 1
+Registrar Abuse Contact Email: info@digitalregistra.co.id
+Registrar Abuse Contact Phone: 
+Domain Status: clientTransferProhibited
+Name Server: DNS1.CSCDNS.NET
+Name Server: DNS2.CSCDNS.NET
+DNSSEC: unsigned
+URL of the ICANN Whois Inaccuracy Complaint Form: https://www.icann.org/wicf/
+>>> Last update of WHOIS database: 2025-11-24T13:23:04Z <<<
+

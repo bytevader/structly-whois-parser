@@ -1,0 +1,97 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.nic.cr
+
+domain:       CR
+
+organisation: National Academy of Sciences (Academia Nacional de Ciencias)
+address:      San Pedro Montes de Oca
+address:      San José 1367-2050
+address:      Costa Rica
+
+contact:      administrative
+name:         Guy F. de Teramond
+organisation: National Academy of Sciences
+organisation: Academia Nacional de Ciencias
+address:      San Pedro Montes de Oca
+address:      San José 1367-2050
+address:      Costa Rica
+phone:        +506 2283 4814
+fax-no:       +506 2283 4101
+e-mail:       gdt@ns.cr
+
+contact:      technical
+name:         Ricardo Samper Jimenez
+organisation: National Academy of Sciences Academia Nacional de Ciencias
+address:      Barrio Francisco Peralta, de la Casa Italia 100 metros al oeste y 15 metros sur
+address:      San José 1367-2050
+address:      Costa Rica
+phone:        +506 2280-6453
+fax-no:       +506 2280-5261
+e-mail:       rsamper@nic.cr
+
+nserver:      A.LACTLD.ORG 200.0.68.10 2801:14:a000:0:0:0:0:10
+nserver:      CA1.NIC.CR 185.159.197.100 2620:10a:80aa:0:0:0:0:100
+nserver:      CA2.NIC.CR 185.159.198.100 2620:10a:80ab:0:0:0:0:100
+nserver:      DE.NIC.CR 194.0.11.107 2001:678:e:107:0:0:0:53
+nserver:      DNS.NIC.CR 200.107.82.100 2001:13c7:7004:1:0:0:0:d100
+nserver:      P.NIC.CR 2001:500:14:6089:ad:0:0:1 204.61.216.89
+ds-rdata:     58628 13 2 774366be4cb919e7a17116beac78e6b2aff1c87cbf0462a17e9b03cede12daae
+ds-rdata:     58628 13 4 e574f2fc644d92a320775c9c5083166c5a6305652762a62f859405ff64fa61db503221c353d3be30f082e6e65c9e75c4
+
+whois:        whois.nic.cr
+
+status:       ACTIVE
+remarks:      Registration information: http://www.nic.cr/
+
+created:      1990-09-10
+changed:      2025-08-22
+source:       IANA
+
+# whois.nic.cr
+
+% Domain Information over Whois protocol
+% 
+% Whoisd Server Version: 3.15.0
+% Timestamp: Mon Nov 24 13:40:30 2025
+
+domain:       google.co.cr
+registrant:   CN_10
+admin-c:      CN_10
+nsset:        NS_GOOGLE_CO_CR
+registrar:    NIC-REG1
+status:       Administratively blocked
+status:       Deletion forbidden
+status:       Sponsoring registrar change forbidden
+status:       Update forbidden
+status:       Registrant change forbidden
+registered:   18.04.2002 18:00:00
+changed:      26.05.2025 04:32:10
+expire:       17.04.2026
+
+contact:      CN_10
+org:          MarkMonitor Inc.
+name:         MarkMonitor Inc
+address:      1120 S. Rackham Way, Suite 300
+address:      Meridian
+address:      83642
+address:      Idaho
+address:      US
+phone:        +1.2083895740
+e-mail:       ccops@markmonitor.com
+registrar:    NIC-REG1
+created:      14.03.2024 10:33:28
+changed:      28.05.2024 12:44:39
+
+nsset:        NS_GOOGLE_CO_CR
+nserver:      ns1.google.com 
+nserver:      ns2.google.com 
+nserver:      ns3.google.com 
+nserver:      ns4.google.com 
+tech-c:       CN_10
+registrar:    NIC-REG1
+created:      14.03.2024 12:39:22
+
+

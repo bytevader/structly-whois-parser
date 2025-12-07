@@ -1,0 +1,95 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.fi
+
+domain:       FI
+
+organisation: Finnish Transport and Communications Agency Traficom
+address:      PO Box 320
+address:      TRAFICOM
+address:      Helsinki 00059
+address:      Finland
+
+contact:      administrative
+name:         Domain Names
+organisation: Finnish Transport and Communications Agency Traficom
+address:      PO Box 320
+address:      TRAFICOM
+address:      Helsinki 00059
+address:      Finland
+phone:        +358 295 345 000
+e-mail:       firootadmin@traficom.fi
+
+contact:      technical
+name:         Sami Salmensuo
+organisation: Finnish Transport and Communications Agency Traficom
+address:      PO Box 320
+address:      TRAFICOM
+address:      Helsinki 00059
+address:      Finland
+phone:        +358 295 345 000
+e-mail:       firootadmin@traficom.fi
+
+nserver:      A.FI 193.166.4.1 2001:708:10:53:0:0:0:53
+nserver:      B.FI 194.146.106.26 2001:67c:1010:6:0:0:0:53
+nserver:      C.FI 194.0.11.104 2001:678:e:104:0:0:0:53
+nserver:      D.FI 2a01:3f0:0:302:0:0:0:53 77.72.229.253
+nserver:      E.FI 194.0.1.14 2001:678:4:0:0:0:0:e
+nserver:      F.FI 2a03:d640:100:1:0:0:0:6 80.248.170.230
+nserver:      G.FI 2001:500:14:6098:ad:0:0:1 204.61.216.98
+nserver:      I.FI 194.0.25.30 2001:678:20:0:0:0:0:30
+nserver:      J.FI 185.159.199.190 2620:10a:80ac:0:0:0:0:190
+nserver:      K.FI 2001:14b8:188d:0:0:0:0:53 213.186.229.226
+ds-rdata:     18073 13 2 f9b1900e886c251982237f40a9877bd3445a7379231d7f2cc280fce6ac6f2244
+
+whois:        whois.fi
+
+status:       ACTIVE
+remarks:      Registration information: https://domain.fi
+
+created:      1986-12-17
+changed:      2025-09-15
+source:       IANA
+
+# whois.fi
+
+
+domain.............: druid.fi
+status.............: Registered
+created............: 18.7.2012 04:04:23
+expires............: 17.7.2028 22:16:55
+available..........: 17.8.2028 22:16:55
+modified...........: 30.6.2025 10:48:42
+holder transfer....: 30.6.2025 10:48:42
+RegistryLock.......: no
+
+Nameservers
+
+nserver............: ns3.digitalocean.com [OK]
+nserver............: ns1.digitalocean.com [OK]
+nserver............: ns2.digitalocean.com [OK]
+
+DNSSEC
+
+dnssec.............: no
+
+Holder
+
+name...............: Druid Oy
+register number....: 2491789-2
+address............: Pasilankatu 2
+postal.............: 00240
+city...............: Helsinki
+country............: Finland
+phone..............: 
+holder email.......: 
+
+Registrar
+
+registrar..........: CSL Computer Service Langenbach GmbH (d/b/a joker.com)
+www................: www.joker.com
+
+>>> Last update of WHOIS database: 24.11.2025 15:30:50 (EET) <<<
+

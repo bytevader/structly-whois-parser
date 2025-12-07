@@ -1,0 +1,58 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.nixiregistry.in
+
+domain:       IN
+
+organisation: National Internet Exchange of India
+address:      6C, 6D, 6E Hansalaya Building 15, Barakhamba Road
+address:      New Delhi 110 001
+address:      India
+
+contact:      administrative
+name:         Rajiv Kumar
+organisation: National Internet Exchange of India
+address:      6C, 6D, 6E Hansalaya Building 15, Barakhamba Road
+address:      New Delhi 110 001
+address:      India
+phone:        +91 11 48202011
+fax-no:       +91 11 48202013
+e-mail:       registry@nixi.in
+
+contact:      technical
+name:         Rajiv Kumar
+organisation: National Internet Exchange of India
+address:      6C, 6D, 6E Hansalaya Building 15, Barakhamba Road
+address:      New Delhi 110 001
+address:      India
+phone:        +91 11 48202011
+fax-no:       +91 11 48202013
+e-mail:       rajiv@nixi.in
+
+nserver:      NS01.TRS-DNS.COM 2620:57:4001:0:0:0:0:1 64.96.1.1
+nserver:      NS01.TRS-DNS.NET 2620:57:4002:0:0:0:0:1 64.96.2.1
+nserver:      NS10.TRS-DNS.INFO 2620:171:812:1534:8:0:0:1 64.78.204.1
+nserver:      NS10.TRS-DNS.ORG 2620:171:813:1534:8:0:0:1 64.78.205.1
+ds-rdata:     10094 13 2 5824ee9a55ed72f0d46d2c3a511f393f05efc27e73cbd1005bebbc73402b6186
+
+whois:        whois.nixiregistry.in
+
+status:       ACTIVE
+remarks:      Registration information: https://registry.in
+
+created:      1989-05-08
+changed:      2025-07-22
+source:       IANA
+
+# whois.nixiregistry.in
+
+Domain Name: aadhaar.gov.in
+
+>>> This name is not available for registration:
+
+>>> restricted by registry policy
+
+>>> Last update of WHOIS database: 2025-11-24T13:11:46.957Z <<<
+

@@ -1,0 +1,194 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.cira.ca
+
+domain:       CA
+
+organisation: Canadian Internet Registration Authority (CIRA) Autorité Canadienne pour les enregistrements Internet (ACEI)
+address:      979 Bank Street, Suite 400
+address:      Ottawa ON K1S 5K5
+address:      Canada
+
+contact:      administrative
+name:         Chief Information Officer
+organisation: CIRA
+address:      979 Bank Street, Suite 400
+address:      Ottawa ON K1S 5K5
+address:      Canada
+phone:        +1 613 237 5335
+fax-no:       +1 613 237 0534
+e-mail:       chief.information.officer@cira.ca
+
+contact:      technical
+name:         DNS Admin
+organisation: CIRA
+address:      979 Bank Street, Suite 400
+address:      Ottawa ON K1S 5K5
+address:      Canada
+phone:        +1 613 237 5335
+fax-no:       +1 613 237 0534
+e-mail:       admin-dns@cira.ca
+
+nserver:      ANY.CA-SERVERS.CA 199.4.144.2 2001:500:a7:0:0:0:0:2
+nserver:      C.CA-SERVERS.CA 185.159.196.2 2620:10a:8053:0:0:0:0:2
+nserver:      D.CA-SERVERS.CA 2a0e:dbc0:0:0:0:0:0:101 45.142.220.101
+nserver:      J.CA-SERVERS.CA 198.182.167.1 2001:500:83:0:0:0:0:1
+ds-rdata:     26384 13 2 77ea11d2be58cbba58bf8ecd60f4c7e72d1feb31b5993e7c55809440cb5f78b0
+
+whois:        whois.cira.ca
+
+status:       ACTIVE
+remarks:      Registration information: http://www.cira.ca/
+
+created:      1987-05-14
+changed:      2025-11-18
+source:       IANA
+
+# whois.cira.ca
+
+Domain Name: tdsb.on.ca
+Registry Domain ID: D1446-CIRA
+Registrar WHOIS Server: whois.ca.fury.ca
+Registrar URL: http://www.domainpeople.ca
+Updated Date: 2023-02-27T21:06:53Z
+Creation Date: 2000-09-26T16:30:26Z
+Registry Expiry Date: 2025-12-25T05:00:00Z
+Registrar: DomainPeople, Inc.
+Registrar IANA ID: not applicable
+Registrar Abuse Contact Email: abuse@domainpeople.com
+Registrar Abuse Contact Phone: +1.8777343667
+Registrar Abuse Contact Phone Ext:
+Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+Registry Registrant ID: 108866011-CIRA
+Registrant Name: Toronto District School Board
+Registrant Organization: Toronto District School Board
+Registrant Street: 140 Borough Drive, 3rd Floor
+Registrant City: Toronto
+Registrant State/Province: ON
+Registrant Postal Code: M1P4N6
+Registrant Country: CA
+Registrant Phone: +1.4164533947
+Registrant Phone Ext:
+Registrant Fax: +1.4163969037
+Registrant Fax Ext:
+Registrant Email: ernesto.garcia@tdsb.on.ca
+Registry Admin ID: 108866014-CIRA
+Admin Name: Data Protected Data Protected
+Admin Organization: Data Protected
+Admin Street: 123 Data Protected
+Admin City: Kirkland
+Admin State/Province: WA
+Admin Postal Code: 98033
+Admin Country: US
+Admin Phone: +1.0000000000
+Admin Phone Ext:
+Admin Fax: +1.0000000000
+Admin Fax Ext:
+Admin Email: noreply@data-protected.net
+Registry Tech ID: 108866013-CIRA
+Tech Name: Data Protected Data Protected
+Tech Organization: Data Protected
+Tech Street: 123 Data Protected
+Tech City: Kirkland
+Tech State/Province: WA
+Tech Postal Code: 98033
+Tech Country: US
+Tech Phone: +1.0000000000
+Tech Phone Ext:
+Tech Fax: +1.0000000000
+Tech Fax Ext:
+Tech Email: noreply@data-protected.net
+Registry Billing ID:
+Billing Name:
+Billing Organization:
+Billing Street:
+Billing City:
+Billing State/Province:
+Billing Postal Code:
+Billing Country:
+Billing Phone:
+Billing Phone Ext:
+Billing Fax:
+Billing Fax Ext:
+Billing Email:
+Name Server: ns1.d-zone.ca
+Name Server: ns2.d-zone.ca
+DNSSEC: unsigned
+URL of the ICANN Whois Inaccuracy Complaint Form: https://www.icann.org/wicf/
+>>> Last update of WHOIS database: 2025-11-24T12:46:14Z <<<
+
+# whois.ca.fury.ca
+
+Domain Name: tdsb.on.ca
+Registry Domain ID: D1446-CIRA
+Registrar WHOIS Server: whois.ca.fury.ca
+Registrar URL: http://www.domainpeople.ca
+Updated Date: 2023-02-27T21:06:53Z
+Creation Date: 2000-09-26T16:30:26Z
+Registry Expiry Date: 2025-12-25T05:00:00Z
+Registrar: DomainPeople, Inc.
+Registrar IANA ID: not applicable
+Registrar Abuse Contact Email: abuse@domainpeople.com
+Registrar Abuse Contact Phone: +1.8777343667
+Registrar Abuse Contact Phone Ext:
+Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+Registry Registrant ID: 108866011-CIRA
+Registrant Name: Toronto District School Board
+Registrant Organization: Toronto District School Board
+Registrant Street: 140 Borough Drive, 3rd Floor
+Registrant City: Toronto
+Registrant State/Province: ON
+Registrant Postal Code: M1P4N6
+Registrant Country: CA
+Registrant Phone: +1.4164533947
+Registrant Phone Ext:
+Registrant Fax: +1.4163969037
+Registrant Fax Ext:
+Registrant Email: ernesto.garcia@tdsb.on.ca
+Registry Admin ID: 108866014-CIRA
+Admin Name: Data Protected Data Protected
+Admin Organization: Data Protected
+Admin Street: 123 Data Protected
+Admin City: Kirkland
+Admin State/Province: WA
+Admin Postal Code: 98033
+Admin Country: US
+Admin Phone: +1.0000000000
+Admin Phone Ext:
+Admin Fax: +1.0000000000
+Admin Fax Ext:
+Admin Email: noreply@data-protected.net
+Registry Tech ID: 108866013-CIRA
+Tech Name: Data Protected Data Protected
+Tech Organization: Data Protected
+Tech Street: 123 Data Protected
+Tech City: Kirkland
+Tech State/Province: WA
+Tech Postal Code: 98033
+Tech Country: US
+Tech Phone: +1.0000000000
+Tech Phone Ext:
+Tech Fax: +1.0000000000
+Tech Fax Ext:
+Tech Email: noreply@data-protected.net
+Registry Billing ID:
+Billing Name:
+Billing Organization:
+Billing Street:
+Billing City:
+Billing State/Province:
+Billing Postal Code:
+Billing Country:
+Billing Phone:
+Billing Phone Ext:
+Billing Fax:
+Billing Fax Ext:
+Billing Email:
+Name Server: ns1.d-zone.ca
+Name Server: ns2.d-zone.ca
+DNSSEC: unsigned
+URL of the ICANN Whois Inaccuracy Complaint Form: https://www.icann.org/wicf/
+>>> Last update of WHOIS database: 2025-11-24T12:46:14Z <<<
+

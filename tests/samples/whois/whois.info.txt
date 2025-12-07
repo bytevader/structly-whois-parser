@@ -1,0 +1,53 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        
+
+domain:       INFO
+
+organisation: Identity Digital Limited
+address:      c/o Identity Digital Inc.
+address:      10500 NE 8th Street, Suite 750
+address:      Bellevue WA 98004
+address:      United States of America (the)
+
+contact:      administrative
+name:         Vice President, Engineering
+organisation: Identity Digital Limited
+address:      c/o Identity Digital Inc.
+address:      10500 NE 8th Street, Suite 750
+address:      Bellevue WA 98004
+address:      United States of America (the)
+phone:        +1.425.298.2200
+fax-no:       +1.425.671.0020
+e-mail:       tldadmin@identity.digital
+
+contact:      technical
+name:         Senior Director, DNS Infrastructure Group
+organisation: Identity Digital Limited
+address:      c/o Identity Digital Inc.
+address:      10500 NE 8th Street, Suite 750
+address:      Bellevue WA 98004
+address:      United States of America (the)
+phone:        +1.425.298.2200
+fax-no:       +1.425.671.0020
+e-mail:       tldtech@identity.digital
+
+nserver:      A0.INFO.AFILIAS-NST.INFO 199.254.31.1 2001:500:19:0:0:0:0:1
+nserver:      A2.INFO.AFILIAS-NST.INFO 199.249.113.1 2001:500:41:0:0:0:0:1
+nserver:      B0.INFO.AFILIAS-NST.ORG 199.254.48.1 2001:500:1a:0:0:0:0:1
+nserver:      B2.INFO.AFILIAS-NST.ORG 199.249.121.1 2001:500:49:0:0:0:0:1
+nserver:      C0.INFO.AFILIAS-NST.INFO 199.254.49.1 2001:500:1b:0:0:0:0:1
+nserver:      D0.INFO.AFILIAS-NST.ORG 199.254.50.1 2001:500:1c:0:0:0:0:1
+ds-rdata:     5104 8 2 1af7548a8d3e2950c20303757df9390c26cfa39e26c8b6a8f6c8b1e72dd8f744
+
+whois:        
+
+status:       ACTIVE
+remarks:      Registration information: https://www.identity.digital/
+
+created:      2001-06-26
+changed:      2025-09-04
+source:       IANA
+

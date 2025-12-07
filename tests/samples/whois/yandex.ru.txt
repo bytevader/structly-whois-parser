@@ -1,0 +1,70 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.tcinet.ru
+
+domain:       RU
+
+organisation: Coordination Center for TLD RU
+address:      8 Marta street 1, bld 12
+address:      Moscow 127083
+address:      Russian Federation (the)
+
+contact:      administrative
+name:         .RU domain Administrative group
+organisation: Coordination Center for TLD RU
+address:      8 Marta street 1, bld 12
+address:      Moscow 127083
+address:      Russian Federation (the)
+phone:        +7 495 730 29 71
+fax-no:       +7 495 730 29 68
+e-mail:       ru-adm@cctld.ru
+
+contact:      technical
+name:         Technical Center of Internet
+organisation: Technical Center of Internet
+address:      8 Marta street 1, bld 12
+address:      Moscow 127083
+address:      Russian Federation (the)
+phone:        +7 495 730 29 69
+fax-no:       +7 495 730 29 68
+e-mail:       ru-tech@tcinet.ru
+
+nserver:      A.DNS.RIPN.NET 193.232.128.6 2001:678:17:0:193:232:128:6
+nserver:      B.DNS.RIPN.NET 194.85.252.62 2001:678:16:0:194:85:252:62
+nserver:      D.DNS.RIPN.NET 194.190.124.17 2001:678:18:0:194:190:124:17
+nserver:      E.DNS.RIPN.NET 193.232.142.17 2001:678:15:0:193:232:142:17
+nserver:      F.DNS.RIPN.NET 193.232.156.17 2001:678:14:0:193:232:156:17
+ds-rdata:     51575 8 2 34cf735353060d9bd6347ff81ecfaac24ec8f11971dc800249c64a21bc062775
+
+whois:        whois.tcinet.ru
+
+status:       ACTIVE
+remarks:      Registration information: http://www.cctld.ru/en
+
+created:      1994-04-07
+changed:      2025-10-22
+source:       IANA
+
+# whois.tcinet.ru
+
+% TCI Whois Service. Terms of use:
+% https://tcinet.ru/documents/whois_ru_rf.pdf (in Russian)
+% https://tcinet.ru/documents/whois_su.pdf (in Russian)
+
+domain:        YANDEX.RU
+nserver:       ns1.yandex.ru. 213.180.193.1, 2a02:6b8::1
+nserver:       ns2.yandex.ru. 93.158.134.1, 2a02:6b8:0:1::1
+state:         REGISTERED, DELEGATED, VERIFIED
+org:           YANDEX, LLC.
+taxpayer-id:   7736207543
+registrar:     RU-CENTER-RU
+admin-contact: https://www.nic.ru/whois
+created:       1997-09-23T09:45:07Z
+paid-till:     2026-09-30T21:00:00Z
+free-date:     2026-11-01
+source:        TCI
+
+Last updated on 2025-11-24T11:38:01Z
+

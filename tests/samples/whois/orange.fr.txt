@@ -1,0 +1,150 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.nic.fr
+
+domain:       FR
+
+organisation: Association Française pour le Nommage Internet en Coopération (A.F.N.I.C.)
+address:      7, avenue du 8 mai 1945
+address:      Guyancourt 78280
+address:      France
+
+contact:      administrative
+name:         TLD Admin Contact
+organisation: Association Française pour le Nommage Internet en Coopération (A.F.N.I.C.)
+address:      7, avenue du 8 mai 1945
+address:      Guyancourt 78280
+address:      France
+phone:        +33 1 39 30 83 05
+fax-no:       +33 1 39 30 83 01
+e-mail:       tld-admin@nic.fr
+
+contact:      technical
+name:         TLD Technical Contact
+organisation: Association Française pour le Nommage Internet en Coopération (A.F.N.I.C.)
+address:      7, avenue du 8 mai 1945
+address:      Guyancourt 78280
+address:      France
+phone:        +33 1 39 30 83 00
+fax-no:       +33 1 39 30 83 01
+e-mail:       tld-tech@nic.fr
+
+nserver:      D.NIC.FR 194.0.9.1 2001:678:c:0:0:0:0:1
+nserver:      F.EXT.NIC.FR 194.146.106.46 2001:67c:1010:11:0:0:0:53
+nserver:      G.EXT.NIC.FR 194.0.36.1 2001:678:4c:0:0:0:0:1
+ds-rdata:     65381 13 2 8163abf45792942cf4ee38cca31f6a6832fcdc6d402338fc687827690c4132f6
+
+whois:        whois.nic.fr
+
+status:       ACTIVE
+remarks:      Registration information: https://www.nic.fr
+
+created:      1986-09-02
+changed:      2025-07-31
+source:       IANA
+
+# whois.nic.fr
+
+%%
+%% This is the AFNIC Whois server.
+%%
+%% complete date format: YYYY-MM-DDThh:mm:ssZ
+%%
+%% Rights restricted by copyright.
+%% See https://www.afnic.fr/en/domain-names-and-support/everything-there-is-to-know-about-domain-names/find-a-domain-name-or-a-holder-using-whois/
+%%
+%%
+
+domain:                        orange.fr
+status:                        ACTIVE
+eppstatus:                     serverUpdateProhibited
+eppstatus:                     serverTransferProhibited
+eppstatus:                     serverDeleteProhibited
+eppstatus:                     serverRecoverProhibited
+hold:                          NO
+holder-c:                      CTC5102137-FRNIC
+admin-c:                       O69928-FRNIC
+tech-c:                        CTC5066892-FRNIC
+registrar:                     NORDNET
+Expiry Date:                   2026-10-14T15:12:55Z
+created:                       2001-02-01T23:00:00Z
+last-update:                   2025-03-30T12:17:54.513642Z
+source:                        FRNIC
+
+nserver:                       ns1.orange.fr
+nserver:                       ns2.orange.fr
+source:                        FRNIC
+
+registrar:                     NORDNET
+address:                       245 Boulevard de Tournai
+address:                       CS 20458
+address:                       59664 VILLENEUVE D'ASCQ CEDEX
+country:                       FR
+phone:                         +33.969360360
+e-mail:                        administration@nordnet.com
+website:                       https://www.nordnet.com/offres/pack_relais/presentation.php
+anonymous:                     No
+registered:                    1997-12-29T00:00:00Z
+source:                        FRNIC
+
+nic-hdl:                       CTC5102137-FRNIC
+type:                          ORGANIZATION
+contact:                       ORANGE
+address:                       ORANGE
+address:                       111 QUAI DU PRESIDENT ROOSEVELT
+address:                       92130 ISSY LES MOULINEAUX
+country:                       FR
+phone:                         +33.157395678
+fax-no:                        +33.157395678
+e-mail:                        gestionndd@francetelecom.biz
+registrar:                     NORDNET
+anonymous:                     NO
+obsoleted:                     NO
+eppstatus:                     serverUpdateProhibited
+eppstatus:                     associated
+eligstatus:                    not identified
+reachstatus:                   not identified
+source:                        FRNIC
+
+nic-hdl:                       O69928-FRNIC
+type:                          ORGANIZATION
+contact:                       Orange
+address:                       111 Quai du President Roosevelt
+address:                       92130 Issy les Moulineaux
+country:                       FR
+phone:                         +33.157399729
+e-mail:                        gestionndd@francetelecom.biz
+registrar:                     NORDNET
+changed:                       2025-03-26T10:06:18.332976Z
+anonymous:                     NO
+obsoleted:                     NO
+eppstatus:                     associated
+eppstatus:                     active
+eligstatus:                    not identified
+reachstatus:                   not identified
+source:                        FRNIC
+
+nic-hdl:                       CTC5066892-FRNIC
+type:                          ORGANIZATION
+contact:                       Nordnet
+address:                       245 Boulevard de Tournai
+address:                       cs 20458
+address:                       59664 Villeneuve d'Ascq
+country:                       FR
+phone:                         +33.892702033
+fax-no:                        +33.892702033
+e-mail:                        technical@lerelaisinternet.com
+registrar:                     NORDNET
+changed:                       2025-03-25T17:19:21.84437Z
+anonymous:                     NO
+obsoleted:                     NO
+eppstatus:                     associated
+eppstatus:                     active
+eligstatus:                    not identified
+reachstatus:                   not identified
+source:                        FRNIC
+
+>>> Last update of WHOIS database: 2025-11-24T12:13:47.299585Z <<<
+
