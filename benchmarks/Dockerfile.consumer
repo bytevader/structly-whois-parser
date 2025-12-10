@@ -14,7 +14,7 @@ COPY src ./src
 COPY benchmarks ./benchmarks
 
 RUN pip install --no-cache-dir --upgrade pip \
-    && pip install --no-cache-dir confluent-kafka python-snappy \
+    && pip install --no-cache-dir confluent-kafka python-snappy orjson \
     && pip install --no-cache-dir .
 
 ENTRYPOINT ["python", "-u", "benchmarks/scripts/consume_and_parse.py"]

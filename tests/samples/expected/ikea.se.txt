@@ -2,7 +2,7 @@
  'admin': {'email': None, 'name': None, 'organization': None, 'telephone': None},
  'dnssec': 'signed delegation',
  'domain': 'ikea.se',
- 'expires_at': None,
+ 'expires_at': '2026-08-23T00:00:00',
  'is_rate_limited': False,
  'name_servers': ['udns1.cscdns.net', 'udns2.cscdns.uk'],
  'registered_at': '2002-12-23T00:00:00',
@@ -12,4 +12,4 @@
  'registrar_url': None,
  'statuses': ['active', 'serverUpdateProhibited', 'serverDeleteProhibited', 'serverTransferProhibited'],
  'tech': {'email': None, 'name': None, 'organization': None, 'telephone': None},
- 'updated_at': None}
+ 'updated_at': '2025-08-14T00:00:00'}

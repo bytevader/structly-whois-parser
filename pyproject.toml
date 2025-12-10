@@ -39,10 +39,12 @@ dev = [
   "psutil>=5.9",
   "confluent-kafka>=2.3",
   "python-snappy>=0.6",
+  "orjson>=3.9",
 ]
 benchmarks = [
   "confluent-kafka>=2.3",
   "python-snappy>=0.6",
+  "orjson>=3.9",
 ]
 
 [project.scripts]

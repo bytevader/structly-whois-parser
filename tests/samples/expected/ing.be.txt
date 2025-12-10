@@ -20,6 +20,6 @@
  'registrar': 'CSC Corporate Domains, Inc.',
  'registrar_id': None,
  'registrar_url': 'https://www.cscdigitalbrand.services/',
- 'statuses': ['NOT AVAILABLE', 'NOT', 'clientTransferProhibited'],
+ 'statuses': ['NOT AVAILABLE', 'clientTransferProhibited'],
  'tech': {'email': None, 'name': None, 'organization': None, 'telephone': None},
  'updated_at': None}

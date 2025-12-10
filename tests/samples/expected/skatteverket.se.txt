@@ -2,7 +2,7 @@
  'admin': {'email': None, 'name': None, 'organization': None, 'telephone': None},
  'dnssec': 'signed delegation',
  'domain': 'skatteverket.se',
- 'expires_at': None,
+ 'expires_at': '2028-07-21T00:00:00',
  'is_rate_limited': False,
  'name_servers': ['ystad.dns.swip.net',
                   'dns5.telia.com',
@@ -19,4 +19,4 @@
  'registrar_url': None,
  'statuses': ['active', 'serverUpdateProhibited', 'serverDeleteProhibited', 'serverTransferProhibited'],
  'tech': {'email': None, 'name': None, 'organization': None, 'telephone': None},
- 'updated_at': None}
+ 'updated_at': '2024-05-30T00:00:00'}
