@@ -6,7 +6,9 @@ from structly_whois.normalization import (
     _extract_afnic_contact_blocks,
     _extract_afnic_handles,
     _inject_afnic_contacts,
+    _slice_from_last_domain,
     _slice_latest_section,
+    normalize_raw_text,
 )
 
 
@@ -21,6 +23,17 @@ def test_slice_latest_section_prefers_last_marker() -> None:
     payload = "# server.one\nDomain Name: old.example\n# server.two\nDomain Name: new.example\n"
     latest = _slice_latest_section(payload)
     assert "Domain Name: new.example" in latest
+
+
+def test_slice_latest_section_handles_leading_hash() -> None:
+    payload = "# banner\nDomain Name: example.org\n"
+    assert _slice_latest_section(payload) == payload
+
+
+def test_slice_from_last_domain_without_leading_newline() -> None:
+    payload = "Domain Name: lone.example\nRegistrar: Example\n"
+    result = _slice_from_last_domain(payload)
+    assert result.startswith("Domain Name: lone.example")
 
 
 def test_afnic_handle_extraction_and_blocks() -> None:
@@ -80,3 +93,9 @@ source: FRNIC
     normalized = _inject_afnic_contacts(payload)
     assert "Registrant Organization: Holder Org" in normalized
     assert "Admin Name: Admin Person" in normalized
+
+
+def test_normalize_raw_text_handles_empty_and_enforces_newline() -> None:
+    assert normalize_raw_text("") == ""
+    result = normalize_raw_text("Domain Name: example.dev")
+    assert result.endswith("\n")

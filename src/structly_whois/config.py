@@ -18,6 +18,22 @@ def rx(pattern: str) -> FieldPattern:
 FieldDefinition = dict[str, Any]
 FieldOverride = dict[str, Any]
 
+_STATUS_SINGLE_TOKEN_PATTERN = rx(r"(?i)^(?:domain\s+status|status)\s*:\s*(?P<val>[^,\s]+)")
+BASE_STATUS_PATTERNS = [
+    rx(r"(?i)^domain\s+status\s*:\s*(?P<val>[^,\n]+?)(?:\s+\(?https?://\S+\)?)?$"),
+    rx(r"(?i)^status\s*:\s*(?P<val>[^,\n]+?)(?:\s+\(?https?://\S+\)?)?$"),
+    rx(r"(?i)^registration\s+status\s*:\s*(?P<val>[^,\n]+?)(?:\s+\(?https?://\S+\)?)?$"),
+    rx(r"(?i)^state\s*:\s*(?P<val>[^,\n]+?)(?:\s+\(?https?://\S+\)?)?$"),
+    _STATUS_SINGLE_TOKEN_PATTERN,
+    rx(r"(?i)^(?:domain\s+status|status)[^,\n]*,\s*(?P<val>[^,\s]+)"),
+    rx(r"(?i)^(?:domain\s+status|status)(?:[^,\n]+,\s*){2}(?P<val>[^,\s]+)"),
+    rx(r"(?i)^(?:domain\s+status|status)(?:[^,\n]+,\s*){3}(?P<val>[^,\s]+)"),
+    rx(r"(?i)^state\s*:\s*(?P<val>[^,\s]+)"),
+    rx(r"(?i)^state[^,\n]*,\s*(?P<val>[^,\s]+)"),
+    rx(r"(?i)^state(?:[^,\n]+,\s*){2}(?P<val>[^,\s]+)"),
+    rx(r"(?i)^state(?:[^,\n]+,\s*){3}(?P<val>[^,\s]+)"),
+]
+
 
 BASE_FIELD_DEFINITIONS: dict[str, FieldDefinition] = {
     "domain_name": {
@@ -89,6 +105,7 @@ BASE_FIELD_DEFINITIONS: dict[str, FieldDefinition] = {
             rx(r"(?i)^last\s+updated\s+date\s*:\s*(?P<val>.+)$"),
             rx(r"(?i)^updated\s*(?:on|date)?\s*:\s*(?P<val>.+)$"),
             rx(r"(?i)^changed\s*:\s*(?P<val>.+)$"),
+            rx(r"(?i)^modified\s*:\s*(?P<val>.+)$"),
         ]
     },
     "expiration_date": {
@@ -106,24 +123,11 @@ BASE_FIELD_DEFINITIONS: dict[str, FieldDefinition] = {
             rx(r"(?i)^expiration\s*:\s*(?P<val>.+)$"),
             rx(r"(?i)^expire\s*:\s*(?P<val>.+)$"),
             rx(r"(?i)^registrar registration expiration date\s*:\s*(?P<val>.+)$"),
+            rx(r"(?i)^expires\s*:\s*(?P<val>.+)$"),
         ]
     },
     "status": {
-        "patterns": [
-            rx(r"(?i)^domain\s+status\s*:\s*(?P<val>[^,\n]+?)(?:\s+\(?https?://\S+\)?)?$"),
-            rx(r"(?i)^status\s*:\s*(?P<val>[^,\n]+?)(?:\s+\(?https?://\S+\)?)?$"),
-            rx(r"(?i)^registration\s+status\s*:\s*(?P<val>[^,\n]+?)(?:\s+\(?https?://\S+\)?)?$"),
-            rx(r"(?i)^state\s*:\s*(?P<val>[^,\n]+?)(?:\s+\(?https?://\S+\)?)?$"),
-            rx(r"(?i)^flags\s*:\s*(?P<val>[^,\n]+?)(?:\s+\(?https?://\S+\)?)?$"),
-            rx(r"(?i)^(?:domain\s+status|status)\s*:\s*(?P<val>[^,\s]+)"),
-            rx(r"(?i)^(?:domain\s+status|status)[^,\n]*,\s*(?P<val>[^,\s]+)"),
-            rx(r"(?i)^(?:domain\s+status|status)(?:[^,\n]+,\s*){2}(?P<val>[^,\s]+)"),
-            rx(r"(?i)^(?:domain\s+status|status)(?:[^,\n]+,\s*){3}(?P<val>[^,\s]+)"),
-            rx(r"(?i)^state\s*:\s*(?P<val>[^,\s]+)"),
-            rx(r"(?i)^state[^,\n]*,\s*(?P<val>[^,\s]+)"),
-            rx(r"(?i)^state(?:[^,\n]+,\s*){2}(?P<val>[^,\s]+)"),
-            rx(r"(?i)^state(?:[^,\n]+,\s*){3}(?P<val>[^,\s]+)"),
-        ],
+        "patterns": BASE_STATUS_PATTERNS,
         "mode": Mode.all,
         "unique": True,
         "return_shape": ReturnShape.list_,
@@ -481,11 +485,17 @@ TLD_OVERRIDES: dict[str, dict[str, FieldOverride]] = {
     },
     "be": {
         "status": {
-            "extend_patterns": [
+            # Drop the single-token pattern to avoid extracting a stray "NOT" status from lines like
+            # "Status: NOT AVAILABLE" that appear in .be WHOIS payloads.
+            "patterns": [pattern for pattern in BASE_STATUS_PATTERNS if pattern is not _STATUS_SINGLE_TOKEN_PATTERN]
+            + [
                 rx(r"(?i)^flags:\s*(?P<val>.+)$"),
                 rx(r"(?i)^status:\s*(?P<val>.+)$"),
                 rx(r"(?i)^domain status:\s*(?P<val>.+)$"),
-            ]
+            ],
+            "mode": Mode.all,
+            "unique": True,
+            "return_shape": ReturnShape.list_,
         },
         "registrant_organization": {
             "patterns": [

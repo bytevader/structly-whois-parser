@@ -17,7 +17,7 @@ def test_cli_outputs_json(tmp_payload: Path, capsys: pytest.CaptureFixture[str])
         "--domain",
         "cli.example",
         "--date-parser",
-        "tests.helpers:iso_to_datetime",
+        "tests.common.helpers:iso_to_datetime",
     ])
 
     assert exit_code == 0
@@ -53,3 +53,12 @@ def test_read_payload_reads_stdin(monkeypatch: pytest.MonkeyPatch) -> None:
     fake_stdin = io.StringIO("Domain Name: stdin.example\n")
     monkeypatch.setattr(cli.sys, "stdin", fake_stdin)
     assert cli._read_payload("-") == "Domain Name: stdin.example\n"
+
+
+def test_cli_default_output_uses_mapping(tmp_payload: Path, capsys: pytest.CaptureFixture[str]) -> None:
+    exit_code = cli.main([str(tmp_payload)])
+
+    assert exit_code == 0
+    captured = capsys.readouterr()
+    assert "cli.example" in captured.out
+    assert captured.err == ""

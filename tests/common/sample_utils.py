@@ -4,8 +4,10 @@ from __future__ import annotations
 
 from pathlib import Path
 
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
-SAMPLES_ROOT = PROJECT_ROOT / "tests" / "samples"
+COMMON_DIR = Path(__file__).resolve().parent
+TESTS_ROOT = COMMON_DIR.parent
+PROJECT_ROOT = TESTS_ROOT.parent
+SAMPLES_ROOT = TESTS_ROOT / "samples"
 WHOIS_ROOT = SAMPLES_ROOT / "whois"
 EXPECTED_ROOT = SAMPLES_ROOT / "expected"
 

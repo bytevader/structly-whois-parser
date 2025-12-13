@@ -1,12 +1,17 @@
 from __future__ import annotations
 
 import argparse
-import json
+import logging
+import socket
 import sys
 import time
+from collections import defaultdict
 from collections.abc import Iterable
+from dataclasses import dataclass
 from pathlib import Path
+from typing import Any
 
+import orjson
 import snappy
 from confluent_kafka import Consumer, KafkaError, KafkaException, Message, Producer
 
@@ -15,6 +20,15 @@ if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
 from structly_whois import WhoisParser  # noqa: E402
+
+logger = logging.getLogger(__name__)
+
+
+@dataclass(slots=True)
+class PendingPayload:
+    message: Message
+    raw_text: str
+    domain: str | None
 
 
 def _snappy_self_test() -> None:
@@ -70,139 +84,255 @@ def _parse_args(argv: Iterable[str] | None = None) -> argparse.Namespace:
     return parser.parse_args(argv)
 
 
-def _log_batch(elapsed: float, records: int) -> None:
-    rate = records / elapsed if elapsed else 0.0
-    print(f"[batch] duration={elapsed:.2f}s records={records:,} rate={rate:,.0f}/s")
+def _wait_for_kafka(bootstrap_servers: str, retry_interval: float = 1.0) -> None:
+    """Block until at least one broker endpoint accepts TCP connections."""
+    endpoints: list[tuple[str, int]] = []
+    for target in bootstrap_servers.split(","):
+        target = target.strip()
+        if not target:
+            continue
+        host, sep, port_str = target.rpartition(":")
+        if not sep:
+            host = target
+            port_str = "9092"
+        endpoints.append((host, int(port_str)))
+    if not endpoints:
+        raise ValueError("No Kafka bootstrap servers provided.")
+    last_error: Exception | None = None
+    while True:
+        for host, port in endpoints:
+            try:
+                with socket.create_connection((host, port), timeout=3):
+                    logger.info("Connected to Kafka bootstrap %s:%s", host, port)
+                    return
+            except OSError as exc:
+                last_error = exc
+        logger.info("Waiting for Kafka (%s); retrying in %.1fs...", last_error, retry_interval)
+        time.sleep(retry_interval)
 
 
-def _commit_offset(consumer: Consumer, message: Message | None, synchronous: bool) -> None:
-    if message is None:
-        return
-    try:
-        consumer.commit(message=message, asynchronous=not synchronous)
-    except KafkaException as exc:  # pragma: no cover - defensive logging
-        print(f"[warn] commit failed: {exc}", file=sys.stderr)
+class ConsumeAndParseApp:
+    """Class-based orchestrator for the WHOIS Kafka pipeline."""
+
+    def __init__(self, args: argparse.Namespace) -> None:
+        self.args = args
+        self.logger = logging.getLogger(f"{__name__}.ConsumeAndParseApp")
+        self.consumer = _build_consumer(args)
+        self.producer = _build_producer(args)
+        self.parser = WhoisParser()
+        self.processed = 0
+        self.skipped = 0
+        self.start_time: float | None = None
+        self.last_message_time: float | None = None
+        self.batch_timer_start: float | None = None
+        self.batch_records = 0
+        self.last_message_in_batch: Message | None = None
+
+    def run(self) -> int:
+        try:
+            while True:
+                messages = self.consumer.consume(num_messages=self.args.batch_size, timeout=1.0)
+                now = time.monotonic()
+                if not messages:
+                    if self._handle_idle(now):
+                        break
+                    continue
+
+                if self.batch_timer_start is None:
+                    self.batch_timer_start = now
+
+                grouped, fallback = self._partition_payloads(messages, now)
+                self._process_grouped_payloads(grouped, fallback)
+                self._process_fallback_payloads(fallback)
+                self.producer.poll(0)
+
+                if self.batch_records >= self.args.batch_size:
+                    self._flush_batch(synchronous=False)
+
+        except KeyboardInterrupt:
+            self.logger.info("Interrupted; flushing outstanding records...")
+        finally:
+            self._flush_batch(synchronous=True)
+            self.producer.flush()
+            self.consumer.close()
+
+        duration = self.last_message_time - self.start_time if self.start_time and self.last_message_time else 0.0
+        self.logger.info(
+            "Processed %s messages (skipped=%s) in %.2fs between first and last payload.",
+            f"{self.processed:,}",
+            f"{self.skipped:,}",
+            duration,
+        )
+        return 0
+
+    def _handle_idle(self, now: float) -> bool:
+        self._flush_batch(synchronous=True, current_time=now)
+        if self.last_message_time and now - self.last_message_time >= self.args.idle_timeout:
+            self.logger.info("Idle timeout reached after %.2fs. Exiting.", now - self.last_message_time)
+            return True
+        return False
+
+    def _partition_payloads(
+        self,
+        messages: list[Message | None],
+        now: float,
+    ) -> tuple[dict[str, list[PendingPayload]], list[PendingPayload]]:
+        grouped_payloads: dict[str, list[PendingPayload]] = defaultdict(list)
+        fallback_payloads: list[PendingPayload] = []
+
+        for message in messages:
+            if message is None:
+                continue
+            if message.error():
+                error = message.error()
+                if error.code() == KafkaError._PARTITION_EOF:
+                    continue
+                raise KafkaException(error)
+
+            self.last_message_time = now
+            raw_value = message.value()
+            if not raw_value:
+                self.skipped += 1
+                continue
+            try:
+                value: dict[str, Any] = orjson.loads(raw_value)
+            except orjson.JSONDecodeError as exc:
+                self.skipped += 1
+                self.logger.warning("Invalid JSON payload at offset %s: %s", message.offset(), exc)
+                continue
+
+            raw_text = value.get("raw_text")
+            domain = value.get("domain")
+            if not raw_text:
+                self.skipped += 1
+                continue
+
+            payload = PendingPayload(message=message, raw_text=raw_text, domain=domain)
+            if domain:
+                tld_hint = self._safe_select_tld(domain)
+                if tld_hint:
+                    grouped_payloads[tld_hint].append(payload)
+                    continue
+            fallback_payloads.append(payload)
+
+        return grouped_payloads, fallback_payloads
+
+    def _process_grouped_payloads(
+        self,
+        grouped: dict[str, list[PendingPayload]],
+        fallback_payloads: list[PendingPayload],
+    ) -> None:
+        for tld_hint, payloads in grouped.items():
+            try:
+                parsed_records = self.parser.parse_many(
+                    (payload.raw_text for payload in payloads),
+                    tld=tld_hint,
+                    to_records=True,
+                )
+            except Exception as exc:  # pragma: no cover - defensive logging
+                self.logger.warning("parse_many failed for TLD '%s': %s", tld_hint, exc)
+                fallback_payloads.extend(payloads)
+                continue
+
+            for payload, parsed_record in zip(payloads, parsed_records):
+                self._handle_parsed_record(parsed_record, payload)
+
+    def _process_fallback_payloads(self, payloads: list[PendingPayload]) -> None:
+        for payload in payloads:
+            try:
+                parsed_record = self.parser.parse_record(payload.raw_text, domain=payload.domain)
+            except Exception as exc:  # pragma: no cover - defensive logging
+                self.skipped += 1
+                self.logger.warning("Failed to parse payload: %s", exc)
+                continue
+            self._handle_parsed_record(parsed_record, payload)
+
+    def _handle_parsed_record(self, record: Any, payload: PendingPayload) -> None:
+        try:
+            self._emit_parsed_record(record, payload)
+        except Exception as exc:  # pragma: no cover - defensive logging
+            self.skipped += 1
+            self.logger.warning("Failed to process payload: %s", exc)
+            return
+
+        self.processed += 1
+        self.batch_records += 1
+        self.last_message_in_batch = payload.message
+        if self.start_time is None:
+            self.start_time = time.monotonic()
+        if self.args.log_interval and self.processed % self.args.log_interval == 0:
+            elapsed_total = time.monotonic() - self.start_time
+            rate_total = self.processed / elapsed_total if elapsed_total else 0
+            self.logger.info(
+                "processed %s messages (skipped=%s, rate=%s records/sec)",
+                f"{self.processed:,}",
+                f"{self.skipped:,}",
+                f"{rate_total:,.0f}",
+            )
+
+    def _emit_parsed_record(self, record: Any, payload: PendingPayload) -> None:
+        parsed_payload = record.to_dict(include_raw_text=False)
+        source_key_bytes = payload.message.key()
+        parsed_payload.update({
+            "source_topic": payload.message.topic(),
+            "source_partition": payload.message.partition(),
+            "source_offset": payload.message.offset(),
+            "source_key": source_key_bytes.decode("utf-8") if source_key_bytes else None,
+            "consumed_at": time.time(),
+        })
+        key = parsed_payload.get("domain") or payload.domain or ""
+        key_bytes = key.encode("utf-8") if key else None
+        value_bytes = orjson.dumps(parsed_payload, default=str)
+        while True:
+            try:
+                self.producer.produce(self.args.parsed_topic, key=key_bytes, value=value_bytes)
+                break
+            except BufferError:
+                self.producer.poll(0.5)
+
+    def _flush_batch(self, *, synchronous: bool, current_time: float | None = None) -> None:
+        if self.batch_timer_start is None or not self.batch_records:
+            return
+        now = current_time or time.monotonic()
+        elapsed = now - self.batch_timer_start
+        rate = self.batch_records / elapsed if elapsed else 0.0
+        self.logger.info(
+            "[batch] duration=%.2fs records=%s rate=%s/s",
+            elapsed,
+            f"{self.batch_records:,}",
+            f"{rate:,.0f}",
+        )
+        self._commit_offset(synchronous=synchronous)
+        self.batch_timer_start = None
+        self.batch_records = 0
+        self.last_message_in_batch = None
+
+    def _commit_offset(self, *, synchronous: bool) -> None:
+        if self.last_message_in_batch is None:
+            return
+        try:
+            self.consumer.commit(message=self.last_message_in_batch, asynchronous=not synchronous)
+        except KafkaException as exc:  # pragma: no cover - defensive logging
+            self.logger.warning("Commit failed: %s", exc)
+
+    def _safe_select_tld(self, domain: str) -> str:
+        try:
+            return self.parser._select_tld(None, domain)
+        except Exception:  # pragma: no cover - defensive fallback
+            return ""
 
 
 def main(argv: Iterable[str] | None = None) -> int:
     args = _parse_args(argv)
+    logging.basicConfig(
+        level=logging.INFO,
+        format="%(asctime)s %(levelname)s [%(name)s] %(message)s",
+        datefmt="%Y-%m-%d %H:%M:%S",
+    )
+    _wait_for_kafka(args.bootstrap_servers)
     _snappy_self_test()
-    parser = WhoisParser()
-    consumer = _build_consumer(args)
-    producer = _build_producer(args)
-
-    processed = 0
-    skipped = 0
-    start_time: float | None = None
-    last_message_time: float | None = None
-    batch_timer_start: float | None = None
-    batch_records = 0
-    last_message_in_batch: Message | None = None
-
-    try:
-        while True:
-            messages = consumer.consume(num_messages=args.batch_size, timeout=1.0)
-            now = time.monotonic()
-            if not messages:
-                if batch_timer_start is not None and batch_records:
-                    elapsed = now - batch_timer_start
-                    _log_batch(elapsed, batch_records)
-                    _commit_offset(consumer, last_message_in_batch, synchronous=True)
-                    batch_timer_start = None
-                    batch_records = 0
-                    last_message_in_batch = None
-                if last_message_time and now - last_message_time >= args.idle_timeout:
-                    break
-                continue
-
-            if batch_timer_start is None:
-                batch_timer_start = now
-
-            for message in messages:
-                if message is None:
-                    continue
-                if message.error():
-                    error = message.error()
-                    if error.code() == KafkaError._PARTITION_EOF:
-                        continue
-                    raise KafkaException(error)
-
-                last_message_time = now
-                raw_value = message.value()
-                if not raw_value:
-                    skipped += 1
-                    continue
-                try:
-                    value = json.loads(raw_value.decode("utf-8"))
-                except json.JSONDecodeError as exc:
-                    skipped += 1
-                    print(f"[warn] invalid JSON payload at offset {message.offset()}: {exc}", file=sys.stderr)
-                    continue
-
-                raw_text = value.get("raw_text")
-                domain = value.get("domain")
-                if not raw_text:
-                    skipped += 1
-                    continue
-
-                try:
-                    parsed_record = parser.parse_record(raw_text, domain=domain)
-                except Exception as exc:  # pragma: no cover - defensive logging
-                    skipped += 1
-                    print(f"[warn] failed to parse payload: {exc}", file=sys.stderr)
-                    continue
-
-                parsed_payload = parsed_record.to_dict(include_raw_text=False)
-                source_key_bytes = message.key()
-                parsed_payload.update({
-                    "source_topic": message.topic(),
-                    "source_partition": message.partition(),
-                    "source_offset": message.offset(),
-                    "source_key": source_key_bytes.decode("utf-8") if source_key_bytes else None,
-                    "consumed_at": time.time(),
-                })
-                key = parsed_payload.get("domain") or domain or ""
-                key_bytes = key.encode("utf-8") if key else None
-                value_bytes = json.dumps(parsed_payload, default=str).encode("utf-8")
-                while True:
-                    try:
-                        producer.produce(args.parsed_topic, key=key_bytes, value=value_bytes)
-                        break
-                    except BufferError:
-                        producer.poll(0.5)
-                producer.poll(0)
-
-                processed += 1
-                batch_records += 1
-                last_message_in_batch = message
-                if start_time is None:
-                    start_time = now
-                if args.log_interval and processed % args.log_interval == 0:
-                    elapsed_total = now - start_time
-                    rate_total = processed / elapsed_total if elapsed_total else 0
-                    print(f"processed {processed:,} messages (skipped={skipped:,}, rate={rate_total:,.0f} records/sec)")
-
-            if batch_records >= args.batch_size and batch_timer_start is not None:
-                elapsed = time.monotonic() - batch_timer_start
-                _log_batch(elapsed, batch_records)
-                _commit_offset(consumer, last_message_in_batch, synchronous=False)
-                batch_timer_start = None
-                batch_records = 0
-                last_message_in_batch = None
-
-    except KeyboardInterrupt:
-        print("Interrupted; flushing outstanding records...")
-    finally:
-        if batch_timer_start is not None and batch_records:
-            elapsed = time.monotonic() - batch_timer_start
-            _log_batch(elapsed, batch_records)
-        _commit_offset(consumer, last_message_in_batch, synchronous=True)
-        producer.flush()
-        consumer.close()
-
-    duration = last_message_time - start_time if start_time and last_message_time else 0.0
-    print(f"Processed {processed:,} messages (skipped={skipped:,}) in {duration:.2f}s between first and last payload.")
-    return 0
+    app = ConsumeAndParseApp(args)
+    return app.run()
 
 
 if __name__ == "__main__":

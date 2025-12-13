@@ -19,7 +19,7 @@
 </a>
 </p>
 
-> Fast, typed WHOIS parsing powered by [structly](https://pypi.org/project/structly/) and [msgspec](https://pypi.org/project/structly/).
+> Fast WHOIS parser powered by [structly](https://pypi.org/project/structly/) and [msgspec](https://pypi.org/project/structly/).
 
 **structly_whois** wraps Structly's compiled parsers with a modern Python API so you can normalize noisy WHOIS payloads, auto-detect TLD-specific overrides, and emit JSON-ready records without hauling heavy regex DSLs or dateparser into your hot path.
 
@@ -28,7 +28,7 @@
 - **Structly speed** – Per-TLD configurations are compiled by Structly, keeping parsing under a millisecond/record even on commodity hardware.
 - **Typed surface** – msgspec-based `WhoisRecord` structs, `py.typed` wheels, and a CLI entrypoint (`structly-whois`) for quick inspection.
 - **Configurable** – Inject your own Structly configs, register TLD overrides at runtime, or extend the base field definitions without forking.
-- **Lean dependencies** – No `dateparser` or `requests` required. Plug in a `date_parser` callable only when locale-aware coercion is truly needed.
+- **Lean dependencies** – No `dateparser` or required by default. Plug in a `date_parser` callable only when locale-aware coercion is truly needed.
 - **Batched & streaming friendly** – `parse_many` and `parse_chunks` let you process millions of payloads from queues, tarballs, or S3 archives without buffering everything in memory.
 
 ## Installation
@@ -72,7 +72,7 @@ If you omit `domain`, structly_whois inspects the payload to infer the domain/TL
 structly-whois tests/samples/whois/google.com.txt \
   --domain google.com \
   --record --json \
-  --date-parser tests.helpers:iso_to_datetime
+  --date-parser tests.common.helpers:iso_to_datetime
 ```
 
 The CLI mirrors the Python API: pass `--record` to emit a structured `WhoisRecord`, `--lowercase` to normalize strings, and `--date-parser module:callable` when you want custom date coercion.

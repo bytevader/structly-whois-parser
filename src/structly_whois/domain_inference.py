@@ -20,8 +20,10 @@ class DomainPatternRegistry:
         base_fields: Mapping[str, MutableMapping[str, Any]],
         overrides: Mapping[str, Mapping[str, MutableMapping[str, Any]]],
     ) -> None:
-        prefixes: set[str] = set()
-        regexes: set[str] = set()
+        prefixes: list[str] = []
+        regexes: list[str] = []
+        seen_prefixes: set[str] = set()
+        seen_regexes: set[str] = set()
 
         def _add_patterns(field_def: MutableMapping[str, Any] | None) -> None:
             if not field_def:
@@ -32,9 +34,15 @@ class DomainPatternRegistry:
                     continue
                 for pattern in patterns:
                     if pattern.pattern_type == FieldPatternType.STARTS_WITH:
-                        prefixes.add(pattern.pattern)
+                        if pattern.pattern in seen_prefixes:
+                            continue
+                        seen_prefixes.add(pattern.pattern)
+                        prefixes.append(pattern.pattern)
                     elif pattern.pattern_type == FieldPatternType.REGEX:
-                        regexes.add(pattern.pattern)
+                        if pattern.pattern in seen_regexes:
+                            continue
+                        seen_regexes.add(pattern.pattern)
+                        regexes.append(pattern.pattern)
 
         _add_patterns(base_fields.get("domain_name"))
         for domain_overrides in overrides.values():

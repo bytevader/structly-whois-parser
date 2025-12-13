@@ -3,6 +3,37 @@
 All notable changes to this project will be documented here. This project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.0] - 2025-02-14
+
+### Added
+
+- Fallback guard for `.info` domains so callers who pass the domain explicitly always get it back even when registries return `INFO` as the payload's domain label.
+- Targeted unit tests for CLI defaults, domain inference helpers, normalization edge cases, and `.info` parsing paths, plus docs describing the Kafka benchmark batching strategy.
+
+### Changed
+
+- Reorganized the test suite into `tests/unit`, `tests/integration`, and `tests/common` with helper scripts under `tests/scripts`, making it clearer which suites hit fixtures vs. fast-running modules.
+- Updated README/docs examples to reference the new helper module path (`tests.common.helpers`) and use the improved benchmark documentation.
+
+### Fixed
+
+- Addressed Ruff's SIM102 warning in the domain inference registry and ensured `.info` expected fixtures behave consistently across sample-driven tests.
+
+## [0.2.4] - 2025-12-10
+
+### Added
+
+- Ship `tests/report_coverage.py` so maintainers can generate the per-TLD field coverage numbers that back `coverage_report.txt`, making it easier to decide which registries deserve new fixtures next.
+- Expand the WHOIS fixture corpus (Belgium, EU, Sweden, Ukraine, etc.) and expected outputs so regressions in tricky registries are caught by CI instead of surfacing in production.
+
+### Changed
+
+- Domain inference now refreshes itself from every `domain_name` pattern defined in the Structly base fields and overrides, so newly registered TLD configs immediately influence CLI/domain auto-detection without extra plumbing.
+
+### Fixed
+
+- Harden the `.be` override to drop stray single-token statuses (no more `["NOT", "NOT AVAILABLE"]`) and capture registrar/registrant metadata that DNS Belgium hides behind multi-line blocks.
+
 ## [0.2.0] - 2024-06-01
 
 - Rename the package from `structly_whois_parser` to `structly_whois` (distribution: `structly-whois`) and expose `__version__` from `__about__.py`.

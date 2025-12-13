@@ -96,6 +96,26 @@ class WhoisParser:
             self._parsers[tld] = self._build_structly_parser(tld)
         return self._parsers[tld]
 
+    def _apply_domain_hint(
+        self,
+        parsed: MutableMapping[str, Any],
+        *,
+        domain_hint: str | None,
+        target_tld: str,
+    ) -> None:
+        """Ensure problematic TLDs keep the user-provided domain name."""
+        if target_tld != "info" or not domain_hint:
+            return
+        cleaned_hint = domain_hint.strip()
+        if not cleaned_hint:
+            return
+        parsed_domain = parsed.get("domain_name")
+        if isinstance(parsed_domain, str):
+            normalized = parsed_domain.strip().strip(".").lower()
+            if normalized and normalized != target_tld:
+                return
+        parsed["domain_name"] = cleaned_hint
+
     def register_tld(
         self,
         tld: str,
@@ -141,7 +161,9 @@ class WhoisParser:
         parser = self._get_parser_for_tld(target_tld)
         if target_tld == "" and default_parsed is not None:
             return default_parsed
-        return parser.parse(text)
+        parsed = parser.parse(text)
+        self._apply_domain_hint(parsed, domain_hint=domain, target_tld=target_tld)
+        return parsed
 
     def parse_record(
         self,
@@ -188,12 +210,18 @@ class WhoisParser:
             raw_payloads = None
             parser_input = (normalize_raw_text(text) for text in payloads)
         parsed_payloads = parser.parse_many(parser_input)
+        parsed_sequence: Iterable[MutableMapping[str, str]] = parsed_payloads
+        if domain and target_tld == "info":
+            parsed_list_for_hint = list(parsed_sequence)
+            for parsed in parsed_list_for_hint:
+                self._apply_domain_hint(parsed, domain_hint=domain, target_tld=target_tld)
+            parsed_sequence = parsed_list_for_hint
         if not to_records:
-            return parsed_payloads
+            return parsed_sequence
         records: list[WhoisRecord] = []
         if raw_payloads is None:
             return records
-        parsed_list = list(parsed_payloads)
+        parsed_list = list(parsed_sequence)
         if len(parsed_list) != len(raw_payloads):
             raise RuntimeError("Structly returned an unexpected number of results")
         for raw_text, parsed in zip(raw_payloads, parsed_list):
@@ -217,7 +245,15 @@ class WhoisParser:
     ) -> Iterator[list[MutableMapping[str, Any]]]:
         target_tld = self._select_tld(tld, domain)
         parser = self._get_parser_for_tld(target_tld)
-        return parser.parse_chunks(
-            (normalize_raw_text(text) for text in payloads),
-            chunk_size=chunk_size,
-        )
+        normalized_inputs = (normalize_raw_text(text) for text in payloads)
+        chunks = parser.parse_chunks(normalized_inputs, chunk_size=chunk_size)
+        if not domain or target_tld != "info":
+            return chunks
+
+        def _apply_hint() -> Iterator[list[MutableMapping[str, Any]]]:
+            for chunk in chunks:
+                for parsed in chunk:
+                    self._apply_domain_hint(parsed, domain_hint=domain, target_tld=target_tld)
+                yield chunk
+
+        return _apply_hint()

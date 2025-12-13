@@ -21,9 +21,6 @@
  'registrar': None,
  'registrar_id': None,
  'registrar_url': 'https://www.clearmedia.be',
- 'statuses': ['KSK protocol:3 algorithm:RSA_SHA256 '
-              'pubKey:AwEAAfKX5A/wIWblwrXsFCDw8WSAZUaxRmB5tQSlhAiTVkPNwhgcCE5ockRYQey6kdPX6YyVw7fDIAZQjzg5efHoKXzvaRWMK1XC09NXrIrnIkLVE7c6twDnEJBAd61kGablPeKR8sVOOJ7yFiISioat+t5woQCozU9c9w8RNKKHFuhdlega9qsWxxqaRI36ok6cFmEEPpOtEatgL7JoG4hnHf5UqcNbVb08F3Em0W+7WfcpPKXpWs437Q2GydKRoxg6kwxI/pOtzNxQVS8DNEE4XMTqP3SwkUuVMeqKWUYzrIE9wzzmGRff/9xjAzhC76XfCr1KTmd3WnINMDE4rtDacJE=',
-              'KSK protocol:3 algorithm:RSA_SHA256 '
-              'pubKey:AwEAAd6ILwCObzteZw4iDDFF5Ab0GGaEvtogmEvjNeZyjczgtq641zpu38BNDMmgRM6tDqoYtphAoqWjEUkI8XiTYW6go+VGtqY06VDdX5+Hl0l2YOAAxKUo6EYlB9nos5wzKD5FeEYaBP2UCmyzk1hZyfTIOcLXkZt1uUQF7l3MmQ1ETB38pOvbwxU0EQVKuG9YmKKogjW7Ujab4JFIVxqyN+Fxhh7isrceHce0ITryL8e64wVwX9GQNA3zLxK7XQvOJswv82ebYwsl8PmIRwi7hkpJMuz+oQe/i5E6xLpAXRfCDENrcHgXi9FbRmC9Vk9RVU82BpYfrsoNZSNSeRDrJl5iftwtacOpf+QvaI1je7O5cd0VwehjteT9Rfs0Gx27WlZ7KBw7ZurwLdosvNUjKzzvLpmUiKvEyicmgZ+5cGYSTAIdhcAri+mKVpN776qeF2v6fOSEtHFK/Bpu7HMO6FQ3e7KtFiQPMdYe6WSaXODA1EoVHX2IcSNhxnMuhvt7QUaPLVfs0kbzhd2XlZH56D07kLLNAsnwl6ZeBnoqbe/vlio8/HXzDFlPmWTTUqLbPNdx0kfqbQEmkc1IRHnB0upy6/Vve86K9cl4FBW2eYdWZprm2c+ZdEJXsVAGo3w4LutKFjHLweABS0y/BNQN0a0Ga8GVTzmKK9csklZRqj3d'],
+ 'statuses': [],
  'tech': {'email': None, 'name': None, 'organization': None, 'telephone': None},
  'updated_at': None}

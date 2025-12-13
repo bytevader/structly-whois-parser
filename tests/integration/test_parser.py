@@ -8,7 +8,8 @@ from structly import FieldPattern
 
 from structly_whois import WhoisParser
 from structly_whois import domain_inference as domain_mod
-from tests.sample_utils import EXPECTED_ROOT, SKIPPED_SAMPLES, WHOIS_ROOT
+from structly_whois.normalization import normalize_raw_text
+from tests.common.sample_utils import EXPECTED_ROOT, SKIPPED_SAMPLES, WHOIS_ROOT
 
 
 def _read_sample(domain: str) -> str:
@@ -27,6 +28,10 @@ Name Server: NS2.EXAMPLE.COM
 Status: ok
 Registrant Name: Example Inc
 Registrant Email: contact@example.dev
+"""
+
+INFO_WHOIS = """Domain Name: INFO
+Registrar: Example Registrar
 """
 
 
@@ -50,6 +55,29 @@ def test_parse_many_can_return_records() -> None:
     assert records[0].name_servers == ["ns1.example.com", "ns2.example.com"]
 
 
+def test_parser_supported_tlds_skip_empty_labels() -> None:
+    parser = WhoisParser(preload_tlds=("com", "", "info"))
+
+    assert parser.supported_tlds == ("com", "info")
+
+
+def test_parser_default_date_parser_property() -> None:
+    def _hook(value: str) -> datetime:
+        return datetime.fromisoformat(value)
+
+    parser = WhoisParser(preload_tlds=(), date_parser=_hook)
+
+    assert parser.default_date_parser is _hook
+
+
+def test_parse_record_prefers_domain_hint_for_info_tld() -> None:
+    parser = WhoisParser(preload_tlds=("info",))
+
+    record = parser.parse_record(INFO_WHOIS, domain="example.info")
+
+    assert record.domain == "example.info"
+
+
 def test_parser_accepts_extra_tld_overrides() -> None:
     overrides = {
         "demo": {
@@ -63,6 +91,15 @@ def test_parser_accepts_extra_tld_overrides() -> None:
     result = parser.parse("Demo: custom.demo", tld="demo")
 
     assert result["domain_name"] == "custom.demo"
+
+
+def test_apply_domain_hint_preserves_existing_domain() -> None:
+    parser = WhoisParser(preload_tlds=("info",))
+    parsed = {"domain_name": "actual.info"}
+
+    parser._apply_domain_hint(parsed, domain_hint="example.info", target_tld="info")
+
+    assert parsed["domain_name"] == "actual.info"
 
 
 def test_com_br_override_extracts_owner_fields() -> None:
@@ -101,6 +138,9 @@ def test_all_samples_match_expected() -> None:
         assert expected_path.exists(), f"missing expected fixture for {domain}"
         expected = ast.literal_eval(expected_path.read_text(encoding="utf-8"))
         record = parser.parse_record(raw, domain=domain).to_dict(include_raw_text=False)
+        if domain.endswith(".info"):
+            expected = dict(expected)
+            expected["domain"] = domain
         assert record == expected, f"parsed WHOIS payload for {domain} does not match expected fixture"
 
 
@@ -150,6 +190,30 @@ def test_parse_many_matches_expected_samples() -> None:
             assert record.to_dict(include_raw_text=False) == expected, domain
 
 
+def test_parse_many_applies_domain_hint_for_info_domains() -> None:
+    parser = WhoisParser(preload_tlds=("info",))
+
+    parsed = parser.parse_many([INFO_WHOIS], domain="example.info", tld="info")
+
+    assert parsed[0]["domain_name"] == "example.info"
+
+
+def test_parse_many_to_records_applies_domain_hint() -> None:
+    parser = WhoisParser(preload_tlds=("info",))
+
+    records = parser.parse_many([INFO_WHOIS], domain="example.info", tld="info", to_records=True)
+
+    assert records[0].domain == "example.info"
+
+
+def test_parse_chunks_apply_domain_hint_for_info_domains() -> None:
+    parser = WhoisParser(preload_tlds=("info",))
+    chunks = list(parser.parse_chunks([INFO_WHOIS], domain="example.info", tld="info", chunk_size=1))
+
+    assert chunks
+    assert chunks[0][0]["domain_name"] == "example.info"
+
+
 def test_register_tld_requires_label() -> None:
     parser = WhoisParser(preload_tlds=())
     with pytest.raises(ValueError):
@@ -193,6 +257,13 @@ def test_infer_domain_from_text_fallback_to_prefix(monkeypatch: pytest.MonkeyPat
     monkeypatch.setattr(registry, "prefixes", ("Domain Name:",))
     text = "Domain Name: fallback.example\n"
     assert domain_mod.infer_domain_from_text(text) == "fallback.example"
+
+
+def test_infer_domain_prefers_domain_label_over_nameservers() -> None:
+    raw = _read_sample("belgium.be")
+    normalized = normalize_raw_text(raw)
+
+    assert domain_mod.infer_domain_from_text(normalized) == "belgium.be"
 
 
 def test_parse_record_marks_rate_limited(sample_payloads: dict[str, str]) -> None:

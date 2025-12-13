@@ -11,11 +11,13 @@ from pathlib import Path
 
 from structly_whois import WhoisParser
 
-PROJECT_ROOT = Path(__file__).resolve().parents[1]
+SCRIPT_DIR = Path(__file__).resolve().parent
+TESTS_ROOT = SCRIPT_DIR.parent
+PROJECT_ROOT = TESTS_ROOT.parent
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from tests.sample_utils import SKIPPED_SAMPLES, WHOIS_ROOT  # noqa: E402
+from tests.common.sample_utils import SKIPPED_SAMPLES, WHOIS_ROOT  # noqa: E402
 
 FieldExtractor = Callable[[dict], bool]
 
