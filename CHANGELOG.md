@@ -3,6 +3,22 @@
 All notable changes to this project will be documented here. This project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.0] - 2025-02-14
+
+### Added
+
+- Fallback guard for `.info` domains so callers who pass the domain explicitly always get it back even when registries return `INFO` as the payload's domain label.
+- Targeted unit tests for CLI defaults, domain inference helpers, normalization edge cases, and `.info` parsing paths, plus docs describing the Kafka benchmark batching strategy.
+
+### Changed
+
+- Reorganized the test suite into `tests/unit`, `tests/integration`, and `tests/common` with helper scripts under `tests/scripts`, making it clearer which suites hit fixtures vs. fast-running modules.
+- Updated README/docs examples to reference the new helper module path (`tests.common.helpers`) and use the improved benchmark documentation.
+
+### Fixed
+
+- Addressed Ruff's SIM102 warning in the domain inference registry and ensured `.info` expected fixtures behave consistently across sample-driven tests.
+
 ## [0.2.4] - 2025-12-10
 
 ### Added
