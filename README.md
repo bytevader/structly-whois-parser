@@ -72,7 +72,7 @@ If you omit `domain`, structly_whois inspects the payload to infer the domain/TL
 structly-whois tests/samples/whois/google.com.txt \
   --domain google.com \
   --record --json \
-  --date-parser tests.helpers:iso_to_datetime
+  --date-parser tests.common.helpers:iso_to_datetime
 ```
 
 The CLI mirrors the Python API: pass `--record` to emit a structured `WhoisRecord`, `--lowercase` to normalize strings, and `--date-parser module:callable` when you want custom date coercion.

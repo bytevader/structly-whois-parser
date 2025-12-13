@@ -1,3 +1,9 @@
+## Parsing Strategy
+
+`benchmarks/scripts/consume_and_parse.py` batches WHOIS payloads by the TLD inferred from each message’s `domain`. Pending payloads that share a TLD are fed into `WhoisParser.parse_many`, which reuses the already-initialized Structly parser for that suffix and parses the whole slice in one call. Any payloads without a reliable hint fall back to `parse_record`.
+
+Grouping by TLD keeps the hot parser cached, eliminates per-payload parser selection, and lets Structly amortize normalization plus parsing across the batch. In practice this means more CPU time is spent inside the Rust parser and less on Python bookkeeping or Kafka round-trips, making `parse_many` the fastest path when you already know which TLD parser to apply.
+
 ## Benchmarking Environment
 
 Follow these steps to spin up Kafka/Redpanda plus the constrained WHOIS consumer, then publish the 1M-record workload:

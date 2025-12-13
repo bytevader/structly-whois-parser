@@ -12,10 +12,11 @@ from pathlib import Path
 from structly_whois import WhoisParser
 
 SCRIPT_DIR = Path(__file__).resolve().parent
-if str(SCRIPT_DIR) not in sys.path:
-    sys.path.insert(0, str(SCRIPT_DIR))
+TESTS_ROOT = SCRIPT_DIR.parent
+if str(TESTS_ROOT) not in sys.path:
+    sys.path.insert(0, str(TESTS_ROOT))
 
-from sample_utils import EXPECTED_ROOT, SKIPPED_SAMPLES, WHOIS_ROOT  # noqa: E402
+from tests.common.sample_utils import EXPECTED_ROOT, SKIPPED_SAMPLES, WHOIS_ROOT  # noqa: E402
 
 
 def _iter_sample_domains(include_skipped: bool, only: set[str] | None) -> Iterable[str]:

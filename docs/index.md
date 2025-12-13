@@ -23,7 +23,7 @@ CLI entry point:
 
 ```bash
 structly-whois whois.txt --domain example.com --record --json \
-  --date-parser tests.helpers:iso_to_datetime
+  --date-parser tests.common.helpers:iso_to_datetime
 ```
 
 ## Feature snapshot
