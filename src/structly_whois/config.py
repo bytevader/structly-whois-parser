@@ -91,6 +91,7 @@ BASE_FIELD_DEFINITIONS: dict[str, FieldDefinition] = {
             rx(r"(?i)^domain registration date\s*:\s*(?P<val>.+)$"),
             rx(r"(?i)^assigned\s*:\s*(?P<val>.+)$"),
             rx(r"(?i)^registered:\s*:\s*(?P<val>.+)$"),
+            rx(r"(?i)^domain record activated:\s*(?P<val>.+)$"),
         ]
     },
     "updated_date": {
@@ -106,6 +107,7 @@ BASE_FIELD_DEFINITIONS: dict[str, FieldDefinition] = {
             rx(r"(?i)^updated\s*(?:on|date)?\s*:\s*(?P<val>.+)$"),
             rx(r"(?i)^changed\s*:\s*(?P<val>.+)$"),
             rx(r"(?i)^modified\s*:\s*(?P<val>.+)$"),
+            rx(r"(?i)last\s+updated\s*:\s*(?P<val>.+)$"),
         ]
     },
     "expiration_date": {
@@ -124,6 +126,8 @@ BASE_FIELD_DEFINITIONS: dict[str, FieldDefinition] = {
             rx(r"(?i)^expire\s*:\s*(?P<val>.+)$"),
             rx(r"(?i)^registrar registration expiration date\s*:\s*(?P<val>.+)$"),
             rx(r"(?i)^expires\s*:\s*(?P<val>.+)$"),
+            rx(r"(?i)expires\s*:\s*(?P<val>.+)$"),
+            rx(r"(?i)^registrar expiration date:\s*(?P<val>.+)$"),
         ]
     },
     "status": {
@@ -144,6 +148,7 @@ BASE_FIELD_DEFINITIONS: dict[str, FieldDefinition] = {
             rx(r"(?i)^\s*(?P<val>[a-z0-9-]+(?:\.[a-z0-9-]+)+)\.\s+.*$"),
             rx(r"(?i)^\s*(?P<val>[a-z0-9-]+(?:\.[a-z0-9-]+)+)\s+\(.*\)$"),
             rx(r"(?i)^\s*(?P<val>[a-z0-9-]+(?:\.[a-z0-9-]+)+)\s+[0-9a-f:.]+(?:\s+.*)?$"),
+            rx(r"(?i)^\s*Hostname:\s*(?P<val>[a-z0-9-]+(?:\.[a-z0-9-]+)+)\s*$"),
         ],
         "mode": Mode.all,
         "unique": True,
@@ -165,6 +170,7 @@ BASE_FIELD_DEFINITIONS: dict[str, FieldDefinition] = {
             rx(r"(?i)^registrant organisation:\s*(?P<val>.+)$"),
             rx(r"(?i)^registrant contact organisation:\s*(?P<val>.+)$"),
             rx(r"(?i)^organization:\s*(?P<val>.+)$"),
+            rx(r"(?i)^org:\s*(?P<val>.+)$"),
         ]
     },
     "registrant_email": {
@@ -208,6 +214,7 @@ BASE_FIELD_DEFINITIONS: dict[str, FieldDefinition] = {
             rx(r"(?i)^admin organization:\s*(?P<val>.+)$"),
             rx(r"(?i)^administrative contact organisation:\s*(?P<val>.+)$"),
             rx(r"(?i)^administrative contact organization:\s*(?P<val>.+)$"),
+            rx(r"(?i)^org:\s*(?P<val>.+)$"),
         ]
     },
     "admin_email": {
@@ -248,6 +255,7 @@ BASE_FIELD_DEFINITIONS: dict[str, FieldDefinition] = {
             rx(r"(?i)^technical contact organisation:\s*(?P<val>.+)$"),
             rx(r"(?i)^tech contact organization:\s*(?P<val>.+)$"),
             rx(r"(?i)^technical contact organization:\s*(?P<val>.+)$"),
+            rx(r"(?i)^org:\s*(?P<val>.+)$"),
         ]
     },
     "tech_email": {
@@ -587,6 +595,63 @@ TLD_OVERRIDES: dict[str, dict[str, FieldOverride]] = {
             ]
         },
     },
+    "fi": {
+        "domain_name": {
+            "extend_patterns": [
+                rx(r"(?i)^domain\.+:\s*(?P<val>[a-z0-9._-]+)$"),
+            ]
+        },
+        "status": {
+            "extend_patterns": [
+                rx(r"(?i)^status\.+:\s*(?P<val>.+)$"),
+            ]
+        },
+        "creation_date": {
+            "extend_patterns": [
+                rx(r"(?i)^created\.+:\s*(?P<val>.+)$"),
+            ]
+        },
+        "expiration_date": {
+            "extend_patterns": [
+                rx(r"(?i)^expires\.+:\s*(?P<val>.+)$"),
+            ]
+        },
+        "updated_date": {
+            "extend_patterns": [
+                rx(r"(?i)^modified\.+:\s*(?P<val>.+)$"),
+            ]
+        },
+        "name_servers": {
+            "extend_patterns": [
+                rx(r"(?i)^nserver\.+:\s*(?P<val>[a-z0-9-]+(?:\.[a-z0-9-]+)+)"),
+            ]
+        },
+        "registrant_name": {
+            "extend_patterns": [
+                rx(r"(?ims)^Holder\s*(?:\n[^\S\r\n]*\S.*)*?\nname\.+:\s*(?P<val>[^\r\n]+)"),
+            ]
+        },
+        "registrant_organization": {
+            "extend_patterns": [
+                rx(r"(?ims)^Holder\s*(?:\n[^\S\r\n]*\S.*)*?\nname\.+:\s*(?P<val>[^\r\n]+)"),
+            ]
+        },
+        "registrar": {
+            "extend_patterns": [
+                rx(r"(?i)^registrar\.+:\s*(?P<val>.+)$"),
+            ]
+        },
+        "registrar_url": {
+            "extend_patterns": [
+                rx(r"(?i)^www\.+:\s*(?P<val>\S+)$"),
+            ]
+        },
+        "dnssec": {
+            "extend_patterns": [
+                rx(r"(?i)^dnssec\.+:\s*(?P<val>.+)$"),
+            ]
+        },
+    },
     "pl": {
         "registrar": {
             "extend_patterns": [
@@ -657,6 +722,216 @@ TLD_OVERRIDES: dict[str, dict[str, FieldOverride]] = {
             "extend_patterns": [
                 rx(r"(?i)^\s*registrant\s*:\s*(?P<val>.+)$"),
                 rx(r"(?im)^registrant:\s*$\n^(?P<val>.+)$"),
+            ]
+        },
+    },
+    "edu": {
+        "registrant_organization": {
+            "extend_patterns": [
+                rx(r"(?ims)^Registrant:\s*\n\s*(?P<val>[^\n]+)"),
+            ]
+        },
+        "admin_name": {
+            "extend_patterns": [
+                rx(r"(?ims)^Administrative Contact:\s*\n\s*(?P<val>[^\n]+)"),
+            ]
+        },
+        "admin_organization": {
+            "extend_patterns": [
+                rx(r"(?ims)^Administrative Contact:\s*\n\s*[^\n]+\n\s*(?P<val>[^\n]+)"),
+            ]
+        },
+        "admin_telephone": {
+            "extend_patterns": [
+                rx(r"(?ims)^Administrative Contact:\s*(?:\n\s*[^\n]+)*?\n\s*(?P<val>\+?\d[\d().\-\s]*\d)"),
+            ]
+        },
+        "admin_email": {
+            "extend_patterns": [
+                rx(
+                    r"(?ims)^Administrative Contact:\s*(?:\n\s*[^\n]+)*?\n\s*(?P<val>[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,})"
+                ),
+            ]
+        },
+        "tech_name": {
+            "extend_patterns": [
+                rx(r"(?ims)^Technical Contact:\s*\n\s*(?P<val>[^\n]+)"),
+            ]
+        },
+        "tech_organization": {
+            "extend_patterns": [
+                rx(r"(?ims)^Technical Contact:\s*\n\s*[^\n]+\n\s*(?P<val>[^\n]+)"),
+            ]
+        },
+        "tech_telephone": {
+            "extend_patterns": [
+                rx(r"(?ims)^Technical Contact:\s*(?:\n\s*[^\n]+)*?\n\s*(?P<val>\+?\d[\d().\-\s]*\d)"),
+            ]
+        },
+        "tech_email": {
+            "extend_patterns": [
+                rx(r"(?ims)^Technical Contact:\s*(?:\n\s*[^\n]+)*?\n\s*(?P<val>[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,})"),
+            ]
+        },
+    },
+    "ve": {
+        "registrant_organization": {
+            "extend_patterns": [
+                rx(r"(?ims)^contact:\s*[^\r\n]+(?:\r?\n)(?:.*?(?:\r?\n))*?^\s*org:\s*(?P<val>[^\r\n]+)"),
+            ]
+        },
+        "admin_organization": {
+            "extend_patterns": [
+                rx(
+                    r"(?ims)^contact:\s*[^\r\n]+(?:\r?\n)(?:.*?(?:\r?\n))*?(?:\r?\n)\s*(?:\r?\n)^contact:\s*[^\r\n]+(?:\r?\n)(?:.*?(?:\r?\n))*?^\s*org:\s*(?P<val>[^\r\n]+)"
+                ),
+            ]
+        },
+        "tech_organization": {
+            "extend_patterns": [
+                rx(
+                    r"(?ims)^contact:\s*[^\r\n]+(?:\r?\n)(?:.*?(?:\r?\n))*?(?:\r?\n)\s*(?:\r?\n)^contact:\s*[^\r\n]+(?:\r?\n)(?:.*?(?:\r?\n))*?(?:\r?\n)\s*(?:\r?\n)^contact:\s*[^\r\n]+(?:\r?\n)(?:.*?(?:\r?\n))*?^\s*org:\s*(?P<val>[^\r\n]+)"
+                ),
+                rx(
+                    r"(?ims)^contact:\s*[^\r\n]+(?:\r?\n)(?:.*?(?:\r?\n))*?(?:\r?\n)\s*(?:\r?\n)^contact:\s*[^\r\n]+(?:\r?\n)(?:.*?(?:\r?\n))*?^\s*org:\s*(?P<val>[^\r\n]+)"
+                ),
+            ]
+        },
+    },
+    "cz": {
+        "status": {
+            "patterns": [
+                rx(r"(?i)^status:\s*(?P<val>.+)$"),
+            ],
+            "mode": Mode.all,
+            "unique": True,
+            "return_shape": ReturnShape.list_,
+        }
+    },
+    "gg": {
+        "status": {
+            "patterns": [
+                rx(r"(?i)^(?P<val>Active|Transfer Prohibited by Registrar)\s*$"),
+            ],
+            "mode": Mode.all,
+            "unique": True,
+            "return_shape": ReturnShape.list_,
+        },
+        "registrar": {
+            "patterns": [
+                rx(r"(?im)^\s*Registrar:\s*(?P<val>.+?)(?:\s*\([^)]*\))?\s*$"),
+            ]
+        },
+        "registrant_name": {
+            "patterns": [
+                rx(r"(?im)^\s*Registrant:\s*(?P<val>.+?)\s*$"),
+            ]
+        },
+        "name_servers": {
+            "patterns": [rx(r"(?i)^(?P<val>[a-z0-9-]+(?:\.[a-z0-9-]+){3,})\.?$")],
+            "mode": Mode.all,
+            "unique": True,
+            "return_shape": ReturnShape.list_,
+        },
+    },
+    "hk": {
+        "domain_name": {
+            "patterns": [
+                sw("Domain Name:"),
+                rx(
+                    r"(?im)^\s*Domain\s+Name:\s*(?P<val>[A-Z0-9.-]+\.(?:HK|COM\.HK|NET\.HK|ORG\.HK|EDU\.HK|GOV\.HK|IDV\.HK))\s*$"
+                ),
+            ]
+        },
+        "registrar": {
+            "patterns": [
+                rx(r"(?im)^\s*Registrar Name:\s*(?P<val>.+?)\s*$"),
+            ]
+        },
+        "dnssec": {
+            "patterns": [
+                rx(r"(?im)^\s*DNSSEC:\s*(?P<val>.+?)\s*$"),
+            ]
+        },
+        "expiration_date": {
+            "patterns": [
+                rx(r"(?im)^\s*Expiry Date:\s*(?P<val>\d{2}-\d{2}-\d{4})\s*$"),
+            ]
+        },
+        "creation_date": {
+            "patterns": [
+                rx(r"(?im)^\s*Domain Name Commencement Date:\s*(?P<val>\d{2}-\d{2}-\d{4})\s*$"),
+            ]
+        },
+        "status": {
+            "patterns": [
+                rx(r"(?im)^\s*Domain Status:\s*(?P<val>[^.\r\n-][^\r\n]*)\s*$"),
+            ],
+            "mode": Mode.all,
+            "unique": True,
+            "return_shape": ReturnShape.list_,
+        },
+        "name_servers": {
+            "patterns": [
+                rx(r"(?im)^\s*(?P<val>[A-Z0-9-]+(?:\.[A-Z0-9-]+){2,})\s*$"),
+            ],
+            "mode": Mode.all,
+            "unique": True,
+            "return_shape": ReturnShape.list_,
+        },
+        "registrant_name": {
+            "patterns": [
+                rx(r"(?im)^\s*Company English Name.*?:\s*(?P<val>.+?)\s*$"),
+            ]
+        },
+        "registrant_organization": {
+            "patterns": [
+                rx(r"(?im)^\s*Company English Name.*?:\s*(?P<val>.+?)\s*$"),
+            ]
+        },
+        "registrant_email": {
+            "patterns": [
+                rx(r"(?im)^\s*Email:\s*(?P<val>\S+@\S+)\s*$"),
+            ]
+        },
+        "admin_name": {
+            "patterns": [
+                rx(r"(?im)^\s*Given name:\s*(?P<val>.+?)\s*$"),
+            ]
+        },
+        "admin_organization": {
+            "patterns": [
+                rx(r"(?im)^\s*Company name:\s*(?P<val>.+?)\s*$"),
+            ]
+        },
+        "admin_email": {
+            "patterns": [
+                rx(r"(?im)^\s*Email:\s*(?P<val>\S+@\S+)\s*$"),
+            ]
+        },
+        "admin_telephone": {
+            "patterns": [
+                rx(r"(?im)^\s*Phone:\s*(?P<val>.+?)\s*$"),
+            ]
+        },
+        "tech_name": {
+            "patterns": [
+                rx(r"(?im)^\s*Given name:\s*(?P<val>.+?)\s*$"),
+            ]
+        },
+        "tech_organization": {
+            "patterns": [
+                rx(r"(?im)^\s*Company name:\s*(?P<val>.+?)\s*$"),
+            ]
+        },
+        "tech_email": {
+            "patterns": [
+                rx(r"(?im)^\s*Email:\s*(?P<val>\S+@\S+)\s*$"),
+            ]
+        },
+        "tech_telephone": {
+            "patterns": [
+                rx(r"(?im)^\s*Phone:\s*(?P<val>.+?)\s*$"),
             ]
         },
     },

@@ -1,0 +1,176 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.nic.abogado
+
+domain:       ABOGADO
+
+organisation: Registry Services, LLC
+address:      100 S. Mill Ave, Suite 1600
+address:      Tempe AZ 85281
+address:      United States of America (the)
+
+contact:      administrative
+name:         IANA Contact
+organisation: GoDaddy Registry
+address:      100 S. Mill Ave, Suite 1600
+address:      Tempe AZ 85281
+address:      United States of America (the)
+phone:        +1 480-505-8800
+fax-no:       +1 480-624-2546
+e-mail:       iana@registry.godaddy
+
+contact:      technical
+name:         IANA Contact
+organisation: GoDaddy Registry
+address:      100 S. Mill Ave, Suite 1600
+address:      Tempe AZ 85281
+address:      United States of America (the)
+phone:        +1 480-505-8800
+fax-no:       +1 480-624-2546
+e-mail:       iana@registry.godaddy
+
+nserver:      A.NIC.ABOGADO 2001:dcd:1:0:0:0:0:10 37.209.192.10
+nserver:      B.NIC.ABOGADO 2001:dcd:2:0:0:0:0:10 37.209.194.10
+nserver:      C.NIC.ABOGADO 2001:dcd:3:0:0:0:0:10 37.209.196.10
+nserver:      X.NIC.ABOGADO 156.154.172.82 2610:a1:1074:0:0:0:1:82
+nserver:      Y.NIC.ABOGADO 156.154.173.82 2610:a1:1075:0:0:0:1:82
+nserver:      Z.NIC.ABOGADO 156.154.174.82 2610:a1:1076:0:0:0:1:82
+ds-rdata:     37480 8 2 5589c84ddbf5b50db5c8a9d5cea939409c24ce6369f7013f683a0bca912ac8f3
+
+whois:        whois.nic.abogado
+
+status:       ACTIVE
+remarks:      Registration information: http://nic.abogado/
+
+created:      2014-07-10
+changed:      2024-04-16
+source:       IANA
+
+# whois.nic.abogado
+
+Domain Name: jaskot.abogado
+Registry Domain ID: REDACTED FOR PRIVACY
+Registrar WHOIS Server: whois.101domain.com
+Registrar URL: www.101domain.com
+Updated Date: 2025-10-15T13:48:12Z
+Creation Date: 2018-03-08T00:23:29Z
+Registry Expiry Date: 2026-03-08T00:23:29Z
+Registrar: 101domain GRS Limited
+Registrar IANA ID: 1011
+Registrar Abuse Contact Email: abuse@101domain.com
+Registrar Abuse Contact Phone: +1.8582954626
+Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+Registry Registrant ID: REDACTED FOR PRIVACY
+Registrant Name: REDACTED FOR PRIVACY
+Registrant Organization:
+Registrant Street: REDACTED FOR PRIVACY
+Registrant Street: REDACTED FOR PRIVACY
+Registrant Street: REDACTED FOR PRIVACY
+Registrant City: REDACTED FOR PRIVACY
+Registrant State/Province: MD
+Registrant Postal Code: REDACTED FOR PRIVACY
+Registrant Country: US
+Registrant Phone: REDACTED FOR PRIVACY
+Registrant Phone Ext: REDACTED FOR PRIVACY
+Registrant Fax: REDACTED FOR PRIVACY
+Registrant Fax Ext: REDACTED FOR PRIVACY
+Registrant Email: Please query the RDDS service of the Registrar of Record identified in this output for information on how to contact the Registrant, Admin, or Tech contact of the queried domain name.
+Registry Admin ID:
+Admin Name:
+Admin Organization:
+Admin Street:
+Admin Street:
+Admin Street:
+Admin City:
+Admin State/Province:
+Admin Postal Code:
+Admin Country:
+Admin Phone:
+Admin Phone Ext:
+Admin Fax:
+Admin Fax Ext:
+Admin Email:
+Registry Tech ID: REDACTED FOR PRIVACY
+Tech Name: REDACTED FOR PRIVACY
+Tech Organization: REDACTED FOR PRIVACY
+Tech Street: REDACTED FOR PRIVACY
+Tech Street: REDACTED FOR PRIVACY
+Tech Street: REDACTED FOR PRIVACY
+Tech City: REDACTED FOR PRIVACY
+Tech State/Province: REDACTED FOR PRIVACY
+Tech Postal Code: REDACTED FOR PRIVACY
+Tech Country: REDACTED FOR PRIVACY
+Tech Phone: REDACTED FOR PRIVACY
+Tech Phone Ext: REDACTED FOR PRIVACY
+Tech Fax: REDACTED FOR PRIVACY
+Tech Fax Ext: REDACTED FOR PRIVACY
+Tech Email: Please query the RDDS service of the Registrar of Record identified in this output for information on how to contact the Registrant, Admin, or Tech contact of the queried domain name.
+Name Server: sterling.ns.cloudflare.com
+Name Server: susan.ns.cloudflare.com
+DNSSEC: unsigned
+URL of the ICANN Whois Inaccuracy Complaint Form: https://www.icann.org/wicf/
+>>> Last update of WHOIS database: 2025-12-25T17:39:32Z <<<
+
+# whois.101domain.com
+
+Domain Name: jaskot.abogado
+Registrar WHOIS Server: whois.101domain.com
+Registrar URL: https://www.101domain.com
+Registrar IANA ID: 1011
+Registrar Abuse Contact Email: abuse@101domain.com
+Registrar Abuse Contact Phone: +1.8582954626
+Creation Date: 2020-02-26T16:57:16+00:00
+Updated Date: 2025-01-08T00:06:55+00:00
+Registrar Expiration Date: 2026-03-08T00:23:29+00:00
+Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+Registrant Name: REDACTED FOR PRIVACY
+Registrant Organization: REDACTED FOR PRIVACY
+Registrant Street1: REDACTED FOR PRIVACY
+Registrant Street2: REDACTED FOR PRIVACY
+Registrant City: REDACTED FOR PRIVACY
+Registrant State: REDACTED FOR PRIVACY
+Registrant Postal Code: REDACTED FOR PRIVACY
+Registrant Country: REDACTED FOR PRIVACY
+Registrant Phone: REDACTED FOR PRIVACY
+Registrant Fax: REDACTED FOR PRIVACY
+Registrant Email: TO CONTACT REGISTRANT, COMPLETE THIS FORM: https://my.101domain.com/contact-registrant/JASKOT.ABOGADO.html
+Admin Name: REDACTED FOR PRIVACY
+Admin Organization: REDACTED FOR PRIVACY
+Admin Street1: REDACTED FOR PRIVACY
+Admin Street2: REDACTED FOR PRIVACY
+Admin City: REDACTED FOR PRIVACY
+Admin State: REDACTED FOR PRIVACY
+Admin Postal Code: REDACTED FOR PRIVACY
+Admin Country: REDACTED FOR PRIVACY
+Admin Phone: REDACTED FOR PRIVACY
+Admin Fax: REDACTED FOR PRIVACY
+Admin Email: TO CONTACT REGISTRANT, COMPLETE THIS FORM: https://my.101domain.com/contact-registrant/JASKOT.ABOGADO.html
+Tech Name: REDACTED FOR PRIVACY
+Tech Organization: REDACTED FOR PRIVACY
+Tech Street1: REDACTED FOR PRIVACY
+Tech Street2: REDACTED FOR PRIVACY
+Tech City: REDACTED FOR PRIVACY
+Tech State: REDACTED FOR PRIVACY
+Tech Postal Code: REDACTED FOR PRIVACY
+Tech Country: REDACTED FOR PRIVACY
+Tech Phone: REDACTED FOR PRIVACY
+Tech Fax: REDACTED FOR PRIVACY
+Tech Email: TO CONTACT REGISTRANT, COMPLETE THIS FORM: https://my.101domain.com/contact-registrant/JASKOT.ABOGADO.html
+Billing Name: REDACTED FOR PRIVACY
+Billing Organization: REDACTED FOR PRIVACY
+Billing Street1: REDACTED FOR PRIVACY
+Billing Street2: REDACTED FOR PRIVACY
+Billing City: REDACTED FOR PRIVACY
+Billing State: REDACTED FOR PRIVACY
+Billing Postal Code: REDACTED FOR PRIVACY
+Billing Country: REDACTED FOR PRIVACY
+Billing Phone: REDACTED FOR PRIVACY
+Billing Fax: REDACTED FOR PRIVACY
+Billing Email: TO CONTACT REGISTRANT, COMPLETE THIS FORM: https://my.101domain.com/contact-registrant/JASKOT.ABOGADO.html
+Name Server: STERLING.NS.CLOUDFLARE.COM
+Name Server: SUSAN.NS.CLOUDFLARE.COM
+URL of the ICANN WHOIS Data Problem Reporting System: http://wdprs.internic.net/
+>>> Last update of WHOIS database: 2025-12-25T17:39:32+00:00 <<<
+

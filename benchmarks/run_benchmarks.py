@@ -19,7 +19,7 @@ DEFAULT_OUTPUT = PROJECT_ROOT / "benchmarks" / "results.md"
 ITERATIONS_DEFAULT = 100
 DEFAULT_BENCHMARK_DOMAINS = ("google.com", "google.ai", "google.at", "google.com.br", "google.com.pe")
 
-from tests.sample_utils import SKIPPED_SAMPLES, WHOIS_ROOT  # noqa: E402
+from tests.common.sample_utils import SKIPPED_SAMPLES, WHOIS_ROOT  # noqa: E402
 
 ParseFunc = Callable[[str, str], object]
 

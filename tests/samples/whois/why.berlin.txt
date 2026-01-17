@@ -1,0 +1,192 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.nic.berlin
+
+domain:       BERLIN
+
+organisation: dotBERLIN GmbH & Co. KG
+address:      Gustav-Mueller-Strasse 1
+address:      Berlin 10829
+address:      Germany
+
+contact:      administrative
+name:         Chief Executive Officer
+organisation: dotBERLIN GmbH & Co. KG
+address:      Gustav-Mueller-Strasse 1
+address:      Berlin 10829
+address:      Germany
+phone:        +49 30 49782354
+fax-no:       +49 30 49782356
+e-mail:       registry@dot.berlin
+
+contact:      technical
+name:         Technical Operations
+organisation: TLD-BOX Registrydienstleistungen GmbH
+address:      Jakob-Haringer-Strasse 8/V
+address:      Salzburg 5020
+address:      Austria
+phone:        +43 662 234548 730
+fax-no:       +43 662 234548 29
+e-mail:       iana@tld-box.at
+
+nserver:      A.DNS.NIC.BERLIN 194.0.25.16 2001:678:20:0:0:0:0:16
+nserver:      M.DNS.NIC.BERLIN 194.0.26.5 2001:67c:10e0:0:0:0:0:5
+nserver:      N.DNS.NIC.BERLIN 194.0.24.5 2001:678:24:0:0:0:0:5
+ds-rdata:     47974 8 2 b1ddc962a9293cda1c2ae8f951c86a8f391248c50751ad61f642d46d0f644b41
+ds-rdata:     7669 8 2 169700d66838fc2a4fe16098924c9da5f3d167da2697461c144c50d47ed123b0
+
+whois:        whois.nic.berlin
+
+status:       ACTIVE
+remarks:      Registration information: http://nic.berlin/
+
+created:      2013-12-19
+changed:      2025-05-13
+source:       IANA
+
+# whois.nic.berlin
+
+Domain Name: why.berlin
+Registry Domain ID: D0000593785-BERLIN
+Registrar WHOIS Server: whois.psi-usa.info
+Registrar URL: http://www.psi-usa.info
+Updated Date: 2024-07-15T15:49:37Z
+Creation Date: 2024-07-15T05:31:05Z
+Registry Expiry Date: 2026-07-15T05:31:05Z
+Registrar: InterNetX GmbH
+Registrar IANA ID: 151
+Registrar Abuse Contact Email: domain-abuse@psi-usa.info
+Registrar Abuse Contact Phone: +49.94159559482
+Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+Name Server: ns.shc-service.com
+Name Server: ns.shc-service.eu
+Name Server: ns.shc-service.it
+Name Server: ns.shc-service.net
+DNSSEC: unsigned
+URL of the ICANN Whois Inaccuracy Complaint Form: https://www.icann.org/wicf/
+>>> Last update of Whois database: 2026-01-10T18:49:16Z <<<
+
+# whois.psi-usa.info
+
+Domain Name: why.berlin
+Registry Domain ID: D0000593785-BERLIN
+Registrar WHOIS Server: whois.registrar.internetx.com
+Registrar URL: https://registrar.internetx.com
+Updated Date: 2025-09-03T06:56:24Z
+Creation Date: 2024-07-15T05:31:05Z
+Registrar Registration Expiration Date: 2026-07-15T05:31:06Z
+Registrar: InterNetX GmbH
+Registrar IANA ID: 151
+Registrar Abuse Contact Email: domain-abuse@internetx.com
+Registrar Abuse Contact Phone: +49.94159559482
+Domain Status: clientTransferProhibited https://www.icann.org/epp#clientTransferProhibited
+Registry Registrant ID: REDACTED FOR PRIVACY
+Registrant Name: REDACTED FOR PRIVACY
+Registrant Organization: Berlin Partner für Wirtschaft und Technologie GmbH
+Registrant Street: REDACTED FOR PRIVACY
+Registrant City: REDACTED FOR PRIVACY
+Registrant State/Province: Berlin
+Registrant Postal Code: REDACTED FOR PRIVACY
+Registrant Country: DE
+Registrant Phone: REDACTED FOR PRIVACY
+Registrant Phone Ext: REDACTED FOR PRIVACY
+Registrant Fax: REDACTED FOR PRIVACY
+Registrant Fax Ext: REDACTED FOR PRIVACY
+Registrant Email: https://whoispro.domain-robot.org/whois/why.berlin 
+Registry Admin ID: REDACTED FOR PRIVACY
+Admin Name: REDACTED FOR PRIVACY
+Admin Organization: REDACTED FOR PRIVACY
+Admin Street: REDACTED FOR PRIVACY
+Admin City: REDACTED FOR PRIVACY
+Admin State/Province: REDACTED FOR PRIVACY
+Admin Postal Code: REDACTED FOR PRIVACY
+Admin Country: REDACTED FOR PRIVACY
+Admin Phone: REDACTED FOR PRIVACY
+Admin Phone Ext: REDACTED FOR PRIVACY
+Admin Fax: REDACTED FOR PRIVACY
+Admin Fax Ext: REDACTED FOR PRIVACY
+Admin Email: https://whoispro.domain-robot.org/whois/why.berlin
+Registry Tech ID: REDACTED FOR PRIVACY
+Tech Name: REDACTED FOR PRIVACY
+Tech Organization: REDACTED FOR PRIVACY
+Tech Street: REDACTED FOR PRIVACY
+Tech City: REDACTED FOR PRIVACY
+Tech State/Province: REDACTED FOR PRIVACY
+Tech Postal Code: REDACTED FOR PRIVACY
+Tech Country: REDACTED FOR PRIVACY
+Tech Phone: REDACTED FOR PRIVACY
+Tech Phone Ext: REDACTED FOR PRIVACY
+Tech Fax: REDACTED FOR PRIVACY
+Tech Fax Ext: REDACTED FOR PRIVACY
+Tech Email: https://whoispro.domain-robot.org/whois/why.berlin
+Name Server: ns.shc-service.eu
+Name Server: ns.shc-service.net
+Name Server: ns.shc-service.com
+Name Server: ns.shc-service.it
+DNSSEC: unsigned
+URL of the ICANN WHOIS Data Problem Reporting System: https://wdprs.internic.net/
+>>> Last update of WHOIS database: 2026-01-10T18:49:16Z <<<
+
+# whois.registrar.internetx.com
+
+Domain Name: why.berlin
+Registry Domain ID: D0000593785-BERLIN
+Registrar WHOIS Server: whois.registrar.internetx.com
+Registrar URL: https://registrar.internetx.com
+Updated Date: 2025-09-03T06:56:24Z
+Creation Date: 2024-07-15T05:31:05Z
+Registrar Registration Expiration Date: 2026-07-15T05:31:06Z
+Registrar: InterNetX GmbH
+Registrar IANA ID: 151
+Registrar Abuse Contact Email: domain-abuse@internetx.com
+Registrar Abuse Contact Phone: +49.94159559482
+Domain Status: clientTransferProhibited https://www.icann.org/epp#clientTransferProhibited
+Registry Registrant ID: REDACTED FOR PRIVACY
+Registrant Name: REDACTED FOR PRIVACY
+Registrant Organization: Berlin Partner für Wirtschaft und Technologie GmbH
+Registrant Street: REDACTED FOR PRIVACY
+Registrant City: REDACTED FOR PRIVACY
+Registrant State/Province: Berlin
+Registrant Postal Code: REDACTED FOR PRIVACY
+Registrant Country: DE
+Registrant Phone: REDACTED FOR PRIVACY
+Registrant Phone Ext: REDACTED FOR PRIVACY
+Registrant Fax: REDACTED FOR PRIVACY
+Registrant Fax Ext: REDACTED FOR PRIVACY
+Registrant Email: https://whoispro.domain-robot.org/whois/why.berlin 
+Registry Admin ID: REDACTED FOR PRIVACY
+Admin Name: REDACTED FOR PRIVACY
+Admin Organization: REDACTED FOR PRIVACY
+Admin Street: REDACTED FOR PRIVACY
+Admin City: REDACTED FOR PRIVACY
+Admin State/Province: REDACTED FOR PRIVACY
+Admin Postal Code: REDACTED FOR PRIVACY
+Admin Country: REDACTED FOR PRIVACY
+Admin Phone: REDACTED FOR PRIVACY
+Admin Phone Ext: REDACTED FOR PRIVACY
+Admin Fax: REDACTED FOR PRIVACY
+Admin Fax Ext: REDACTED FOR PRIVACY
+Admin Email: https://whoispro.domain-robot.org/whois/why.berlin
+Registry Tech ID: REDACTED FOR PRIVACY
+Tech Name: REDACTED FOR PRIVACY
+Tech Organization: REDACTED FOR PRIVACY
+Tech Street: REDACTED FOR PRIVACY
+Tech City: REDACTED FOR PRIVACY
+Tech State/Province: REDACTED FOR PRIVACY
+Tech Postal Code: REDACTED FOR PRIVACY
+Tech Country: REDACTED FOR PRIVACY
+Tech Phone: REDACTED FOR PRIVACY
+Tech Phone Ext: REDACTED FOR PRIVACY
+Tech Fax: REDACTED FOR PRIVACY
+Tech Fax Ext: REDACTED FOR PRIVACY
+Tech Email: https://whoispro.domain-robot.org/whois/why.berlin
+Name Server: ns.shc-service.eu
+Name Server: ns.shc-service.net
+Name Server: ns.shc-service.com
+Name Server: ns.shc-service.it
+DNSSEC: unsigned
+URL of the ICANN WHOIS Data Problem Reporting System: https://wdprs.internic.net/
+>>> Last update of WHOIS database: 2026-01-10T18:49:16Z <<<
+

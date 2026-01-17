@@ -1,0 +1,100 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.nic.ad
+
+domain:       AD
+
+organisation: Andorra Telecom
+address:      Carrer Mossèn Lluís Pujol, 8-14
+address:      Santa Coloma AD500
+address:      Andorra
+
+contact:      administrative
+name:         Enric Castellet Garcia
+organisation: Andorra Telecom
+address:      Carrer Mossèn Lluís Pujol, 8-14
+address:      Santa Coloma AD500
+address:      Andorra
+phone:        +376 875481
+fax-no:       +376 725001
+e-mail:       enric.castellet@andorratelecom.ad
+
+contact:      technical
+name:         Fabrici Rossell
+organisation: Andorra Telecom
+address:      Carrer Mossèn Lluís Pujol, 8-14
+address:      Santa Coloma AD500
+address:      Andorra
+phone:        +376 875481
+fax-no:       +376 725001
+e-mail:       fabrici.rossell@andorratelecom.ad
+
+nserver:      AD.NS.NIC.ES 194.69.254.15 2001:67c:21cc:2000:0:0:64:47
+nserver:      ANYCAST23.IRONDNS.NET 195.253.65.11 2a01:5b0:5:0:0:0:0:b
+nserver:      ANYCAST9.IRONDNS.NET 195.253.64.11 2a01:5b0:4:0:0:0:0:b
+nserver:      NS3.NIC.FR 192.134.0.49 2001:660:3006:1:0:0:1:1
+ds-rdata:     6062 8 2 3c07a798097f38d173d98194f436a2ed29443ecc1da0d9f8da8abfa29348d6ce
+
+whois:        whois.nic.ad
+
+status:       ACTIVE
+remarks:      Registration information: https://www.domini.ad
+
+created:      1996-01-09
+changed:      2025-11-10
+source:       IANA
+
+# whois.nic.ad
+
+Domain Name: sporting.ad
+Registry Domain ID: Dntyv38273-AD
+Registrar URL: https://www.spaceship.com/
+Updated Date: 2025-08-07T14:01:42.958Z
+Creation Date: 2025-07-12T05:59:34.684Z
+Registry Expiry Date: 2026-07-12T05:59:34.684Z
+Registrar: Spaceship, Inc.
+Registrar Abuse Contact Email: abuse@spaceship.com
+Registrar Abuse Contact Phone: +1.6027723958
+Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+Domain Status: serverTransferProhibited https://icann.org/epp#serverTransferProhibited
+Registry Registrant ID: 
+Registrant Name: 
+Registrant Organization: 
+Registrant Street: 
+Registrant City: 
+Registrant State/Province: CA
+Registrant Postal Code: 
+Registrant Country: US
+Registrant Phone: 
+Registrant Phone Ext: 
+Registrant Email: Please contact the Registrar of Record identified in this output for information on how to contact the Registrant, Admin, or Tech contact of the queried domain name.
+Registry Admin ID: 
+Admin Name: 
+Admin Organization: 
+Admin Street: 
+Admin City: 
+Admin State/Province: 
+Admin Postal Code: 
+Admin Country: 
+Admin Phone: 
+Admin Phone Ext: 
+Admin Email: Please contact the Registrar of Record identified in this output for information on how to contact the Registrant, Admin, or Tech contact of the queried domain name.
+Registry Tech ID: 
+Tech Name: 
+Tech Organization: 
+Tech Street: 
+Tech City: 
+Tech State/Province: 
+Tech Postal Code: 
+Tech Country: 
+Tech Phone: 
+Tech Phone Ext: 
+Tech Email: Please contact the Registrar of Record identified in this output for information on how to contact the Registrant, Admin, or Tech contact of the queried domain name.
+Name Server: launch1.spaceship.net
+Name Server: launch2.spaceship.net
+DNSSEC: unsigned
+IDN Tag:
+>>> Last update of Whois database: 2025-12-25T19:18:29.9Z <<<
+

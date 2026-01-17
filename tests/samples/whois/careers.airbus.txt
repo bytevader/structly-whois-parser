@@ -1,0 +1,69 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.nic.airbus
+
+domain:       AIRBUS
+
+organisation: Airbus S.A.S.
+address:      1 rond point Maurice Bellonte
+address:      Blagnac 31700
+address:      France
+
+contact:      administrative
+name:         Head of Web & Images
+organisation: Airbus S.A.S.
+address:      1 rond point Maurice Bellonte
+address:      Blagnac 31700
+address:      France
+phone:        +33 561933333
+fax-no:       +33 561935948
+e-mail:       ngtld-airbus@cscinfo.com
+
+contact:      technical
+name:         Howard Eland, Senior Director, DNS Infrastructure Group
+organisation: Identity Digital Inc.
+address:      10500 NE 8th Street, Suite 750
+address:      Bellevue WA 98004
+address:      United States of America (the)
+phone:        +1.425.298.2200
+fax-no:       +1.425.671.0020
+e-mail:       tldtech@identity.digital
+
+nserver:      V0N0.NIC.AIRBUS 2a01:8840:6a:0:0:0:0:10 65.22.108.10
+nserver:      V0N1.NIC.AIRBUS 2a01:8840:6b:0:0:0:0:10 65.22.109.10
+nserver:      V0N2.NIC.AIRBUS 2a01:8840:6c:0:0:0:0:10 65.22.110.10
+nserver:      V0N3.NIC.AIRBUS 161.232.32.10 2a01:8840:108:0:0:0:0:10
+nserver:      V2N0.NIC.AIRBUS 2a01:8840:6d:0:0:0:0:10 65.22.111.10
+nserver:      V2N1.NIC.AIRBUS 161.232.33.10 2a01:8840:109:0:0:0:0:10
+ds-rdata:     51547 8 2 982b16e3bae278ab7146e3bdedaf3bfc9c8c46d7db3485321019d10c7f5108ee
+
+whois:        whois.nic.airbus
+
+status:       ACTIVE
+remarks:      Registration information: 
+
+created:      2016-05-26
+changed:      2024-11-15
+source:       IANA
+
+# whois.nic.airbus
+
+Domain Name: careers.airbus
+Registry Domain ID: 4aa73cc8e81642ec95abcfdb06cf4d44-DONUTS
+Registrar WHOIS Server: www.whois.corporatedomains.com
+Registrar URL: http://www.cscglobal.com
+Updated Date: 2025-10-30T05:08:39Z
+Creation Date: 2024-10-29T10:39:44Z
+Registry Expiry Date: 2026-10-29T10:39:44Z
+Registrar: CSC Corporate Domains, Inc.
+Registrar IANA ID: 299
+Registrar Abuse Contact Email: domainabuse@cscglobal.com
+Registrar Abuse Contact Phone: +1.3026365400
+Domain Status: ok https://icann.org/epp#ok
+Name Server: udns2.cscdns.uk
+Name Server: udns1.cscdns.net
+DNSSEC: unsigned
+URL of the ICANN Whois Inaccuracy Complaint Form: https://icann.org/wicf/
+>>> Last update of WHOIS database: 2026-01-02T13:57:37Z <<<

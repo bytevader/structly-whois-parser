@@ -46,16 +46,16 @@ Python 3.9+ is supported. Wheels ship `py.typed` markers for static analyzers.
 from structly_whois import WhoisParser
 
 parser = WhoisParser()
-payload = """\
-Domain Name: example.com
-Registrar: Example Registrar LLC
-Creation Date: 2020-01-01T12:00:00Z
-Registry Expiry Date: 2030-01-01T12:00:00Z
-Name Server: NS1.EXAMPLE.COM
-Name Server: NS2.EXAMPLE.COM
-Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
-Registrant Name: Example DNS
-"""
+payload = """
+          Domain Name: example.com
+          Registrar: Example Registrar LLC
+          Creation Date: 2020-01-01T12:00:00Z
+          Registry Expiry Date: 2030-01-01T12:00:00Z
+          Name Server: NS1.EXAMPLE.COM
+          Name Server: NS2.EXAMPLE.COM
+          Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+          Registrant Name: Example DNS
+          """
 
 record = parser.parse_record(payload, domain="example.com")
 print(record.domain)

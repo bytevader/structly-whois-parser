@@ -1,0 +1,65 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.nic.hamburg
+
+domain:       HAMBURG
+
+organisation: Hamburg Top-Level-Domain GmbH
+address:      Neuer Wall 10
+address:      Hamburg 20354
+address:      Germany
+
+contact:      administrative
+name:         Dirk Krischenowski
+organisation: Hamburg Top-Level-Domain GmbH
+address:      Neuer Wall 10
+address:      Hamburg 20354
+address:      Germany
+phone:        +49 40 6506 2020
+e-mail:       registry@nic.hamburg
+
+contact:      technical
+name:         Alexander Mayrhofer
+organisation: TLD-BOX Registrydienstleistungen GmbH
+address:      Jakob-Haringer-Strasse 8
+address:      Salzburg 5020
+address:      Austria
+phone:        +43 662 2345 48730
+fax-no:       +43 662 2345 4829
+e-mail:       iana@tld-box.at
+
+nserver:      A.DNS.NIC.HAMBURG 194.0.25.21 2001:678:20:0:0:0:0:21
+nserver:      M.DNS.NIC.HAMBURG 194.0.26.10 2001:67c:10e0:0:0:0:0:10
+nserver:      N.DNS.NIC.HAMBURG 194.0.24.10 2001:678:24:0:0:0:0:10
+ds-rdata:     12136 8 2 8bdc8642f1c0275904aea61c126d9d5a5db25881a564348af218eb4165bef7c5
+ds-rdata:     31894 8 2 0c985a6cbba65067171ebe40e4062058ef01bdd53a2d3321a0c52031755b1bbb
+
+whois:        whois.nic.hamburg
+
+status:       ACTIVE
+remarks:      Registration information: http://www.nic.hamburg
+
+created:      2014-05-22
+changed:      2025-05-13
+source:       IANA
+
+# whois.nic.hamburg
+
+Domain Name: sciencecity.hamburg
+Registry Domain ID: D0000158533-HAMBURG
+Registrar URL: http://www.vautron.de
+Creation Date: 2019-07-17T11:30:49Z
+Registry Expiry Date: 2026-07-17T11:30:49Z
+Registrar: Vautron Rechenzentrum AG
+Registrar IANA ID: 1443
+Registrar Abuse Contact Email: abuse@vautron.de
+Registrar Abuse Contact Phone: +49.9415990620
+Domain Status: ok https://icann.org/epp#ok
+Name Server: ns1.ns-serve.net
+Name Server: ns2.ns-serve.net
+DNSSEC: unsigned
+URL of the ICANN Whois Inaccuracy Complaint Form: https://www.icann.org/wicf/
+>>> Last update of Whois database: 2026-01-16T19:36:51Z <<<
+
