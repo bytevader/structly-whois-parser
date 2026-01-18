@@ -1,0 +1,157 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.nic.saarland
+
+domain:       SAARLAND
+
+organisation: dotSaarland GmbH
+address:      Im Oberen Werk 1
+address:      St. Ingbert 66386
+address:      Germany
+
+contact:      administrative
+name:         Registry Service
+organisation: dotSaarland GmbH
+address:      Im Oberen Werk 1
+address:      St. Ingbert 66386
+address:      Germany
+phone:        +49 6894 9396 250
+fax-no:       +49 6894 93 96 251
+e-mail:       info@nic.saarland
+
+contact:      technical
+name:         CTO
+organisation: CentralNic
+address:      Saddlers House, 4th Floor
+address:      44 Gutter Lane
+address:      London EC2V 6BR
+address:      United Kingdom of Great Britain and Northern Ireland (the)
+phone:        +44 20 33 88 0600
+fax-no:       +44 20 33 88 0601
+e-mail:       tld.ops@centralnic.com
+
+nserver:      A.NIC.SAARLAND 194.169.218.97 2001:67c:13cc:0:0:0:1:97
+nserver:      B.NIC.SAARLAND 185.24.64.97 2a04:2b00:13cc:0:0:0:1:97
+nserver:      C.NIC.SAARLAND 212.18.248.97 2a04:2b00:13ee:0:0:0:0:97
+nserver:      D.NIC.SAARLAND 212.18.249.97 2a04:2b00:13ff:0:0:0:0:97
+ds-rdata:     46559 8 2 ad4f2ac407e370565df690b65cc4db568a2f4396403fab61d2dcf21cf7d2d823
+ds-rdata:     48752 8 2 4ca46968a784b92804d8b08d61ffa40a44c037863c90d8318faa32dd7d6f6a24
+
+whois:        whois.nic.saarland
+
+status:       ACTIVE
+remarks:      Registration information: http://www.nic-saarland.de
+
+created:      2014-03-20
+changed:      2023-09-08
+source:       IANA
+
+# whois.nic.saarland
+
+Domain Name: GERMANYS.SAARLAND
+Registry Domain ID: D94095768-CNIC
+Registrar WHOIS Server: whois.rrpproxy.net
+Registrar URL: http://www.key-systems.net
+Updated Date: 2025-11-25T14:00:36.0Z
+Creation Date: 2017-08-31T15:25:03.0Z
+Registry Expiry Date: 2026-08-31T23:59:59.0Z
+Registrar: Key-Systems LLC
+Registrar IANA ID: 1345
+Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+Registrant Organization: SHS Strukturholding Saar GmbH
+Registrant State/Province: Saarland
+Registrant Country: DE
+Registrant Email: Please query the RDDS service of the Registrar of Record identified in this output for information on how to contact the Registrant, Admin, or Tech contact of the queried domain name.
+Tech Email: Please query the RDDS service of the Registrar of Record identified in this output for information on how to contact the Registrant, Admin, or Tech contact of the queried domain name.
+Name Server: NS02.14V.DE
+Name Server: NS01.14V.DE
+Name Server: NS03.14V.DE
+DNSSEC: unsigned
+Registrar Abuse Contact Email: abuse@key-systems.net
+Registrar Abuse Contact Phone: +49.68949396850
+URL of the ICANN Whois Inaccuracy Complaint Form: https://www.icann.org/wicf/
+>>> Last update of WHOIS database: 2026-01-17T20:34:39.0Z <<<
+
+# whois.rrpproxy.net
+
+Domain Name: germanys.saarland
+Registry Domain ID: D94095768-CNIC
+Registrar WHOIS Server: whois.rrpproxy.net
+Registrar URL: http://www.one4vision.de
+Updated Date: 2025-11-20T22:37:26Z
+Creation Date: 2017-08-31T15:25:03Z
+Registrar Registration Expiration Date: 2026-08-31T23:59:59Z
+Registrar: Key-Systems GmbH
+Registrar IANA ID: 269
+Registrar Abuse Contact Email: abusereport@key-systems.net
+Registrar Abuse Contact Phone: +49.68949396850
+Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+Registry Registrant ID: REDACTED FOR PRIVACY
+Registrant Name: REDACTED FOR PRIVACY  
+Registrant Organization: REDACTED FOR PRIVACY
+Registrant Street: REDACTED FOR PRIVACY
+Registrant Street: REDACTED FOR PRIVACY
+Registrant Street: REDACTED FOR PRIVACY
+Registrant City: REDACTED FOR PRIVACY
+Registrant State/Province: Saarland
+Registrant Postal Code: REDACTED FOR PRIVACY
+Registrant Country: DE
+Registrant Phone: REDACTED FOR PRIVACY
+Registrant Phone Ext: REDACTED FOR PRIVACY
+Registrant Fax: REDACTED FOR PRIVACY
+Registrant Fax Ext: REDACTED FOR PRIVACY
+Registrant Email: info@domain-contact.org
+Registry Admin ID: REDACTED FOR PRIVACY
+Admin Name: REDACTED FOR PRIVACY  
+Admin Organization: REDACTED FOR PRIVACY
+Admin Street: REDACTED FOR PRIVACY
+Admin Street: REDACTED FOR PRIVACY
+Admin Street: REDACTED FOR PRIVACY
+Admin City: REDACTED FOR PRIVACY
+Admin State/Province: REDACTED FOR PRIVACY
+Admin Postal Code: REDACTED FOR PRIVACY
+Admin Country: REDACTED FOR PRIVACY
+Admin Phone: REDACTED FOR PRIVACY
+Admin Phone Ext: REDACTED FOR PRIVACY
+Admin Fax: REDACTED FOR PRIVACY
+Admin Fax Ext: REDACTED FOR PRIVACY
+Admin Email: info@domain-contact.org
+Registry Tech ID: REDACTED FOR PRIVACY
+Tech Name: REDACTED FOR PRIVACY  
+Tech Organization: REDACTED FOR PRIVACY
+Tech Street: REDACTED FOR PRIVACY
+Tech Street: REDACTED FOR PRIVACY
+Tech Street: REDACTED FOR PRIVACY
+Tech City: REDACTED FOR PRIVACY
+Tech State/Province: REDACTED FOR PRIVACY
+Tech Postal Code: REDACTED FOR PRIVACY
+Tech Country: REDACTED FOR PRIVACY
+Tech Phone: REDACTED FOR PRIVACY
+Tech Phone Ext: REDACTED FOR PRIVACY
+Tech Fax: REDACTED FOR PRIVACY
+Tech Fax Ext: REDACTED FOR PRIVACY
+Tech Email: info@domain-contact.org
+Registry Billing ID: REDACTED FOR PRIVACY
+Billing Name: REDACTED FOR PRIVACY  
+Billing Organization: REDACTED FOR PRIVACY
+Billing Street: REDACTED FOR PRIVACY
+Billing Street: REDACTED FOR PRIVACY
+Billing Street: REDACTED FOR PRIVACY
+Billing City: REDACTED FOR PRIVACY
+Billing State/Province: REDACTED FOR PRIVACY
+Billing Postal Code: REDACTED FOR PRIVACY
+Billing Country: REDACTED FOR PRIVACY
+Billing Phone: REDACTED FOR PRIVACY
+Billing Phone Ext: REDACTED FOR PRIVACY
+Billing Fax: REDACTED FOR PRIVACY
+Billing Fax Ext: REDACTED FOR PRIVACY
+Billing Email: info@domain-contact.org
+Name Server: ns01.14v.de 
+Name Server: ns02.14v.de 
+Name Server: ns03.14v.de 
+DNSSEC: unsigned
+URL of the ICANN WHOIS Data Problem Reporting System: https://wdprs.internic.net/
+>>> Last update of WHOIS database: 2026-01-17T20:34:40Z <<<
+

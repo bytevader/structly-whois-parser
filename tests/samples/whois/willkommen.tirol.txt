@@ -1,0 +1,121 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.nic.tirol
+
+domain:       TIROL
+
+organisation: punkt Tirol GmbH
+address:      Brunecker Strasse 3
+address:      Innsbruck 6020
+address:      Austria
+
+contact:      administrative
+name:         Markus Kichl
+organisation: punkt Tirol GmbH
+address:      Brunecker Strasse 3
+address:      Innsbruck 6020
+address:      Austria
+phone:        +435125354-3886
+fax-no:       +43 512 5354-993886
+e-mail:       markus.kichl@nic.tirol
+
+contact:      technical
+name:         Technical Operations
+organisation: RyCE GmbH
+address:      Matznergasse 17
+address:      Vienna 1140
+address:      Austria
+phone:        +431981160
+fax-no:       +43198116111
+e-mail:       tech@dns.business
+
+nserver:      DNS.RYCE-RSP.COM 194.0.11.114 2001:678:e:114:0:0:0:53
+nserver:      NS1.DNS.BUSINESS 157.90.205.138 2a01:4f8:252:4295:0:0:9d5a:cd8a
+nserver:      NS1.RYCE-RSP.COM 193.56.204.111 2a0c:8f40:0:701:0:0:0:111
+ds-rdata:     52354 8 2 c69a3d977e6dfbeb38ea5627c10cfbd818c97a111ef0c24d1c6e21b9484846fb
+
+whois:        whois.nic.tirol
+
+status:       ACTIVE
+remarks:      Registration information: http://www.nic.tirol
+
+created:      2014-05-29
+changed:      2025-09-01
+source:       IANA
+
+# whois.nic.tirol
+
+Domain Name: willkommen.tirol
+Registry Domain ID: 1m0y_DOMAIN-TIROL
+Registrar WHOIS Server: None
+Registrar URL: http://www.key-systems.net
+Updated Date: 2025-11-26T12:18:42Z
+Creation Date: 2020-10-08T14:17:37Z
+Registry Expiry Date: 2026-10-08T14:17:37Z
+Registrar Registration Expiration Date: 2026-10-08T14:17:37Z
+Registrar: Key-Systems LLC
+Registrar IANA ID: 1345
+Registrar Abuse Contact Email: abuse@key-systems.net
+Registrar Abuse Contact Phone: +49.68949396850
+Reseller: 
+Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+Registry Registrant ID: REDACTED
+Registrant Name: REDACTED
+Registrant Organization: Lebensraum Tirol Holding GmbH
+Registrant Street: REDACTED
+Registrant City: REDACTED
+Registrant State/Province: REDACTED
+Registrant Postal Code: REDACTED
+Registrant Country: AT
+Registrant Phone: REDACTED
+Registrant Phone Ext: REDACTED
+Registrant Fax: REDACTED
+Registrant Fax Ext: REDACTED
+Registrant Email: Please query the RDDS service of the Registrar of Record identified in this output for information on how to contact the Registrant, Admin or Tech contacts of the domain name.
+Registry Admin ID: REDACTED
+Admin Name: REDACTED
+Admin Organization: REDACTED
+Admin Street: REDACTED
+Admin City: REDACTED
+Admin State/Province: REDACTED
+Admin Postal Code: REDACTED
+Admin Country: REDACTED
+Admin Phone: REDACTED
+Admin Phone Ext: REDACTED
+Admin Fax: REDACTED
+Admin Fax Ext: REDACTED
+Admin Email: Please query the RDDS service of the Registrar of Record identified in this output for information on how to contact the Registrant, Admin or Tech contacts of the domain name.
+Registry Tech ID: REDACTED
+Tech Name: REDACTED
+Tech Organization: REDACTED
+Tech Street: REDACTED
+Tech City: REDACTED
+Tech State/Province: REDACTED
+Tech Postal Code: REDACTED
+Tech Country: REDACTED
+Tech Phone: REDACTED
+Tech Phone Ext: REDACTED
+Tech Fax: REDACTED
+Tech Fax Ext: REDACTED
+Tech Email: Please query the RDDS service of the Registrar of Record identified in this output for information on how to contact the Registrant, Admin or Tech contacts of the domain name.
+Registry Billing ID: REDACTED
+Billing Name: REDACTED
+Billing Organization: REDACTED
+Billing Street: REDACTED
+Billing City: REDACTED
+Billing State/Province: REDACTED
+Billing Postal Code: REDACTED
+Billing Country: REDACTED
+Billing Phone: REDACTED
+Billing Phone Ext: REDACTED
+Billing Fax: REDACTED
+Billing Fax Ext: REDACTED
+Billing Email: Please query the RDDS service of the Registrar of Record identified in this output for information on how to contact the Registrant, Admin or Tech contacts of the domain name.
+Name Server: ispconfig3.ikbnet.at
+Name Server: ns4.ikbnet.at
+Name Server: ns5.ikbnet.at
+DNSSEC: unsigned
+URL of the ICANN Whois Inaccuracy Complaint Form: https://www.icann.org/wicf/
+>>> Last update of WHOIS database: 2026-01-18T12:18:55Z <<<

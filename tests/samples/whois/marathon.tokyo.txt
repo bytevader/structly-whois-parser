@@ -1,0 +1,77 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.nic.tokyo
+
+domain:       TOKYO
+
+organisation: GMO Registry, Inc.
+address:      26-1 Sakuragaoka-cho
+address:      Shibuya-ku Tokyo
+address:      Japan
+
+contact:      administrative
+name:         Representative Director and CEO
+organisation: GMO Registry, Inc.
+address:      Cerulean Tower
+address:      26-1 Sakuragaoka-cho
+address:      Shibuya-ku Tokyo 150-8512
+address:      Japan
+phone:        +81 354561601
+fax-no:       +81 337805239
+e-mail:       newgtld@gmoregistry.com
+
+contact:      technical
+name:         Director
+organisation: GMO Registry, Inc.
+address:      Cerulean Tower
+address:      26-1 Sakuragaoka-cho
+address:      Shibuya-ku Tokyo 150-8512
+address:      Japan
+phone:        +81 354561601
+fax-no:       +81 337805239
+e-mail:       newgtld@gmoregistry.com
+
+nserver:      A.GMOREGISTRY.NET 2001:dcd:1:0:0:0:0:4 37.209.192.4
+nserver:      B.GMOREGISTRY.NET 2001:dcd:2:0:0:0:0:4 37.209.194.4
+nserver:      K.GMOREGISTRY.NET 37.209.196.4
+nserver:      L.GMOREGISTRY.NET 2001:dcd:4:0:0:0:0:4 37.209.198.4
+ds-rdata:     34775 8 2 009538d854dc2b09a147c657b496a8cd5151bc2fbadd83cf0c322f625fa5a7ce
+
+whois:        whois.nic.tokyo
+
+status:       ACTIVE
+remarks:      Registration information:
+remarks:      http://www.gmo-registry.com/en/
+
+created:      2014-01-16
+changed:      2019-08-20
+source:       IANA
+
+# whois.nic.tokyo
+
+Domain Name: MARATHON.TOKYO
+Registry Domain ID: DO92110-GMO
+Registrar WHOIS Server:
+Registrar URL: http://www.onamae.com/
+Updated Date: 2025-12-22T07:05:25.0Z
+Creation Date: 2014-06-06T12:53:00.0Z
+Registry Expiry Date: 2026-06-06T23:59:59.0Z
+Registrar: GMO Internet Group, Inc.
+Registrar IANA ID: 49
+Registrar Abuse Contact Email: abuse@internet.gmo
+Registrar Abuse Contact Phone: +81.337709199
+Domain Status: ok https://icann.org/epp#ok
+Registrant State/Province:
+Registrant Country:
+Registrant Email:
+Admin Email:
+Tech Email:
+Name Server: NS-962.AWSDNS-56.NET
+Name Server: NS-1889.AWSDNS-44.CO.UK
+Name Server: NS-489.AWSDNS-61.COM
+Name Server: NS-1499.AWSDNS-59.ORG
+DNSSEC: unsigned
+URL of the ICANN Whois Inaccuracy Complaint Form: https://www.icann.org/wicf/
+>>> Last update of WHOIS database: 2026-01-18T12:20:34.0Z <<<

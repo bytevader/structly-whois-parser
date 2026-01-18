@@ -1,0 +1,84 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.thnic.co.th
+
+domain:       TH
+
+organisation: Thai Network Information Center Foundation
+address:      159 Thanon Phichai
+address:      Khwaeng Thanon Nakhon Chaisi, Khet Dusit
+address:      Bangkok 10300
+address:      Thailand
+
+contact:      administrative
+name:         Chaya Limchitti
+organisation: Thai Network Information Center Foundation
+address:      159 Thanon Phichai
+address:      Khwaeng Thanon Nakhon Chaisi, Khet Dusit
+address:      Bangkok 10300
+address:      Thailand
+phone:        +66-2-244-8261
+fax-no:       +66-2-244-8264
+e-mail:       chaya@thnic.or.th
+
+contact:      technical
+name:         Pensri Arunwatanamongkol
+organisation: Thai Network Information Center Foundation
+address:      159 Thanon Phichai
+address:      Khwaeng Thanon Nakhon Chaisi, Khet Dusit
+address:      Bangkok 10300
+address:      Thailand
+phone:        +66 2 564 8039
+fax-no:       +66 2 564 8040
+e-mail:       pensri@thnic.or.th
+
+nserver:      A.THAINS.CO.TH 122.155.23.64 2001:c38:2000:183:0:0:0:30
+nserver:      B.THAINS.CO.TH 203.159.64.64 2405:3340:e011:3000:0:0:0:30
+nserver:      C.THAINS.CO.TH 194.0.1.28 2001:678:4:0:0:0:0:1c
+nserver:      NN1.THAINS.CO.TH 194.146.106.154 2001:67c:1010:39:0:0:0:53
+nserver:      NS.THNIC.NET 202.28.0.1
+nserver:      P.THAINS.CO.TH 2001:500:14:6126:ad:0:0:1 204.61.216.126
+ds-rdata:     19117 8 2 e26bf35f73234ac50c600632fc717ae491f4a8b4f662fb29234f5499acfebf64
+
+whois:        whois.thnic.co.th
+
+status:       ACTIVE
+remarks:      Registration information: http://www.thnic.co.th
+
+created:      1988-09-07
+changed:      2025-01-23
+source:       IANA
+
+# whois.thnic.co.th
+
+
+Whois Server Version 2.1.7
+
+Domain Name:                AIS.CO.TH
+Registrar:                  THNIC
+Name Server:                NS2.AIS-IDC.COM
+Name Server:                NS1.AIS-IDC.COM
+Name Server:                NS3.AIS.CO.TH
+Name Server:                NS4.AIS.CO.TH
+DNSSEC:                     unsigned
+Status:                     ACTIVE
+Updated date:               24 Jul 2025
+Created date:               21 Mar 2003
+Exp date:                   20 Mar 2026
+Domain Holder Organization: ADVANCE INFO SERVICE PLC., LTD. (บริษัท แอดวานซ์ อินโฟร์ เซอร์วิส จำกัด (มหาชน))
+Domain Holder Street:       Personal Information
+Domain Holder Country:      TH
+
+Tech Contact:               Personal Information
+Tech Organization:          Personal Information
+Tech Street:                Personal Information
+Tech Country:               Personal Information
+
+>>> Last updated on Sun, 18 Jan 2026 03:42:17 UTC+7 <<<
+
+If you have a legitimate interest in viewing the non-public WHOIS details, send your request and the reasons for your request to staff@thnic.co.th and specify the domain name in the subject line. We will review that request and may ask for supporting documentation and explanation.
+
+For more information please visit: https://www.thnic.co.th/whois
+

@@ -1,0 +1,70 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.registry.om
+
+domain:       OM
+
+organisation: Telecommunications Regulatory Authority (TRA)
+address:      P.O. Box 3555, P.C 111, Seeb
+address:      Muscat
+address:      Oman
+
+contact:      administrative
+name:         Domain Name Exective Manager
+organisation: Telecommunications Regulatory Authority (TRA)
+address:      P.O. Box 3555, P.C 111, Seeb
+address:      Muscat
+address:      Oman
+phone:        +968 24222082
+fax-no:       +968 24222081
+e-mail:       dnsmanager@tra.gov.om
+
+contact:      technical
+name:         Domain Name Manager
+organisation: Telecommunications Regulatory Authority (TRA)
+address:      P.O. Box 3555, P.C 111, Ruwi
+address:      Muscat
+address:      Oman
+phone:        +968 24222086
+fax-no:       +968 24222081
+e-mail:       dnsadmin@tra.gov.om
+
+nserver:      CCTLD.ALPHA.ARIDNS.NET.AU 2001:dcd:1:0:0:0:0:6 37.209.192.6
+nserver:      CCTLD.BETA.ARIDNS.NET.AU 2001:dcd:2:0:0:0:0:6 37.209.194.6
+nserver:      CCTLD.DELTA.ARIDNS.NET.AU 2001:dcd:4:0:0:0:0:6 37.209.198.6
+nserver:      CCTLD.GAMMA.ARIDNS.NET.AU 2001:dcd:3:0:0:0:0:6 37.209.196.6
+nserver:      NS1.REGISTRY.OM 185.27.88.50 2a00:9120:1:0:0:0:0:50
+nserver:      NS2.REGISTRY.OM 185.27.89.50 2a00:9120:2:0:0:0:0:50
+
+whois:        whois.registry.om
+
+status:       ACTIVE
+remarks:      Registration information:
+remarks:      http://www.registry.om/om/en/?page_id=197
+
+created:      1996-04-11
+changed:      2017-11-21
+source:       IANA
+
+# whois.registry.om
+
+Domain Name: omantel.om
+Registry Domain ID: D6B62BB9F70E7F225D5988C88EF3C388F-OMREG
+Registrar WHOIS Server:
+Registrar URL: http://www.omantel.om
+Registrar: Oman Telecommunication Company (Omantel)
+Registrar IANA ID: 700000007
+Registrar Abuse Contact Email:
+Registrant Name: Oman  Tel
+Registrant Organization: Oman Telecommunications Company
+Registrant Email: yassir.shaqsi@omantel.om
+Admin Organization: Oman Telecommunications Company
+Name Server: ns-cloud-b1.googledomains.com
+Name Server: ns-cloud-b2.googledomains.com
+Name Server: ns-cloud-b3.googledomains.com
+Name Server: ns-cloud-b4.googledomains.com
+URL of the ICANN Whois Inaccuracy Complaint Form: https://www.icann.org/wicf/
+>>> Last update of WHOIS database: 2026-01-17T14:51:49Z <<<
+

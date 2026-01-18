@@ -1,0 +1,76 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.dns.pt
+
+domain:       PT
+
+organisation: Associação DNS.PT
+address:      Rua Eça de Queiroz, 29
+address:      Lisboa 1050-095
+address:      Portugal
+
+contact:      administrative
+name:         Luisa Ribeiro Lopes
+organisation: Associação DNS.PT
+address:      Rua Eça de Queiroz, 29
+address:      Lisboa 1050-095
+address:      Portugal
+phone:        (+351) 211308200
+fax-no:       (+351) 211312720
+e-mail:       luisa@dns.pt
+
+contact:      technical
+name:         Assis Guerreiro
+organisation: Associação DNS.PT
+address:      Rua Eça de Queiroz, 29
+address:      Lisboa 1050-095
+address:      Portugal
+phone:        (+351) 211308200
+fax-no:       (+351) 211312720
+e-mail:       assis.guerreiro@dns.pt
+
+nserver:      A.DNS.PT 185.39.208.1 2a04:6d80:0:0:0:0:0:1
+nserver:      B.DNS.PT 194.0.25.23 2001:678:20:0:0:0:0:23
+nserver:      C.DNS.PT 2001:500:14:6105:ad:0:0:1 204.61.216.105
+nserver:      D.DNS.PT 185.39.210.1 2a04:6d82:0:0:0:0:0:1
+nserver:      E.DNS.PT 193.136.192.64 2001:690:a00:4001:0:0:0:64
+nserver:      G.DNS.PT 193.136.2.226 2001:690:a80:4001:0:0:0:100
+nserver:      H.DNS.PT 194.146.106.138 2001:67c:1010:35:0:0:0:53
+nserver:      NS.DNS.BR 200.160.0.5 2001:12ff:0:a20:0:0:0:5
+nserver:      NS2.NIC.FR 192.93.0.4 2001:660:3005:1:0:0:1:2
+ds-rdata:     40155 13 2 b0ed28b7255e9880e7ce4665b75ae7271f7837899057f0d4b897ece2eb1eb494
+
+whois:        whois.dns.pt
+
+status:       ACTIVE
+remarks:      Registration information: http://www.dns.pt/
+
+created:      1988-06-30
+changed:      2023-08-02
+source:       IANA
+
+# whois.dns.pt
+
+Domain: edp.pt
+Domain Status: Registered
+Creation Date: 21/03/1997 00:00:00
+Expiration Date: 01/06/2026 23:59:10
+Owner Name: EDP, S.A.
+Owner Address: Praça Marquês de Pombal, No.12
+Owner Locality: LISBOA
+Owner ZipCode: 1250-162
+Owner Locality ZipCode: LISBOA
+Owner Country Code: PT
+Owner Email: dns@edp.pt,gsi.arquitecturas@edp.pt,joao.figueiredo@cms-rpa.com
+Admin Name: DMNS - DOMINIOS, S.A.
+Admin Address: Parque Multiusos, Areal Gordo, Lote   3A
+Admin Locality: Areal Gordo
+Admin ZipCode: 8005-409
+Admin Locality ZipCode: FARO
+Admin Country Code: PT
+Admin Email: dns@dominios.pt,mailmanager@dominios.pt
+Name Server: ns.edp.com.pt | IPv4: 185.58.83.135 and IPv6:
+Name Server: ns.edp.pt | IPv4: 185.58.81.135 and IPv6:
+edp.pt IN DS  8 2 d78313d04264007ea2009ed51069b569ee5a63f47ae2804c0080c793f03dc3c3

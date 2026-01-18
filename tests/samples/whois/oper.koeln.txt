@@ -1,0 +1,122 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.ryce-rsp.com
+
+domain:       KOELN
+
+organisation: dotKoeln GmbH
+address:      Schoenbrunner Strasse 231
+address:      Vienna 1120
+address:      Austria
+
+contact:      administrative
+name:         Ronald Schwaerzler
+organisation: dotKoeln GmbH
+address:      Schoenbrunner Strasse 231
+address:      Vienna 1120
+address:      Austria
+phone:        +43 1 198116-700
+fax-no:       +43 1 98116-111
+e-mail:       ronald.schwaerzler@domainworx.consulting
+
+contact:      technical
+name:         Technical Operations
+organisation: RyCE GmbH
+address:      Schoenbrunner Strasse 231
+address:      Vienna 1120
+address:      Austria
+phone:        +431981160
+fax-no:       +43198116111
+e-mail:       tech@dns.business
+
+nserver:      DNS.RYCE-RSP.COM 194.0.11.114 2001:678:e:114:0:0:0:53
+nserver:      NS1.DNS.BUSINESS 157.90.205.138 2a01:4f8:252:4295:0:0:9d5a:cd8a
+nserver:      NS1.RYCE-RSP.COM 193.56.204.111 2a0c:8f40:0:701:0:0:0:111
+ds-rdata:     38539 8 2 3d58791c3bccf61d15649d4d6a7b686b7cdf411dbe4af145ece40fed88ebcbcf
+
+whois:        whois.ryce-rsp.com
+
+status:       ACTIVE
+remarks:      Registration information: https://www.nic.koeln
+
+created:      2014-02-20
+changed:      2025-09-01
+source:       IANA
+
+# whois.ryce-rsp.com
+
+Domain Name: oper.koeln
+Registry Domain ID: nbm_DOMAIN-KOELN
+Registrar WHOIS Server: None
+Registrar URL: www.registrygate.com
+Updated Date: 2025-11-26T14:23:32Z
+Creation Date: 2015-01-21T10:46:41Z
+Registry Expiry Date: 2026-01-21T10:46:41Z
+Registrar Registration Expiration Date: 2026-01-21T10:46:41Z
+Registrar: RegistryGate GmbH
+Registrar IANA ID: 1328
+Registrar Abuse Contact Email: fd@registrygate.com
+Registrar Abuse Contact Phone: +49.8955061210
+Reseller: 
+Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+Registry Registrant ID: REDACTED
+Registrant Name: REDACTED
+Registrant Organization: Stadt Koeln - Online-Redaktion
+Registrant Street: REDACTED
+Registrant City: REDACTED
+Registrant State/Province: REDACTED
+Registrant Postal Code: REDACTED
+Registrant Country: DE
+Registrant Phone: REDACTED
+Registrant Phone Ext: REDACTED
+Registrant Fax: REDACTED
+Registrant Fax Ext: REDACTED
+Registrant Email: Please query the RDDS service of the Registrar of Record identified in this output for information on how to contact the Registrant, Admin or Tech contacts of the domain name.
+Registry Admin ID: REDACTED
+Admin Name: REDACTED
+Admin Organization: REDACTED
+Admin Street: REDACTED
+Admin City: REDACTED
+Admin State/Province: REDACTED
+Admin Postal Code: REDACTED
+Admin Country: REDACTED
+Admin Phone: REDACTED
+Admin Phone Ext: REDACTED
+Admin Fax: REDACTED
+Admin Fax Ext: REDACTED
+Admin Email: Please query the RDDS service of the Registrar of Record identified in this output for information on how to contact the Registrant, Admin or Tech contacts of the domain name.
+Registry Tech ID: REDACTED
+Tech Name: REDACTED
+Tech Organization: REDACTED
+Tech Street: REDACTED
+Tech City: REDACTED
+Tech State/Province: REDACTED
+Tech Postal Code: REDACTED
+Tech Country: REDACTED
+Tech Phone: REDACTED
+Tech Phone Ext: REDACTED
+Tech Fax: REDACTED
+Tech Fax Ext: REDACTED
+Tech Email: Please query the RDDS service of the Registrar of Record identified in this output for information on how to contact the Registrant, Admin or Tech contacts of the domain name.
+Registry Billing ID: REDACTED
+Billing Name: REDACTED
+Billing Organization: REDACTED
+Billing Street: REDACTED
+Billing City: REDACTED
+Billing State/Province: REDACTED
+Billing Postal Code: REDACTED
+Billing Country: REDACTED
+Billing Phone: REDACTED
+Billing Phone Ext: REDACTED
+Billing Fax: REDACTED
+Billing Fax Ext: REDACTED
+Billing Email: Please query the RDDS service of the Registrar of Record identified in this output for information on how to contact the Registrant, Admin or Tech contacts of the domain name.
+Name Server: dns11.netcologne.de
+Name Server: dns12.netcologne.de
+Name Server: dns13.netcologne.de
+Name Server: dns14.netcologne.de
+DNSSEC: unsigned
+URL of the ICANN Whois Inaccuracy Complaint Form: https://www.icann.org/wicf/
+>>> Last update of WHOIS database: 2026-01-17T14:25:56Z <<<

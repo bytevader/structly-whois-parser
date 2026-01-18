@@ -1,0 +1,166 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.nic.me
+
+domain:       ME
+
+organisation: Government of Montenegro
+address:      Rimski trg 46
+address:      Podgorica 81000
+address:      Montenegro
+
+contact:      administrative
+name:         Božo Krstajić
+organisation: University of Montenegro, Faculty of Electrical Engineering
+address:      Džordža Vašingtona bb
+address:      Podgorica 81000
+address:      Montenegro
+phone:        +382 67 313 222
+e-mail:       bozok@ac.me
+
+contact:      technical
+name:         TLD Tech
+organisation: Center of Information System (CIS)
+organisation: University of Montenegro
+address:      Cetinjski put 2
+address:      Podgorica 81000
+address:      Montenegro
+phone:        +382 20 414 290
+fax-no:       +382 20 414 283
+e-mail:       tldtech@ac.me
+
+nserver:      A0.NIC.ME 199.253.59.1 2001:500:53:0:0:0:0:1
+nserver:      A2.NIC.ME 199.249.119.1 2001:500:47:0:0:0:0:1
+nserver:      B0.NIC.ME 199.253.60.1 2001:500:54:0:0:0:0:1
+nserver:      B2.NIC.ME 199.249.127.1 2001:500:4f:0:0:0:0:1
+nserver:      C0.NIC.ME 199.253.61.1 2001:500:55:0:0:0:0:1
+ds-rdata:     45352 8 2 7708c8a6d5d72b63214bbff50cb54553f7e07a1fa5e9074bd8d63c43102d8559
+
+whois:        whois.nic.me
+
+status:       ACTIVE
+remarks:      Registration information: http://www.domain.me
+
+created:      2007-09-24
+changed:      2020-10-19
+source:       IANA
+
+# whois.nic.me
+
+Domain Name: t.me
+Registry Domain ID: REDACTED
+Registrar WHOIS Server: whois.godaddy.com
+Registrar URL: http://www.godaddy.com/domains/search.aspx?ci=8990
+Updated Date: 2025-07-04T18:50:58Z
+Creation Date: 2010-05-20T18:50:32Z
+Registry Expiry Date: 2026-05-20T18:50:32Z
+Registrar: GoDaddy.com, LLC
+Registrar IANA ID: 146
+Registrar Abuse Contact Email: abuse@godaddy.com
+Registrar Abuse Contact Phone: +1.4806242505
+Domain Status: clientDeleteProhibited https://icann.org/epp#clientDeleteProhibited
+Domain Status: clientRenewProhibited https://icann.org/epp#clientRenewProhibited
+Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+Domain Status: clientUpdateProhibited https://icann.org/epp#clientUpdateProhibited
+Registry Registrant ID: REDACTED
+Registrant Name: REDACTED
+Registrant Organization: Domains By Proxy, LLC
+Registrant Street: REDACTED
+Registrant City: REDACTED
+Registrant State/Province: Arizona
+Registrant Postal Code: REDACTED
+Registrant Country: US
+Registrant Phone: REDACTED
+Registrant Phone Ext: REDACTED
+Registrant Fax: REDACTED
+Registrant Fax Ext: REDACTED
+Registrant Email: REDACTED
+Registry Admin ID: REDACTED
+Admin Name: REDACTED
+Admin Organization: REDACTED
+Admin Street: REDACTED
+Admin City: REDACTED
+Admin State/Province: REDACTED
+Admin Postal Code: REDACTED
+Admin Country: REDACTED
+Admin Phone: REDACTED
+Admin Phone Ext: REDACTED
+Admin Fax: REDACTED
+Admin Fax Ext: REDACTED
+Admin Email: REDACTED
+Registry Tech ID: REDACTED
+Tech Name: REDACTED
+Tech Organization: REDACTED
+Tech Street: REDACTED
+Tech City: REDACTED
+Tech State/Province: REDACTED
+Tech Postal Code: REDACTED
+Tech Country: REDACTED
+Tech Phone: REDACTED
+Tech Phone Ext: REDACTED
+Tech Fax: REDACTED
+Tech Fax Ext: REDACTED
+Tech Email: REDACTED
+Name Server: ns-cloud-b1.googledomains.com
+Name Server: ns-cloud-b2.googledomains.com
+Name Server: ns-cloud-b3.googledomains.com
+Name Server: ns-cloud-b4.googledomains.com
+DNSSEC: unsigned
+URL of the ICANN Whois Inaccuracy Complaint Form: https://icann.org/wicf/
+>>> Last update of WHOIS database: 2026-01-17T14:32:33Z <<<
+
+# whois.godaddy.com
+
+Domain Name: t.me
+Registry Domain ID: 67739971fd634dfca9b07d5e156f39c1-DONUTS
+Registrar WHOIS Server: whois.godaddy.com
+Registrar URL: https://www.godaddy.com
+Updated Date: 2025-05-21T10:41:28Z
+Creation Date: 2010-05-20T18:50:32Z
+Registrar Registration Expiration Date: 2026-05-20T18:50:32Z
+Registrar: GoDaddy.com, LLC
+Registrar IANA ID: 146
+Registrar Abuse Contact Email: abuse@godaddy.com
+Registrar Abuse Contact Phone: +1.4806242505
+Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+Domain Status: clientUpdateProhibited https://icann.org/epp#clientUpdateProhibited
+Domain Status: clientRenewProhibited https://icann.org/epp#clientRenewProhibited
+Domain Status: clientDeleteProhibited https://icann.org/epp#clientDeleteProhibited
+Registry Registrant ID: CR775074207
+Registrant Name: Registration Private
+Registrant Organization: Domains By Proxy, LLC
+Registrant Street: DomainsByProxy.com
+Registrant Street: 100 S. Mill Ave, Suite 1600
+Registrant City: Tempe
+Registrant State/Province: Arizona
+Registrant Postal Code: 85281
+Registrant Country: US
+Registrant Phone: +1.4806242599
+Registrant Phone Ext:
+Registrant Fax: 
+Registrant Fax Ext:
+Registrant Email: https://www.godaddy.com/whois/results.aspx?domain=t.me&action=contactDomainOwner
+Registry Tech ID: CR775074206
+Tech Name: Registration Private
+Tech Organization: Domains By Proxy, LLC
+Tech Street: DomainsByProxy.com
+Tech Street: 100 S. Mill Ave, Suite 1600
+Tech City: Tempe
+Tech State/Province: Arizona
+Tech Postal Code: 85281
+Tech Country: US
+Tech Phone: +1.4806242599
+Tech Phone Ext:
+Tech Fax: 
+Tech Fax Ext:
+Tech Email: https://www.godaddy.com/whois/results.aspx?domain=t.me&action=contactDomainOwner
+Name Server: NS-CLOUD-B1.GOOGLEDOMAINS.COM
+Name Server: NS-CLOUD-B2.GOOGLEDOMAINS.COM
+Name Server: NS-CLOUD-B3.GOOGLEDOMAINS.COM
+Name Server: NS-CLOUD-B4.GOOGLEDOMAINS.COM
+DNSSEC: unsigned
+URL of the ICANN WHOIS Data Problem Reporting System: http://wdprs.internic.net/
+>>> Last update of WHOIS database: 2026-01-17T14:32:33Z <<<
+

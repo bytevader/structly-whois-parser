@@ -1,0 +1,74 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.nic.ruhr
+
+domain:       RUHR
+
+organisation: dotSaarland GmbH
+address:      Im Oberen Werk 1
+address:      St. Ingbert 66386
+address:      Germany
+
+contact:      administrative
+name:         Oliver Fries
+organisation: dotSaarland GmbH
+address:      Im Oberen Werk 1
+address:      St. Ingbert 66386
+address:      Germany
+phone:        +49 (0) 68 94 - 93 96 246
+fax-no:       +49 (0) 68 94 - 93 96 247
+e-mail:       info@nic.saarland
+
+contact:      technical
+name:         Head of Registry Engineering
+organisation: CentralNic
+address:      44 Gutter Lane, Saddlers House
+address:      London EC2V 6BR
+address:      United Kingdom of Great Britain and Northern Ireland (the)
+phone:        +44 20 33 88 0600
+fax-no:       +44 20 33 88 0601
+e-mail:       tld.ops@centralnic.com
+
+nserver:      A.NIC.RUHR 194.169.218.155 2001:67c:13cc:0:0:0:1:155
+nserver:      B.NIC.RUHR 185.24.64.155 2a04:2b00:13cc:0:0:0:1:155
+nserver:      C.NIC.RUHR 212.18.248.155 2a04:2b00:13ee:0:0:0:0:155
+nserver:      D.NIC.RUHR 212.18.249.155 2a04:2b00:13ff:0:0:0:0:155
+ds-rdata:     40422 10 2 74fb0b871adf46aab5d49a1eb3b8b0b7dda42c023dd045ec0282b6187b3b4cf7
+ds-rdata:     46252 10 2 3db9db25d3b8e13fbcb4eba53f61c7ce156831dce66d4a19747d17f8ab278fdb
+
+whois:        whois.nic.ruhr
+
+status:       ACTIVE
+remarks:      Registration information: http://dot.ruhr
+
+created:      2013-11-25
+changed:      2023-09-08
+source:       IANA
+
+# whois.nic.ruhr
+
+Domain Name: RVR.RUHR
+Registry Domain ID: D321611908-CNIC
+Registrar WHOIS Server: whois.global-village.de
+Registrar URL: http://www.global-village.de
+Updated Date: 2025-09-03T06:37:38.0Z
+Creation Date: 2014-06-21T13:07:25.0Z
+Registry Expiry Date: 2026-06-21T23:59:59.0Z
+Registrar: Global Village GmbH
+Registrar IANA ID: 1725
+Domain Status: ok https://icann.org/epp#ok
+Registrant Organization: organization redacted
+Registrant State/Province:
+Registrant Country: DE
+Registrant Email: Please query the RDDS service of the Registrar of Record identified in this output for information on how to contact the Registrant, Admin, or Tech contact of the queried domain name.
+Tech Email: Please query the RDDS service of the Registrar of Record identified in this output for information on how to contact the Registrant, Admin, or Tech contact of the queried domain name.
+Name Server: DNS.GLOBVILL.DE
+Name Server: DNS.VOERDE.GLOBVILL.DE
+Name Server: DNS.GLOBVILL.RUHR
+DNSSEC: unsigned
+Registrar Abuse Contact Email: registries@global-village.de
+Registrar Abuse Contact Phone: +49.285596510
+URL of the ICANN Whois Inaccuracy Complaint Form: https://www.icann.org/wicf/
+>>> Last update of WHOIS database: 2026-01-17T20:32:29.0Z <<<

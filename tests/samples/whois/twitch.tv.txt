@@ -1,0 +1,162 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.nic.tv
+
+domain:       TV
+
+organisation: Ministry of Transport, Energy, Communications and Innovations
+address:      2 Vaiaku Rd
+address:      Vaiaku Funafuti
+address:      Tuvalu
+
+contact:      administrative
+name:         Ministry of Transport, Energy, Communications and Innovations
+address:      2 Vaiaku Rd
+address:      Vaiaku Funafuti
+address:      Tuvalu
+phone:        +(688) 20069
+e-mail:       ict@gov.tv
+
+contact:      technical
+name:         IANA Contact
+organisation: GoDaddy Registry
+address:      100 S. Mill Ave, Suite 1600
+address:      Tempe AZ 85281
+address:      United States of America (the)
+phone:        +1 480 505 8800
+fax-no:       +1 480 624 2546
+e-mail:       iana@registry.godaddy
+
+nserver:      A.NIC.TV 2001:dcd:1:0:0:0:0:6 37.209.192.6
+nserver:      B.NIC.TV 2001:dcd:2:0:0:0:0:6 37.209.194.6
+nserver:      C.NIC.TV 2001:dcd:3:0:0:0:0:6 37.209.196.6
+nserver:      X.NIC.TV 156.154.103.22 2610:a1:1010:0:0:0:0:22
+nserver:      Y.NIC.TV 156.154.104.22 2610:a1:1011:0:0:0:0:22
+nserver:      Z.NIC.TV 156.154.105.22 2610:a1:1012:0:0:0:0:22
+ds-rdata:     57277 8 2 cdf61faf1ebc9d83d5bc3d9de22e794ae8acdb0475ea8cf27e92cc00f0c3f5f9
+
+whois:        whois.nic.tv
+
+status:       ACTIVE
+remarks:      Registration information: https://turnon.tv/
+
+created:      1996-03-18
+changed:      2025-09-04
+source:       IANA
+
+# whois.nic.tv
+
+Domain Name: twitch.tv
+Registry Domain ID: REDACTED FOR PRIVACY
+Registrar WHOIS Server: whois.markmonitor.com
+Registrar URL: www.markmonitor.com
+Updated Date: 2025-05-05T17:36:00Z
+Creation Date: 2009-06-08T22:31:23Z
+Registry Expiry Date: 2026-06-08T22:31:23Z
+Registrar: MarkMonitor, Inc.
+Registrar IANA ID: 292
+Registrar Abuse Contact Email: registry.admin@markmonitor.com
+Registrar Abuse Contact Phone: +1.2083895740
+Domain Status: clientDeleteProhibited https://icann.org/epp#clientDeleteProhibited
+Domain Status: clientUpdateProhibited https://icann.org/epp#clientUpdateProhibited
+Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+Domain Status: serverUpdateProhibited https://icann.org/epp#serverUpdateProhibited
+Domain Status: serverDeleteProhibited https://icann.org/epp#serverDeleteProhibited
+Domain Status: serverTransferProhibited https://icann.org/epp#serverTransferProhibited
+Registry Registrant ID: REDACTED FOR PRIVACY
+Registrant Name: REDACTED FOR PRIVACY
+Registrant Organization: Twitch Interactive, Inc.
+Registrant Street: REDACTED FOR PRIVACY
+Registrant Street: REDACTED FOR PRIVACY
+Registrant Street: REDACTED FOR PRIVACY
+Registrant City: REDACTED FOR PRIVACY
+Registrant State/Province: CA
+Registrant Postal Code: REDACTED FOR PRIVACY
+Registrant Country: US
+Registrant Phone: REDACTED FOR PRIVACY
+Registrant Phone Ext: REDACTED FOR PRIVACY
+Registrant Fax: REDACTED FOR PRIVACY
+Registrant Fax Ext: REDACTED FOR PRIVACY
+Registrant Email: Please query the RDDS service of the Registrar of Record identified in this output for information on how to contact the Registrant, Admin, or Tech contact of the queried domain name.
+Registry Admin ID: REDACTED FOR PRIVACY
+Admin Name: REDACTED FOR PRIVACY
+Admin Organization: REDACTED FOR PRIVACY
+Admin Street: REDACTED FOR PRIVACY
+Admin Street: REDACTED FOR PRIVACY
+Admin Street: REDACTED FOR PRIVACY
+Admin City: REDACTED FOR PRIVACY
+Admin State/Province: REDACTED FOR PRIVACY
+Admin Postal Code: REDACTED FOR PRIVACY
+Admin Country: REDACTED FOR PRIVACY
+Admin Phone: REDACTED FOR PRIVACY
+Admin Phone Ext: REDACTED FOR PRIVACY
+Admin Fax: REDACTED FOR PRIVACY
+Admin Fax Ext: REDACTED FOR PRIVACY
+Admin Email: Please query the RDDS service of the Registrar of Record identified in this output for information on how to contact the Registrant, Admin, or Tech contact of the queried domain name.
+Registry Tech ID: REDACTED FOR PRIVACY
+Tech Name: REDACTED FOR PRIVACY
+Tech Organization: REDACTED FOR PRIVACY
+Tech Street: REDACTED FOR PRIVACY
+Tech Street: REDACTED FOR PRIVACY
+Tech Street: REDACTED FOR PRIVACY
+Tech City: REDACTED FOR PRIVACY
+Tech State/Province: REDACTED FOR PRIVACY
+Tech Postal Code: REDACTED FOR PRIVACY
+Tech Country: REDACTED FOR PRIVACY
+Tech Phone: REDACTED FOR PRIVACY
+Tech Phone Ext: REDACTED FOR PRIVACY
+Tech Fax: REDACTED FOR PRIVACY
+Tech Fax Ext: REDACTED FOR PRIVACY
+Tech Email: Please query the RDDS service of the Registrar of Record identified in this output for information on how to contact the Registrant, Admin, or Tech contact of the queried domain name.
+Name Server: ns-1450.awsdns-53.org
+Name Server: ns-219.awsdns-27.com
+Name Server: ns-1778.awsdns-30.co.uk
+Name Server: ns-664.awsdns-19.net
+DNSSEC: unsigned
+URL of the ICANN Whois Inaccuracy Complaint Form: https://www.icann.org/wicf/
+>>> Last update of WHOIS database: 2026-01-18T12:22:38Z <<<
+
+# whois.markmonitor.com
+
+Domain Name: twitch.tv
+Registry Domain ID: 90261951_DOMAIN_TV-VRSN
+Registrar WHOIS Server: whois.markmonitor.com
+Registrar URL: http://www.markmonitor.com
+Updated Date: 2025-04-30T17:36:00+0000
+Creation Date: 2009-06-08T22:31:23+0000
+Registrar Registration Expiration Date: 2026-06-08T00:00:00+0000
+Registrar: MarkMonitor, Inc.
+Registrar IANA ID: 292
+Registrar Abuse Contact Email: abusecomplaints@markmonitor.com
+Registrar Abuse Contact Phone: +1.2086851750
+Domain Status: clientUpdateProhibited (https://www.icann.org/epp#clientUpdateProhibited)
+Domain Status: clientTransferProhibited (https://www.icann.org/epp#clientTransferProhibited)
+Domain Status: clientDeleteProhibited (https://www.icann.org/epp#clientDeleteProhibited)
+Domain Status: serverUpdateProhibited (https://www.icann.org/epp#serverUpdateProhibited)
+Domain Status: serverTransferProhibited (https://www.icann.org/epp#serverTransferProhibited)
+Domain Status: serverDeleteProhibited (https://www.icann.org/epp#serverDeleteProhibited)
+Registrant Name: Twitch Hostmaster
+Registrant Organization: Twitch Interactive, Inc.
+Registrant Street: 225 Bush Street, 6th Floor, 
+Registrant City: San Francisco
+Registrant State/Province: CA
+Registrant Postal Code: 94104
+Registrant Country: US
+Registrant Phone: +1.4156926927
+Registrant Phone Ext: 
+Registrant Fax: 
+Registrant Fax Ext: 
+Registrant Email: hostmaster@amazon.com
+Tech Name: Twitch Hostmaster
+Tech Phone: +1.4156926927
+Tech Email: hostmaster@amazon.com
+Name Server: ns-664.awsdns-19.net
+Name Server: ns-1450.awsdns-53.org
+Name Server: ns-1778.awsdns-30.co.uk
+Name Server: ns-219.awsdns-27.com
+DNSSEC: unsigned
+URL of the ICANN WHOIS Data Problem Reporting System: http://wdprs.internic.net/
+>>> Last update of WHOIS database: 2026-01-18T12:22:38+0000 <<<
+
