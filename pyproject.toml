@@ -53,7 +53,7 @@ structly-whois = "structly_whois.cli:main"
 [project.urls]
 Homepage = "https://github.com/bytevader/structly-whois-parser"
 Repository = "https://github.com/bytevader/structly-whois-parser"
-Issues = "https://github.com/bytevader/structly-whois-parser/-/issues"
+Issues = "https://github.com/bytevader/structly-whois-parser/issues"
 
 [tool.hatch.version]
 path = "src/structly_whois/__about__.py"
