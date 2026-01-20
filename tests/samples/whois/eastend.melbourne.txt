@@ -1,0 +1,178 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.nic.melbourne
+
+domain:       MELBOURNE
+
+organisation: The Crown in right of the State of Victoria, represented by its Department of State Development, Business and Innovation
+address:      Level 20, 80 Collins Street
+address:      Melbourne VIC 3000
+address:      Australia
+
+contact:      administrative
+name:         IANA Contact
+organisation: GoDaddy Registry
+address:      100 S. Mill Ave, Suite 1600
+address:      Tempe AZ 85281
+address:      United States of America (the)
+phone:        +1 480-505-8800
+fax-no:       +1 480-624-2546
+e-mail:       iana@registry.godaddy
+
+contact:      technical
+name:         IANA Contact
+organisation: GoDaddy Registry
+address:      100 S. Mill Ave, Suite 1600
+address:      Tempe AZ 85281
+address:      United States of America (the)
+phone:        +1 480-505-8800
+fax-no:       +1 480-624-2546
+e-mail:       iana@registry.godaddy
+
+nserver:      A.NIC.MELBOURNE 2001:dcd:1:0:0:0:0:10 37.209.192.10
+nserver:      B.NIC.MELBOURNE 2001:dcd:2:0:0:0:0:10 37.209.194.10
+nserver:      C.NIC.MELBOURNE 2001:dcd:3:0:0:0:0:10 37.209.196.10
+nserver:      X.NIC.MELBOURNE 156.154.172.82 2610:a1:1074:0:0:0:1:82
+nserver:      Y.NIC.MELBOURNE 156.154.173.82 2610:a1:1075:0:0:0:1:82
+nserver:      Z.NIC.MELBOURNE 156.154.174.82 2610:a1:1076:0:0:0:1:82
+ds-rdata:     17374 8 2 6d9aaf608c610bea2a8ce99b8870e02e7ec8cd2a8c1a76d363cd813a682f5513
+
+whois:        whois.nic.melbourne
+
+status:       ACTIVE
+remarks:      Registration information: https://www.live.melbourne/
+
+created:      2014-07-03
+changed:      2024-04-17
+source:       IANA
+
+# whois.nic.melbourne
+
+Domain Name: eastend.melbourne
+Registry Domain ID: REDACTED FOR PRIVACY
+Registrar WHOIS Server: whois.synergywholesale.com
+Registrar URL: https://synergywholesale.com
+Updated Date: 2025-10-14T19:53:36Z
+Creation Date: 2014-12-01T01:16:31Z
+Registry Expiry Date: 2026-12-01T01:16:31Z
+Registrar: Synergy Wholesale Accreditations Pty Ltd
+Registrar IANA ID: 1609
+Registrar Abuse Contact Email: notifications-registry-abuse@nexigen.digital
+Registrar Abuse Contact Phone: +61.383999483
+Domain Status: ok https://icann.org/epp#ok
+Registry Registrant ID: REDACTED FOR PRIVACY
+Registrant Name: REDACTED FOR PRIVACY
+Registrant Organization:
+Registrant Street: REDACTED FOR PRIVACY
+Registrant Street: REDACTED FOR PRIVACY
+Registrant Street: REDACTED FOR PRIVACY
+Registrant City: REDACTED FOR PRIVACY
+Registrant State/Province: VIC
+Registrant Postal Code: REDACTED FOR PRIVACY
+Registrant Country: AU
+Registrant Phone: REDACTED FOR PRIVACY
+Registrant Phone Ext: REDACTED FOR PRIVACY
+Registrant Fax: REDACTED FOR PRIVACY
+Registrant Fax Ext: REDACTED FOR PRIVACY
+Registrant Email: Please query the RDDS service of the Registrar of Record identified in this output for information on how to contact the Registrant, Admin, or Tech contact of the queried domain name.
+Registry Admin ID:
+Admin Name:
+Admin Organization:
+Admin Street:
+Admin Street:
+Admin Street:
+Admin City:
+Admin State/Province:
+Admin Postal Code:
+Admin Country:
+Admin Phone:
+Admin Phone Ext:
+Admin Fax:
+Admin Fax Ext:
+Admin Email:
+Registry Tech ID: REDACTED FOR PRIVACY
+Tech Name: REDACTED FOR PRIVACY
+Tech Organization: REDACTED FOR PRIVACY
+Tech Street: REDACTED FOR PRIVACY
+Tech Street: REDACTED FOR PRIVACY
+Tech Street: REDACTED FOR PRIVACY
+Tech City: REDACTED FOR PRIVACY
+Tech State/Province: REDACTED FOR PRIVACY
+Tech Postal Code: REDACTED FOR PRIVACY
+Tech Country: REDACTED FOR PRIVACY
+Tech Phone: REDACTED FOR PRIVACY
+Tech Phone Ext: REDACTED FOR PRIVACY
+Tech Fax: REDACTED FOR PRIVACY
+Tech Fax Ext: REDACTED FOR PRIVACY
+Tech Email: Please query the RDDS service of the Registrar of Record identified in this output for information on how to contact the Registrant, Admin, or Tech contact of the queried domain name.
+Name Server: beth.ns.cloudflare.com
+Name Server: trey.ns.cloudflare.com
+DNSSEC: unsigned
+URL of the ICANN Whois Inaccuracy Complaint Form: https://www.icann.org/wicf/
+>>> Last update of WHOIS database: 2026-01-17T14:35:07Z <<<
+
+# whois.synergywholesale.com
+
+Domain Name: eastend.melbourne
+Registry Domain ID: DBE7DC94D29C14449867E35C2394E2C24-ARI
+Registrar WHOIS Server: whois.synergywholesale.com
+Registrar URL: https://synergywholesale.com/partner-lookup
+Updated Date: 2022-11-12 23:17:03
+Creation Date: 2014-12-01 01:16:31
+Registrar Registration Expiration Date: 2026-12-01 01:16:31
+Registrar: Synergy Wholesale Accreditations Pty Ltd
+Registrar IANA ID: 1609
+Registrar Abuse Contact Email: registry-abuse@nexigen.digital
+Registrar Abuse Contact Phone: +61.383999483
+Reseller: Junction City
+Reseller: https://www.junction.city
+Reseller: quotes@junction.city
+Domain Status: ok http://www.icann.org/epp#ok
+Registry Registrant ID: Not Available From Registry
+Registrant Name: Kayely Marriner
+Registrant Organization: 
+Registrant Street: Level 1
+Registrant Street: 162 Collins St
+Registrant Street: 
+Registrant City: Melbourne
+Registrant State/Province: VIC
+Registrant Postal Code: 3000
+Registrant Country: AU
+Registrant Phone: +61.390388803
+Registrant Fax: 
+Registrant Email: sales@junctioncity.com.au
+Registry Admin ID: Not Available From Registry
+Admin Name: Kayely Marriner
+Admin Organization: 
+Admin Street: Level 1
+Admin Street: 162 Collins St
+Admin Street: 
+Admin City: Melbourne
+Admin State/Province: VIC
+Admin Postal Code: 3000
+Admin Country: AU
+Admin Phone: +61.390388803
+Admin Fax: 
+Admin Email: sales@junctioncity.com.au
+Registry Tech ID: Not Available From Registry
+Tech Name: Kayely Marriner
+Tech Organization: 
+Tech Street: Level 1
+Tech Street: 162 Collins St
+Tech Street: 
+Tech City: Melbourne
+Tech State/Province: VIC
+Tech Postal Code: 3000
+Tech Country: AU
+Tech Phone: +61.390388803
+Tech Fax: 
+Tech Email: sales@junctioncity.com.au
+Name Server: beth.ns.cloudflare.com
+Name Server: trey.ns.cloudflare.com
+DNSSEC: unsigned
+URL of the ICANN WHOIS Data Problem Reporting System: http://wdprs.internic.net/
+For more information on Whois status codes, please visit https://icann.org/epp
+>>> Last update of WHOIS database: 2026-01-17 14:35:08 <<<
+

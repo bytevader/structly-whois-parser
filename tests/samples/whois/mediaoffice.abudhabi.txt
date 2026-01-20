@@ -1,0 +1,118 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.nic.abudhabi
+
+domain:       ABUDHABI
+
+organisation: Abu Dhabi Systems and Information Centre
+address:      Abu Dhabi Systems & Information Centre
+address:      International Tower Al Karama Street
+address:      Abu Dhabi
+address:      United Arab Emirates (the)
+
+contact:      administrative
+name:         Khadeeja Mohsen Al Faqeeh
+organisation: Abu Dhabi Systems & Information Centre
+address:      International Tower Al Karama Street
+address:      Abu Dhabi
+address:      United Arab Emirates (the)
+phone:        +97126961146
+fax-no:       +97126717333
+e-mail:       adtld@adsic.abudhabi.ae
+
+contact:      technical
+name:         Manager Systems, ae Domain Administration
+organisation: Telecommunications Regulatory Authority of UAE
+address:      Al Waheeda street Al Memzar
+address:      P.O.Box 116688
+address:      Dubai
+address:      United Arab Emirates (the)
+phone:        +97142300018
+fax-no:       +97142300011
+e-mail:       gtldsupport@aeda.ae
+
+nserver:      GTLD.ALPHA.ARIDNS.NET.AU 2001:dcd:1:0:0:0:0:10 37.209.192.10
+nserver:      GTLD.BETA.ARIDNS.NET.AU 2001:dcd:2:0:0:0:0:10 37.209.194.10
+nserver:      GTLD.DELTA.ARIDNS.NET.AU 2001:dcd:4:0:0:0:0:10 37.209.198.10
+nserver:      GTLD.GAMMA.ARIDNS.NET.AU 2001:dcd:3:0:0:0:0:10 37.209.196.10
+ds-rdata:     15247 8 1 d2c05ad2312ebe77f6149f8b962dd9012d6d2cca
+ds-rdata:     15247 8 2 4146c35f5ee96a341ee8c8f0aca17a2cbb52fcd1d6d1c95c9aab70061a7ac692
+
+whois:        whois.nic.abudhabi
+
+status:       ACTIVE
+remarks:      Registration information: 
+
+created:      2016-02-26
+changed:      2019-11-26
+source:       IANA
+
+# whois.nic.abudhabi
+
+Domain Name: mediaoffice.abudhabi
+Registry Domain ID: D1AE1A472E86A43BDBCBB5B2EEB71C913-NSR
+Registrar WHOIS Server:
+Registrar URL: https://www.nic.ae/
+Updated Date: 2024-11-27T13:45:33Z
+Creation Date: 2019-02-03T06:56:33Z
+Registry Expiry Date: 2028-02-03T06:56:33Z
+Registrar: Etisalat
+Registrar IANA ID: 1738
+Registrar Abuse Contact Email: abuse@nic.ae
+Registrar Abuse Contact Phone: +971.43717272
+Domain Status: clientTransferProhibited http://www.icann.org/epp#clientTransferProhibited
+Registry Registrant ID: C2A36E93705F14599985F8AC6DEBF1393-NSR
+Registrant Name: Abu Dhabi Media Office
+Registrant Organization: Abu Dhabi Media Office
+Registrant Street:
+Registrant Street:
+Registrant Street:
+Registrant City: Abu Dhabi
+Registrant State/Province: Abu Dhabi
+Registrant Postal Code: 769900
+Registrant Country: ae
+Registrant Phone: +971.26966666
+Registrant Phone Ext:
+Registrant Fax: +0.0
+Registrant Fax Ext:
+Registrant Email: netadmin@mediaoffice.abudhabi
+Registry Admin ID: C2A36E93705F14599985F8AC6DEBF1393-NSR
+Admin Name: Abu Dhabi Media Office
+Admin Organization: Abu Dhabi Media Office
+Admin Street:
+Admin Street:
+Admin Street:
+Admin City: Abu Dhabi
+Admin State/Province: Abu Dhabi
+Admin Postal Code: 769900
+Admin Country: ae
+Admin Phone: +971.26966666
+Admin Phone Ext:
+Admin Fax: +0.0
+Admin Fax Ext:
+Admin Email: netadmin@mediaoffice.abudhabi
+Registry Tech ID: C2A36E93705F14599985F8AC6DEBF1393-NSR
+Tech Name: Abu Dhabi Media Office
+Tech Organization: Abu Dhabi Media Office
+Tech Street:
+Tech Street:
+Tech Street:
+Tech City: Abu Dhabi
+Tech State/Province: Abu Dhabi
+Tech Postal Code: 769900
+Tech Country: ae
+Tech Phone: +971.26966666
+Tech Phone Ext:
+Tech Fax: +0.0
+Tech Fax Ext:
+Tech Email: netadmin@mediaoffice.abudhabi
+Name Server: ns1.etisalatdomains.ae
+Name Server: ns2.etisalatdomains.ae
+Name Server: ns3.etisalatdomains.ae
+Name Server: ns4.etisalatdomains.ae
+DNSSEC: unsigned
+URL of the ICANN Whois Inaccuracy Complaint Form: https://www.icann.org/wicf/
+>>> Last update of WHOIS database: 2025-12-25T17:46:02Z <<<
+

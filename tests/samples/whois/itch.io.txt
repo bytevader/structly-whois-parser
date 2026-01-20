@@ -1,0 +1,110 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.nic.io
+
+domain:       IO
+
+organisation: Internet Computer Bureau Limited
+address:      c/o Sure (Diego Garcia) Limited
+address:      Diego Garcia
+address:      British Indian Ocean Territories, PSC 466 Box 59
+address:      FPO-AP 96595-0059
+address:      British Indian Ocean Territory (the)
+
+contact:      administrative
+name:         Internet Administrator
+organisation: Internet Computer Bureau Limited
+address:      c/o Sure (Diego Garcia) Limited
+address:      Diego Garcia
+address:      British Indian Ocean Territories, PSC 466 Box 59
+address:      FPO-AP 96595-0059
+address:      British Indian Ocean Territory (the)
+phone:        +246 9398
+fax-no:       +246 9398
+e-mail:       administrator@nic.io
+
+contact:      technical
+name:         Administrator
+organisation: Internet Computer Bureau Ltd
+address:      Greytown House, 221-227 High Street
+address:      Orpington Kent BR6 0NZ
+address:      United Kingdom of Great Britain and Northern Ireland (the)
+phone:        +44 (0)1689 827505
+fax-no:       +44 (0)1689 831478
+e-mail:       admin@icb.co.uk
+
+nserver:      A0.NIC.IO 2a01:8840:9e:0:0:0:0:17 65.22.160.17
+nserver:      A2.NIC.IO 2a01:8840:a1:0:0:0:0:17 65.22.163.17
+nserver:      B0.NIC.IO 2a01:8840:9f:0:0:0:0:17 65.22.161.17
+nserver:      C0.NIC.IO 2a01:8840:a0:0:0:0:0:17 65.22.162.17
+ds-rdata:     57355 8 2 95a57c3bab7849dbcddf7c72ada71a88146b141110318ca5be672057e865c3e2
+
+whois:        whois.nic.io
+
+status:       ACTIVE
+remarks:      Registration information: http://www.nic.io/
+
+created:      1997-09-16
+changed:      2023-01-18
+source:       IANA
+
+# whois.nic.io
+
+Domain Name: itch.io
+Registry Domain ID: REDACTED
+Registrar WHOIS Server: whois.1api.net
+Registrar URL: http://www.1api.net
+Updated Date: 2025-11-26T18:11:08Z
+Creation Date: 2011-10-27T23:55:37Z
+Registry Expiry Date: 2030-10-27T22:55:37Z
+Registrar: 1API GmbH
+Registrar IANA ID: 1387
+Registrar Abuse Contact Email: abuse@1api.net
+Registrar Abuse Contact Phone: +49.68949396850
+Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+Registry Registrant ID: REDACTED
+Registrant Name: REDACTED
+Registrant Organization: Registrant of itch.io
+Registrant Street: REDACTED
+Registrant City: REDACTED
+Registrant State/Province: West Yorkshire
+Registrant Postal Code: REDACTED
+Registrant Country: GB
+Registrant Phone: REDACTED
+Registrant Phone Ext: REDACTED
+Registrant Fax: REDACTED
+Registrant Fax Ext: REDACTED
+Registrant Email: REDACTED
+Registry Admin ID: REDACTED
+Admin Name: REDACTED
+Admin Organization: REDACTED
+Admin Street: REDACTED
+Admin City: REDACTED
+Admin State/Province: REDACTED
+Admin Postal Code: REDACTED
+Admin Country: REDACTED
+Admin Phone: REDACTED
+Admin Phone Ext: REDACTED
+Admin Fax: REDACTED
+Admin Fax Ext: REDACTED
+Admin Email: REDACTED
+Registry Tech ID: REDACTED
+Tech Name: REDACTED
+Tech Organization: REDACTED
+Tech Street: REDACTED
+Tech City: REDACTED
+Tech State/Province: REDACTED
+Tech Postal Code: REDACTED
+Tech Country: REDACTED
+Tech Phone: REDACTED
+Tech Phone Ext: REDACTED
+Tech Fax: REDACTED
+Tech Fax Ext: REDACTED
+Tech Email: REDACTED
+Name Server: noah.ns.cloudflare.com
+Name Server: dawn.ns.cloudflare.com
+DNSSEC: unsigned
+URL of the ICANN Whois Inaccuracy Complaint Form: https://icann.org/wicf/
+>>> Last update of WHOIS database: 2026-01-17T12:26:19Z <<<

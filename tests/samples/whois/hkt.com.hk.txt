@@ -1,0 +1,176 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.hkirc.hk
+
+domain:       HK
+
+organisation: Hong Kong Internet Registration Corporation Ltd.
+address:      Unit 501, Level 5, Core C, Cyberport 3
+address:      100 Cyberport Road
+address:      Hong Kong
+
+contact:      administrative
+name:         Cherry Lam
+organisation: Hong Kong Internet Registration Corporation Ltd.
+address:      Unit 501, Level 5, Core C, Cyberport 3
+address:      100 Cyberport Road
+address:      Hong Kong
+phone:        +852 2319 2303
+fax-no:       +852 2319 2626
+e-mail:       info@hkirc.hk
+
+contact:      technical
+name:         John Lam
+organisation: Hong Kong Internet Registration Corporation Ltd.
+address:      Unit 501, Level 5, Core C, Cyberport 3
+address:      100 Cyberport Road
+address:      Hong Kong
+phone:        +852 2319 2303
+fax-no:       +852 2319 2626
+e-mail:       tech@hkirc.hk
+
+nserver:      C.HKIRC.NET.HK 2001:dca:4000:0:0:0:cb77:2da 203.119.2.218
+nserver:      D.HKIRC.NET.HK 2001:dca:2000:0:0:0:cb77:57da 203.119.87.218
+nserver:      M.HKIRC.NET.HK 125.208.49.10 2001:dc7:feff:0:0:0:0:10
+nserver:      T.HKIRC.NET.HK 2001:dd8:12:0:0:0:0:53 202.12.31.53
+nserver:      U.HKIRC.NET.HK 210.201.138.58 2404:0:10a0:0:0:0:0:58
+nserver:      V.HKIRC.NET.HK 2001:500:14:6046:ad:0:0:1 204.61.216.46
+nserver:      X.HKIRC.NET.HK 202.45.188.39 2405:3001:1:3a:0:0:0:27
+nserver:      Y.HKIRC.NET.HK 137.189.6.21 2405:3000:3:6:0:0:0:15
+nserver:      Z.HKIRC.NET.HK 194.146.106.70 2001:67c:1010:17:0:0:0:53
+ds-rdata:     11209 8 2 87b3704efc01844572ea103f0379ff94e889b703ed877afbd6868f4a9abab725
+
+whois:        whois.hkirc.hk
+
+status:       ACTIVE
+remarks:      Registration information: http://www.hkirc.hk
+
+created:      1990-01-03
+changed:      2026-01-07
+source:       IANA
+
+# whois.hkirc.hk
+
+ 
+ -------------------------------------------------------------------------------
+ Whois server by HKIRC
+ -------------------------------------------------------------------------------
+ .hk top level Domain names can be registered via HKIRC-Accredited Registrars. 
+ Go to https://www.hkirc.hk/content.jsp?id=280 for details. 
+ -------------------------------------------------------------------------------
+
+
+
+Domain Name:  HKT.COM.HK 
+Bundled Domain Name:  香港電訊.公司.香港 
+Domain Status: Active 
+
+DNSSEC:  unsigned  
+
+Contract Version:   Refer to registrar   
+
+Active variants
+
+Inactive variants
+
+Registrar Name: CSC Corporate Domains, Inc.
+
+Registrar Contact Information: TLDSupport@cscglobal.com
+
+Reseller: 
+
+
+Registrant Contact Information:
+
+Company English Name (It should be the same as the registered/corporation name on your Business Register Certificate or relevant documents): PCCW-HKT DATACOM SERVICES LIMITED
+Company Chinese name:  - 
+Address:  RM902, 9F EAST EXCHANGE TOWER
+38-40 LEIGHTON ROAD
+CAUSEWAY BAY     
+Country: Hong Kong (HK)
+Email:  domain.admin@pccw.com 
+Domain Name Commencement Date: 06-06-1994
+Expiry Date: 12-03-2026 
+Re-registration Status:  Complete   
+
+
+
+Administrative Contact Information:
+
+Given name:  DOMAIN 
+Family name:  ADMINISTRATOR 
+Company name:  PCCW-HKT DATACOM SERVICES LIMITED 
+Address:  RM902, 9F EAST EXCHANGE TOWER
+38-40 LEIGHTON ROAD
+CAUSEWAY BAY     
+Country:  Hong Kong (HK) 
+Phone:  +852-28838524 
+Fax:  +852-29625858 
+Email:  domain.admin@pccw.com 
+
+Account Name:  HK9290721T 
+
+
+
+Technical Contact Information:
+
+Given name:  DOMAIN 
+Family name:  ADMINISTRATOR 
+Company name:  PCCW-HKT DATACOM SERVICES LIMITED 
+Address:  RM902, 9F EAST EXCHANGE TOWER
+38-40 LEIGHTON ROAD
+CAUSEWAY BAY     
+Country:  Hong Kong (HK) 
+Phone:  +852-28838524 
+Fax:  +852-29625858 
+Email:  domain.admin@pccw.com 
+
+
+
+Name Servers Information:
+
+DNS3.PCCW.COM
+DNS4.PCCW.COM
+
+
+
+Status Information:
+
+Domain Prohibit Status: 
+
+
+
+ -------------------------------------------------------------------------------
+ The Registry contains ONLY .com.hk, .net.hk, .edu.hk, .org.hk,
+ .gov.hk, idv.hk. and .hk $domains.
+ -------------------------------------------------------------------------------
+
+WHOIS Terms of Use 
+By using this WHOIS search enquiry service you agree to these terms of use.
+The data in HKDNR's WHOIS search engine is for informational purposes only and HKDNR does not guarantee the accuracy of the data. The data is provided to assist people obtaining information about the registration record of domain names registered by HKDNR. You agree to use the data for lawful purposes only.
+
+In light of the General Data Protection Regulation, HKIRC reserves the right to not make available certain data on this WHOIS search enquiry.
+
+You are not authorised to use high-volume, electronic or automated processes to access, query or harvest data from this WHOIS search enquiry service.
+
+You agree that you will not and will not allow anyone else to:
+
+a.    use the data for mass unsolicited commercial advertising of any sort via any media including telephone, email or fax; or
+
+b.    enable high volume, automated or electronic processes that apply to HKDNR or its computer systems including the WHOIS search enquiry service; or
+
+c.    without the prior written consent of HKDNR compile, repackage, disseminate, disclose to any third party or use the data for a purpose other than obtaining information about a domain name registration record; or
+
+d.    use such data to derive an economic benefit for yourself.
+
+HKIRC in its sole discretion may terminate your access to the WHOIS search enquiry service (including but not limited to blocking your IP address) at any time due to, including but not limited to, excessive use of the WHOIS search enquiry service.
+
+HKDNR may modify these terms of use at any time by publishing the modified terms of use on its website.
+
+
+
+
+
+

@@ -1,0 +1,172 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.ua
+
+domain:       UA
+
+organisation: Hostmaster Ltd.
+address:      vul Vavilovykh 18
+address:      Kyiv 04060
+address:      Ukraine
+
+contact:      administrative
+name:         Dmitry Kohmanyuk
+organisation: Hostmaster Ltd.
+address:      P.O.Box 23
+address:      Kyiv 04053
+address:      Ukraine
+phone:        +380 50 381 4604
+fax-no:       +1 (510) 400-0104
+e-mail:       dk@cctld.ua
+
+contact:      technical
+name:         Igor Sviridov
+organisation: Hostmaster Ltd
+address:      P.O. Box 98
+address:      Kyiv 04060
+address:      Ukraine
+phone:        +1 415 672 3654
+fax-no:       +1 978 359 5830
+e-mail:       sia@nest.org
+
+nserver:      BG.NS.UA 185.136.96.185 185.136.97.185 2a06:fb00:1:0:0:0:2:185 2a06:fb00:1:0:0:0:4:185
+nserver:      CZ.NS.UA 185.43.134.15 2001:148f:fffd:0:0:0:0:15
+nserver:      HO1.NS.UA 195.47.253.1 2001:67c:258:0:0:0:0:1
+nserver:      IN1.NS.UA 2604:ee00:0:101:0:0:0:40 74.123.224.40
+nserver:      NN.NS.UA 194.58.197.4 2a01:3f1:c001:0:0:0:0:53
+nserver:      PCH.NS.UA 2001:500:14:6012:ad:0:0:1 204.61.216.12
+nserver:      RCZ.NS.UA 193.46.128.10 2a02:850:ffe0:0:0:0:0:10
+ds-rdata:     51024 13 2 1bdca65b3ba927efb64909637c10adf90763ea7ab5d0ac1597c66cd6c6caeb6c
+ds-rdata:     51024 13 4 61195cabb323f940314d1bbec97f4eba54d2d7ba49aa244948c8c29844e43a42293ee100841009fbfe85f1ab7ceffacf
+
+whois:        whois.ua
+
+status:       ACTIVE
+remarks:      Registration information: https://www.hostmaster.ua/
+
+created:      1992-12-01
+changed:      2024-11-30
+source:       IANA
+
+# whois.ua
+
+% Request from 109.111.244.16
+% This is the Ukrainian Whois query server #W.
+% The Whois is subject to Terms of use
+% See https://hostmaster.ua/services/
+%
+% IN THE PROCESS OF DELEGATION OF A DOMAIN NAME,
+% THE REGISTRANT IS AN ENTITY WHO USES AND MANAGES A CERTAIN DOMAIN NAME,
+% AND THE REGISTRAR IS A BUSINESS ENTITY THAT PROVIDES THE REGISTRANT
+% WITH THE SERVICES NECESSARY FOR THE TECHNICAL MAINTENANCE OF THE REGISTRATION AND OPERATION OF THE DOMAIN NAME.
+% FOR INFORMATION ABOUT THE REGISTRANT OF THE DOMAIN NAME, YOU SHOULD CONTACT THE REGISTRAR.
+
+domain:           rozetka.ua
+dom-public:       NO
+license:          190490
+mnt-by:           ua.imena
+nserver:          nsa1.srv53.com
+nserver:          nsa4.srv53.net
+nserver:          nsa4.srv53.org
+nserver:          nsb1.srv53.com
+nserver:          nsb1.srv53.net
+nserver:          nsb1.srv53.org
+nserver:          nsc2.srv53.com
+nserver:          nsc2.srv53.org
+nserver:          nsc3.srv53.net
+nserver:          nsd3.srv53.com
+nserver:          nsd3.srv53.net
+nserver:          nsd4.srv53.org
+status:           ok
+created:          2006-11-08 14:09:33+02
+modified:         2021-04-07 11:58:53+03
+expires:          2030-11-08 14:09:33+02
+source:           UAEPP
+
+% Registrar:
+%
+% The following disclaimer was provided by the domain name registrar
+% ==========
+% Надана інформація є неповною і може містити помилки, пов'язані з особливостями механізмів кешування інформації, несинхронного оновлення реєстрів тощо, тому не є достовірною та надається виключно для ознайомлення.
+% У зв'язку із зазначеним вище, дана інформація не може бути використана з метою вирішення спорів, конфліктів, визначення майнових та немайнових прав тощо.
+% Єдиним джерелом первинних даних про доменне ім'я є реєстратор (registrar) доменного імені, який може надати необхідну інформацію на запит у встановленому законом порядку.
+% 
+% The provided information is incomplete and may contain errors related to the specificity 
+% of information caching mechanisms, asynchronous updating of registries, etc., 
+% therefore it is not reliable and is provided for informational purposes only. 
+% In connection with the above, this information can not be used to resolve disputes, 
+% conflicts, determine property and non-property rights, etc.
+% The only source of primary data about the domain name is the registrar of the domain name, 
+% which can provide the required information upon request, in accordance with the procedure established by law.
+% ==========
+registrar:        ua.imena
+organization:     Internet Invest LLC
+organization-loc: ТОВ "Інтернет Інвест"
+url:              http://www.imena.ua
+city:             Kyiv
+country:          UA
+abuse-email:      abuse@imena.ua
+abuse-phone:      +380.442010102
+abuse-postal:     50-B Simi Prakhovykh St., Kyiv, 01033, Ukraine
+abuse-postal-loc: вул. Сім'ї Прахових, 50-Б, м. Київ, 01033, Україна
+source:           UAEPP
+
+% Registrant:
+% ===========
+person:           not published
+person-loc:       not published
+organization-loc: not published
+e-mail:           not published
+address:          n/a
+address-loc:      not published
+phone:            not published
+fax:              not published
+mnt-by:           ua.imena
+status:           ok
+status:           linked
+created:          2014-04-03 06:50:18+03
+modified:         2021-04-07 11:58:50+03
+source:           UAEPP
+
+
+% Administrative Contacts:
+% =======================
+person:           not published
+person-loc:       not published
+organization-loc: not published
+e-mail:           not published
+address:          n/a
+address-loc:      not published
+phone:            not published
+fax:              not published
+mnt-by:           ua.imena
+status:           ok
+status:           linked
+created:          2014-04-03 06:50:19+03
+modified:         2021-04-07 11:59:01+03
+source:           UAEPP
+
+
+% Technical Contacts:
+% ===================
+person:           not published
+person-loc:       not published
+organization-loc: not published
+e-mail:           not published
+address:          n/a
+address-loc:      not published
+phone:            not published
+fax:              not published
+mnt-by:           ua.imena
+status:           ok
+status:           linked
+created:          2014-04-03 06:50:19+03
+modified:         2021-04-07 11:59:01+03
+source:           UAEPP
+
+
+
+% Query time:     5 msec
+

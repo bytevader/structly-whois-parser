@@ -1,0 +1,66 @@
+# whois.nic.af
+
+Domain Name: play.afl
+Registry Domain ID: D90B4E24BA9134FB88663CC44BA00CBBA-ARI
+Registrar WHOIS Server: whois.corporatedomains.com
+Registrar URL: whois.corporatedomains.com
+Updated Date: 2025-10-13T16:48:54Z
+Creation Date: 2016-01-25T03:09:24Z
+Registry Expiry Date: 2026-01-25T03:09:24Z
+Registrar: CSC Corporate Domains, Inc.
+Registrar IANA ID: 299
+Registrar Abuse Contact Email: domainabuse@cscglobal.com
+Registrar Abuse Contact Phone: +1.8887802723
+Domain Status: ok https://icann.org/epp#ok
+Registry Registrant ID:
+Registrant Name:
+Registrant Organization:
+Registrant Street:
+Registrant Street:
+Registrant Street:
+Registrant City:
+Registrant State/Province:
+Registrant Postal Code:
+Registrant Country:
+Registrant Phone:
+Registrant Phone Ext:
+Registrant Fax:
+Registrant Fax Ext:
+Registrant Email:
+Registry Admin ID:
+Admin Name:
+Admin Organization:
+Admin Street:
+Admin Street:
+Admin Street:
+Admin City:
+Admin State/Province:
+Admin Postal Code:
+Admin Country:
+Admin Phone:
+Admin Phone Ext:
+Admin Fax:
+Admin Fax Ext:
+Admin Email:
+Registry Tech ID:
+Tech Name:
+Tech Organization:
+Tech Street:
+Tech Street:
+Tech Street:
+Tech City:
+Tech State/Province:
+Tech Postal Code:
+Tech Country:
+Tech Phone:
+Tech Phone Ext:
+Tech Fax:
+Tech Fax Ext:
+Tech Email:
+Name Server: ns-1577.awsdns-05.co.uk
+Name Server: ns-1068.awsdns-05.org
+Name Server: ns-906.awsdns-49.net
+Name Server: ns-190.awsdns-23.com
+DNSSEC: unsigned
+URL of the ICANN Whois Inaccuracy Complaint Form: https://www.icann.org/wicf/
+>>> Last update of WHOIS database: 2025-12-28T20:06:09Z <<<

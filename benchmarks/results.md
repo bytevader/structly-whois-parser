@@ -1,14 +1,14 @@
 # Benchmark Results
 
-- samples: 105
+- samples: 146
 - iterations per sample: 100
 
 | backend                   |   records | records/s   |   avg latency (ms) |
 |---------------------------|-----------|-------------|--------------------|
-| structly-whois            |     10500 | 7,861       |              0.127 |
-| structly-whois+dateutil   |     10500 | 8,159       |              0.123 |
-| structly-whois+dateparser |     10500 | 998         |              1.002 |
-| whois-parser              |     10500 | 17          |             58.147 |
-| python-whois              |     10500 | 440         |              2.272 |
+| structly-whois            |     14600 | 9,085       |              0.11  |
+| structly-whois+dateutil   |     14600 | 8,996       |              0.111 |
+| structly-whois+dateparser |     14600 | 1,465       |              0.683 |
+| whois-parser              |     14600 | 19          |             52.556 |
+| python-whois              |     14600 | 323         |              3.1   |
 
-Leader: structly-whois+dateutil (8,159 records/s, 0.123 ms per record)
+Leader: structly-whois (9,085 records/s, 0.110 ms per record)

@@ -1,0 +1,161 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.nic.ai
+
+domain:       AI
+
+organisation: Government of Anguilla
+address:      Coronation Avenue, PO Box 60
+address:      The Valley AI2640
+address:      Anguilla
+
+contact:      administrative
+name:         Telecommunications Officer
+organisation: Government of Anguilla, Ministry of Infrastructure, Communications and Utilities
+address:      Coronation Avenue, PO Box 60
+address:      The Valley AI2640
+address:      Anguilla
+phone:        +1 264 497 5233
+e-mail:       telecommunications.office@gov.ai
+
+contact:      technical
+name:         Telecommunications Officer
+organisation: Government of Anguilla
+address:      Coronation Avenue, PO Box 60
+address:      The Valley AI2640
+address:      Anguilla
+phone:        +12644975233
+e-mail:       telecommunications.office@gov.ai
+
+nserver:      V0N0.NIC.AI 199.115.152.1 2001:500:a0:0:0:0:0:1
+nserver:      V0N1.NIC.AI 199.115.153.1 2001:500:a1:0:0:0:0:1
+nserver:      V0N2.NIC.AI 199.115.154.1 2001:500:a2:0:0:0:0:1
+nserver:      V0N3.NIC.AI 199.115.155.1 2001:500:a3:0:0:0:0:1
+nserver:      V2N0.NIC.AI 199.115.156.1 2001:500:a4:0:0:0:0:1
+nserver:      V2N1.NIC.AI 199.115.157.1 2001:500:a5:0:0:0:0:1
+ds-rdata:     3799 8 2 8a8030d4661ae6fcf417349682ac058648371002e70e717e4cf2f11f83543385
+
+whois:        whois.nic.ai
+
+status:       ACTIVE
+remarks:      Registration information: https://nic.ai
+
+created:      1995-02-16
+changed:      2025-02-11
+source:       IANA
+
+# whois.nic.ai
+
+Domain Name: character.ai
+Registry Domain ID: 53a3257aa05e4b578fa96e1211cc19d6-DONUTS
+Registrar WHOIS Server: whois.godaddy.com
+Registrar URL: http://www.godaddy.com/domains/search.aspx?ci=8990
+Updated Date: 2025-04-02T15:59:47Z
+Creation Date: 2018-06-15T16:06:46Z
+Registry Expiry Date: 2026-06-15T16:06:46Z
+Registrar: GoDaddy.com, LLC
+Registrar IANA ID: 146
+Registrar Abuse Contact Email: abuse@godaddy.com
+Registrar Abuse Contact Phone: +1.4806242505
+Domain Status: clientDeleteProhibited https://icann.org/epp#clientDeleteProhibited
+Domain Status: clientRenewProhibited https://icann.org/epp#clientRenewProhibited
+Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+Domain Status: clientUpdateProhibited https://icann.org/epp#clientUpdateProhibited
+Registry Registrant ID: 60ab43ee6d524cd7a5bb4209019d6826-DONUTS
+Registrant Name: Registration Private
+Registrant Organization: Domains By Proxy, LLC
+Registrant Street: DomainsByProxy.com, 100 S. Mill Ave, Suite 1600
+Registrant City: Tempe
+Registrant State/Province: Arizona
+Registrant Postal Code: 85281
+Registrant Country: US
+Registrant Phone: +1.4806242599
+Registrant Phone Ext:
+Registrant Fax:
+Registrant Fax Ext:
+Registrant Email: character.ai@domainsbyproxy.com
+Registry Admin ID: 84783a9fa8fd42cb84488509a279ac74-DONUTS
+Admin Name: Registration Private
+Admin Organization: Domains By Proxy, LLC
+Admin Street: DomainsByProxy.com, 100 S. Mill Ave, Suite 1600
+Admin City: Tempe
+Admin State/Province: Arizona
+Admin Postal Code: 85281
+Admin Country: US
+Admin Phone: +1.4806242599
+Admin Phone Ext:
+Admin Fax:
+Admin Fax Ext:
+Admin Email: character.ai@domainsbyproxy.com
+Registry Tech ID: 24311ce50b3d4b06aa9b4666393cc5b7-DONUTS
+Tech Name: Registration Private
+Tech Organization: Domains By Proxy, LLC
+Tech Street: DomainsByProxy.com, 100 S. Mill Ave, Suite 1600
+Tech City: Tempe
+Tech State/Province: Arizona
+Tech Postal Code: 85281
+Tech Country: US
+Tech Phone: +1.4806242599
+Tech Phone Ext:
+Tech Fax:
+Tech Fax Ext:
+Tech Email: character.ai@domainsbyproxy.com
+Name Server: cora.ns.cloudflare.com
+Name Server: elijah.ns.cloudflare.com
+DNSSEC: unsigned
+URL of the ICANN Whois Inaccuracy Complaint Form: https://icann.org/wicf/
+>>> Last update of WHOIS database: 2026-01-10T18:26:10Z <<<
+
+# whois.godaddy.com
+
+Domain Name: character.ai
+Registry Domain ID: 53a3257aa05e4b578fa96e1211cc19d6-DONUTS
+Registrar WHOIS Server: whois.godaddy.com
+Registrar URL: https://www.godaddy.com
+Updated Date: 2025-01-22T08:46:01Z
+Creation Date: 2018-06-15T16:06:46Z
+Registrar Registration Expiration Date: 2026-06-15T16:06:46Z
+Registrar: GoDaddy.com, LLC
+Registrar IANA ID: 146
+Registrar Abuse Contact Email: abuse@godaddy.com
+Registrar Abuse Contact Phone: +1.4806242505
+Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+Domain Status: clientUpdateProhibited https://icann.org/epp#clientUpdateProhibited
+Domain Status: clientRenewProhibited https://icann.org/epp#clientRenewProhibited
+Domain Status: clientDeleteProhibited https://icann.org/epp#clientDeleteProhibited
+Registry Registrant ID: cr786033654-kjoz
+Registrant Name: Registration Private
+Registrant Organization: Domains By Proxy, LLC
+Registrant Street: DomainsByProxy.com
+Registrant Street: 100 S. Mill Ave, Suite 1600
+Registrant City: Tempe
+Registrant State/Province: Arizona
+Registrant Postal Code: 85281
+Registrant Country: US
+Registrant Phone: +1.4806242599
+Registrant Phone Ext:
+Registrant Fax:
+Registrant Fax Ext:
+Registrant Email: https://www.godaddy.com/whois/results.aspx?domain=character.ai&action=contactDomainOwner
+Registry Tech ID: cr786033656-wvta
+Tech Name: Registration Private
+Tech Organization: Domains By Proxy, LLC
+Tech Street: DomainsByProxy.com
+Tech Street: 100 S. Mill Ave, Suite 1600
+Tech City: Tempe
+Tech State/Province: Arizona
+Tech Postal Code: 85281
+Tech Country: US
+Tech Phone: +1.4806242599
+Tech Phone Ext:
+Tech Fax:
+Tech Fax Ext:
+Tech Email: https://www.godaddy.com/whois/results.aspx?domain=character.ai&action=contactDomainOwner
+Name Server: CORA.NS.CLOUDFLARE.COM
+Name Server: ELIJAH.NS.CLOUDFLARE.COM
+DNSSEC: unsigned
+URL of the ICANN WHOIS Data Problem Reporting System: http://wdprs.internic.net/
+>>> Last update of WHOIS database: 2026-01-10T18:26:10Z <<<
+

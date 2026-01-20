@@ -22,6 +22,8 @@ from .domain_inference import (
 from .normalization import normalize_raw_text
 from .records import RecordBuilder, WhoisRecord, is_rate_limited_payload
 
+TLDS_REQUIRING_DOMAIN_HINT = frozenset({"info", "za", "jobs", "live"})
+
 refresh_domain_markers(DEFAULT_CONFIG_FACTORY.base_fields, DEFAULT_CONFIG_FACTORY.tld_overrides)
 
 DateParser = Callable[[str], datetime]
@@ -104,7 +106,7 @@ class WhoisParser:
         target_tld: str,
     ) -> None:
         """Ensure problematic TLDs keep the user-provided domain name."""
-        if target_tld != "info" or not domain_hint:
+        if target_tld not in TLDS_REQUIRING_DOMAIN_HINT or not domain_hint:
             return
         cleaned_hint = domain_hint.strip()
         if not cleaned_hint:
@@ -194,13 +196,21 @@ class WhoisParser:
         self,
         payloads: Iterable[str],
         *,
-        domain: str | None = None,
+        domain: str | Iterable[str] | None = None,
         tld: str | None = None,
         to_records: bool = False,
         lowercase: bool = False,
         date_parser: DateParser | None = None,
-    ) -> list[MutableMapping[str, str]] | list[WhoisRecord]:
-        target_tld = self._select_tld(tld, domain)
+    ) -> Iterable[MutableMapping[str, str]] | list[WhoisRecord]:
+        domain_hints: list[str] | None = None
+        domain_hint_for_selection: str | None
+        if isinstance(domain, str) or domain is None:
+            domain_hint_for_selection = domain
+        else:
+            domain_hints = list(domain)
+            domain_hint_for_selection = domain_hints[0] if domain_hints else None
+
+        target_tld = self._select_tld(tld, domain_hint_for_selection)
         parser = self._get_parser_for_tld(target_tld)
         parser_input: Iterable[str]
         if to_records:
@@ -211,11 +221,19 @@ class WhoisParser:
             parser_input = (normalize_raw_text(text) for text in payloads)
         parsed_payloads = parser.parse_many(parser_input)
         parsed_sequence: Iterable[MutableMapping[str, str]] = parsed_payloads
-        if domain and target_tld == "info":
-            parsed_list_for_hint = list(parsed_sequence)
-            for parsed in parsed_list_for_hint:
-                self._apply_domain_hint(parsed, domain_hint=domain, target_tld=target_tld)
-            parsed_sequence = parsed_list_for_hint
+        if target_tld in TLDS_REQUIRING_DOMAIN_HINT:
+            if domain_hints is not None:
+                parsed_list_for_hint = list(parsed_sequence)
+                if len(parsed_list_for_hint) != len(domain_hints):
+                    raise ValueError("domain hint count does not match payload count")
+                for parsed, hint in zip(parsed_list_for_hint, domain_hints):
+                    self._apply_domain_hint(parsed, domain_hint=hint, target_tld=target_tld)
+                parsed_sequence = parsed_list_for_hint
+            elif domain_hint_for_selection:
+                parsed_list_for_hint = list(parsed_sequence)
+                for parsed in parsed_list_for_hint:
+                    self._apply_domain_hint(parsed, domain_hint=domain_hint_for_selection, target_tld=target_tld)
+                parsed_sequence = parsed_list_for_hint
         if not to_records:
             return parsed_sequence
         records: list[WhoisRecord] = []
@@ -247,7 +265,7 @@ class WhoisParser:
         parser = self._get_parser_for_tld(target_tld)
         normalized_inputs = (normalize_raw_text(text) for text in payloads)
         chunks = parser.parse_chunks(normalized_inputs, chunk_size=chunk_size)
-        if not domain or target_tld != "info":
+        if not domain or target_tld not in TLDS_REQUIRING_DOMAIN_HINT:
             return chunks
 
         def _apply_hint() -> Iterator[list[MutableMapping[str, Any]]]:

@@ -1,0 +1,109 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.nic.fm
+
+domain:       FM
+
+organisation: FSM Telecommunications Corporation
+address:      P.O. Box 1210
+address:      Kolonia Pohnpei 96941
+address:      Micronesia (Federated States of)
+
+contact:      administrative
+name:         Chief Executive Officer
+organisation: FSM Telecommunications Corporation
+address:      P.O. Box 1210
+address:      Kolonia Pohnpei 96941
+address:      Micronesia (Federated States of)
+phone:        +691 320 2740
+fax-no:       +691 320 2745
+e-mail:       dotfm-admin@fsmtc.fm
+
+contact:      technical
+name:         IT Manager
+organisation: FSM Telecommunications Corporation
+address:      P.O. Box 1210
+address:      Kolonia Pohnpei 96941
+address:      Micronesia (Federated States of)
+phone:        +691 320 2740
+fax-no:       +691 320 2745
+e-mail:       dotfm-technical@fsmtc.fm
+
+nserver:      A.NIC.FM 194.169.218.26 2001:67c:13cc:0:0:0:1:26
+nserver:      B.NIC.FM 185.24.64.26 2a04:2b00:13cc:0:0:0:1:26
+nserver:      C.NIC.FM 212.18.248.26 2a04:2b00:13ee:0:0:0:0:26
+nserver:      D.NIC.FM 212.18.249.26 2a04:2b00:13ff:0:0:0:0:26
+nserver:      E.NIC.FM 2001:500:14:6137:ad:0:0:1 204.61.216.137
+nserver:      F.NIC.FM 206.51.254.3 2620:171:804:ad2:0:0:0:3
+ds-rdata:     26186 8 2 db3703697384a6f8b3a944a21c1a81ffd921000b23aa4241380b4ba3aa28dea0
+ds-rdata:     60226 8 2 ff4191e32b7f636aabaf957bf976bc1d792b5709b73a351fc77f45d0033dfbde
+
+whois:        whois.nic.fm
+
+status:       ACTIVE
+remarks:      Registration information: https://www.dot.fm/
+
+created:      1995-04-19
+changed:      2024-08-07
+source:       IANA
+
+# whois.nic.fm
+
+Domain Name: LAST.FM
+Registry Domain ID: D34879429-CNIC
+Registrar WHOIS Server: whois.markmonitor.com
+Registrar URL:
+Updated Date: 2025-03-01T10:52:58.0Z
+Creation Date: 2002-03-20T23:59:59.0Z
+Registry Expiry Date: 2026-03-19T23:59:59.0Z
+Registrar: MarkMonitor, Inc.
+Registrar IANA ID: 292
+Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+Domain Status: clientUpdateProhibited https://icann.org/epp#clientUpdateProhibited
+Domain Status: clientDeleteProhibited https://icann.org/epp#clientDeleteProhibited
+Registrant Email: https://whois.nic.fm/contact/last.fm/registrant
+Tech Email: https://whois.nic.fm/contact/last.fm/tech
+Name Server: DNS1.P09.NSONE.NET
+Name Server: DNS2.P09.NSONE.NET
+Name Server: DNS4.P09.NSONE.NET
+Name Server: DNS3.P09.NSONE.NET
+Name Server: NS0004.SECONDARY.CLOUDFLARE.COM
+Name Server: NS0243.SECONDARY.CLOUDFLARE.COM
+DNSSEC: unsigned
+Registrar Abuse Contact Email: ccops@markmonitor.com
+Registrar Abuse Contact Phone: +1.2083895740
+URL of the ICANN Whois Inaccuracy Complaint Form: https://www.icann.org/wicf/
+>>> Last update of WHOIS database: 2026-01-11T11:44:22.0Z <<<
+
+# whois.markmonitor.com
+
+Domain Name: last.fm
+Registry Domain ID: D34879429-CNIC
+Registrar WHOIS Server: whois.markmonitor.com
+Registrar URL: http://www.markmonitor.com
+Updated Date: 2025-12-02T01:11:38+0000
+Creation Date: 2002-03-20T23:59:59+0000
+Registrar Registration Expiration Date: 2026-03-19T00:00:00+0000
+Registrar: MarkMonitor, Inc.
+Registrar IANA ID: 292
+Registrar Abuse Contact Email: abusecomplaints@markmonitor.com
+Registrar Abuse Contact Phone: +1.2086851750
+Domain Status: clientUpdateProhibited (https://www.icann.org/epp#clientUpdateProhibited)
+Domain Status: clientTransferProhibited (https://www.icann.org/epp#clientTransferProhibited)
+Domain Status: clientDeleteProhibited (https://www.icann.org/epp#clientDeleteProhibited)
+Registrant Organization: Last.fm Ltd.
+Registrant Country: UK
+Registrant Email: Select Request Email Form at https://domains.markmonitor.com/whois/last.fm
+Tech Email: Select Request Email Form at https://domains.markmonitor.com/whois/last.fm
+Name Server: dns3.p09.nsone.net
+Name Server: dns2.p09.nsone.net
+Name Server: ns0243.secondary.cloudflare.com
+Name Server: dns1.p09.nsone.net
+Name Server: dns4.p09.nsone.net
+Name Server: ns0004.secondary.cloudflare.com
+DNSSEC: unsigned
+URL of the ICANN WHOIS Data Problem Reporting System: http://wdprs.internic.net/
+>>> Last update of WHOIS database: 2026-01-11T11:44:05+0000 <<<
+

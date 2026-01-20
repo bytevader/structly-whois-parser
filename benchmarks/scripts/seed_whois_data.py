@@ -15,11 +15,11 @@ PROJECT_ROOT = Path(__file__).resolve().parents[2]
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from tests.sample_utils import SKIPPED_SAMPLES  # noqa: E402
+from tests.common.sample_utils import SKIPPED_SAMPLES  # noqa: E402
 
 DEFAULT_SAMPLES_DIR = PROJECT_ROOT / "tests" / "samples" / "whois"
 DEFAULT_TOTAL_RECORDS = 1_000_000
-DEFAULT_SAMPLE_LIMIT = 105
+DEFAULT_SAMPLE_LIMIT = 184
 
 
 def _snappy_self_test() -> None:
@@ -101,6 +101,12 @@ def _parse_args(argv: Iterable[str] | None = None) -> argparse.Namespace:
         default=100_000,
         help="Print progress after this many published records.",
     )
+    parser.add_argument(
+        "--sleep-between-batches",
+        type=float,
+        default=0.0,
+        help="Optional delay in seconds inserted after each producer buffer flush to throttle publishing.",
+    )
     return parser.parse_args(argv)
 
 
@@ -114,6 +120,8 @@ def main(argv: Iterable[str] | None = None) -> int:
     )
     producer = _build_producer(args.bootstrap_servers, args.linger_ms, args.batch_size)
     start = time.perf_counter()
+    aborted = False
+    last_idx = 0
     try:
         for idx, domain, raw_text in _iter_messages(samples, args.total_records):
             tld = _tld_for_domain(domain)
@@ -133,16 +141,27 @@ def main(argv: Iterable[str] | None = None) -> int:
                 except BufferError:
                     producer.poll(0.5)
             producer.poll(0)
+            last_idx = idx
             if idx % args.report_every == 0:
                 elapsed = time.perf_counter() - start
                 print(f"sent {idx:,}/{args.total_records:,} messages ({idx / elapsed:,.0f} records/sec)")
+            if args.sleep_between_batches > 0 and idx % args.batch_size == 0:
+                time.sleep(args.sleep_between_batches)
+    except KeyboardInterrupt:
+        aborted = True
+        print("Interrupted, stopping publish loop...")
     finally:
-        producer.flush()
+        timeout = 5.0 if aborted else float("inf")
+        remaining = producer.flush(timeout=timeout)
+        if remaining:
+            print(f"flush exited with {remaining} undelivered message(s)")
     elapsed = time.perf_counter() - start
-    print(
-        f"Done publishing {args.total_records:,} messages in {elapsed:.2f}s "
-        f"({args.total_records / elapsed:,.0f} records/sec)."
-    )
+    total_sent = last_idx
+    rate = (total_sent / elapsed) if elapsed and total_sent else 0.0
+    if aborted:
+        print(f"Stopped after sending {total_sent:,} messages in {elapsed:.2f}s ({rate:,.0f} records/sec).")
+    else:
+        print(f"Done publishing {total_sent:,} messages in {elapsed:.2f}s ({rate:,.0f} records/sec).")
     return 0
 
 

@@ -1,0 +1,126 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.nic.cloud
+
+domain:       CLOUD
+
+organisation: ARUBA PEC S.p.A.
+address:      Via San Clemente 53
+address:      Ponte San Pietro (BG) 24036
+address:      Italy
+
+contact:      administrative
+name:         Francesco Simondi
+organisation: Aruba PEC S.p.A.
+address:      Via San Clemente 53
+address:      Ponte San Pietro BG 24036
+address:      Italy
+phone:        +39.05750505
+fax-no:       +39.0575862000
+e-mail:       registry@get.cloud
+
+contact:      technical
+name:         Francisco Obispo
+organisation: Tucows.com, Co.
+address:      96 Mowat Avenue
+address:      Toronto Ontario M6K3M1
+address:      Canada
+phone:        +1 (416) 535-0123
+e-mail:       trs-ops@tucows.com
+
+nserver:      NS01.TRS-DNS.COM 2620:57:4001:0:0:0:0:1 64.96.1.1
+nserver:      NS01.TRS-DNS.NET 2620:57:4002:0:0:0:0:1 64.96.2.1
+nserver:      NS10.TRS-DNS.INFO 2620:171:812:1534:8:0:0:1 64.78.204.1
+nserver:      NS10.TRS-DNS.ORG 2620:171:813:1534:8:0:0:1 64.78.205.1
+ds-rdata:     7041 13 2 03e1b41319fdd3a14e27ce35ffba8036da51e328165ce102ae69a6c1203f64e4
+
+whois:        whois.nic.cloud
+
+status:       ACTIVE
+remarks:      Registration information: https://www.get.cloud
+
+created:      2015-06-18
+changed:      2025-12-18
+source:       IANA
+
+# whois.nic.cloud
+
+Domain Name: alchemy.cloud
+Registry Domain ID: D3BEBAB90E3004895887536638F8B2B08-ARI
+Registrar WHOIS Server: whois.godaddy.com
+Registrar URL: www.godaddy.com
+Updated Date: 2025-02-08T14:37:22.015Z
+Creation Date: 2016-02-17T15:27:55.367Z
+Registry Expiry Date: 2026-02-17T15:27:55.367Z
+Registrar: GoDaddy
+Registrar IANA ID: 146
+Registrar Abuse Contact Email: reg_admin@godaddy.com
+Registrar Abuse Contact Phone: +1.4805058800
+Domain Status: clientRenewProhibited https://icann.org/epp#clientRenewProhibited
+Domain Status: clientDeleteProhibited https://icann.org/epp#clientDeleteProhibited
+Domain Status: clientUpdateProhibited https://icann.org/epp#clientUpdateProhibited
+Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+Name Server: ns-509.awsdns-63.com
+Name Server: ns-709.awsdns-24.net
+Name Server: ns-1346.awsdns-40.org
+Name Server: ns-1979.awsdns-55.co.uk
+DNSSEC: unsigned
+URL of the ICANN RDDS Inaccuracy Complaint Form: https://icann.org/wicf
+
+>>> Last update of WHOIS database: 2026-01-10T18:56:01.728Z <<<
+
+# whois.godaddy.com
+
+Domain Name: alchemy.cloud
+Registry Domain ID: D3BEBAB90E3004895887536638F8B2B08-ARI
+Registrar WHOIS Server: whois.godaddy.com
+Registrar URL: https://www.godaddy.com
+Updated Date: 2025-02-03T14:37:21Z
+Creation Date: 2016-02-17T15:27:55Z
+Registrar Registration Expiration Date: 2026-02-17T15:27:55Z
+Registrar: GoDaddy.com, LLC
+Registrar IANA ID: 146
+Registrar Abuse Contact Email: abuse@godaddy.com
+Registrar Abuse Contact Phone: +1.4806242505
+Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+Domain Status: clientUpdateProhibited https://icann.org/epp#clientUpdateProhibited
+Domain Status: clientRenewProhibited https://icann.org/epp#clientRenewProhibited
+Domain Status: clientDeleteProhibited https://icann.org/epp#clientDeleteProhibited
+Registry Registrant ID: CR766190087
+Registrant Name: Registration Private
+Registrant Organization: Domains By Proxy, LLC
+Registrant Street: DomainsByProxy.com
+Registrant Street: 100 S. Mill Ave, Suite 1600
+Registrant City: Tempe
+Registrant State/Province: Arizona
+Registrant Postal Code: 85281
+Registrant Country: US
+Registrant Phone: +1.4806242599
+Registrant Phone Ext:
+Registrant Fax: 
+Registrant Fax Ext:
+Registrant Email: https://www.godaddy.com/whois/results.aspx?domain=alchemy.cloud&action=contactDomainOwner
+Registry Tech ID: CR766190081
+Tech Name: Registration Private
+Tech Organization: Domains By Proxy, LLC
+Tech Street: DomainsByProxy.com
+Tech Street: 100 S. Mill Ave, Suite 1600
+Tech City: Tempe
+Tech State/Province: Arizona
+Tech Postal Code: 85281
+Tech Country: US
+Tech Phone: +1.4806242599
+Tech Phone Ext:
+Tech Fax: 
+Tech Fax Ext:
+Tech Email: https://www.godaddy.com/whois/results.aspx?domain=alchemy.cloud&action=contactDomainOwner
+Name Server: NS-709.AWSDNS-24.NET
+Name Server: NS-509.AWSDNS-63.COM
+Name Server: NS-1346.AWSDNS-40.ORG
+Name Server: NS-1979.AWSDNS-55.CO.UK
+DNSSEC: unsigned
+URL of the ICANN WHOIS Data Problem Reporting System: http://wdprs.internic.net/
+>>> Last update of WHOIS database: 2026-01-10T18:56:01Z <<<
+

@@ -1,0 +1,162 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.nic.accountant
+
+domain:       ACCOUNTANT
+
+organisation: dot Accountant Limited
+address:      2nd Floor, Leisure Island Business Centre, Ocean Village
+address:      Gibraltar  GX11 1AA
+address:      Gibraltar
+
+contact:      administrative
+name:         Edgar Charles Andrew Lavarello
+organisation: Pricewaterhousecoopers Ltd.
+address:      327 Main Street
+address:      Gibraltar  GX11 1AA
+address:      Gibraltar
+phone:        +350 200 73520
+e-mail:       edgar.c.lavarello@gi.pwc.com
+
+contact:      technical
+name:         IANA Contact
+organisation: GoDaddy Registry
+address:      100 S. Mill Ave, Suite 1600
+address:      Tempe AZ 85281
+address:      United States of America (the)
+phone:        +1 480 505 8800
+fax-no:       +1 480 624 2546
+e-mail:       iana@registry.godaddy
+
+nserver:      A.NIC.ACCOUNTANT 2001:dcd:1:0:0:0:0:10 37.209.192.10
+nserver:      B.NIC.ACCOUNTANT 2001:dcd:2:0:0:0:0:10 37.209.194.10
+nserver:      C.NIC.ACCOUNTANT 2001:dcd:3:0:0:0:0:10 37.209.196.10
+nserver:      NS1.DNS.NIC.ACCOUNTANT 156.154.144.195 2610:a1:1071:0:0:0:0:c3
+nserver:      NS2.DNS.NIC.ACCOUNTANT 156.154.145.195 2610:a1:1072:0:0:0:0:c3
+nserver:      NS3.DNS.NIC.ACCOUNTANT 156.154.159.195 2610:a1:1073:0:0:0:0:c3
+ds-rdata:     59392 8 2 d07b6b81becef22a22bf731c3eb8932cb97414e494675ef8c7771d4b768ab6f5
+
+whois:        whois.nic.accountant
+
+status:       ACTIVE
+remarks:      Registration information: http://nic.accountant
+
+created:      2015-02-05
+changed:      2024-05-11
+source:       IANA
+
+# whois.nic.accountant
+
+Domain Name: hi88.accountant
+Registry Domain ID: REDACTED FOR PRIVACY
+Registrar WHOIS Server: whois.spaceship.com
+Registrar URL: https://www.spaceship.com/
+Updated Date: 2025-11-11T04:25:06Z
+Creation Date: 2025-09-12T04:25:06Z
+Registry Expiry Date: 2026-09-12T04:25:06Z
+Registrar: Spaceship, Inc.
+Registrar IANA ID: 3862
+Registrar Abuse Contact Email: abuse@spaceship.com
+Registrar Abuse Contact Phone: +1.6613102107
+Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+Registry Registrant ID: REDACTED FOR PRIVACY
+Registrant Name: REDACTED FOR PRIVACY
+Registrant Organization: Privacy service provided by Withheld for Privacy ehf
+Registrant Street: REDACTED FOR PRIVACY
+Registrant Street: REDACTED FOR PRIVACY
+Registrant Street: REDACTED FOR PRIVACY
+Registrant City: REDACTED FOR PRIVACY
+Registrant State/Province: Capital Region
+Registrant Postal Code: REDACTED FOR PRIVACY
+Registrant Country: IS
+Registrant Phone: REDACTED FOR PRIVACY
+Registrant Phone Ext: REDACTED FOR PRIVACY
+Registrant Fax: REDACTED FOR PRIVACY
+Registrant Fax Ext: REDACTED FOR PRIVACY
+Registrant Email: Please query the RDDS service of the Registrar of Record identified in this output for information on how to contact the Registrant, Admin, or Tech contact of the queried domain name.
+Registry Admin ID:
+Admin Name:
+Admin Organization:
+Admin Street:
+Admin Street:
+Admin Street:
+Admin City:
+Admin State/Province:
+Admin Postal Code:
+Admin Country:
+Admin Phone:
+Admin Phone Ext:
+Admin Fax:
+Admin Fax Ext:
+Admin Email:
+Registry Tech ID:
+Tech Name:
+Tech Organization:
+Tech Street:
+Tech Street:
+Tech Street:
+Tech City:
+Tech State/Province:
+Tech Postal Code:
+Tech Country:
+Tech Phone:
+Tech Phone Ext:
+Tech Fax:
+Tech Fax Ext:
+Tech Email:
+Name Server: fonzie.ns.cloudflare.com
+Name Server: arely.ns.cloudflare.com
+DNSSEC: unsigned
+URL of the ICANN Whois Inaccuracy Complaint Form: https://www.icann.org/wicf/
+>>> Last update of WHOIS database: 2025-12-25T19:10:47Z <<<
+
+# whois.spaceship.com
+
+Domain name: hi88.accountant
+Registry Domain ID: D5F922E8C32CF46ADBCF50FD1E770379C-GDREG
+Registrar WHOIS Server: whois.spaceship.com
+Registrar URL: https://www.spaceship.com
+Registrar: Spaceship, Inc.
+Registrar IANA ID: 3862
+Registrar Abuse Contact Email: abuse@spaceship.com
+Registrar Abuse Contact Phone: +1.6613102107
+Reseller: Spaceship, Inc.
+Creation Date: 2025-09-12T04:25:06Z
+Updated Date: 2025-09-12T04:25:07Z
+Registrar Registration Expiration Date: 2026-09-12T04:25:06Z
+Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+Domain Status: serverTransferProhibited https://icann.org/epp#serverTransferProhibited
+Registry Registrant ID: C494348BBA6654FD9A52F48E0F15DBB8A-GDREG
+Registrant Name: Redacted for Privacy Purposes
+Registrant Organization: Privacy service provided by Withheld for Privacy ehf
+Registrant Street: Kalkofnsvegur 2
+Registrant City: Reykjavik
+Registrant State/Province: Capital Region
+Registrant Postal Code: 101
+Registrant Country: IS
+Registrant Phone: +354.4212434
+Registrant Phone Ext: 
+Registrant Fax: 
+Registrant Fax Ext: 
+Registrant Email: https://www.spaceship.com/domains/whois/contact/?d=hi88.accountant
+Registry Tech ID: cdf0d763a6684246bf6c4962e13a854e-SPACESH
+Tech Name: Redacted for Privacy Purposes
+Tech Organization: Privacy service provided by Withheld for Privacy ehf
+Tech Street: Kalkofnsvegur 2
+Tech City: Reykjavik
+Tech State/Province: Capital Region
+Tech Postal Code: 101
+Tech Country: IS
+Tech Phone: +354.4212434
+Tech Phone Ext: 
+Tech Fax: 
+Tech Fax Ext: 
+Tech Email: https://www.spaceship.com/domains/whois/contact/?d=hi88.accountant
+Name Server: arely.ns.cloudflare.com
+Name Server: fonzie.ns.cloudflare.com
+DNSSEC: unsigned
+URL of the ICANN WHOIS Data Problem Reporting System: http://wdprs.internic.net/
+>>> Last update of WHOIS database: 2025-12-25T19:10:47.73Z <<<
+

@@ -1,0 +1,179 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.nic.abbott
+
+domain:       ABBOTT
+
+organisation: Abbott Laboratories, Inc.
+address:      100 Abbott Park Road
+address:      Dept. G397, Bldg. AP6D-2
+address:      Abbott Park IL 60064
+address:      United States of America (the)
+
+contact:      administrative
+name:         Domain Administrator
+organisation: Abbott Laboratories, Inc
+address:      100 Abbott Park Road, Dept. G397, Bldg. AP6D-2
+address:      Abbott Park IL 60064
+address:      United States of America (the)
+phone:        +44 20 70 15 17 17
+e-mail:       ngtld-abbott@cscglobal.com
+
+contact:      technical
+name:         Senior Director, DNS Infrastructure Group
+organisation: Afilias
+address:      300 Welsh Road
+address:      Building 3, Suite 105
+address:      Horsham PA 19044
+address:      United States of America (the)
+phone:        +1 215.706.5700
+fax-no:       +1 215.706.5701
+e-mail:       tld-tech-poc@afilias.info
+
+nserver:      A0.NIC.ABBOTT 2a01:8840:9a:0:0:0:0:41 65.22.156.41
+nserver:      A2.NIC.ABBOTT 2a01:8840:9d:0:0:0:0:41 65.22.159.41
+nserver:      B0.NIC.ABBOTT 2a01:8840:9b:0:0:0:0:41 65.22.157.41
+nserver:      C0.NIC.ABBOTT 2a01:8840:9c:0:0:0:0:41 65.22.158.41
+ds-rdata:     41764 8 2 04c4003cf06316c866df2dcf23304b3a25d30778ac1a838f986350010d2647ce
+
+whois:        whois.nic.abbott
+
+status:       ACTIVE
+remarks:      Registration information: http://www.abbott.com
+
+created:      2014-11-20
+changed:      2025-12-15
+source:       IANA
+
+# whois.nic.abbott
+
+This domain is protected by the Registry Lock service. If you are the registrant and wish to take action on this lock, please contact your registrar.
+
+Domain Name: nic.abbott
+Registry Domain ID: 7db1f169c3ed4d32b6ad4da1e0d9139c-DONUTS
+Registrar WHOIS Server: whois.identitydigital.services
+Registrar URL: https://identity.digital
+Updated Date: 2025-08-16T19:18:20Z
+Creation Date: 2015-07-02T19:18:06Z
+Registry Expiry Date: 2026-07-02T19:18:06Z
+Registrar: Registry Operator acts as Registrar (9999)
+Registrar IANA ID: 9999
+Registrar Abuse Contact Email: abuse@identity.digital
+Registrar Abuse Contact Phone: +1.6664447777
+Domain Status: serverDeleteProhibited https://icann.org/epp#serverDeleteProhibited
+Domain Status: serverTransferProhibited https://icann.org/epp#serverTransferProhibited
+Domain Status: serverUpdateProhibited https://icann.org/epp#serverUpdateProhibited
+Registry Registrant ID: e06c245a5cb84725a5a13cc1b38d75d4-DONUTS
+Registrant Name: Premium Reserved Names
+Registrant Organization: Abbott Laboratories
+Registrant Street: 100 Abbott Park Road Dept G397, AP6D-2
+Registrant City: Abbott Park
+Registrant State/Province: Illinois
+Registrant Postal Code: 60064
+Registrant Country: US
+Registrant Phone: +1.2246681158
+Registrant Phone Ext: 
+Registrant Fax: +1.2246680793
+Registrant Fax Ext: 
+Registrant Email: abbottregistry@fairwindspartners.com
+Registry Admin ID: e06c245a5cb84725a5a13cc1b38d75d4-DONUTS
+Admin Name: Premium Reserved Names
+Admin Organization: Abbott Laboratories
+Admin Street: 100 Abbott Park Road Dept G397, AP6D-2
+Admin City: Abbott Park
+Admin State/Province: Illinois
+Admin Postal Code: 60064
+Admin Country: US
+Admin Phone: +1.2246681158
+Admin Phone Ext: 
+Admin Fax: +1.2246680793
+Admin Fax Ext: 
+Admin Email: abbottregistry@fairwindspartners.com
+Registry Tech ID: e06c245a5cb84725a5a13cc1b38d75d4-DONUTS
+Tech Name: Premium Reserved Names
+Tech Organization: Abbott Laboratories
+Tech Street: 100 Abbott Park Road Dept G397, AP6D-2
+Tech City: Abbott Park
+Tech State/Province: Illinois
+Tech Postal Code: 60064
+Tech Country: US
+Tech Phone: +1.2246681158
+Tech Phone Ext: 
+Tech Fax: +1.2246680793
+Tech Fax Ext: 
+Tech Email: abbottregistry@fairwindspartners.com
+Name Server: a0.nic.abbott
+Name Server: a2.nic.abbott
+Name Server: b0.nic.abbott
+Name Server: c0.nic.abbott
+DNSSEC: signedDelegation
+URL of the ICANN Whois Inaccuracy Complaint Form: https://icann.org/wicf/
+>>> Last update of WHOIS database: 2025-12-25T17:29:02Z <<<
+
+# whois.identitydigital.services
+
+This domain is protected by the Registry Lock service. If you are the registrant and wish to take action on this lock, please contact your registrar.
+
+Domain Name: nic.abbott
+Registry Domain ID: 7db1f169c3ed4d32b6ad4da1e0d9139c-DONUTS
+Registrar WHOIS Server: whois.identitydigital.services
+Registrar URL: https://identity.digital
+Updated Date: 2025-08-16T19:18:20Z
+Creation Date: 2015-07-02T19:18:06Z
+Registry Expiry Date: 2026-07-02T19:18:06Z
+Registrar: Registry Operator acts as Registrar (9999)
+Registrar IANA ID: 9999
+Registrar Abuse Contact Email: abuse@identity.digital
+Registrar Abuse Contact Phone: +1.6664447777
+Domain Status: serverDeleteProhibited https://icann.org/epp#serverDeleteProhibited
+Domain Status: serverTransferProhibited https://icann.org/epp#serverTransferProhibited
+Domain Status: serverUpdateProhibited https://icann.org/epp#serverUpdateProhibited
+Registry Registrant ID: e06c245a5cb84725a5a13cc1b38d75d4-DONUTS
+Registrant Name: Premium Reserved Names
+Registrant Organization: Abbott Laboratories
+Registrant Street: 100 Abbott Park Road Dept G397, AP6D-2
+Registrant City: Abbott Park
+Registrant State/Province: Illinois
+Registrant Postal Code: 60064
+Registrant Country: US
+Registrant Phone: +1.2246681158
+Registrant Phone Ext: 
+Registrant Fax: +1.2246680793
+Registrant Fax Ext: 
+Registrant Email: abbottregistry@fairwindspartners.com
+Registry Admin ID: e06c245a5cb84725a5a13cc1b38d75d4-DONUTS
+Admin Name: Premium Reserved Names
+Admin Organization: Abbott Laboratories
+Admin Street: 100 Abbott Park Road Dept G397, AP6D-2
+Admin City: Abbott Park
+Admin State/Province: Illinois
+Admin Postal Code: 60064
+Admin Country: US
+Admin Phone: +1.2246681158
+Admin Phone Ext: 
+Admin Fax: +1.2246680793
+Admin Fax Ext: 
+Admin Email: abbottregistry@fairwindspartners.com
+Registry Tech ID: e06c245a5cb84725a5a13cc1b38d75d4-DONUTS
+Tech Name: Premium Reserved Names
+Tech Organization: Abbott Laboratories
+Tech Street: 100 Abbott Park Road Dept G397, AP6D-2
+Tech City: Abbott Park
+Tech State/Province: Illinois
+Tech Postal Code: 60064
+Tech Country: US
+Tech Phone: +1.2246681158
+Tech Phone Ext: 
+Tech Fax: +1.2246680793
+Tech Fax Ext: 
+Tech Email: abbottregistry@fairwindspartners.com
+Name Server: a0.nic.abbott
+Name Server: a2.nic.abbott
+Name Server: b0.nic.abbott
+Name Server: c0.nic.abbott
+DNSSEC: signedDelegation
+URL of the ICANN Whois Inaccuracy Complaint Form: https://icann.org/wicf/
+>>> Last update of WHOIS database: 2025-12-25T17:29:03Z <<<
+

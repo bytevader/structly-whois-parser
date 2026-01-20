@@ -61,8 +61,10 @@ services:
       - --parsed-topic=whois_parsed
       - --group-id=structly-parser
       - --idle-timeout=15
+    volumes:
+      - ../benchmarks/scripts/consume_and_parse.py:/app/benchmarks/scripts/consume_and_parse.py:ro
     deploy:
       resources:
-        limits:
-          cpus: "1.0"
-          memory: 500M
+       limits:
+         cpus: "1.0"
+         memory: 500M

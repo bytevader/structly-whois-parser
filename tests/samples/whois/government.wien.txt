@@ -1,0 +1,199 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.nic.wien
+
+domain:       WIEN
+
+organisation: punkt.wien GmbH
+address:      Schoenbrunner Strasse 231
+address:      Vienna 1120
+address:      Austria
+
+contact:      administrative
+name:         Ronald Schwaerzler
+organisation: punkt.wien GmbH
+address:      Schoenbrunner Strasse 231
+address:      Vienna 1120
+address:      Austria
+phone:        +431981160
+fax-no:       +43198116111
+e-mail:       ronald.schwaerzler@nic.wien
+
+contact:      technical
+name:         Technical Operations
+organisation: RyCE GmbH
+address:      Schoenbrunner Strasse 231
+address:      Vienna 1120
+address:      Austria
+phone:        +431981160
+fax-no:       +43198116111
+e-mail:       tech@dns.business
+
+nserver:      DNS.RYCE-RSP.COM 194.0.11.114 2001:678:e:114:0:0:0:53
+nserver:      NS1.DNS.BUSINESS 157.90.205.138 2a01:4f8:252:4295:0:0:9d5a:cd8a
+nserver:      NS1.RYCE-RSP.COM 193.56.204.111 2a0c:8f40:0:701:0:0:0:111
+ds-rdata:     43762 8 2 ce9ba7bc8f43cfe6f1d63cdcc5882bb072bce1aa1ad0b7e739a8edfe60328ec3
+
+whois:        whois.nic.wien
+
+status:       ACTIVE
+remarks:      Registration information: https://www.nic.wien
+
+created:      2013-12-19
+changed:      2025-09-01
+source:       IANA
+
+# whois.nic.wien
+
+Domain Name: government.wien
+Registry Domain ID: 1upy_DOMAIN-WIEN
+Registrar WHOIS Server: whois.1api.net
+Registrar URL: http://1api.net/
+Updated Date: 2025-11-26T10:39:49Z
+Creation Date: 2023-07-09T16:03:09Z
+Registry Expiry Date: 2026-07-09T16:03:09Z
+Registrar Registration Expiration Date: 2026-07-09T16:03:09Z
+Registrar: 1API GmbH
+Registrar IANA ID: 1387
+Registrar Abuse Contact Email: admin-c@1api.net
+Registrar Abuse Contact Phone: 496 841 698 200
+Reseller: 
+Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+Registry Registrant ID: REDACTED
+Registrant Name: REDACTED
+Registrant Organization: Data Protected
+Registrant Street: REDACTED
+Registrant City: REDACTED
+Registrant State/Province: REDACTED
+Registrant Postal Code: REDACTED
+Registrant Country: KN
+Registrant Phone: REDACTED
+Registrant Phone Ext: REDACTED
+Registrant Fax: REDACTED
+Registrant Fax Ext: REDACTED
+Registrant Email: Please query the RDDS service of the Registrar of Record identified in this output for information on how to contact the Registrant, Admin or Tech contacts of the domain name.
+Registry Admin ID: REDACTED
+Admin Name: REDACTED
+Admin Organization: REDACTED
+Admin Street: REDACTED
+Admin City: REDACTED
+Admin State/Province: REDACTED
+Admin Postal Code: REDACTED
+Admin Country: REDACTED
+Admin Phone: REDACTED
+Admin Phone Ext: REDACTED
+Admin Fax: REDACTED
+Admin Fax Ext: REDACTED
+Admin Email: Please query the RDDS service of the Registrar of Record identified in this output for information on how to contact the Registrant, Admin or Tech contacts of the domain name.
+Registry Tech ID: REDACTED
+Tech Name: REDACTED
+Tech Organization: REDACTED
+Tech Street: REDACTED
+Tech City: REDACTED
+Tech State/Province: REDACTED
+Tech Postal Code: REDACTED
+Tech Country: REDACTED
+Tech Phone: REDACTED
+Tech Phone Ext: REDACTED
+Tech Fax: REDACTED
+Tech Fax Ext: REDACTED
+Tech Email: Please query the RDDS service of the Registrar of Record identified in this output for information on how to contact the Registrant, Admin or Tech contacts of the domain name.
+Registry Billing ID: REDACTED
+Billing Name: REDACTED
+Billing Organization: REDACTED
+Billing Street: REDACTED
+Billing City: REDACTED
+Billing State/Province: REDACTED
+Billing Postal Code: REDACTED
+Billing Country: REDACTED
+Billing Phone: REDACTED
+Billing Phone Ext: REDACTED
+Billing Fax: REDACTED
+Billing Fax Ext: REDACTED
+Billing Email: Please query the RDDS service of the Registrar of Record identified in this output for information on how to contact the Registrant, Admin or Tech contacts of the domain name.
+Name Server: dns1.ihordns.net
+Name Server: dns2.ihordns.net
+DNSSEC: unsigned
+URL of the ICANN Whois Inaccuracy Complaint Form: https://www.icann.org/wicf/
+>>> Last update of WHOIS database: 2026-01-18T12:57:58Z <<<
+
+# whois.1api.net
+
+Domain Name: government.wien
+Registry Domain ID: DOM_1UPY-RYCE
+Registrar WHOIS Server: whois.1api.net
+Registrar URL: https://nicenic.net/
+Updated Date: 2025-11-26T10:39:49Z
+Creation Date: 2023-07-09T16:03:09Z
+Registrar Registration Expiration Date: 2026-07-09T16:03:09Z
+Registrar: 1API GmbH
+Registrar IANA ID: 1387
+Registrar Abuse Contact Email: abuse@1api.net
+Registrar Abuse Contact Phone: +49.68949396850
+Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+Registry Registrant ID: REDACTED FOR PRIVACY
+Registrant Name: REDACTED FOR PRIVACY  
+Registrant Organization: REDACTED FOR PRIVACY
+Registrant Street: REDACTED FOR PRIVACY
+Registrant Street: REDACTED FOR PRIVACY
+Registrant Street: REDACTED FOR PRIVACY
+Registrant City: REDACTED FOR PRIVACY
+Registrant State/Province: Charlestown
+Registrant Postal Code: REDACTED FOR PRIVACY
+Registrant Country: KN
+Registrant Phone: REDACTED FOR PRIVACY
+Registrant Phone Ext: REDACTED FOR PRIVACY
+Registrant Fax: REDACTED FOR PRIVACY
+Registrant Fax Ext: REDACTED FOR PRIVACY
+Registrant Email: info@domain-contact.org
+Registry Admin ID: REDACTED FOR PRIVACY
+Admin Name: REDACTED FOR PRIVACY  
+Admin Organization: REDACTED FOR PRIVACY
+Admin Street: REDACTED FOR PRIVACY
+Admin Street: REDACTED FOR PRIVACY
+Admin Street: REDACTED FOR PRIVACY
+Admin City: REDACTED FOR PRIVACY
+Admin State/Province: REDACTED FOR PRIVACY
+Admin Postal Code: REDACTED FOR PRIVACY
+Admin Country: REDACTED FOR PRIVACY
+Admin Phone: REDACTED FOR PRIVACY
+Admin Phone Ext: REDACTED FOR PRIVACY
+Admin Fax: REDACTED FOR PRIVACY
+Admin Fax Ext: REDACTED FOR PRIVACY
+Admin Email: info@domain-contact.org
+Registry Tech ID: REDACTED FOR PRIVACY
+Tech Name: REDACTED FOR PRIVACY  
+Tech Organization: REDACTED FOR PRIVACY
+Tech Street: REDACTED FOR PRIVACY
+Tech Street: REDACTED FOR PRIVACY
+Tech Street: REDACTED FOR PRIVACY
+Tech City: REDACTED FOR PRIVACY
+Tech State/Province: REDACTED FOR PRIVACY
+Tech Postal Code: REDACTED FOR PRIVACY
+Tech Country: REDACTED FOR PRIVACY
+Tech Phone: REDACTED FOR PRIVACY
+Tech Phone Ext: REDACTED FOR PRIVACY
+Tech Fax: REDACTED FOR PRIVACY
+Tech Fax Ext: REDACTED FOR PRIVACY
+Tech Email: info@domain-contact.org
+Registry Billing ID: 
+Billing Name: 
+Billing Organization: 
+Billing Street: 
+Billing City: 
+Billing State/Province: 
+Billing Postal Code: 
+Billing Country: 
+Billing Phone: 
+Billing Phone Ext: 
+Billing Fax: 
+Billing Fax Ext: 
+Billing Email: 
+Name Server: dns1.ihordns.net 
+Name Server: dns2.ihordns.net 
+DNSSEC: unsigned
+URL of the ICANN WHOIS Data Problem Reporting System: https://wdprs.internic.net/
+>>> Last update of WHOIS database: 2026-01-18T12:57:58Z <<<
+

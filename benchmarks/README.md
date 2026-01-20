@@ -34,7 +34,8 @@ Follow these steps to spin up Kafka/Redpanda plus the constrained WHOIS consumer
    - ZooKeeper listens on `localhost:2181`.
    - Kafka listens on `localhost:9094` for host clients and `kafka:9092` inside the Compose network.
    - Redpanda Console is mapped to `http://localhost:8080`; it will show the Kafka topics once the broker is reachable.
-   - The consumer container is pinned to `1 CPU / 500 MB` and reads from `whois_raw`, writes to `whois_parsed`.
+   - The consumer container is pinned to `1 CPU / 500 MB` and reads from `whois_raw`, writes to `whois_parsed`.  
+   - The parser process is long-running: if Kafka/topcis are not ready yet, the container will restart automatically until the broker is reachable and the topics exist.
 
 4. **Create the Kafka topics (whois_raw & whois_parsed)**  
    ```bash
@@ -68,7 +69,7 @@ Follow these steps to spin up Kafka/Redpanda plus the constrained WHOIS consumer
    # Rancher Desktop / nerdctl
    nerdctl compose -f benchmarks/docker-compose.yml -p whois-bench logs -f whois-parser
    ```
-   - The script reports the elapsed time between the first and last payload once the topic drains.
+   - The script reports sustained throughput continuously; the container keeps polling even when idle, so leave it running to pick up new records.
 
 7. **Shut everything down when done**  
    ```bash

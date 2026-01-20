@@ -1,0 +1,64 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.pknic.net.pk
+
+domain:       PK
+
+organisation: PKNIC
+address:      435 Tariq Block
+address:      New Garden Town
+address:      Lahore
+address:      Pakistan
+
+contact:      administrative
+name:         Ashar Nisar
+organisation: PKNIC
+address:      435 Tariq Block
+address:      New Garden Town
+address:      Lahore
+address:      Pakistan
+phone:        +92 (332) 477-1656
+fax-no:       +1 (800) 835-9892
+e-mail:       ashar@pknic.net.pk
+
+contact:      technical
+name:         Ashar Nisar
+organisation: PKNIC
+address:      435 Tariq Block
+address:      New Garden Town
+address:      Lahore
+address:      Pakistan
+phone:        +92-(332)-477-1656
+e-mail:       ashar@pknic.net.pk
+
+nserver:      ROOT-C1.PKNIC.PK 185.159.197.160 2620:10a:80aa:0:0:0:0:160
+nserver:      ROOT-C2.PKNIC.PK 185.159.198.160 2620:10a:80ab:0:0:0:0:160
+nserver:      ROOT-E.PKNIC.PK 107.6.178.178
+nserver:      ROOT-S.PKNIC.PK 119.81.34.90
+
+whois:        whois.pknic.net.pk
+
+status:       ACTIVE
+remarks:      Registration information: http://www.pknic.net.pk/
+
+created:      1992-06-03
+changed:      2022-07-06
+source:       IANA
+
+# whois.pknic.net.pk
+
+# WHOIS .PK Domains (PKNIC)
+
+    Domain: ptcl.com.pk
+    Status: Domain is Registered
+    
+
+    Creation Date: 2000-08-20
+    Expiry Date: 2026-08-20
+    Name Server: dns00.ptcl.net.pk
+    Name Server: dns04.ptcl.net.pk
+    Name Server: cdns-khi-01.ptcl.net.pk
+    Name Server: cdns-lhr-02.ptcl.net.pk
+

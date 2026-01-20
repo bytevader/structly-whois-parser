@@ -1,0 +1,104 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.nic.ac
+
+domain:       AC
+
+organisation: Internet Computer Bureau Limited
+address:      c/o Sure (Ascension Island)
+address:      Georgetown ASCN 1ZZ
+address:      Ascension Island
+
+contact:      administrative
+name:         Managing Director
+organisation: Internet Computer Bureau Limited
+address:      c/o Sure (Ascension Island)
+address:      Georgetown ASCN 1ZZ
+address:      Ascension Island
+e-mail:       administrator@nic.ac
+
+contact:      technical
+name:         Technical Director
+organisation: Internet Computer Bureau Limited
+address:      Greytown House, 221-227 High Street
+address:      Orpington Kent BR6 0NZ
+address:      United Kingdom of Great Britain and Northern Ireland (the)
+phone:        +44 (0)1689 827505
+fax-no:       +44 (0)1689 831478
+e-mail:       admin@icb.co.uk
+
+nserver:      A0.NIC.AC 2a01:8840:9e:0:0:0:0:1 65.22.160.1
+nserver:      A2.NIC.AC 2a01:8840:a1:0:0:0:0:1 65.22.163.1
+nserver:      B0.NIC.AC 2a01:8840:9f:0:0:0:0:1 65.22.161.1
+nserver:      C0.NIC.AC 2a01:8840:a0:0:0:0:0:1 65.22.162.1
+ds-rdata:     42665 8 2 4b15f405c98f4bc3a370b19e54dbe75df201edcd38577c51d277dc6559865d95
+
+whois:        whois.nic.ac
+
+status:       ACTIVE
+remarks:      Registration information: http://www.nic.ac/
+
+created:      1997-12-19
+changed:      2023-03-07
+source:       IANA
+
+# whois.nic.ac
+
+Domain Name: work.ac
+Registry Domain ID: REDACTED
+Registrar WHOIS Server: whois.101domain.com
+Registrar URL: http://101domain.com
+Updated Date: 2022-01-14T09:18:39Z
+Creation Date: 2002-12-20T21:25:25Z
+Registry Expiry Date: 2031-12-20T21:25:25Z
+Registrar: 101domain GRS Limited
+Registrar IANA ID: 1011
+Registrar Abuse Contact Email: abuse@101domain.com
+Registrar Abuse Contact Phone: +1.7604448674
+Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+Registry Registrant ID: REDACTED
+Registrant Name: REDACTED
+Registrant Organization: Digital Privacy Corporation
+Registrant Street: REDACTED
+Registrant City: REDACTED
+Registrant State/Province: CA
+Registrant Postal Code: REDACTED
+Registrant Country: US
+Registrant Phone: REDACTED
+Registrant Phone Ext: REDACTED
+Registrant Fax: REDACTED
+Registrant Fax Ext: REDACTED
+Registrant Email: REDACTED
+Registry Admin ID: REDACTED
+Admin Name: REDACTED
+Admin Organization: REDACTED
+Admin Street: REDACTED
+Admin City: REDACTED
+Admin State/Province: REDACTED
+Admin Postal Code: REDACTED
+Admin Country: REDACTED
+Admin Phone: REDACTED
+Admin Phone Ext: REDACTED
+Admin Fax: REDACTED
+Admin Fax Ext: REDACTED
+Admin Email: REDACTED
+Registry Tech ID: REDACTED
+Tech Name: REDACTED
+Tech Organization: REDACTED
+Tech Street: REDACTED
+Tech City: REDACTED
+Tech State/Province: REDACTED
+Tech Postal Code: REDACTED
+Tech Country: REDACTED
+Tech Phone: REDACTED
+Tech Phone Ext: REDACTED
+Tech Fax: REDACTED
+Tech Fax Ext: REDACTED
+Tech Email: REDACTED
+Name Server: ns1.bluehost.com
+Name Server: ns2.bluehost.com
+DNSSEC: unsigned
+URL of the ICANN Whois Inaccuracy Complaint Form: https://icann.org/wicf/
+>>> Last update of WHOIS database: 2025-12-25T19:00:32Z <<<

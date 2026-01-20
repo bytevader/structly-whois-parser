@@ -1,0 +1,148 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.registry.co
+
+domain:       CO
+
+organisation: Ministry of Information and Communications Technologies (MinTIC)
+address:      Edificio Murillo Toro
+address:      Cra.8 #Entre Calles 12A y 12B
+address:      Bogotá D.C. Cundinamarca 111711
+address:      Colombia
+
+contact:      administrative
+name:         Thiago Grijo Dal-Toe
+organisation: Ministry of Information and Communications Technologies (MinTIC)
+address:      Edificio Murillo Toro
+address:      Cra.8 #Entre Calles 12A y 12B
+address:      Bogotá D.C. Cundinamarca 111711
+address:      Colombia
+phone:        +57 (601) 344 3460
+fax-no:       +57 (601) 344 2248
+e-mail:       cctld.co@mintic.gov.co
+
+contact:      technical
+name:         CTO
+organisation: CentralNic
+address:      Saddlers House, 4th Floor
+address:      44 Gutter Lane
+address:      London EC2V 6BR
+address:      United Kingdom of Great Britain and Northern Ireland (the)
+phone:        +44 20 33 88 0600
+fax-no:       +44 20 33 88 0601
+e-mail:       tld.ops@centralnic.com
+
+nserver:      A.REGISTRYDNS.CO 194.169.218.57 2001:67c:13cc:0:0:0:1:57
+nserver:      B.REGISTRYDNS.CO 185.24.64.57 2a04:2b00:13cc:0:0:0:1:57
+nserver:      C.REGISTRYDNS.CO 212.18.248.57 2a04:2b00:13ee:0:0:0:0:57
+nserver:      D.REGISTRYDNS.CO 212.18.249.57 2a04:2b00:13ff:0:0:0:0:57
+ds-rdata:     62110 8 2 4857ee1a85e661c92156ad09b40139dae7d5be37d117a1223289f0e20cf9d654
+ds-rdata:     7786 8 2 eb84f864cbe86e913796d2c8dd81933aa2c94bbcfb73419a42250bc4650b081b
+
+whois:        whois.registry.co
+
+status:       ACTIVE
+remarks:      Registration information: http://www.registry.co
+
+created:      1991-12-24
+changed:      2025-10-08
+source:       IANA
+
+# whois.registry.co
+
+Domain Name: ANGEL.CO
+Registry Domain ID: D180398-CNIC
+Registrar WHOIS Server: whois.gandi.net
+Registrar URL: https://www.gandi.net
+Updated Date: 2025-10-15T11:43:05.0Z
+Creation Date: 2010-04-22T17:00:36.0Z
+Registry Expiry Date: 2026-04-21T23:59:59.0Z
+Registrar: Gandi SAS
+Registrar IANA ID: 81
+Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+Registrant Email: Please query the RDDS service of the Registrar of Record identified in this output for information on how to contact the Registrant, Admin, or Tech contact of the queried domain name.
+Admin Email: Please query the RDDS service of the Registrar of Record identified in this output for information on how to contact the Registrant, Admin, or Tech contact of the queried domain name.
+Tech Email: Please query the RDDS service of the Registrar of Record identified in this output for information on how to contact the Registrant, Admin, or Tech contact of the queried domain name.
+Name Server: NICK.NS.CLOUDFLARE.COM
+Name Server: AMBER.NS.CLOUDFLARE.COM
+DNSSEC: unsigned
+Billing Email: Please query the RDDS service of the Registrar of Record identified in this output for information on how to contact the Registrant, Admin, or Tech contact of the queried domain name.
+Registrar Abuse Contact Email: abuse@gandi.net
+Registrar Abuse Contact Phone: +33.170377880
+URL of the ICANN Whois Inaccuracy Complaint Form: https://www.icann.org/wicf/
+>>> Last update of WHOIS database: 2026-01-10T18:59:10.0Z <<<
+
+# whois.gandi.net
+
+Domain Name: angel.co
+Registry Domain ID: D722844-CO
+Registrar WHOIS Server: whois.gandi.net
+Registrar URL: http://www.gandi.net
+Updated Date: 2025-10-15T11:43:05Z
+Creation Date: 2010-04-22T15:00:36Z
+Registrar Registration Expiration Date: 2026-04-21T23:59:59Z
+Registrar: GANDI SAS
+Registrar IANA ID: 81
+Registrar Abuse Contact Email: abuse@support.gandi.net
+Registrar Abuse Contact Phone: +33.170377661
+Reseller: Amazon Registrar, Inc.
+Domain Status: clientTransferProhibited http://www.icann.org/epp#clientTransferProhibited
+Domain Status: 
+Domain Status: 
+Domain Status: 
+Domain Status: 
+Registry Registrant ID: REDACTED FOR PRIVACY
+Registrant Name: REDACTED FOR PRIVACY
+Registrant Organization: AL Brand, Inc
+Registrant Street: REDACTED FOR PRIVACY
+Registrant City: REDACTED FOR PRIVACY
+Registrant State/Province: California
+Registrant Postal Code: REDACTED FOR PRIVACY
+Registrant Country: US
+Registrant Phone: REDACTED FOR PRIVACY
+Registrant Phone Ext:
+Registrant Fax: REDACTED FOR PRIVACY
+Registrant Fax Ext:
+Registrant Email: f4cf24a76b51659892e3965be8718f00-21628356@contact.gandi.net
+Registry Admin ID: REDACTED FOR PRIVACY
+Admin Name: REDACTED FOR PRIVACY
+Admin Organization: REDACTED FOR PRIVACY
+Admin Street: REDACTED FOR PRIVACY
+Admin City: REDACTED FOR PRIVACY
+Admin State/Province: REDACTED FOR PRIVACY
+Admin Postal Code: REDACTED FOR PRIVACY
+Admin Country: REDACTED FOR PRIVACY
+Admin Phone: REDACTED FOR PRIVACY
+Admin Phone Ext:
+Admin Fax: REDACTED FOR PRIVACY
+Admin Fax Ext:
+Admin Email: f4cf24a76b51659892e3965be8718f00-21628356@contact.gandi.net
+Registry Tech ID: REDACTED FOR PRIVACY
+Tech Name: REDACTED FOR PRIVACY
+Tech Organization: REDACTED FOR PRIVACY
+Tech Street: REDACTED FOR PRIVACY
+Tech City: REDACTED FOR PRIVACY
+Tech State/Province: REDACTED FOR PRIVACY
+Tech Postal Code: REDACTED FOR PRIVACY
+Tech Country: REDACTED FOR PRIVACY
+Tech Phone: REDACTED FOR PRIVACY
+Tech Phone Ext:
+Tech Fax: REDACTED FOR PRIVACY
+Tech Fax Ext:
+Tech Email: f4cf24a76b51659892e3965be8718f00-21628356@contact.gandi.net
+Name Server: NICK.NS.CLOUDFLARE.COM
+Name Server: AMBER.NS.CLOUDFLARE.COM
+Name Server: 
+Name Server: 
+Name Server: 
+Name Server: 
+Name Server: 
+Name Server: 
+Name Server: 
+Name Server: 
+DNSSEC: Unsigned
+URL of the ICANN WHOIS Data Problem Reporting System: http://wdprs.internic.net/
+>>> Last update of WHOIS database: 2026-01-10T18:59:19Z <<<
+
