@@ -106,6 +106,30 @@ for record in records:
     ingest(record)  # bulk insert, emit to Kafka, etc.
 ```
 
+### Streaming note: `to_records=True` buffers input
+
+`parse_many(..., to_records=True)` yields `WhoisRecord` instances. Building those structs requires both the parsed fields and the original raw payload, so the incoming iterable is materialized into a list. When processing very large streams, chunk the input so memory stays bounded:
+
+```python
+from itertools import islice
+from structly_whois import WhoisParser
+
+def chunked(iterator, size: int):
+    iterator = iter(iterator)
+    while True:
+        chunk = list(islice(iterator, size))
+        if not chunk:
+            return
+        yield chunk
+
+parser = WhoisParser()
+
+for payload_chunk in chunked(iter_whois_payloads(), 1024):
+    records = parser.parse_many(payload_chunk, to_records=True)
+    for record in records:
+        ingest(record)
+```
+
 ### Optional date parser hook
 
 `structly_whois` intentionally avoids bundling `dateparser`. If you need locale-specific conversions, pass a callable either when constructing the parser or per method:
@@ -154,6 +178,25 @@ for chunk in parser.parse_chunks(payloads, chunk_size=512):
 ### Kafka batch ingestion
 
 Need to process live WHOIS feeds? `benchmarks/scripts/consume_and_parse.py` shows how to wire `WhoisParser` into a Kafka consumer, group messages by TLD, and issue `parse_many` calls per bucket. Grouping domains ensures each batch uses the right Structly override and minimizes parser cache churn, so `.com.br` payloads never run through `.com` rules while still keeping throughput high.
+
+### Performance tip: pass `domain=` or `tld=` when you know it
+
+Inference keeps things convenient, but the fastest path is to tell the parser what you already know:
+
+```python
+from structly_whois import WhoisParser
+
+parser = WhoisParser()
+
+# Fastest path: you know the exact domain
+record = parser.parse_record(raw_text, domain="example.com")
+
+# Fast bulk parsing: you know every payload shares the same TLD
+parsed = parser.parse_many(payloads, tld="com")
+records = parser.parse_many(payloads, tld="com", to_records=True)
+```
+
+If you omit both `domain` and `tld`, `WhoisParser` inspects the payload and picks the right override automatically. That path is still efficient, but providing hints avoids the inference work entirely.
 
 ### Custom Structly Config overrides
 
