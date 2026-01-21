@@ -3,7 +3,22 @@
 All notable changes to this project will be documented here. This project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.0.0] - 2026-01-21
+## [1.0.1] - 2026-01-21
+
+### Added
+
+- Documented streaming considerations (`to_records=True` buffering) and performance hints for `domain`/`tld` hints in the README.
+- GitHub Actions now publishes JUnit test reports and coverage summaries directly in the Checks UI, making CI results easier to audit.
+
+### Changed
+
+- `parse_many(..., to_records=True)` guidance now includes chunked-processing helpers to keep memory bounded.
+
+### Fixed
+
+- Rate-limit detection uses layered heuristics (exact match, line-level, substrings, regex) to catch more registry throttling responses without misclassifying real payloads.
+
+### 1.0.0 baseline
 
 ### Added
 
