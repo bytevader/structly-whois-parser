@@ -98,8 +98,8 @@ class WhoisParser:
             self._parsers[tld] = self._build_structly_parser(tld)
         return self._parsers[tld]
 
+    @staticmethod
     def _apply_domain_hint(
-        self,
         parsed: MutableMapping[str, Any],
         *,
         domain_hint: str | None,
