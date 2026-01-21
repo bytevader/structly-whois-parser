@@ -1,0 +1,131 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.nic.cz
+
+domain:       CZ
+
+organisation: CZ.NIC, z.s.p.o
+address:      Milesovska 5
+address:      Prague 130 00
+address:      Czechia
+
+contact:      administrative
+name:         Ondrej Filip
+organisation: CZ.NIC, z.s.p.o.
+address:      Milesovska 5
+address:      Prague 130 00
+address:      Czechia
+phone:        +420 222745111
+fax-no:       +420 222745112
+e-mail:       admin@nic.cz
+
+contact:      technical
+name:         Martin Peterka
+organisation: CZ.NIC, z.s.p.o.
+address:      Milesovska 5
+address:      Prague 130 00
+address:      Czechia
+phone:        +420 222745111
+fax-no:       +420 222745112
+e-mail:       tech@nic.cz
+
+nserver:      A.NS.NIC.CZ 194.0.12.1 2001:678:f:0:0:0:0:1
+nserver:      B.NS.NIC.CZ 194.0.13.1 2001:678:10:0:0:0:0:1
+nserver:      C.NS.NIC.CZ 194.0.14.1 2001:678:11:0:0:0:0:1
+nserver:      D.NS.NIC.CZ 193.29.206.1 2001:678:1:0:0:0:0:1
+ds-rdata:     20237 13 2 cff0f3ecdbc529c1f0031ba1840bfb835853b9209ed1e508fff48451d7b778e2
+
+whois:        whois.nic.cz
+
+status:       ACTIVE
+remarks:      Registration information: http://www.nic.cz/
+
+created:      1993-01-13
+changed:      2023-03-07
+source:       IANA
+
+# whois.nic.cz
+
+%  (c) 2006-2021 CZ.NIC, z.s.p.o.
+% 
+% Intended use of supplied data and information
+% 
+% Data contained in the domain name register, as well as information
+% supplied through public information services of CZ.NIC association,
+% are appointed only for purposes connected with Internet network
+% administration and operation, or for the purpose of legal or other
+% similar proceedings, in process as regards a matter connected
+% particularly with holding and using a concrete domain name.
+% 
+% Full text available at:
+% http://www.nic.cz/page/306/intended-use-of-supplied-data-and-information/
+% 
+% See also a search service at http://www.nic.cz/whois/
+% 
+% 
+% Whoisd Server Version: 3.15.0
+% Timestamp: Sat Jan 10 20:06:03 2026
+
+domain:       seznam.cz
+registrant:   SEZNAM-CZ-AS
+admin-c:      SEZNAM-CZ-AS-TECH
+nsset:        SEZNAM-NAMESERVERS
+keyset:       AUTO-1F6H8UIVQ6PNRFJQ3L1YU16R9
+registrar:    REG-SEZNAM
+status:       Sponsoring registrar change forbidden
+registered:   07.10.1996 02:00:00
+changed:      05.09.2022 14:21:11
+expire:       29.10.2026
+
+contact:      SEZNAM-CZ-AS
+org:          Seznam.cz, a.s.
+name:         Pavel Zima
+address:      Radlická 3294/10
+address:      Praha 5
+address:      150 00
+address:      CZ
+e-mail:       domeny-owner@firma.seznam.cz
+registrar:    REG-MOJEID
+created:      21.01.2021 07:38:06
+changed:      05.10.2022 09:56:15
+
+contact:      SEZNAM-CZ-AS-TECH
+org:          Seznam.cz, a.s.
+name:         Vlastimil Pečínka
+address:      Radlická 3294/10
+address:      Praha 5
+address:      150 00
+address:      CZ
+e-mail:       domeny@firma.seznam.cz
+registrar:    REG-MOJEID
+created:      27.02.2017 13:51:01
+changed:      12.10.2022 12:08:58
+
+nsset:        SEZNAM-NAMESERVERS
+nserver:      ans.seznam.cz (77.75.74.80, 2a02:598:3333::3)
+nserver:      ams.seznam.cz (77.75.75.230, 2a02:598:4444::4)
+tech-c:       SEZNAM-CZ-AS-TECH
+registrar:    REG-SEZNAM
+created:      18.10.2007 18:01:01
+changed:      11.12.2024 13:50:21
+
+keyset:       AUTO-1F6H8UIVQ6PNRFJQ3L1YU16R9
+dnskey:       257 3 13 4RjTqRW4rtz/sJ8Doo44NqGOoB8RirxCI4Qo9sAvZFOt71Am6E0d9YSFKfDcIHQSNyMonv8gD/3L/Q8xVM51mQ==
+tech-c:       CZNIC-AKM
+registrar:    REG-CZNIC
+created:      10.11.2021 14:55:10
+changed:      14.11.2025 22:34:15
+
+contact:      CZNIC-AKM
+org:          CZ.NIC, z.s.p.o.
+name:         CZ.NIC, z.s.p.o.
+address:      Milesovska 1136/5
+address:      Praha 3
+address:      13000
+address:      CZ
+registrar:    REG-CZNIC
+created:      12.08.2024 15:02:38
+
+

@@ -1,0 +1,189 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.nic.paris
+
+domain:       PARIS
+
+organisation: City of Paris
+address:      Ville de Paris
+address:      5 rue Lobau
+address:      Paris 75004
+address:      France
+
+contact:      administrative
+name:         Account Manager
+organisation: AFNIC
+address:      7, avenue du 8 mai 1945
+address:      Guyancourt 78280
+address:      France
+phone:        +33 139308300
+fax-no:       +33 139308301
+e-mail:       gtld-admin@nic.fr
+
+contact:      technical
+name:         TLD Technical Contact
+organisation: Association Française pour le Nommage Internet en Coopération (A.F.N.I.C.)
+address:      7, avenue du 8 mai 1945
+address:      Guyancourt 78280
+address:      France
+phone:        +33 1 39 30 83 00
+fax-no:       +33 1 39 30 83 01
+e-mail:       pocparis@afnic.fr
+
+nserver:      D.NIC.FR 194.0.9.1 2001:678:c:0:0:0:0:1
+nserver:      F.EXT.NIC.FR 194.146.106.46 2001:67c:1010:11:0:0:0:53
+nserver:      G.EXT.NIC.FR 194.0.36.1 2001:678:4c:0:0:0:0:1
+ds-rdata:     29441 13 2 2a63e38eb019ad4300a2d9533fae0db139328ceffd0861cd8db1c401ca0258d9
+
+whois:        whois.nic.paris
+
+status:       ACTIVE
+remarks:      Registration information: http://mondomaine.paris.fr/
+
+created:      2014-03-27
+changed:      2025-04-29
+source:       IANA
+
+# whois.nic.paris
+
+Domain Name:                   bienvenue.paris
+Registry Domain ID:            DOM000000021725-PARIS
+Registrar WHOIS Server:        whois.nameshield.net
+Registrar URL:                 http://www.nameshield.net
+Updated Date:                  2025-06-07T09:02:08.907483Z
+Creation Date:                 2014-06-03T13:05:37Z
+Registry Expiry Date:          2026-06-03T13:05:37Z
+Registrar:                     NAMESHIELD
+Registrar IANA ID:             1251
+Registrar Abuse Contact Email: abuse@nameshield.net
+Registrar Abuse Contact Phone: +33.241182828
+Domain Status:                 clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+Domain Status:                 clientDeleteProhibited https://icann.org/epp#clientDeleteProhibited
+Registry Registrant ID:        REDACTED_FOR_PRIVACY
+Registrant Name:               REDACTED_FOR_PRIVACY
+Registrant Organization:       VILLE DE PARIS
+Registrant Contact Status:     associated
+Registrant Contact Status:     active
+Registrant Street:             REDACTED_FOR_PRIVACY, REDACTED_FOR_PRIVACY, REDACTED_FOR_PRIVACY
+Registrant City:               REDACTED_FOR_PRIVACY
+Registrant Postal Code:        REDACTED_FOR_PRIVACY
+Registrant State/Province:     REDACTED_FOR_PRIVACY
+Registrant Country:            REDACTED_FOR_PRIVACY
+Registrant Phone:              REDACTED_FOR_PRIVACY
+Registrant Fax:                REDACTED_FOR_PRIVACY
+Registrant Email:              REDACTED_FOR_PRIVACY
+Registry Admin ID:             REDACTED_FOR_PRIVACY
+Admin Name:                    REDACTED_FOR_PRIVACY
+Admin Organization:            VILLE DE PARIS
+Admin Contact Status:          associated
+Admin Contact Status:          active
+Admin Street:                  REDACTED_FOR_PRIVACY, REDACTED_FOR_PRIVACY, REDACTED_FOR_PRIVACY
+Admin City:                    REDACTED_FOR_PRIVACY
+Admin Postal Code:             REDACTED_FOR_PRIVACY
+Admin State/Province:          REDACTED_FOR_PRIVACY
+Admin Country:                 REDACTED_FOR_PRIVACY
+Admin Phone:                   REDACTED_FOR_PRIVACY
+Admin Fax:                     REDACTED_FOR_PRIVACY
+Admin Email:                   REDACTED_FOR_PRIVACY
+Registry Tech ID:              REDACTED_FOR_PRIVACY
+Tech Name:                     REDACTED_FOR_PRIVACY
+Tech Organization:             NAMESHIELD
+Tech Contact Status:           associated
+Tech Contact Status:           active
+Tech Street:                   REDACTED_FOR_PRIVACY, REDACTED_FOR_PRIVACY, REDACTED_FOR_PRIVACY
+Tech City:                     REDACTED_FOR_PRIVACY
+Tech Postal Code:              REDACTED_FOR_PRIVACY
+Tech State/Province:           REDACTED_FOR_PRIVACY
+Tech Country:                  REDACTED_FOR_PRIVACY
+Tech Phone:                    REDACTED_FOR_PRIVACY
+Tech Fax:                      REDACTED_FOR_PRIVACY
+Tech Email:                    REDACTED_FOR_PRIVACY
+Registry Billing ID:           REDACTED_FOR_PRIVACY
+Billing Name:                  REDACTED_FOR_PRIVACY
+Billing Organization:          NAMESHIELD
+Billing Contact Status:        associated
+Billing Contact Status:        active
+Billing Street:                REDACTED_FOR_PRIVACY, REDACTED_FOR_PRIVACY, REDACTED_FOR_PRIVACY
+Billing City:                  REDACTED_FOR_PRIVACY
+Billing Postal Code:           REDACTED_FOR_PRIVACY
+Billing State/Province:        REDACTED_FOR_PRIVACY
+Billing Country:               REDACTED_FOR_PRIVACY
+Billing Phone:                 REDACTED_FOR_PRIVACY
+Billing Fax:                   REDACTED_FOR_PRIVACY
+Billing Email:                 REDACTED_FOR_PRIVACY
+Name Server:                   mdpdns01.paris.fr
+Name Server:                   mdpdns02.paris.fr
+Name Server:                   nsa.perf1.fr
+Name Server:                   nsb.perf1.com
+Name Server:                   nsc.perf1.com
+DNSSEC:                        unsigned
+URL of the ICANN Whois Inaccuracy Complaint Form: https://www.icann.org/wicf/
+>>> Last update of WHOIS database: 2026-01-17T14:53:53.258899Z <<<
+
+# whois.nameshield.net
+
+Domain Name: bienvenue.paris
+Internationalized Domain Name: 
+Registry Domain ID: DOM000000021725-PARIS
+Registrar WHOIS Server: whois.nameshield.net
+Registrar URL: https://www.nameshield.com
+Updated Date: 2025-06-02T00:00:00+02:00
+Creation Date: 2014-06-03T00:00:00+02:00
+Registrar Registration Expiration Date: 2026-06-03T00:00:00+02:00
+Registrar: Nameshield SAS
+Registrar IANA ID: 1251
+Registrar Abuse Contact Email: abuse@nameshield.net
+Registrar Abuse Contact Phone: +33.241182828
+Reseller: 
+Domain Status: clientDeleteProhibited https://icann.org/epp#clientDeleteProhibited
+Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+Registry Registrant ID: 
+Registrant Name: 
+Registrant Organization: VILLE DE PARIS
+Registrant Street: 
+Registrant City: 
+Registrant State/Province: N/C
+Registrant Postal Code: 
+Registrant Country: FR
+Registrant Phone: 
+Registrant Phone Ext: 
+Registrant Fax: 
+Registrant Fax Ext: 
+Registrant Email: https://secure.nameshield.net/contact/bienvenue.paris/owner
+Registry Admin ID: 
+Admin Name: 
+Admin Organization: VILLE DE PARIS
+Admin Street: 
+Admin City: 
+Admin State/Province: 
+Admin Postal Code: 
+Admin Country: 
+Admin Phone: 
+Admin Phone Ext: 
+Admin Fax: 
+Admin Fax Ext: 
+Admin Email: https://secure.nameshield.net/contact/bienvenue.paris/admin
+Registry Tech ID: 
+Tech Name: 
+Tech Organization: NAMESHIELD
+Tech Street: 
+Tech City: 
+Tech State/Province: 
+Tech Postal Code: 
+Tech Country: 
+Tech Phone: 
+Tech Phone Ext: 
+Tech Fax: 
+Tech Fax Ext: 
+Tech Email: https://secure.nameshield.net/contact/bienvenue.paris/tech
+Name Server: mdpdns01.paris.fr
+Name Server: mdpdns02.paris.fr
+Name Server: nsa.perf1.fr
+Name Server: nsb.perf1.com
+Name Server: nsc.perf1.com
+Dnssec: unsigned
+URL of the ICANN WHOIS Data Problem Reporting System: http://wdprs.internic.net/
+>>> Last update of WHOIS database: 2026-01-17T14:09:40+01:00<<<
+

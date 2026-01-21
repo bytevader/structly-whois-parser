@@ -68,7 +68,7 @@ def _try_fast_datetime_parse(value: str) -> datetime | None:
     return None
 
 
-def _apply_timezone(value: datetime, tz: str | None) -> datetime:
+def apply_timezone(value: datetime, tz: str | None) -> datetime:
     if not tz:
         return value
     if tz.startswith(("+", "-")):
@@ -94,7 +94,7 @@ def parse_datetime(date_string: str) -> ParsedDate:
         return date_string
     fast_parsed = _try_fast_datetime_parse(normalized)
     if fast_parsed is not None:
-        return _apply_timezone(fast_parsed, tz)
+        return apply_timezone(fast_parsed, tz)
     return normalized
 
 
@@ -104,7 +104,7 @@ def _lower_if_needed(value: str | None, *, lowercase: bool) -> str | None:
     return value.lower()
 
 
-def _prepare_list(values: list[str] | None, *, lowercase: bool) -> list[str]:
+def prepare_list(values: list[str] | None, *, lowercase: bool) -> list[str]:
     if not values:
         return []
     filtered = [value for value in values if value]
@@ -178,8 +178,8 @@ def _tzinfo_from_offset(offset: str) -> tzinfo | None:
 
 __all__ = [
     "parse_datetime",
-    "_apply_timezone",
-    "_prepare_list",
+    "apply_timezone",
+    "prepare_list",
     "_build_contact",
     "_parse_date_field",
     "_lower_if_needed",

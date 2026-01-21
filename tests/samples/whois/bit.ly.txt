@@ -1,0 +1,76 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.nic.ly
+
+domain:       LY
+
+organisation: General Authority of Communications and Informatics (GACI)
+address:      Telecom Tower
+address:      Al Zawia Street
+address:      Tripoli
+address:      Libya
+
+contact:      administrative
+name:         Mr. Riyad ALZITOUNI, Manager of International Corporation Office
+organisation: General Authority of Communications and Informatics (GACI)
+address:      Telecom Tower
+address:      Al Zawia Street
+address:      Tripoli
+address:      Libya
+phone:        +218 21 361 4466
+e-mail:       r.zitouni@cim.gov.ly
+
+contact:      technical
+name:         Khaled Esheh
+organisation: Libya Telecom and Technology
+address:      Alshut Road
+address:      P.O. Box 91612
+address:      Tripoli
+address:      Libya
+phone:        +218 21 3400020
+fax-no:       +218 21 3400039
+e-mail:       k.esheh@ltt.ly
+
+nserver:      DNS.LTTNET.NET 62.240.36.9
+nserver:      DNS1.LTTNET.NET 62.68.42.9
+nserver:      NS-LY.AFRINIC.NET 196.216.168.24 2001:43f8:120:0:0:0:0:24
+nserver:      PCH.LTT.LY 2001:500:14:6067:ad:0:0:1 204.61.216.67
+nserver:      PHLOEM.UOREGON.EDU 128.223.32.35 2001:468:d01:20:0:0:80df:2023
+ds-rdata:     62311 8 2 08e9ac56f605a728d048c803787ab044b0c81caea2031eac9edea77150a1bdbe
+
+whois:        whois.nic.ly
+
+status:       ACTIVE
+remarks:      Registration information: https://wsm.ltt.ly/
+
+created:      1997-04-23
+changed:      2025-11-01
+source:       IANA
+
+# whois.nic.ly
+
+Domain Name: bit.ly
+Registry Domain ID: 24501-CoCCA
+Updated Date: 2022-04-18T03:12:18Z
+Creation Date: 2008-05-17T22:00:00Z
+Registry Expiry Date: 2032-05-17T22:00:00Z
+Registrar Registration Expiration Date: 2032-05-17T22:00:00Z
+Registrar: Libyan Spider Network (int)
+Registrar Street Address: Bab Ben Ghashir
+Tripoli
+Registrar Email: sales@register.ly
+Registrar Abuse Contact Email: abuse@register.ly
+Registrar Abuse Contact Phone: +18448469791
+Domain Status: inactive https://icann.org/epp#inactive
+Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+Domain Status: clientDeleteProhibited https://icann.org/epp#clientDeleteProhibited
+Name Server: ns-1372.awsdns-43.org
+Name Server: ns-705.awsdns-24.net
+Name Server: ns-cloud-c1.googledomains.com
+Name Server: ns-cloud-c3.googledomains.com
+Name Server: ns-cloud-c2.googledomains.com
+DNSSEC: unsigned
+>>> Last update of WHOIS database: 2026-01-17T14:29:03.116Z <<<
+

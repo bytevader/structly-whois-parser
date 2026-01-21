@@ -1,0 +1,145 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.nic.sydney
+
+domain:       SYDNEY
+
+organisation: State of New South Wales, Department of Premier and Cabinet
+address:      1 Farrer Place
+address:      Sydney NSW 2000
+address:      Australia
+
+contact:      administrative
+name:         IANA Contact
+organisation: GoDaddy Registry
+address:      100 S. Mill Ave, Suite 1600
+address:      Tempe AZ 85281
+address:      United States of America (the)
+phone:        +1 480-505-8800
+fax-no:       +1 480-624-2546
+e-mail:       iana@registry.godaddy
+
+contact:      technical
+name:         IANA Contact
+organisation: GoDaddy Registry
+address:      100 S. Mill Ave, Suite 1600
+address:      Tempe AZ 85281
+address:      United States of America (the)
+phone:        +1 480-505-8800
+fax-no:       +1 480-624-2546
+e-mail:       iana@registry.godaddy
+
+nserver:      A.NIC.SYDNEY 2001:dcd:1:0:0:0:0:10 37.209.192.10
+nserver:      B.NIC.SYDNEY 2001:dcd:2:0:0:0:0:10 37.209.194.10
+nserver:      C.NIC.SYDNEY 2001:dcd:3:0:0:0:0:10 37.209.196.10
+nserver:      X.NIC.SYDNEY 156.154.172.82 2610:a1:1074:0:0:0:1:82
+nserver:      Y.NIC.SYDNEY 156.154.173.82 2610:a1:1075:0:0:0:1:82
+nserver:      Z.NIC.SYDNEY 156.154.174.82 2610:a1:1076:0:0:0:1:82
+ds-rdata:     56155 8 2 6f8bec880cb37266b04e5b34a8a61238404ddca2ac3efcfd47bf641e650d3d78
+
+whois:        whois.nic.sydney
+
+status:       ACTIVE
+remarks:      Registration information: http://iconic.sydney
+
+created:      2014-10-30
+changed:      2024-04-17
+source:       IANA
+
+# whois.nic.sydney
+
+Domain Name: caw.sydney
+Registry Domain ID: REDACTED FOR PRIVACY
+Registrar WHOIS Server: whois.godaddy.com
+Registrar URL: whois.godaddy.com
+Updated Date: 2026-01-03T22:00:34Z
+Creation Date: 2023-12-28T03:18:00Z
+Registry Expiry Date: 2026-12-28T03:18:00Z
+Registrar: GoDaddy.com, LLC
+Registrar IANA ID: 146
+Registrar Abuse Contact Email: abuse@godaddy.com
+Registrar Abuse Contact Phone: +1.4806242505
+Domain Status: clientDeleteProhibited https://icann.org/epp#clientDeleteProhibited
+Domain Status: clientUpdateProhibited https://icann.org/epp#clientUpdateProhibited
+Domain Status: clientRenewProhibited https://icann.org/epp#clientRenewProhibited
+Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+Registry Registrant ID: REDACTED FOR PRIVACY
+Registrant Name: REDACTED FOR PRIVACY
+Registrant Organization: Greenhouse
+Registrant Street: REDACTED FOR PRIVACY
+Registrant Street: REDACTED FOR PRIVACY
+Registrant Street: REDACTED FOR PRIVACY
+Registrant City: REDACTED FOR PRIVACY
+Registrant State/Province: New South Wales
+Registrant Postal Code: REDACTED FOR PRIVACY
+Registrant Country: AU
+Registrant Phone: REDACTED FOR PRIVACY
+Registrant Phone Ext: REDACTED FOR PRIVACY
+Registrant Fax: REDACTED FOR PRIVACY
+Registrant Fax Ext: REDACTED FOR PRIVACY
+Registrant Email: Please query the RDDS service of the Registrar of Record identified in this output for information on how to contact the Registrant, Admin, or Tech contact of the queried domain name.
+Registry Admin ID:
+Admin Name:
+Admin Organization:
+Admin Street:
+Admin Street:
+Admin Street:
+Admin City:
+Admin State/Province:
+Admin Postal Code:
+Admin Country:
+Admin Phone:
+Admin Phone Ext:
+Admin Fax:
+Admin Fax Ext:
+Admin Email:
+Registry Tech ID: REDACTED FOR PRIVACY
+Tech Name: REDACTED FOR PRIVACY
+Tech Organization: REDACTED FOR PRIVACY
+Tech Street: REDACTED FOR PRIVACY
+Tech Street: REDACTED FOR PRIVACY
+Tech Street: REDACTED FOR PRIVACY
+Tech City: REDACTED FOR PRIVACY
+Tech State/Province: REDACTED FOR PRIVACY
+Tech Postal Code: REDACTED FOR PRIVACY
+Tech Country: REDACTED FOR PRIVACY
+Tech Phone: REDACTED FOR PRIVACY
+Tech Phone Ext: REDACTED FOR PRIVACY
+Tech Fax: REDACTED FOR PRIVACY
+Tech Fax Ext: REDACTED FOR PRIVACY
+Tech Email: Please query the RDDS service of the Registrar of Record identified in this output for information on how to contact the Registrant, Admin, or Tech contact of the queried domain name.
+Name Server: ns35.domaincontrol.com
+Name Server: ns36.domaincontrol.com
+DNSSEC: unsigned
+URL of the ICANN Whois Inaccuracy Complaint Form: https://www.icann.org/wicf/
+>>> Last update of WHOIS database: 2026-01-17T20:41:05Z <<<
+
+# whois.godaddy.com
+
+Domain Name: caw.sydney
+Registry Domain ID: D9168C697398C472F99B0B468F3C5F915-GDREG
+Registrar WHOIS Server: whois.godaddy.com
+Registrar URL: https://www.godaddy.com
+Updated Date: 2025-12-29T22:00:31Z
+Creation Date: 2023-12-28T03:18:00Z
+Registrar Registration Expiration Date: 2026-12-28T03:18:00Z
+Registrar: GoDaddy.com, LLC
+Registrar IANA ID: 146
+Registrar Abuse Contact Email: abuse@godaddy.com
+Registrar Abuse Contact Phone: +1.4806242505
+Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+Domain Status: clientUpdateProhibited https://icann.org/epp#clientUpdateProhibited
+Domain Status: clientRenewProhibited https://icann.org/epp#clientRenewProhibited
+Domain Status: clientDeleteProhibited https://icann.org/epp#clientDeleteProhibited
+Registrant State/Province: New South Wales
+Registrant Country: AU
+Registrant Email: https://www.godaddy.com/whois/results.aspx?domain=caw.sydney&action=contactDomainOwner
+Tech Email: https://www.godaddy.com/whois/results.aspx?domain=caw.sydney&action=contactDomainOwner
+Name Server: NS35.DOMAINCONTROL.COM
+Name Server: NS36.DOMAINCONTROL.COM
+DNSSEC: unsigned
+URL of the ICANN WHOIS Data Problem Reporting System: http://wdprs.internic.net/
+>>> Last update of WHOIS database: 2026-01-17T20:41:05Z <<<
+

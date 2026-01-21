@@ -1,0 +1,110 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.nic.ag
+
+domain:       AG
+
+organisation: UHSA School of Medicine
+address:      P.O. Box 510
+address:      Saint John's
+address:      Antigua and Barbuda
+
+contact:      administrative
+name:         George S. Daniel
+organisation: UHSA School of Medicine
+address:      P.O. Box 510
+address:      Saint John's
+address:      Antigua and Barbuda
+phone:        +1 268 460 1391
+fax-no:       +1 268 460 1477
+e-mail:       daniel@uhsa.edu.ag
+
+contact:      technical
+name:         Senior Director, DNS Infrastructure Group
+organisation: Afilias Limited
+address:      C/O Afilias USA, Inc.
+address:      300 Welsh Road
+address:      Building 3, Suite 105
+address:      Horsham PA 19044
+address:      United States of America (the)
+phone:        +1 215 706 5700
+fax-no:       +1 215 706 5701
+e-mail:       tld-tech-poc@afilias.info
+
+nserver:      A0.CCTLD.AFILIAS-NST.INFO 199.254.59.1 2001:500:25:0:0:0:0:1
+nserver:      A2.CCTLD.AFILIAS-NST.INFO 199.249.116.1 2001:500:44:0:0:0:0:1
+nserver:      B0.CCTLD.AFILIAS-NST.ORG 199.254.60.1 2001:500:26:0:0:0:0:1
+nserver:      B2.CCTLD.AFILIAS-NST.ORG 199.249.124.1 2001:500:4c:0:0:0:0:1
+nserver:      C0.CCTLD.AFILIAS-NST.INFO 199.254.61.1 2001:500:27:0:0:0:0:1
+nserver:      D0.CCTLD.AFILIAS-NST.ORG 199.254.62.1 2001:500:28:0:0:0:0:1
+ds-rdata:     8905 8 2 e3cdce330b6f170283c06a1e3aad11c098ad4a83cfc0f3cb603ecfc49af4a059
+
+whois:        whois.nic.ag
+
+status:       ACTIVE
+remarks:      Registration information: http://www.nic.ag
+
+created:      1991-09-03
+changed:      2021-02-08
+source:       IANA
+
+# whois.nic.ag
+
+Domain Name: bayer.ag
+Registry Domain ID: REDACTED
+Registrar WHOIS Server: www.whois.corporatedomains.com
+Registrar URL: http://www.cscglobal.com
+Updated Date: 2024-12-30T06:03:52Z
+Creation Date: 2001-01-05T05:00:00Z
+Registry Expiry Date: 2027-01-05T05:00:00Z
+Registrar: CSC Corporate Domains, Inc.
+Registrar IANA ID: 299
+Registrar Abuse Contact Email: domainabuse@cscglobal.com
+Registrar Abuse Contact Phone: +1.3026365400
+Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+Registry Registrant ID: REDACTED
+Registrant Name: REDACTED
+Registrant Organization: Bayer AG
+Registrant Street: REDACTED
+Registrant City: REDACTED
+Registrant State/Province: North Rhine-Westphalia
+Registrant Postal Code: REDACTED
+Registrant Country: DE
+Registrant Phone: REDACTED
+Registrant Phone Ext: REDACTED
+Registrant Fax: REDACTED
+Registrant Fax Ext: REDACTED
+Registrant Email: REDACTED
+Registry Admin ID: REDACTED
+Admin Name: REDACTED
+Admin Organization: REDACTED
+Admin Street: REDACTED
+Admin City: REDACTED
+Admin State/Province: REDACTED
+Admin Postal Code: REDACTED
+Admin Country: REDACTED
+Admin Phone: REDACTED
+Admin Phone Ext: REDACTED
+Admin Fax: REDACTED
+Admin Fax Ext: REDACTED
+Admin Email: REDACTED
+Registry Tech ID: REDACTED
+Tech Name: REDACTED
+Tech Organization: REDACTED
+Tech Street: REDACTED
+Tech City: REDACTED
+Tech State/Province: REDACTED
+Tech Postal Code: REDACTED
+Tech Country: REDACTED
+Tech Phone: REDACTED
+Tech Phone Ext: REDACTED
+Tech Fax: REDACTED
+Tech Fax Ext: REDACTED
+Tech Email: REDACTED
+Name Server: pdns1.cscdns.net
+Name Server: pdns2.cscdns.net
+DNSSEC: unsigned
+URL of the ICANN Whois Inaccuracy Complaint Form: https://icann.org/wicf/
+>>> Last update of WHOIS database: 2025-12-28T20:12:16Z <<<

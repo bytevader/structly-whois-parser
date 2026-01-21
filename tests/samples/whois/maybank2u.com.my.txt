@@ -1,0 +1,124 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.mynic.my
+
+domain:       MY
+
+organisation: MYNIC Berhad
+address:      Level 3, Tower 2, Menara Cyber Axis
+address:      Jalan Impact
+address:      Cyberjaya Selangor Darul Ehsan 63000
+address:      Malaysia
+
+contact:      administrative
+name:         Datuk Ts. Hasnul Fadhly Hasan
+organisation: MYNIC Berhad
+address:      Level 3, Tower 2, Menara Cyber Axis
+address:      Jalan Impact
+address:      Cyberjaya Selangor Darul Ehsan 63000
+address:      Malaysia
+phone:        +603 8008 2000
+fax-no:       +603 8008 2020
+e-mail:       dnsadmin@mynic.my
+
+contact:      technical
+name:         Datuk Ts. Hasnul Fadhly Hasan
+organisation: MYNIC Berhad
+address:      Level 3, Tower 2, Menara Cyber Axis
+address:      Jalan Impact
+address:      Cyberjaya Selangor Darul Ehsan 63000
+address:      Malaysia
+phone:        +603 8008 2000
+fax-no:       +603 8008 2020
+e-mail:       dnsadmin@mynic.my
+
+nserver:      A.MYNIC.CENTRALNIC-DNS.COM 194.169.218.114 2001:67c:13cc:0:0:0:1:114
+nserver:      A.NIC.MY 103.44.108.53 2001:ddc:0:53:0:0:0:53
+nserver:      A1.NIC.MY 202.171.47.204
+nserver:      B.MYNIC.CENTRALNIC-DNS.COM 185.24.64.114 2a04:2b00:13cc:0:0:0:1:114
+nserver:      C.MYNIC.CENTRALNIC-DNS.COM 212.18.248.114 2a04:2b00:13ee:0:0:0:0:114
+nserver:      D.MYNIC.CENTRALNIC-DNS.COM 212.18.249.114 2a04:2b00:13ff:0:0:0:0:114
+nserver:      NS01.TRS-DNS.COM 2620:57:4001:0:0:0:0:1 64.96.1.1
+nserver:      NS01.TRS-DNS.NET 2620:57:4002:0:0:0:0:1 64.96.2.1
+ds-rdata:     47187 13 2 8b70cf4c48233d0624556523ea52c524f157800b97445c6a62a8c078337567ae
+
+whois:        whois.mynic.my
+
+status:       ACTIVE
+remarks:      Registration information: http://www.mynic.my
+
+created:      1987-06-08
+changed:      2025-05-12
+source:       IANA
+
+# whois.mynic.my
+
+Domain Name: maybank2u.com.my
+Registry Domain ID: D1A008717-MYNIC
+Registrar WHOIS Server: whois.mynic.my
+Registrar URL: https://www.cscdbs.com/
+Updated Date: 2025-05-20T05:08:03.295Z
+Creation Date: 2000-05-22T16:00:00.000Z
+Registry Expiry Date: 2026-05-22T16:00:00.000Z
+Registrar: CSC Digital Brand Services Malaysia Sdn Bhd
+Registrar IANA ID: 60999004
+Registrar Abuse Contact Email: domainabuse@cscglobal.com
+Registrar Abuse Contact Phone: +1.3026365400
+Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+Registry Registrant ID: REDACTED FOR PRIVACY
+Registrant Name: REDACTED FOR PRIVACY
+Registrant Organization: Malayan Banking Berhad
+Registrant Street: REDACTED FOR PRIVACY
+Registrant City: REDACTED FOR PRIVACY
+Registrant State/Province: Wilayah Persekutuan
+Registrant Postal Code: REDACTED FOR PRIVACY
+Registrant Country: MY
+Registrant Phone: REDACTED FOR PRIVACY
+Registrant Fax: REDACTED FOR PRIVACY
+Registrant Email: Please query the RDDS service of the Registrar of Record identified in this output for information on how to contact the Registrant, Admin, or Tech contact of the queried domain name.
+Registry Admin ID: REDACTED FOR PRIVACY
+Admin Name: REDACTED FOR PRIVACY
+Admin Organization: REDACTED FOR PRIVACY
+Admin Street: REDACTED FOR PRIVACY
+Admin City: REDACTED FOR PRIVACY
+Admin State/Province: REDACTED FOR PRIVACY
+Admin Postal Code: REDACTED FOR PRIVACY
+Admin Country: REDACTED FOR PRIVACY
+Admin Phone: REDACTED FOR PRIVACY
+Admin Fax: REDACTED FOR PRIVACY
+Admin Email: Please query the RDDS service of the Registrar of Record identified in this output for information on how to contact the Registrant, Admin, or Tech contact of the queried domain name.
+Registry Tech ID: REDACTED FOR PRIVACY
+Tech Name: REDACTED FOR PRIVACY
+Tech Organization: REDACTED FOR PRIVACY
+Tech Street: REDACTED FOR PRIVACY
+Tech City: REDACTED FOR PRIVACY
+Tech State/Province: REDACTED FOR PRIVACY
+Tech Postal Code: REDACTED FOR PRIVACY
+Tech Country: REDACTED FOR PRIVACY
+Tech Phone: REDACTED FOR PRIVACY
+Tech Fax: REDACTED FOR PRIVACY
+Tech Email: Please query the RDDS service of the Registrar of Record identified in this output for information on how to contact the Registrant, Admin, or Tech contact of the queried domain name.
+Registry Billing ID: REDACTED FOR PRIVACY
+Billing Name: REDACTED FOR PRIVACY
+Billing Organization: REDACTED FOR PRIVACY
+Billing Street: REDACTED FOR PRIVACY
+Billing City: REDACTED FOR PRIVACY
+Billing State/Province: REDACTED FOR PRIVACY
+Billing Postal Code: REDACTED FOR PRIVACY
+Billing Country: REDACTED FOR PRIVACY
+Billing Phone: REDACTED FOR PRIVACY
+Billing Fax: REDACTED FOR PRIVACY
+Billing Email: Please query the RDDS service of the Registrar of Record identified in this output for information on how to contact the Registrant, Admin, or Tech contact of the queried domain name.
+Name Server: asia2.akam.net
+Name Server: ns1-61.akam.net
+Name Server: ns1-122.akam.net
+Name Server: ns1-127.akam.net
+Name Server: usc1.akam.net
+Name Server: eur2.akam.net
+DNSSEC: unsigned
+URL of the ICANN RDDS Inaccuracy Complaint Form: https://icann.org/wicf
+
+>>> Last update of WHOIS database: 2026-01-17T14:41:02.509Z <<<
+

@@ -11,6 +11,8 @@ from structly import FieldPatternType
 
 @dataclass
 class DomainPatternRegistry:
+    """Thread-safe registry of prefix/regex patterns used to infer domains from raw WHOIS text."""
+
     prefixes: tuple[str, ...] = ()
     regexes: tuple[re.Pattern[str], ...] = ()
     _lock: RLock = field(default_factory=RLock, init=False, repr=False)
@@ -54,6 +56,7 @@ class DomainPatternRegistry:
             self.regexes = compiled
 
     def infer(self, text: str) -> str | None:
+        """Return the first domain-like string extracted from the given text, or None if nothing matches."""
         for pattern in self.regexes:
             match = pattern.search(text)
             if not match:
@@ -89,6 +92,7 @@ def refresh_domain_markers(
     base_fields: Mapping[str, MutableMapping[str, Any]],
     overrides: Mapping[str, Mapping[str, MutableMapping[str, Any]]],
 ) -> None:
+    """Rebuild the shared pattern registry from the current Structly base fields and TLD overrides."""
     _REGISTRY.refresh(base_fields, overrides)
 
 
@@ -106,10 +110,12 @@ def split_domain(domain: str | None) -> list[str]:
 
 
 def infer_domain_from_text(text: str) -> str | None:
+    """Best-effort domain inference when a WHOIS payload lacks an explicit domain field."""
     return _REGISTRY.infer(text)
 
 
 def get_domain_registry() -> DomainPatternRegistry:
+    """Expose the global DomainPatternRegistry for inspection/testing."""
     return _REGISTRY
 
 

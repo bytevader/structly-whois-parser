@@ -1,0 +1,100 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.gg
+
+domain:       GG
+
+organisation: Island Networks Ltd.
+address:      Maison Postel
+address:      Ollivier St
+address:      Alderney GY9 3JZ
+address:      Guernsey
+
+contact:      administrative
+name:         Nigel Roberts
+organisation: Island Networks Ltd
+address:      Maison Postel
+address:      Ollivier St
+address:      Alderney GY9 3JZ
+address:      Guernsey
+phone:        +44 7781 426912
+e-mail:       hostmaster2016@iana-contact.gg
+
+contact:      technical
+name:         GG-Hostmaster
+organisation: Island Networks Limited
+address:      Maison Postel
+address:      Ollivier St
+address:      Alderney GY9 3JZ
+address:      Guernsey
+phone:        +44 7781 426912
+e-mail:       hostmaster2016@iana-contact.gg
+
+nserver:      C.CI-SERVERS.ORG 194.146.106.86 2001:67c:1010:22:0:0:0:53
+nserver:      DNS1.NOMINETDNS.UK 213.248.219.254 2a01:618:403:0:0:0:0:254
+nserver:      DNS2.NOMINETDNS.UK 103.49.83.254 2401:fd80:403:0:0:0:0:254
+nserver:      DNS3.NOMINETDNS.UK 213.248.223.254 2a01:618:407:0:0:0:0:254
+nserver:      DNS4.NOMINETDNS.UK 2401:fd80:407:0:0:0:0:254 43.230.51.254
+nserver:      E.CI-SERVERS.NET 2001:500:14:6074:ad:0:0:1 204.61.216.74
+ds-rdata:     4975 8 2 6b95da44b57bf3bdfce8e9cf6d28df4b0ff999a374eff7909e095ab1c7000630
+
+whois:        whois.gg
+
+status:       ACTIVE
+remarks:      Registration information: http://www.nic.gg
+
+created:      1996-08-07
+changed:      2025-07-07
+source:       IANA
+
+# whois.gg
+
+Domain:
+     discord.gg
+
+Domain Status:
+     Active
+     Transfer Prohibited by Registrar
+
+Registrant:
+     Hammer & Chisel
+
+Registrar:
+     Gandi SAS (http://www.gandi.net)
+
+Relevant dates:
+     Registered on 26th February 2015 at 22:52:30.894
+     Registry fee due on 26th February each year
+
+Registration status:
+     Registered until cancelled
+
+Name servers:
+     gabe.ns.cloudflare.com
+     sima.ns.cloudflare.com
+     
+
+WHOIS lookup made on Sun, 11 Jan 2026 at 12:04:06 GMT
+
+This WHOIS information is provided for free by CIDR, operator of
+the backend registry for domain names ending in GG, JE, and AS.
+
+Copyright (c) and database right Island Networks 1996 - 2026.
+
+You may not access this WHOIS server or use any data from it except
+as permitted by our Terms and Conditions which are published
+at http://www.channelisles.net/legal/whoisterms
+
+They include restrictions and prohibitions on
+
+- using or re-using the data for advertising;
+- using or re-using the service for commercial purposes without a licence;
+- repackaging, recompilation, redistribution or reuse;
+- obscuring, removing or hiding any or all of this notice;
+- exceeding query rate or volume limits.
+
+The data is provided on an 'as-is' basis and may lag behind the
+register. Access may be withdrawn or restricted at any time. 
+

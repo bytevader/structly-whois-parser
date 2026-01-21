@@ -1,0 +1,174 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.nic.bayern
+
+domain:       BAYERN
+
+organisation: Bayern Connect GmbH
+address:      Hansestr. 111
+address:      Köln 51149
+address:      Germany
+
+contact:      administrative
+name:         IANA Contact
+organisation: GoDaddy Registry
+address:      2155 E GoDaddy Way
+address:      Tempe AZ 85284
+address:      United States of America (the)
+phone:        +1 480-505-8800
+fax-no:       +1 480-624-2546
+e-mail:       iana@registry.godaddy
+
+contact:      technical
+name:         ironDNS Support
+organisation: Knipp Medien und Kommunikation GmbH
+address:      Martin-Schmeisser-Weg 9
+address:      Dortmund North Rhine-Westphalia 44227
+address:      Germany
+phone:        +49 231 9703 0
+fax-no:       +49 231 9703 200
+e-mail:       dnsmaster@irondns.net
+
+nserver:      ANYCAST10.IRONDNS.NET 195.253.64.12 2a01:5b0:4:0:0:0:0:c
+nserver:      ANYCAST23.IRONDNS.NET 195.253.65.11 2a01:5b0:5:0:0:0:0:b
+nserver:      ANYCAST24.IRONDNS.NET 195.253.65.12 2a01:5b0:5:0:0:0:0:c
+nserver:      ANYCAST9.IRONDNS.NET 195.253.64.11 2a01:5b0:4:0:0:0:0:b
+nserver:      ARI.ALPHA.TLDNS.GODADDY 2001:dcd:1:0:0:0:0:2 37.209.192.2
+nserver:      ARI.BETA.TLDNS.GODADDY 2001:dcd:2:0:0:0:0:2 37.209.194.2
+nserver:      ARI.DELTA.TLDNS.GODADDY 2001:dcd:4:0:0:0:0:2 37.209.198.2
+nserver:      ARI.GAMMA.TLDNS.GODADDY 2001:dcd:3:0:0:0:0:2 37.209.196.2
+ds-rdata:     27095 8 2 c8d5a25263ef9eaab175f1ca68623488aa7919e16814f516cc369e09f237623a
+
+whois:        whois.nic.bayern
+
+status:       ACTIVE
+remarks:      Registration information: http://nic.bayern
+
+created:      2014-03-13
+changed:      2023-06-13
+source:       IANA
+
+# whois.nic.bayern
+
+Domain Name: erlebe.bayern
+Registry Domain ID: D_000E0C67_BADBD38EC8674434B153D1A3AEE59474_0000015A1A2EFD54-BAYERN
+Registrar WHOIS Server: whois.udag.net
+Registrar URL: https://www.united-domains.de
+Updated Date: 2025-12-11T18:24:01.234Z
+Creation Date: 2017-02-07T20:06:11.534Z
+Registry Expiry Date: 2026-02-07T20:06:11.0Z
+Registrar Registration Expiration Date: 
+Registrar: united-domains AG
+Registrar IANA ID: 1408
+Registrar Abuse Contact Email: abuse@united-domains.de
+Registrar Abuse Contact Phone: +49.8151368670
+Reseller: 
+Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+Registry Registrant ID: REDACTED FOR PRIVACY
+Registrant Name: REDACTED FOR PRIVACY
+Registrant Organization: BAYERN TOURISMUS Marketing GmbH
+Registrant Street: REDACTED FOR PRIVACY
+Registrant City: REDACTED FOR PRIVACY
+Registrant State/Province: 
+Registrant Postal Code: REDACTED FOR PRIVACY
+Registrant Country: DE
+Registrant Phone: REDACTED FOR PRIVACY
+Registrant Phone Ext: 
+Registrant Fax: REDACTED FOR PRIVACY
+Registrant Fax Ext: 
+Registrant Email: Please query the Whois service of the Registrar of Record identified in this output for information on how to contact the Registrant, Admin, or Tech contact of the queried domain name.
+Registry Admin ID: 
+Admin Name: 
+Admin Organization: 
+Admin Street: REDACTED FOR PRIVACY
+Admin City: 
+Admin State/Province: 
+Admin Postal Code: 
+Admin Country: 
+Admin Phone: 
+Admin Phone Ext: 
+Admin Fax: 
+Admin Fax Ext: 
+Admin Email: 
+Registry Tech ID: 
+Tech Name: 
+Tech Organization: 
+Tech Street: REDACTED FOR PRIVACY
+Tech City: 
+Tech State/Province: 
+Tech Postal Code: 
+Tech Country: 
+Tech Phone: 
+Tech Phone Ext: 
+Tech Fax: 
+Tech Fax Ext: 
+Tech Email: 
+Name Server: ns.udag.net
+Name Server: ns.udag.de
+Name Server: ns.udag.org
+DNSSEC: unsigned
+IDN Tag:
+URL of the ICANN Whois Inaccuracy Complaint Form: https://icann.org/wicf
+>>> Last update of Whois database: 2026-01-10T18:46:06.675Z <<<
+
+# whois.udag.net
+
+
+Domain Name: erlebe.bayern
+Registry Domain ID: D_000E0C67_BADBD38EC8674434B153D1A3AEE59474_0000015A1A2EFD54-BAYERN
+Registrar WHOIS Server: whois.udag.net
+Registrar URL: https://www.united-domains.de/
+Updated Date: 2025-12-11T18:24:01Z
+Creation Date: 2017-02-07T20:06:11Z
+Registrar Registration Expiration Date: 2026-02-07T20:06:11Z
+Registrar: united domains AG
+Registrar IANA ID: 1408
+Registrar Abuse Contact Email: abuse@united-domains.de
+Registrar Abuse Contact Phone: +49.8151368670
+Reseller:
+Domain Status: clientTransferProhibited https://www.icann.org/epp#clientTransferProhibited
+Registry Registrant ID:
+Registrant Name: 
+Registrant Street: 
+Registrant City: 
+Registrant State/Province: 
+Registrant Postal Code: 
+Registrant Country: DE
+Registrant Phone: 
+Registrant Phone Ext:
+Registrant Fax: 
+Registrant Fax Ext:
+Registrant Email: https://www.united-domains.de/domain-inhaber-kontaktieren
+Registry Admin ID:
+Admin Name: 
+Admin Street: 
+Admin City: 
+Admin State/Province: 
+Admin Postal Code: 
+Admin Country: 
+Admin Phone: 
+Admin Phone Ext:
+Admin Fax: 
+Admin Fax Ext:
+Admin Email: https://www.united-domains.de/domain-inhaber-kontaktieren
+Registry Tech ID:
+Tech Name: 
+Tech Street: 
+Tech City: 
+Tech State/Province: 
+Tech Postal Code: 
+Tech Country: 
+Tech Phone: 
+Tech Phone Ext:
+Tech Fax: 
+Tech Fax Ext:
+Tech Email: https://www.united-domains.de/domain-inhaber-kontaktieren
+Name Server: ns.udag.net
+Name Server: ns.udag.de
+Name Server: ns.udag.org
+DNSSEC: unsigned
+URL of the ICANN WHOIS Data Problem Reporting System: http://wdprs.internic.net/
+>>> Last update of WHOIS database: 2025-12-11T18:24:01Z <<<
+

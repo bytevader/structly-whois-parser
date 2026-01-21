@@ -31,7 +31,7 @@ dev-install:
 test:
 	@if $(PYTHON) -m coverage --version >/dev/null 2>&1; then \
 		rm -f .coverage; \
-		$(PYTHON) -m coverage run --source=src/structly_whois -m pytest; \
+		$(PYTHON) -m coverage run --source=src/structly_whois -m pytest -vv; \
 		$(PYTHON) -m coverage report; \
 	else \
 		echo "coverage module not installed; running pytest without coverage" >&2; \

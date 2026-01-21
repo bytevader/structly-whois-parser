@@ -9,6 +9,7 @@ from structly import FieldPattern
 from structly_whois import WhoisParser
 from structly_whois import domain_inference as domain_mod
 from structly_whois.normalization import normalize_raw_text
+from structly_whois.parser import TLDS_REQUIRING_DOMAIN_HINT
 from tests.common.sample_utils import EXPECTED_ROOT, SKIPPED_SAMPLES, WHOIS_ROOT
 
 
@@ -33,6 +34,11 @@ Registrant Email: contact@example.dev
 INFO_WHOIS = """Domain Name: INFO
 Registrar: Example Registrar
 """
+
+
+def _requires_domain_override(domain: str) -> bool:
+    parts = domain.lower().split(".")
+    return bool(parts) and parts[-1] in TLDS_REQUIRING_DOMAIN_HINT
 
 
 def test_parse_many_returns_mappings_by_default() -> None:
@@ -138,7 +144,7 @@ def test_all_samples_match_expected() -> None:
         assert expected_path.exists(), f"missing expected fixture for {domain}"
         expected = ast.literal_eval(expected_path.read_text(encoding="utf-8"))
         record = parser.parse_record(raw, domain=domain).to_dict(include_raw_text=False)
-        if domain.endswith(".info"):
+        if _requires_domain_override(domain):
             expected = dict(expected)
             expected["domain"] = domain
         assert record == expected, f"parsed WHOIS payload for {domain} does not match expected fixture"
@@ -182,12 +188,17 @@ def test_parse_many_matches_expected_samples() -> None:
 
     for tld, entries in batches.items():
         payloads = [raw for _, raw in entries]
-        records = parser.parse_many(payloads, tld=tld or None, to_records=True)
+        domain_hints = [domain for domain, _ in entries]
+        records = parser.parse_many(payloads, domain=domain_hints, tld=tld or None, to_records=True)
         assert len(records) == len(entries)
         for (domain, _), record in zip(entries, records):
             expected_path = EXPECTED_ROOT / f"{domain}.txt"
             expected = ast.literal_eval(expected_path.read_text(encoding="utf-8"))
-            assert record.to_dict(include_raw_text=False) == expected, domain
+            result = record.to_dict(include_raw_text=False)
+            if _requires_domain_override(domain):
+                expected = dict(expected)
+                expected["domain"] = domain
+            assert result == expected, domain
 
 
 def test_parse_many_applies_domain_hint_for_info_domains() -> None:

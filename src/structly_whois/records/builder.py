@@ -7,7 +7,7 @@ from typing import Any, Callable, Optional
 import msgspec
 
 from .models import Abuse, Admin, DateParser, Registrant, Tech, WhoisPayload, WhoisRecord
-from .utils import _build_contact, _lower_if_needed, _parse_date_field, _prepare_list
+from .utils import _build_contact, _lower_if_needed, _parse_date_field, prepare_list
 
 WHOIS_RATE_LIMIT_MESSAGES: set[str] = {
     "WHOIS LIMIT EXCEEDED - SEE WWW.PIR.ORG/WHOIS FOR DETAILS",
@@ -37,7 +37,7 @@ DateFieldParser = Callable[[Optional[str], bool, Optional[DateParser]], Optional
 @dataclass
 class RecordBuilder:
     scalar_normalizer: ScalarNormalizer = _lower_if_needed
-    list_normalizer: ListNormalizer = _prepare_list
+    list_normalizer: ListNormalizer = prepare_list
     contact_factory: Callable[..., msgspec.Struct] = _build_contact
     date_field_parser: DateFieldParser = _parse_date_field
 

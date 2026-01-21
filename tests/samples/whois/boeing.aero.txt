@@ -1,0 +1,174 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.aero
+
+domain:       AERO
+
+organisation: Societe Internationale de Telecommunications Aeronautique (SITA INC USA)
+address:      3100 Cumberland Boulevard
+address:      Atlanta GA 30339
+address:      United States of America (the)
+
+contact:      administrative
+name:         .AERO Office
+organisation: SITA SC
+address:      26 Chemin de Joinville
+address:      Cointrin
+address:      Geneva Geneva CH-1216
+address:      Switzerland
+phone:        +41 22 747 60 00
+fax-no:       +41 22 747 63 33
+e-mail:       aero.enquiries@sita.aero
+
+contact:      technical
+name:         Senior Director, DNS Infrastructure Group
+organisation: Afilias
+address:      300 Welsh Road
+address:      Building 3, Suite 105
+address:      Horsham PA 19044
+address:      United States of America (the)
+phone:        +1 215 706 5700
+fax-no:       +1 215 706 5701
+e-mail:       tld-tech-poc@afilias.info
+
+nserver:      A0.NIC.AERO 199.254.51.1 2001:500:1d:0:0:0:0:1
+nserver:      A2.NIC.AERO 199.249.115.1 2001:500:43:0:0:0:0:1
+nserver:      B0.NIC.AERO 199.254.52.1 2001:500:1e:0:0:0:0:1
+nserver:      B2.NIC.AERO 199.249.123.1 2001:500:4b:0:0:0:0:1
+nserver:      C0.NIC.AERO 199.254.54.1 2001:500:20:0:0:0:0:1
+ds-rdata:     59071 8 2 1d81d38a696e94ade581ebdec47a2473a4a22712c33e5501d9756f98ce8b1714
+
+whois:        whois.aero
+
+status:       ACTIVE
+remarks:      Registration information: http://www.information.aero
+
+created:      2001-12-21
+changed:      2023-08-08
+source:       IANA
+
+# whois.aero
+
+Domain Name: boeing.aero
+Registry Domain ID: REDACTED
+Registrar WHOIS Server: whois.101domain.com
+Registrar URL: http://101domain.com
+Updated Date: 2025-03-17T20:02:53Z
+Creation Date: 2002-04-12T18:21:23Z
+Registry Expiry Date: 2027-04-12T18:21:23Z
+Registrar: 101domain GRS Limited
+Registrar IANA ID: 1011
+Registrar Abuse Contact Email: abuse@101domain.com
+Registrar Abuse Contact Phone: +1.7604448674
+Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+Registry Registrant ID: REDACTED
+Registrant Name: REDACTED
+Registrant Organization: Emirates
+Registrant Street: REDACTED
+Registrant City: REDACTED
+Registrant State/Province: Dubai
+Registrant Postal Code: REDACTED
+Registrant Country: AE
+Registrant Phone: REDACTED
+Registrant Phone Ext: REDACTED
+Registrant Fax: REDACTED
+Registrant Fax Ext: REDACTED
+Registrant Email: REDACTED
+Registry Admin ID: REDACTED
+Admin Name: REDACTED
+Admin Organization: REDACTED
+Admin Street: REDACTED
+Admin City: REDACTED
+Admin State/Province: REDACTED
+Admin Postal Code: REDACTED
+Admin Country: REDACTED
+Admin Phone: REDACTED
+Admin Phone Ext: REDACTED
+Admin Fax: REDACTED
+Admin Fax Ext: REDACTED
+Admin Email: REDACTED
+Registry Tech ID: REDACTED
+Tech Name: REDACTED
+Tech Organization: REDACTED
+Tech Street: REDACTED
+Tech City: REDACTED
+Tech State/Province: REDACTED
+Tech Postal Code: REDACTED
+Tech Country: REDACTED
+Tech Phone: REDACTED
+Tech Phone Ext: REDACTED
+Tech Fax: REDACTED
+Tech Fax Ext: REDACTED
+Tech Email: REDACTED
+Name Server: ns1.markmonitor.com
+Name Server: ns3.markmonitor.com
+Name Server: ns4.markmonitor.com
+Name Server: ns2.markmonitor.com
+Name Server: ns6.markmonitor.com
+Name Server: ns5.markmonitor.com
+Name Server: ns7.markmonitor.com
+DNSSEC: unsigned
+URL of the ICANN Whois Inaccuracy Complaint Form: https://icann.org/wicf/
+>>> Last update of WHOIS database: 2025-12-28T19:52:17Z <<<
+
+# whois.101domain.com
+
+Domain Name: BOEING.AERO
+Registrar WHOIS Server: whois.101domain.com
+Registrar URL: https://www.101domain.com/
+Updated Date: 2025-03-12T20:01:56Z
+Creation Date: 2002-04-12T18:21:23Z
+Registrar Registration Expiration Date: 2027-04-12T18:21:23Z
+Registrar: https://www.101domain.com/
+Registrar IANA ID: 1011
+Registrar Abuse Contact Email: abuse@101domain.com
+Registrar Abuse Contact Phone: +1.8582954626
+Domain Status: clientTransferProhibited http://www.icann.org/epp#clientTransferProhibited
+Registrant Organization: Emirates
+Registrant Street: PO Box - 686
+Registrant City: Dubai
+Registrant State/Province: Dubai
+Registrant Postal Code: CAUAE 1
+Registrant Country: AE
+Registrant Phone: +971.4708224
+Registrant Phone Ext: 
+Registrant Fax: +971.42864097
+Registrant Fax Ext: 
+TO CONTACT REGISTRANT, COMPLETE THIS FORM: https://my.101domain.com/contact-registrant/BOEING.AERO.html
+Admin Organization: Emirates
+Admin Street: PO Box - 686
+Admin City: Dubai
+Admin State/Province: Dubai
+Admin Postal Code: CAUAE 1
+Admin Country: AE
+Admin Phone: +971.4708224
+Admin Phone Ext: 
+Admin Fax: +971.42864097
+Admin Fax Ext: 
+TO CONTACT REGISTRANT, COMPLETE THIS FORM: https://my.101domain.com/contact-registrant/BOEING.AERO.html
+Tech Organization: Emirates
+Tech Street: PO Box - 686
+Tech City: Dubai
+Tech State/Province: Dubai
+Tech Postal Code: CAUAE 1
+Tech Country: AE
+Tech Phone: +971.4708224
+Tech Phone Ext: 
+Tech Fax: +971.42864097
+Tech Fax Ext: 
+TO CONTACT REGISTRANT, COMPLETE THIS FORM: https://my.101domain.com/contact-registrant/BOEING.AERO.html
+Name Server: NS6.MARKMONITOR.COM
+Name Server: NS4.MARKMONITOR.COM
+Name Server: NS5.MARKMONITOR.COM
+Name Server: NS1.MARKMONITOR.COM
+Name Server: NS2.MARKMONITOR.COM
+Name Server: NS7.MARKMONITOR.COM
+Name Server: NS3.MARKMONITOR.COM
+These WHOIS results are provided as a courtesy and are no longer required by ICANN. For official required registered name holder information, please use our RDAP Service at https://rdap.101domain.com/domain/ 
+Last update: 2025-12-28 
+
+
+If you believe this domain is in violation of our terms and conditions, submit a report at https://101domain.com/report_abuse.htm
+

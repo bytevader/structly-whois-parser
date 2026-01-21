@@ -1,0 +1,75 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.kenic.or.ke
+
+domain:       KE
+
+organisation: Kenya Network Information Center (KeNIC)
+address:      P.O. Box 1461
+address:      Waiyaki Way, CCK Complex
+address:      Nairobi 00606
+address:      Kenya
+
+contact:      administrative
+name:         Andrew Lewela Mwanyota
+organisation: Kenya Network Information Center (KeNIC)
+address:      P.O. Box 1461
+address:      Waiyaki Way, CA Centre
+address:      Nairobi 00606
+address:      Kenya
+phone:        +254 728 518366
+e-mail:       admin@kenic.or.ke
+
+contact:      technical
+name:         Ahmed Landi
+organisation: Kenya Network Information Center (KeNIC)
+address:      P.O. Box 1461
+address:      Waiyaki Way, CCK Complex
+address:      Nairobi 00606
+address:      Kenya
+phone:        +254 704 316 945
+fax-no:       +254 20 4450087
+e-mail:       tech@kenic.or.ke
+
+nserver:      KENIC.ANYCASTDNS.CZ 185.28.194.194 185.38.108.108
+nserver:      MZIZI.KENIC.OR.KE 196.1.4.130 196.1.4.3 196.13.202.53 2001:43f8:10:0:50c0:a8ff:feee:30
+nserver:      NS-KE.AFRINIC.NET 196.216.168.22 2001:43f8:120:0:0:0:0:22
+nserver:      NS.ANYCAST.KENIC.OR.KE 2001:500:14:6007:ad:0:0:1 204.61.216.7
+ds-rdata:     17597 8 2 4fef0bc48f3d29fb79eea0df695c2e0a3f768fe1c66133c8363909ac972e65d1
+
+whois:        whois.kenic.or.ke
+
+status:       ACTIVE
+remarks:      Registration information: http://www.kenic.or.ke
+
+created:      1993-04-29
+changed:      2025-10-25
+source:       IANA
+
+# whois.kenic.or.ke
+
+Domain Name: safaricom.co.ke
+Registry Domain ID: 1403-Kenic
+Registrar URL: http://domains.safaricom.co.ke
+Updated Date: 2025-10-16T06:36:04Z
+Creation Date: 2003-02-12T21:00:00Z
+Registry Expiry Date: 2030-12-31T21:00:00Z
+Registrar Registration Expiration Date: 2030-12-31T21:00:00Z
+Registrar: Safaricom Limited
+Registrar Street Address: Safaricom House
+P.O. Box 46350 - 001001
+Nairobi
+Registrar Phone: 0722002222
+Registrar Email: ebt-domains@Safaricom.co.ke
+Registrar Abuse Contact Email: 
+Registrar Abuse Contact Phone: 
+Domain Status: active https://icann.org/epp#active
+Name Server: ns4.safaricombusiness.co.ke
+Name Server: ns1.safaricombusiness.co.ke
+Name Server: ns2.safaricombusiness.co.ke
+Name Server: ns3.safaricombusiness.co.ke
+DNSSEC: signedDelegation
+>>> Last update of WHOIS database: 2026-01-17T14:19:03.506Z <<<
+

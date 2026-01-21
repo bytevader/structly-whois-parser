@@ -51,9 +51,11 @@ benchmarks = [
 structly-whois = "structly_whois.cli:main"
 
 [project.urls]
-Homepage = "https://gitlab.com/example/structly-whois"
-Repository = "https://gitlab.com/example/structly-whois"
-Issues = "https://gitlab.com/example/structly-whois/-/issues"
+Homepage = "https://github.com/bytevader/structly-whois-parser"
+Repository = "https://github.com/bytevader/structly-whois-parser"
+Issues = "https://github.com/bytevader/structly-whois-parser/issues"
+Changelog = "https://github.com/bytevader/structly-whois-parser/blob/main/CHANGELOG.md"
+Documentation = "https://github.com/bytevader/structly-whois-parser/blob/main/README.md"
 
 [tool.hatch.version]
 path = "src/structly_whois/__about__.py"

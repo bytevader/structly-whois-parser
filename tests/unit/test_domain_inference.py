@@ -50,6 +50,34 @@ def test_domain_pattern_registry_infer_prefix_trims_suffix() -> None:
     assert registry.infer(payload) == "trailing.example"
 
 
+def test_domain_pattern_registry_skips_empty_prefix_lines() -> None:
+    registry = DomainPatternRegistry(prefixes=("Domain Name:",), regexes=())
+    payload = "Domain Name:\nDomain Name: filled.example\n"
+
+    assert registry.infer(payload) == "filled.example"
+
+
+def test_domain_pattern_registry_refresh_includes_extend_and_prepend_patterns() -> None:
+    registry = DomainPatternRegistry()
+    base_fields = {
+        "domain_name": {
+            "extend_patterns": [FieldPattern.starts_with("Base:")],
+        }
+    }
+    overrides = {
+        "demo": {
+            "domain_name": {
+                "prepend_patterns": [FieldPattern.regex(r"(?i)^demo:\s*(?P<val>[a-z0-9.-]+)$")],
+            }
+        }
+    }
+
+    registry.refresh(base_fields, overrides)
+
+    assert "Base:" in registry.prefixes
+    assert any("demo" in pattern.pattern for pattern in registry.regexes)
+
+
 def test_split_domain_and_normalise_tld_helpers() -> None:
     assert split_domain(None) == []
     assert split_domain(" Sub.Domain.CO.UK. ") == ["sub", "domain", "co", "uk"]

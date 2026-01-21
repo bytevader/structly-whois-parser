@@ -1,0 +1,62 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.nic.so
+
+domain:       SO
+
+organisation: Ministry of Post and Telecommunications
+
+contact:      administrative
+name:         Administrator
+organisation: Ministry of Post and Telecommunications
+phone:        +252 1 587 1200
+fax-no:       +252 1 231 599
+e-mail:       admin@mipt.gov.so
+
+contact:      technical
+name:         Tech Manager
+organisation: soNIC
+address:      Via Republic
+address:      Mogadishu Benadir 1000
+address:      Somalia
+phone:        +252 61 8250888
+fax-no:       +252 61 8250991
+e-mail:       admin@sonic.gov.so
+
+nserver:      D.NIC.SO 196.216.168.54 2001:43f8:120:0:0:0:0:54
+nserver:      E.NIC.SO 2001:500:14:6101:ad:0:0:1 204.61.216.101
+
+whois:        whois.nic.so
+
+status:       ACTIVE
+remarks:      Registration information: http://www.nic.so/
+
+created:      1997-08-28
+changed:      2016-04-18
+source:       IANA
+
+# whois.nic.so
+
+Domain Name: notion.so
+Registry Domain ID: 31288-sonic
+Updated Date: 2025-11-26T10:59:29Z
+Creation Date: 2015-03-31T00:00:00Z
+Registry Expiry Date: 2026-03-31T00:00:00Z
+Registrar Registration Expiration Date: 2026-03-31T00:00:00Z
+Registrar: 1API
+Registrar Street Address: Talstrasse 27
+Homburg	Saarland
+66424
+Registrar Email: admin-c@1api.net
+Registrar Abuse Contact Email: 
+Registrar Abuse Contact Phone: 
+Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+Registry Registrant ID: 79987-sonic
+Registrant Name: Huan Zhao
+Name Server: woz.ns.cloudflare.com
+Name Server: dana.ns.cloudflare.com
+DNSSEC: unsigned
+>>> Last update of WHOIS database: 2026-01-17T20:36:51.825Z <<<
+

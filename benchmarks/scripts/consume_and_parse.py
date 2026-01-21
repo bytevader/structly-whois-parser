@@ -1,18 +1,15 @@
 from __future__ import annotations
 
-import argparse
 import logging
 import socket
 import sys
 import time
 from collections import defaultdict
-from collections.abc import Iterable
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
 import orjson
-import snappy
 from confluent_kafka import Consumer, KafkaError, KafkaException, Message, Producer
 
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
@@ -29,59 +26,6 @@ class PendingPayload:
     message: Message
     raw_text: str
     domain: str | None
-
-
-def _snappy_self_test() -> None:
-    probe = snappy.compress(b"health-check")
-    snappy.decompress(probe)
-
-
-def _build_consumer(args: argparse.Namespace) -> Consumer:
-    config = {
-        "bootstrap.servers": args.bootstrap_servers,
-        "group.id": args.group_id,
-        "auto.offset.reset": "earliest",
-        "enable.auto.commit": False,
-        "max.poll.interval.ms": args.max_poll_interval_ms,
-    }
-    consumer = Consumer(config)
-    consumer.subscribe([args.raw_topic])
-    return consumer
-
-
-def _build_producer(args: argparse.Namespace) -> Producer:
-    config = {
-        "bootstrap.servers": args.bootstrap_servers,
-        "acks": "all",
-        "compression.type": "snappy",
-        "linger.ms": args.linger_ms,
-        "batch.num.messages": args.batch_size,
-    }
-    return Producer(config)
-
-
-def _parse_args(argv: Iterable[str] | None = None) -> argparse.Namespace:
-    parser = argparse.ArgumentParser(description="Consume WHOIS payloads and publish parsed records.")
-    parser.add_argument("--bootstrap-servers", default="kafka:9092", help="Kafka bootstrap servers string.")
-    parser.add_argument("--raw-topic", default="whois_raw", help="Topic carrying unparsed WHOIS payloads.")
-    parser.add_argument("--parsed-topic", default="whois_parsed", help="Topic for structured records.")
-    parser.add_argument("--group-id", default="whois-parser", help="Kafka consumer group id.")
-    parser.add_argument("--idle-timeout", type=float, default=15.0, help="Seconds to wait for new data before exiting.")
-    parser.add_argument("--linger-ms", type=int, default=5, help="linger.ms for the parsed producer.")
-    parser.add_argument(
-        "--batch-size",
-        type=int,
-        default=500,
-        help="Maximum number of messages to consume per poll and to buffer in the producer.",
-    )
-    parser.add_argument("--max-poll-interval-ms", type=int, default=300000, help="Kafka max.poll.interval.ms setting.")
-    parser.add_argument(
-        "--log-interval",
-        type=int,
-        default=50000,
-        help="Emit progress information after this many processed messages.",
-    )
-    return parser.parse_args(argv)
 
 
 def _wait_for_kafka(bootstrap_servers: str, retry_interval: float = 1.0) -> None:
@@ -111,14 +55,22 @@ def _wait_for_kafka(bootstrap_servers: str, retry_interval: float = 1.0) -> None
         time.sleep(retry_interval)
 
 
-class ConsumeAndParseApp:
-    """Class-based orchestrator for the WHOIS Kafka pipeline."""
+class ConsumeAndParseJob:
+    BOOTSTRAP_SERVERS = "kafka:9092"
+    RAW_TOPIC = "whois_raw"
+    PARSED_TOPIC = "whois_parsed"
+    GROUP_ID = "whois-parser"
+    IDLE_TIMEOUT = 15.0
+    LINGER_MS = 5
+    BATCH_SIZE = 500
+    MAX_POLL_INTERVAL_MS = 300000
 
-    def __init__(self, args: argparse.Namespace) -> None:
-        self.args = args
-        self.logger = logging.getLogger(f"{__name__}.ConsumeAndParseApp")
-        self.consumer = _build_consumer(args)
-        self.producer = _build_producer(args)
+    def __init__(self) -> None:
+        self.logger = logging.getLogger(f"{__name__}.ConsumeAndParseJob")
+        _wait_for_kafka(self.BOOTSTRAP_SERVERS)
+
+        self.consumer = self._build_consumer()
+        self.producer = self._build_producer()
         self.parser = WhoisParser()
         self.processed = 0
         self.skipped = 0
@@ -127,11 +79,17 @@ class ConsumeAndParseApp:
         self.batch_timer_start: float | None = None
         self.batch_records = 0
         self.last_message_in_batch: Message | None = None
+        now = time.monotonic()
+        self.job_start_time = now
+        self.progress_log_interval = 10.0
+        self.last_progress_log_time = now
+        self.idle_log_interval = 10.0
+        self.last_idle_log_time = now
 
     def run(self) -> int:
         try:
             while True:
-                messages = self.consumer.consume(num_messages=self.args.batch_size, timeout=1.0)
+                messages = self.consumer.consume(num_messages=self.BATCH_SIZE, timeout=1.0)
                 now = time.monotonic()
                 if not messages:
                     if self._handle_idle(now):
@@ -146,7 +104,7 @@ class ConsumeAndParseApp:
                 self._process_fallback_payloads(fallback)
                 self.producer.poll(0)
 
-                if self.batch_records >= self.args.batch_size:
+                if self.batch_records >= self.BATCH_SIZE:
                     self._flush_batch(synchronous=False)
 
         except KeyboardInterrupt:
@@ -167,7 +125,9 @@ class ConsumeAndParseApp:
 
     def _handle_idle(self, now: float) -> bool:
         self._flush_batch(synchronous=True, current_time=now)
-        if self.last_message_time and now - self.last_message_time >= self.args.idle_timeout:
+        self._log_progress(current_time=now)
+        self._log_idle(now)
+        if self.last_message_time and now - self.last_message_time >= self.IDLE_TIMEOUT:
             self.logger.info("Idle timeout reached after %.2fs. Exiting.", now - self.last_message_time)
             return True
         return False
@@ -224,8 +184,10 @@ class ConsumeAndParseApp:
     ) -> None:
         for tld_hint, payloads in grouped.items():
             try:
+                domain_hints = [payload.domain or "" for payload in payloads]
                 parsed_records = self.parser.parse_many(
                     (payload.raw_text for payload in payloads),
+                    domain=domain_hints,
                     tld=tld_hint,
                     to_records=True,
                 )
@@ -258,17 +220,10 @@ class ConsumeAndParseApp:
         self.processed += 1
         self.batch_records += 1
         self.last_message_in_batch = payload.message
+        self.last_idle_log_time = time.monotonic()
         if self.start_time is None:
             self.start_time = time.monotonic()
-        if self.args.log_interval and self.processed % self.args.log_interval == 0:
-            elapsed_total = time.monotonic() - self.start_time
-            rate_total = self.processed / elapsed_total if elapsed_total else 0
-            self.logger.info(
-                "processed %s messages (skipped=%s, rate=%s records/sec)",
-                f"{self.processed:,}",
-                f"{self.skipped:,}",
-                f"{rate_total:,.0f}",
-            )
+        self._log_progress()
 
     def _emit_parsed_record(self, record: Any, payload: PendingPayload) -> None:
         parsed_payload = record.to_dict(include_raw_text=False)
@@ -285,7 +240,7 @@ class ConsumeAndParseApp:
         value_bytes = orjson.dumps(parsed_payload, default=str)
         while True:
             try:
-                self.producer.produce(self.args.parsed_topic, key=key_bytes, value=value_bytes)
+                self.producer.produce(self.PARSED_TOPIC, key=key_bytes, value=value_bytes)
                 break
             except BufferError:
                 self.producer.poll(0.5)
@@ -321,17 +276,59 @@ class ConsumeAndParseApp:
         except Exception:  # pragma: no cover - defensive fallback
             return ""
 
+    def _build_consumer(self) -> Consumer:
+        config = {
+            "bootstrap.servers": self.BOOTSTRAP_SERVERS,
+            "group.id": self.GROUP_ID,
+            "auto.offset.reset": "earliest",
+            "enable.auto.commit": False,
+            "max.poll.interval.ms": self.MAX_POLL_INTERVAL_MS,
+        }
+        consumer = Consumer(config)
+        consumer.subscribe([self.RAW_TOPIC])
+        return consumer
 
-def main(argv: Iterable[str] | None = None) -> int:
-    args = _parse_args(argv)
+    def _build_producer(self) -> Producer:
+        config = {
+            "bootstrap.servers": self.BOOTSTRAP_SERVERS,
+            "acks": "all",
+            "compression.type": "snappy",
+            "linger.ms": self.LINGER_MS,
+            "batch.num.messages": self.BATCH_SIZE,
+        }
+        return Producer(config)
+
+    def _log_progress(self, current_time: float | None = None) -> None:
+        now = current_time or time.monotonic()
+        if now - self.last_progress_log_time < self.progress_log_interval:
+            return
+        elapsed_total = now - self.job_start_time
+        rate_total = self.processed / elapsed_total if elapsed_total else 0.0
+        self.logger.info(
+            "processed %s messages (skipped=%s, elapsed=%.1fs, rate=%s records/sec)",
+            f"{self.processed:,}",
+            f"{self.skipped:,}",
+            elapsed_total,
+            f"{rate_total:,.0f}",
+        )
+        self.last_progress_log_time = now
+
+    def _log_idle(self, now: float) -> None:
+        if now - self.last_idle_log_time < self.idle_log_interval:
+            return
+        idle_origin = self.last_message_time or self.job_start_time
+        idle_for = now - idle_origin
+        self.logger.info("No messages received for %.1fs; waiting...", idle_for)
+        self.last_idle_log_time = now
+
+
+def main() -> int:
     logging.basicConfig(
         level=logging.INFO,
         format="%(asctime)s %(levelname)s [%(name)s] %(message)s",
         datefmt="%Y-%m-%d %H:%M:%S",
     )
-    _wait_for_kafka(args.bootstrap_servers)
-    _snappy_self_test()
-    app = ConsumeAndParseApp(args)
+    app = ConsumeAndParseJob()
     return app.run()
 
 

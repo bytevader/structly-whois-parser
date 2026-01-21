@@ -1,0 +1,101 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.nic.abb
+
+domain:       ABB
+
+organisation: ABB Ltd
+address:      Affolternstrasse 44
+address:      Zurich CH-8050
+address:      Switzerland
+
+contact:      administrative
+name:         Domain Administration
+organisation: ABB Schweiz AG
+address:      Intellectual Property, CH-IP/TM
+address:      Brown Boveri Strasse 6
+address:      Baden CH-5400
+address:      Switzerland
+phone:        +41 58 585 56 34
+fax-no:       +41 58 585 76 55
+e-mail:       ngtld-abb@cscinfo.com
+
+contact:      technical
+name:         Howard Eland, Senior Director, DNS Infrastructure Group
+organisation: Identity Digital Inc.
+address:      10500 NE 8th Street, Suite 750
+address:      Bellevue WA 98004
+address:      United States of America (the)
+phone:        +1.425.298.2200
+fax-no:       +1.425.671.0020
+e-mail:       tldtech@identity.digital
+
+nserver:      A0.NIC.ABB 2a01:8840:6e:0:0:0:0:41 65.22.112.41
+nserver:      A2.NIC.ABB 2a01:8840:71:0:0:0:0:41 65.22.115.41
+nserver:      B0.NIC.ABB 2a01:8840:6f:0:0:0:0:41 65.22.113.41
+nserver:      C0.NIC.ABB 2a01:8840:70:0:0:0:0:41 65.22.114.41
+ds-rdata:     16216 8 2 6dc3161e488f546a3baa11018bf0123c789c56241c9c03dcb74ce07a5accb18f
+
+whois:        whois.nic.abb
+
+status:       ACTIVE
+remarks:      Registration information: http://abb.com
+
+created:      2015-04-09
+changed:      2023-08-11
+source:       IANA
+
+# whois.nic.abb
+
+This domain is protected by the Registry Lock service. If you are the registrant and wish to take action on this lock, please contact your registrar.
+
+Domain Name: nic.abb
+Registry Domain ID: e50cbd19b9394f43b47980182dce795a-DONUTS
+Registrar WHOIS Server: whois.identitydigital.services
+Registrar URL: https://identity.digital
+Updated Date: 2025-08-19T09:05:44Z
+Creation Date: 2015-03-02T23:28:51Z
+Registry Expiry Date: 2026-03-02T23:28:51Z
+Registrar: Registry Operator acts as Registrar (9999)
+Registrar IANA ID: 9999
+Registrar Abuse Contact Email: abuse@identity.digital
+Registrar Abuse Contact Phone: +1.6664447777
+Domain Status: serverDeleteProhibited https://icann.org/epp#serverDeleteProhibited
+Domain Status: serverTransferProhibited https://icann.org/epp#serverTransferProhibited
+Domain Status: serverUpdateProhibited https://icann.org/epp#serverUpdateProhibited
+Name Server: b0.nic.abb
+Name Server: c0.nic.abb
+Name Server: a2.nic.abb
+Name Server: a0.nic.abb
+DNSSEC: unsigned
+URL of the ICANN Whois Inaccuracy Complaint Form: https://icann.org/wicf/
+>>> Last update of WHOIS database: 2025-12-25T17:26:51Z <<<
+
+# whois.identitydigital.services
+
+This domain is protected by the Registry Lock service. If you are the registrant and wish to take action on this lock, please contact your registrar.
+
+Domain Name: nic.abb
+Registry Domain ID: e50cbd19b9394f43b47980182dce795a-DONUTS
+Registrar WHOIS Server: whois.identitydigital.services
+Registrar URL: https://identity.digital
+Updated Date: 2025-08-19T09:05:44Z
+Creation Date: 2015-03-02T23:28:51Z
+Registry Expiry Date: 2026-03-02T23:28:51Z
+Registrar: Registry Operator acts as Registrar (9999)
+Registrar IANA ID: 9999
+Registrar Abuse Contact Email: abuse@identity.digital
+Registrar Abuse Contact Phone: +1.6664447777
+Domain Status: serverDeleteProhibited https://icann.org/epp#serverDeleteProhibited
+Domain Status: serverTransferProhibited https://icann.org/epp#serverTransferProhibited
+Domain Status: serverUpdateProhibited https://icann.org/epp#serverUpdateProhibited
+Name Server: b0.nic.abb
+Name Server: c0.nic.abb
+Name Server: a2.nic.abb
+Name Server: a0.nic.abb
+DNSSEC: unsigned
+URL of the ICANN Whois Inaccuracy Complaint Form: https://icann.org/wicf/
+>>> Last update of WHOIS database: 2025-12-25T17:26:51Z <<<
+

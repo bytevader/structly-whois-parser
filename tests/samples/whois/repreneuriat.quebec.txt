@@ -1,0 +1,149 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.nic.quebec
+
+domain:       QUEBEC
+
+organisation: PointQuébec Inc
+address:      101-82, Sherbrooke Ouest
+address:      Montréal QC H2X 1X3
+address:      Canada
+
+contact:      administrative
+name:         Normand Fortier
+organisation: PointQuébec
+address:      101-82, Sherbrooke Ouest
+address:      Montréal QC H2X 1X3
+address:      Canada
+phone:        +1.514-700-0018
+fax-no:       +1.877-917-9904
+e-mail:       normand@registre.quebec
+
+contact:      technical
+name:         TLD Technical Contact
+organisation: CORE Association
+address:      2, Cours de Rive
+address:      Geneva CH-1204
+address:      Switzerland
+phone:        +41 223 125 610
+fax-no:       +41 223 125 612
+e-mail:       dnsmaster@corenic.org
+
+nserver:      ANYCAST10.IRONDNS.NET 195.253.64.12 2a01:5b0:4:0:0:0:0:c
+nserver:      ANYCAST23.IRONDNS.NET 195.253.65.11 2a01:5b0:5:0:0:0:0:b
+nserver:      ANYCAST24.IRONDNS.NET 195.253.65.12 2a01:5b0:5:0:0:0:0:c
+nserver:      ANYCAST9.IRONDNS.NET 195.253.64.11 2a01:5b0:4:0:0:0:0:b
+ds-rdata:     46012 10 2 5916001fff3dc261a7f1b5d81bdc63312697f8b672ae1c8ac7677f6e68977f48
+
+whois:        whois.nic.quebec
+
+status:       ACTIVE
+remarks:      Registration information: http://www.registre.quebec
+
+created:      2014-03-13
+changed:      2025-09-19
+source:       IANA
+
+# whois.nic.quebec
+
+Domain Name: repreneuriat.quebec
+Registry Domain ID: Dedlt23654-QUEBEC
+Registrar WHOIS Server: whois.tucows.com
+Registrar URL: http://www.opensrs.com/
+Updated Date: 2026-01-15T14:28:18.947Z
+Creation Date: 2024-02-14T13:15:11.490Z
+Registry Expiry Date: 2031-02-14T13:15:11.490Z
+Registrar Registration Expiration Date: 
+Registrar: OpenSRS
+Registrar IANA ID: 69
+Registrar Abuse Contact Email: domainabuse@tucows.com
+Registrar Abuse Contact Phone: +1.4165350123
+Reseller: 
+Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+Domain Status: clientUpdateProhibited https://icann.org/epp#clientUpdateProhibited
+Domain Status: renewPeriod https://icann.org/epp#renewPeriod
+Registry Registrant ID: 
+Registrant Name: 
+Registrant Organization: Data Protected
+Registrant Street: 
+Registrant City: 
+Registrant State/Province: QC
+Registrant Postal Code: 
+Registrant Country: CA
+Registrant Phone: 
+Registrant Phone Ext: 
+Registrant Fax: 
+Registrant Fax Ext: 
+Registrant Email: Please query the Whois service of the Registrar of Record identified in this output for information on how to contact the Registrant, Admin, or Tech contact of the queried domain name.
+Registry Admin ID: 
+Admin Name: 
+Admin Organization: 
+Admin Street: 
+Admin City: 
+Admin State/Province: 
+Admin Postal Code: 
+Admin Country: 
+Admin Phone: 
+Admin Phone Ext: 
+Admin Fax: 
+Admin Fax Ext: 
+Admin Email: Please query the Whois service of the Registrar of Record identified in this output for information on how to contact the Registrant, Admin, or Tech contact of the queried domain name.
+Registry Tech ID: 
+Tech Name: 
+Tech Organization: 
+Tech Street: 
+Tech City: 
+Tech State/Province: 
+Tech Postal Code: 
+Tech Country: 
+Tech Phone: 
+Tech Phone Ext: 
+Tech Fax: 
+Tech Fax Ext: 
+Tech Email: Please query the Whois service of the Registrar of Record identified in this output for information on how to contact the Registrant, Admin, or Tech contact of the queried domain name.
+Name Server: carl.ns.cloudflare.com
+Name Server: sima.ns.cloudflare.com
+DNSSEC: unsigned
+Canonical Name: repreneuriat.quebec
+IDN Tag: fr
+URL of the ICANN Whois Inaccuracy Complaint Form: https://icann.org/wicf
+>>> Last update of Whois database: 2026-01-17T20:27:56.135Z <<<
+
+# whois.tucows.com
+
+Domain Name: REPRENEURIAT.QUEBEC
+Registry Domain ID: Dedlt23654-QUEBEC
+Registrar WHOIS Server: whois.tucows.com
+Registrar URL: http://tucowsdomains.com
+Updated Date: 2026-01-15T14:28:19
+Creation Date: 2024-02-14T13:15:11
+Registrar Registration Expiration Date: 2031-02-14T13:15:11
+Registrar: TUCOWS DOMAINS, INC.
+Registrar IANA ID: 69
+Reseller: Netfirms
+Domain Status: clientTransferProhibited https://icann.org/epp#clientTransferProhibited
+Domain Status: clientUpdateProhibited https://icann.org/epp#clientUpdateProhibited
+Domain Status: serverTransferProhibited https://icann.org/epp#serverTransferProhibited
+Registry Registrant ID: 
+Registrant Name: REDACTED FOR PRIVACY
+Registrant Organization: REDACTED FOR PRIVACY
+Registrant Street: REDACTED FOR PRIVACY 
+Registrant City: REDACTED FOR PRIVACY
+Registrant State/Province: QC
+Registrant Postal Code: REDACTED FOR PRIVACY
+Registrant Country: CA
+Registrant Phone: REDACTED FOR PRIVACY
+Registrant Phone Ext: 
+Registrant Fax: REDACTED FOR PRIVACY
+Registrant Fax Ext: 
+Registrant Email: https://tieredaccess.com/contact/9da1ce01-16f2-4e5c-abaa-8fbdff3f0f10
+Name Server: sima.ns.cloudflare.com
+Name Server: carl.ns.cloudflare.com
+DNSSEC: unsigned
+Registrar Abuse Contact Email: domainabuse@tucows.com
+Registrar Abuse Contact Phone: +1.4165350123
+URL of the ICANN WHOIS Data Problem Reporting System: https://icann.org/wicf
+>>> Last update of WHOIS database: 2026-01-17T20:28:52Z <<<
+

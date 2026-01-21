@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import re
 from collections.abc import Iterable, Mapping
 
 _COLLAPSIBLE_HEADERS = {
@@ -14,6 +15,8 @@ _COLLAPSIBLE_HEADERS = {
     "abuse contact:",
     "flags:",
 }
+
+_DOMAIN_HEADER_RE = re.compile(r"(?im)^(domain\s+name:\s*)", re.MULTILINE)
 
 
 def _slice_latest_section(raw_text: str) -> str:
@@ -48,15 +51,12 @@ def _collapse_wrapped_fields(lines: Iterable[str]) -> list[str]:
 
 def _slice_from_last_domain(text: str) -> str:
     """Fallback for registries that do not include hash markers."""
-    lowered = text.lower()
-    token = "domain name:"
-    idx = lowered.rfind(token)
-    if idx == -1:
+    last_start: int | None = None
+    for match in _DOMAIN_HEADER_RE.finditer(text):
+        last_start = match.start()
+    if last_start is None:
         return text
-    start = text.rfind("\n", 0, idx)
-    if start == -1:
-        return text[idx:]
-    return text[start + 1 :]
+    return text[last_start:]
 
 
 def normalize_raw_text(raw_text: str) -> str:
