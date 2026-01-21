@@ -17,6 +17,7 @@ env:
 
 permissions:
   contents: read
+  checks: write
   statuses: write
 
 jobs:
@@ -49,6 +50,33 @@ jobs:
         env:
           PYTEST_ADDOPTS: ""
           PYTHON: python
+      - name: Publish unit test report
+        if: always()
+        uses: dorny/test-reporter@v1
+        with:
+          name: pytest
+          path: pytest-junit.xml
+          reporter: java-junit
+      - name: Report coverage summary
+        if: always()
+        run: |
+          python - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import xml.etree.ElementTree as ET
+          from pathlib import Path
+
+          path = Path("coverage.xml")
+          print("### Coverage")
+          print()
+          if not path.exists():
+              print("- coverage.xml not found")
+          else:
+              root = ET.parse(path).getroot()
+              line_rate = float(root.attrib.get("line-rate", 0.0)) * 100
+              branch_rate = float(root.attrib.get("branch-rate", 0.0)) * 100
+              print(f"- Line: {line_rate:.2f}%")
+              print(f"- Branch: {branch_rate:.2f}%")
+          print()
+          PY
       - name: Generate coverage badge
         run: coverage-badge -f -o coverage.svg
       - uses: actions/upload-artifact@v4

@@ -42,7 +42,7 @@ test:
 cov:
 	@if $(PYTHON) -m coverage --version >/dev/null 2>&1; then \
 		rm -f .coverage; \
-		$(PYTHON) -m coverage run --source=src/structly_whois -m pytest; \
+		$(PYTHON) -m coverage run --source=src/structly_whois -m pytest --junitxml=pytest-junit.xml; \
 		$(PYTHON) -m coverage report; \
 		$(PYTHON) -m coverage xml --fail-under=0; \
 	else \
