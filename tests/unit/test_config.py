@@ -5,6 +5,7 @@ from structly import FieldPattern, Mode, ReturnShape
 
 from structly_whois import StructlyConfigFactory, WhoisParser
 from structly_whois.config import _build_field_spec
+from structly_whois.config.factory import _clone_field_definition
 
 
 def test_structly_config_factory_accepts_custom_patterns() -> None:
@@ -107,3 +108,19 @@ def test_build_field_spec_respects_override_ordering() -> None:
     assert spec.unique is True
     assert spec.return_shape == ReturnShape.list_
     assert [p.runtime_value() for p in spec.patterns][0].endswith("Primary:")
+
+
+def test_clone_field_definition_handles_missing_patterns() -> None:
+    original = {"mode": Mode.first}
+
+    clone = _clone_field_definition(original)
+    clone["mode"] = Mode.all
+
+    assert original["mode"] == Mode.first
+
+
+def test_get_base_field_errors_for_unknown_name() -> None:
+    factory = StructlyConfigFactory()
+
+    with pytest.raises(KeyError):
+        factory.get_base_field("does-not-exist")

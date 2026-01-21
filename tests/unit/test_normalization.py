@@ -95,6 +95,29 @@ source: FRNIC
     assert "Admin Name: Admin Person" in normalized
 
 
+def test_extract_afnic_contact_blocks_breaks_on_new_handle() -> None:
+    lines = [
+        "nic-hdl: AA123",
+        "contact: Holder Org",
+        "nic-hdl: BB123",
+        "contact: Admin Person",
+        "source: FRNIC",
+    ]
+    blocks = _extract_afnic_contact_blocks(lines)
+    assert blocks["AA123"]["contact"] == "Holder Org"
+    assert blocks["BB123"]["contact"] == "Admin Person"
+
+
+def test_inject_afnic_contacts_returns_text_when_handles_missing() -> None:
+    payload = """\
+% This is the AFNIC Whois server.
+nic-hdl: AA123
+source: FRNIC
+"""
+    result = _inject_afnic_contacts(payload)
+    assert result == payload
+
+
 def test_normalize_raw_text_handles_empty_and_enforces_newline() -> None:
     assert normalize_raw_text("") == ""
     result = normalize_raw_text("Domain Name: example.dev")

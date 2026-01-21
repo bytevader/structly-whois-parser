@@ -138,6 +138,17 @@ def test_apply_timezone_returns_original_for_unknown_label() -> None:
     assert apply_timezone(dt, "XYZ") is dt
 
 
+def test_apply_timezone_handles_named_offsets() -> None:
+    dt = datetime(2024, 1, 1, tzinfo=None)
+    adjusted = apply_timezone(dt, "JST")
+    assert adjusted.tzinfo is not None
+
+
+def test_apply_timezone_handles_invalid_numeric_offset() -> None:
+    dt = datetime(2024, 1, 1, tzinfo=timezone.utc)
+    assert apply_timezone(dt, "+9999") is dt
+
+
 def test_prepare_list_deduplicates_and_lowercases() -> None:
     values = ["NS1.EXAMPLE.COM", None, "ns1.example.com", "NS2.EXAMPLE.COM"]
     prepared = prepare_list(values, lowercase=True)
