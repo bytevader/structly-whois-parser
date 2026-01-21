@@ -17,8 +17,6 @@ if str(PROJECT_ROOT) not in sys.path:
 
 DEFAULT_OUTPUT = PROJECT_ROOT / "benchmarks" / "results.md"
 ITERATIONS_DEFAULT = 100
-DEFAULT_BENCHMARK_DOMAINS = ("google.com", "google.ai", "google.at", "google.com.br", "google.com.pe")
-
 from tests.common.sample_utils import SKIPPED_SAMPLES, WHOIS_ROOT  # noqa: E402
 
 ParseFunc = Callable[[str, str], object]
@@ -176,7 +174,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument(
         "--domains",
         nargs="*",
-        help="Optional domain sample stems (defaults to a curated subset; pass 'all' to cover every fixture).",
+        help="Optional domain sample stems (omit or pass 'all' to cover every fixture).",
     )
     parser.add_argument(
         "--include-skipped",
@@ -184,12 +182,17 @@ def main(argv: list[str] | None = None) -> int:
         help="Include privacy-blocked or truncated fixtures normally skipped by tests.",
     )
     parser.add_argument("--output", type=Path, default=DEFAULT_OUTPUT, help="Markdown summary destination.")
+    parser.add_argument(
+        "--save-result",
+        action="store_true",
+        help="Persist the Markdown summary to --output (defaults to console-only).",
+    )
     args = parser.parse_args(argv)
 
     if args.domains:
         domain_filter = None if len(args.domains) == 1 and args.domains[0].lower() == "all" else set(args.domains)
     else:
-        domain_filter = set(DEFAULT_BENCHMARK_DOMAINS)
+        domain_filter = None
     payloads = _load_payloads(domains=domain_filter, include_skipped=args.include_skipped)
     requested = [name.strip() for name in args.backends.split(",") if name.strip()]
 
@@ -214,16 +217,17 @@ def main(argv: list[str] | None = None) -> int:
     table = format_table(results)
     best = max(results, key=lambda r: r.records_per_second)
     print(table)
-    args.output.parent.mkdir(parents=True, exist_ok=True)
-    summary = (
-        "# Benchmark Results\n\n"
-        f"- samples: {len(payloads)}\n"
-        f"- iterations per sample: {results[0].iterations}\n\n"
-        f"{table}\n\n"
-        f"Leader: {best.backend} ({best.records_per_second:,.0f} records/s, "
-        f"{best.latency_ms:.3f} ms per record)\n"
-    )
-    args.output.write_text(summary, encoding="utf-8")
+    if args.save_result:
+        args.output.parent.mkdir(parents=True, exist_ok=True)
+        summary = (
+            "# Benchmark Results\n\n"
+            f"- samples: {len(payloads)}\n"
+            f"- iterations per sample: {results[0].iterations}\n\n"
+            f"{table}\n\n"
+            f"Leader: {best.backend} ({best.records_per_second:,.0f} records/s, "
+            f"{best.latency_ms:.3f} ms per record)\n"
+        )
+        args.output.write_text(summary, encoding="utf-8")
     return 0
 
 

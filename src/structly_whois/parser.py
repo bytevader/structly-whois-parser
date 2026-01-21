@@ -147,7 +147,7 @@ class WhoisParser:
         *,
         domain: str | None = None,
         tld: str | None = None,
-    ) -> MutableMapping[str, str]:
+    ) -> MutableMapping[str, Any]:
         """Parse a WHOIS payload into a mapping of canonical fields."""
         text = normalize_raw_text(raw_text)
         inferred_domain = domain

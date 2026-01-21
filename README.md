@@ -19,9 +19,12 @@
 </a>
 </p>
 
-> Fast WHOIS parser powered by [structly](https://pypi.org/project/structly/) and [msgspec](https://pypi.org/project/structly/).
+> Fast WHOIS parser powered by [structly](https://pypi.org/project/structly/) and [msgspec](https://pypi.org/project/msgspec/).
 
 **structly_whois** wraps Structly's compiled parsers with a modern Python API so you can normalize noisy WHOIS payloads, auto-detect TLD-specific overrides, and emit JSON-ready records without hauling heavy regex DSLs or dateparser into your hot path.
+
+This library parses raw WHOIS text, it does not perform WHOIS lookups. 
+Be mindful of data handling obligations (GDPR/ICANN/etc.)
 
 ## Highlights
 
@@ -65,6 +68,20 @@ print(record.to_dict())
 ```
 
 If you omit `domain`, structly_whois inspects the payload to infer the domain/TLD and automatically picks the right Structly configuration.
+Need just a mapping instead of a structured record? Use `parse`/`parse_many` directly:
+
+```python
+parser = WhoisParser(preload_tlds=("com", "net"))
+parsed = parser.parse(payload)  # returns {"domain_name": ..., "registrar": ..., ...}
+
+batch = parser.parse_many(
+    [payload_1, payload_2],
+    domain=["example.com", "example.net"],
+    tld="com",  # optional hint; omit to auto-select per domain
+)
+for result in batch:
+    print(result["domain_name"])
+```
 
 ## CLI usage
 
@@ -134,6 +151,10 @@ for chunk in parser.parse_chunks(payloads, chunk_size=512):
     process(chunk)  # bulk insert, publish, etc.
 ```
 
+### Kafka batch ingestion
+
+Need to process live WHOIS feeds? `benchmarks/scripts/consume_and_parse.py` shows how to wire `WhoisParser` into a Kafka consumer, group messages by TLD, and issue `parse_many` calls per bucket. Grouping domains ensures each batch uses the right Structly override and minimizes parser cache churn, so `.com.br` payloads never run through `.com` rules while still keeping throughput high.
+
 ### Custom Structly Config overrides
 
 `structly_whois` is built for easy extensibility—you can extend the bundled Structly configs or replace
@@ -173,17 +194,33 @@ parser.register_tld(
 ## Benchmarks
 
 `make bench` runs `benchmarks/run_benchmarks.py`, comparing structly_whois against `whois-parser` and `python-whois`. 
-Default settings parse all 105 fixtures ×100 iterations on a MacBook Pro (M4, Python 3.14):
+Default settings parse all fixtures ×100 iterations on a MacBook Pro (M4, Python 3.14):
 
-| backend                   | records | records/s | avg latency (ms) |
-| ------------------------- | ------- | --------- | ---------------- |
-| structly-whois            | 10,500  | 7,779     | 0.129            |
-| structly-whois + dateutil | 10,500  | 3,236     | 0.309            |
-| structly-whois + dateparser | 10,500 | 996      | 1.004            |
-| python-whois              | 10,500  | 196       | 5.096            |
-| whois-parser              | 10,500  | 17        | 58.229           |
+| backend                   |   records | records/s   |   avg latency (ms) |
+|---------------------------|-----------|-------------|--------------------|
+| structly-whois            |     18400 | 7,788       |              0.128 |
+| structly-whois+dateutil   |     18400 | 7,130       |              0.14  |
+| structly-whois+dateparser |     18400 | 804         |              1.244 |
+| whois-parser              |     18400 | 19          |             52.724 |
+| python-whois              |     18400 | 368         |              2.718 |
 
 “dateutil” uses `date_parser=dateutil.parser.parse`; “dateparser” uses `date_parser=dateparser.parse`. Both illustrate how heavier date coercion affects throughput.
+
+Example invocations:
+
+```bash
+# run every backend on all fixtures (default BENCHMARK_BACKENDS env)
+python benchmarks/run_benchmarks.py
+
+# run a custom backend list while keeping all fixtures
+BENCHMARK_BACKENDS="structly-whois,structly-whois+date" \
+  python benchmarks/run_benchmarks.py --iterations 100 --domains all
+
+# focus on a couple of tricky registries with fewer iterations
+python benchmarks/run_benchmarks.py --iterations 10 --domains google.com google.com.br
+```
+
+Add `--save-result` to persist the summary to `benchmarks/results.md` (or a custom `--output` path); otherwise runs print results to stdout only.
 
 ## Development
 

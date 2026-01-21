@@ -11,7 +11,7 @@ from .models import (
     Tech,
     WhoisRecord,
 )
-from .utils import _apply_timezone, _prepare_list, parse_datetime
+from .utils import apply_timezone, parse_datetime, prepare_list
 
 __all__ = [
     "Abuse",
@@ -25,7 +25,7 @@ __all__ = [
     "build_whois_record",
     "is_rate_limited_payload",
     "parse_datetime",
-    "_apply_timezone",
-    "_prepare_list",
+    "apply_timezone",
+    "prepare_list",
     "RecordBuilder",
 ]
