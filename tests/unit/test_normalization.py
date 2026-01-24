@@ -122,3 +122,39 @@ def test_normalize_raw_text_handles_empty_and_enforces_newline() -> None:
     assert normalize_raw_text("") == ""
     result = normalize_raw_text("Domain Name: example.dev")
     assert result.endswith("\n")
+
+
+def test_normalize_raw_text_preserves_existing_newline() -> None:
+    payload = "Domain Name: foo.example\nRegistrar: Example\n"
+    result = normalize_raw_text(payload)
+    assert result == payload
+
+
+def test_extract_afnic_contact_blocks_handles_blank_and_invalid_lines() -> None:
+    lines = [
+        "nic-hdl: AA123",
+        "",
+        "invalid line without colon",
+        "contact: Holder Org",
+        "source: FRNIC",
+        "nic-hdl: BB123",
+        "contact: Admin Person",
+        "source: FRNIC",
+    ]
+    blocks = _extract_afnic_contact_blocks(lines)
+    assert blocks["AA123"]["contact"] == "Holder Org"
+    assert "invalid line without colon" not in blocks["AA123"]
+
+
+def test_build_afnic_contact_lines_returns_empty_when_contact_missing() -> None:
+    assert _build_afnic_contact_lines("Registrant", {}) == []
+
+
+def test_inject_afnic_contacts_skips_unknown_handles() -> None:
+    payload = """\
+% This is the AFNIC Whois server.
+holder-c: AA123
+nic-hdl: AA123
+source: FRNIC
+"""
+    assert _inject_afnic_contacts(payload) == payload

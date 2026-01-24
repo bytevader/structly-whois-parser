@@ -39,6 +39,7 @@ Be mindful of data handling obligations (GDPR/ICANN/etc.)
 ```bash
 pip install structly-whois               # end users
 pip install -e '.[dev]'                  # contributors (installs Ruff, pytest, etc.)
+# optional: pip install python-dateutil or dateparser if you plan to use a custom date parser hook
 ```
 
 Python 3.9+ is supported. Wheels ship `py.typed` markers for static analyzers.
@@ -92,7 +93,23 @@ structly-whois tests/samples/whois/google.com.txt \
   --date-parser tests.common.helpers:iso_to_datetime
 ```
 
-The CLI mirrors the Python API: pass `--record` to emit a structured `WhoisRecord`, `--lowercase` to normalize strings, and `--date-parser module:callable` when you want custom date coercion.
+The CLI mirrors the Python API: pass `--record` to emit a structured `WhoisRecord`, `--lowercase` to normalize strings, and `--date-parser module:callable` when you want custom date coercion. Stdin is supported out of the box:
+
+```bash
+cat tests/samples/whois/google.com.txt | structly-whois - --json
+```
+
+Need to process streams? Switch to JSONL mode. Feed newline-delimited objects that contain at least a `raw_text` field (plus optional `domain`, `tld`, or `id`) and emit JSONL on the way out:
+
+```bash
+structly-whois payloads.jsonl \
+  --input-format jsonl \
+  --jsonl \
+  --best-effort \
+  --metrics
+```
+
+`--best-effort` keeps consuming payloads even if some rows fail (while still returning a non-zero exit status), and `--metrics` prints a throughput summary to stderr when the run completes. Drop the `--jsonl` flag to pretty-print JSON instead.
 
 ## Advanced usage
 
