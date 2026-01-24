@@ -10,6 +10,13 @@ from .models import DateParser, ParsedDate
 
 _TRAILING_PAREN_RE = re.compile(r"\s*\((?P<tz>[^)]+)\)\s*$")
 _TZ_CACHE: dict[str, tzinfo] = {}
+_TZ_ABBREVIATIONS = {
+    "JST": "+09:00",
+    "UTC": "+00:00",
+    "GMT": "+00:00",
+    "CLT": "-04:00",
+    "CLST": "-03:00",
+}
 
 
 def _normalize_iso8601(value: str) -> str:
@@ -18,6 +25,9 @@ def _normalize_iso8601(value: str) -> str:
         text = f"{text[:-1]}+00:00"
     if len(text) >= 6 and text[-6] in "+-" and text[-3] == ":":
         text = f"{text[:-3]}{text[-2:]}"
+    # Normalize short offsets like +02 -> +0200 so strptime %z can consume them.
+    if len(text) >= 3 and text[-3] in "+-" and text[-2:].isdigit():
+        text = f"{text}00"
     return text
 
 
@@ -29,12 +39,16 @@ _FAST_DATETIME_FORMATS: tuple[tuple[str, callable], ...] = (
     ("%Y-%m-%dT%H:%M:%S.%f%z", _normalize_iso8601),
     ("%Y-%m-%dT%H:%M:%S%z", _normalize_iso8601),
     ("%Y-%m-%dT%H:%M:%S", lambda v: v.strip()),
+    ("%Y-%m-%d %H:%M:%S.%f%z", _normalize_iso8601),
+    ("%Y-%m-%d %H:%M:%S%z", _normalize_iso8601),
     ("%Y-%m-%d %H:%M:%S.%f", lambda v: v.strip()),
     ("%Y-%m-%d %H:%M:%S", lambda v: v.strip()),
     ("%Y%m%d %H:%M:%S", lambda v: v.strip()),
     ("%Y%m%d", lambda v: v.strip()),
     ("%Y-%m-%d", lambda v: v.strip()),
     ("%Y/%m/%d", lambda v: v.strip()),
+    ("%d/%m/%Y %H:%M:%S", lambda v: v.strip()),
+    ("%d/%m/%Y", lambda v: v.strip()),
     ("%d-%m-%Y", lambda v: v.strip()),
     ("%m.%d.%Y %H:%M:%S", lambda v: v.strip()),
     ("%m.%d.%Y", lambda v: v.strip()),
@@ -44,6 +58,7 @@ _FAST_DATETIME_FORMATS: tuple[tuple[str, callable], ...] = (
     ("%d.%m.%Y %H:%M:%S", lambda v: v.strip()),
     ("%d-%b-%Y", lambda v: v.strip()),
     ("%d-%b-%Y %H:%M:%S", lambda v: v.strip()),
+    ("%d %b %Y", lambda v: v.strip()),
     ("%a %b %d %Y", lambda v: v.strip()),
     ("%Y/%m/%d %H:%M:%S", _strip_trailing_paren),
 )
@@ -51,11 +66,17 @@ _FAST_DATETIME_FORMATS: tuple[tuple[str, callable], ...] = (
 
 def _extract_trailing_timezone(value: str) -> tuple[str, str | None]:
     match = _TRAILING_PAREN_RE.search(value)
-    if not match:
-        return value, None
-    tz = match.group("tz")
-    cleaned = value[: match.start()].strip()
-    return cleaned, tz
+    if match:
+        tz = match.group("tz")
+        cleaned = value[: match.start()].strip()
+        return cleaned, tz
+    parts = value.rsplit(" ", 1)
+    if len(parts) == 2:
+        candidate = parts[1].strip()
+        upper_candidate = candidate.upper()
+        if upper_candidate in _TZ_ABBREVIATIONS:
+            return parts[0].strip(), upper_candidate
+    return value, None
 
 
 def _try_fast_datetime_parse(value: str) -> datetime | None:
@@ -76,8 +97,7 @@ def apply_timezone(value: datetime, tz: str | None) -> datetime:
         if offset_info:
             return value.replace(tzinfo=offset_info)
         return value
-    tz_offsets = {"JST": "+09:00", "UTC": "+00:00", "GMT": "+00:00"}
-    offset = tz_offsets.get(tz.upper())
+    offset = _TZ_ABBREVIATIONS.get(tz.upper())
     if offset:
         offset_info = _tzinfo_from_offset(offset)
         if offset_info:

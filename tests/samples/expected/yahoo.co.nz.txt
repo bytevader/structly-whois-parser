@@ -1,15 +1,1 @@
-{'abuse': {'email': None, 'telephone': None},
- 'admin': {'email': None, 'name': None, 'organization': None, 'telephone': None},
- 'dnssec': 'unsigned',
- 'domain': 'yahoo.co.nz',
- 'expires_at': None,
- 'is_rate_limited': False,
- 'name_servers': ['ns1.yahoo.com', 'ns3.yahoo.com', 'ns4.yahoo.com', 'ns5.yahoo.com'],
- 'registered_at': '1997-05-04T12:00:00Z',
- 'registrant': {'email': None, 'name': None, 'organization': None, 'telephone': None},
- 'registrar': 'MarkMonitor. Inc',
- 'registrar_id': None,
- 'registrar_url': 'https://www.markmonitor.com/',
- 'statuses': ['clientDeleteProhibited', 'clientTransferProhibited', 'clientUpdateProhibited'],
- 'tech': {'email': None, 'name': None, 'organization': None, 'telephone': None},
- 'updated_at': '2025-04-07T09:13:29Z'}
+{'registrant': {'organization': None, 'email': None, 'name': None, 'telephone': None}, 'admin': {'organization': None, 'email': None, 'name': None, 'telephone': None}, 'tech': {'organization': None, 'email': None, 'name': None, 'telephone': None}, 'abuse': {'email': None, 'telephone': None}, 'statuses': ['clientDeleteProhibited', 'clientTransferProhibited', 'clientUpdateProhibited'], 'name_servers': ['ns1.yahoo.com', 'ns3.yahoo.com', 'ns4.yahoo.com', 'ns5.yahoo.com'], 'domain': 'yahoo.co.nz', 'registrar': 'MarkMonitor. Inc', 'registrar_id': None, 'registrar_url': 'https://www.markmonitor.com/', 'dnssec': 'unsigned', 'expires_at': None, 'registered_at': '1997-05-04T12:00:00Z', 'updated_at': '2025-04-07T09:13:29Z', 'is_rate_limited': False}

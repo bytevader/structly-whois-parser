@@ -1,15 +1,1 @@
-{'abuse': {'email': None, 'telephone': None},
- 'admin': {'email': None, 'name': 'Citibank, N.A.', 'organization': None, 'telephone': None},
- 'dnssec': None,
- 'domain': 'banamex.com.mx',
- 'expires_at': '2026-03-15T00:00:00',
- 'is_rate_limited': False,
- 'name_servers': ['ns1.nsroot1.com', 'ns2.nsroot2.com'],
- 'registered_at': '1998-03-16T00:00:00',
- 'registrant': {'email': None, 'name': 'Citibank, N.A.', 'organization': None, 'telephone': None},
- 'registrar': 'Markmonitor',
- 'registrar_id': None,
- 'registrar_url': 'http://www.markmonitor.com/',
- 'statuses': [],
- 'tech': {'email': None, 'name': 'Citibank, N.A.', 'organization': None, 'telephone': None},
- 'updated_at': '2024-08-25T00:00:00'}
+{'registrant': {'organization': None, 'email': None, 'name': 'Citibank, N.A.', 'telephone': None}, 'admin': {'organization': None, 'email': None, 'name': 'Citibank, N.A.', 'telephone': None}, 'tech': {'organization': None, 'email': None, 'name': 'Citibank, N.A.', 'telephone': None}, 'abuse': {'email': None, 'telephone': None}, 'statuses': [], 'name_servers': ['ns1.nsroot1.com', 'ns2.nsroot2.com'], 'domain': 'banamex.com.mx', 'registrar': 'Markmonitor', 'registrar_id': None, 'registrar_url': 'http://www.markmonitor.com/', 'dnssec': None, 'expires_at': '2026-03-15T00:00:00', 'registered_at': '1998-03-16T00:00:00', 'updated_at': '2024-08-25T00:00:00', 'is_rate_limited': False}

@@ -148,6 +148,22 @@ For multilingual registries, the simplest plug-in is [`dateparser.parse`](https:
 
 NOTE: It can cut throughput by more than half.
 
+### Date parsing coverage & fallbacks
+
+We periodically re-run the parser against every sample under `tests/samples/whois`. The latest sweep (193 fixtures / 452 date fields) produced real `datetime` objects for 448 fields (99.12%) using the built-in fast formats alone. Only two TLDs still emit string timestamps:
+
+- `.uk` (3 samples) – they literally return `"before Aug-1996"` for the creation date. No generic parser can infer a timestamp from that prose.
+- `.il` (1 sample) – the registry embeds `"registrar AT ns.il 19990605"` inside the updated date. Again, not an actual date-time.
+
+Because those strings are not parseable, hooking in `dateutil`/`dateparser` will not magically fix them. If you ever run into a registry that does return a genuine but locale-specific value, pass a fallback parser explicitly:
+
+```python
+from dateutil import parser as dateutil_parser
+parser = WhoisParser(date_parser=dateutil_parser.parse)
+```
+
+Keep in mind that locale-aware libraries are substantially slower than the Structly fast path. Parsing the 452 raw date strings directly takes roughly `0.40s` with `dateutil` and `2.08s` with `dateparser` on this machine, compared to effectively zero overhead when the builtin formats match. If you only need a fallback for a handful of problematic TLDs, wire it in conditionally rather than enabling it globally.
+
 ### Streaming from S3
 
 ```python

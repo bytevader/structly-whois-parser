@@ -1,15 +1,1 @@
-{'abuse': {'email': None, 'telephone': None},
- 'admin': {'email': None, 'name': None, 'organization': None, 'telephone': None},
- 'dnssec': 'Signed',
- 'domain': 'nrk.no',
- 'expires_at': None,
- 'is_rate_limited': False,
- 'name_servers': [],
- 'registered_at': '1999-11-15T00:00:00',
- 'registrant': {'email': None, 'name': None, 'organization': None, 'telephone': None},
- 'registrar': 'REG42-NORID',
- 'registrar_id': None,
- 'registrar_url': None,
- 'statuses': [],
- 'tech': {'email': None, 'name': None, 'organization': None, 'telephone': None},
- 'updated_at': '2025-10-18T00:00:00'}
+{'registrant': {'organization': None, 'email': None, 'name': None, 'telephone': None}, 'admin': {'organization': None, 'email': None, 'name': None, 'telephone': None}, 'tech': {'organization': None, 'email': None, 'name': None, 'telephone': None}, 'abuse': {'email': None, 'telephone': None}, 'statuses': [], 'name_servers': [], 'domain': 'nrk.no', 'registrar': 'REG42-NORID', 'registrar_id': None, 'registrar_url': None, 'dnssec': 'Signed', 'expires_at': None, 'registered_at': '1999-11-15T00:00:00', 'updated_at': '2025-10-18T00:00:00', 'is_rate_limited': False}

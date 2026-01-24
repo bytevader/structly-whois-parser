@@ -1,15 +1,1 @@
-{'abuse': {'email': None, 'telephone': None},
- 'admin': {'email': 'Domain-Manager', 'name': None, 'organization': None, 'telephone': None},
- 'dnssec': None,
- 'domain': 'lg.co.kr',
- 'expires_at': '2033-10-15T00:00:00',
- 'is_rate_limited': False,
- 'name_servers': ['prmns.lg.co.kr', 'secns.lg.co.kr'],
- 'registered_at': '1995-03-20T00:00:00',
- 'registrant': {'email': None, 'name': None, 'organization': None, 'telephone': None},
- 'registrar': None,
- 'registrar_id': None,
- 'registrar_url': None,
- 'statuses': [],
- 'tech': {'email': None, 'name': None, 'organization': None, 'telephone': None},
- 'updated_at': '2014-08-26T00:00:00'}
+{'registrant': {'organization': None, 'email': None, 'name': None, 'telephone': None}, 'admin': {'organization': None, 'email': 'Domain-Manager', 'name': None, 'telephone': None}, 'tech': {'organization': None, 'email': None, 'name': None, 'telephone': None}, 'abuse': {'email': None, 'telephone': None}, 'statuses': [], 'name_servers': ['prmns.lg.co.kr', 'secns.lg.co.kr'], 'domain': 'lg.co.kr', 'registrar': None, 'registrar_id': None, 'registrar_url': None, 'dnssec': None, 'expires_at': '2033-10-15T00:00:00', 'registered_at': '1995-03-20T00:00:00', 'updated_at': '2014-08-26T00:00:00', 'is_rate_limited': False}
