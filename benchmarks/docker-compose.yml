@@ -51,6 +51,7 @@ services:
     build:
       context: ..
       dockerfile: benchmarks/Dockerfile.consumer
+    image: structly-whois-parser:latest
     container_name: structly-whois-parser
     restart: unless-stopped
     depends_on:

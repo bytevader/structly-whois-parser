@@ -15,8 +15,7 @@ COPY src ./src
 
 RUN python -m venv /opt/venv \
     && /opt/venv/bin/pip install --upgrade pip \
-    && /opt/venv/bin/pip install confluent-kafka python-snappy orjson \
-    && /opt/venv/bin/pip install .
+    && /opt/venv/bin/pip install '.[benchmarks]'
 
 FROM python:3.10-slim
 

@@ -45,6 +45,7 @@ benchmarks = [
   "confluent-kafka>=2.3",
   "python-snappy>=0.6",
   "orjson>=3.9",
+  "dateparser>=1.2",
 ]
 
 [project.scripts]
