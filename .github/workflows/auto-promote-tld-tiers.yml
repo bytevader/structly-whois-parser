@@ -1,0 +1,44 @@
+name: Supported TLD Metrics
+
+on:
+  pull_request:
+    branches:
+      - main
+      - dev
+  workflow_dispatch:
+
+env:
+  PYTHON_VERSION: "3.10"
+
+permissions:
+  contents: read
+
+jobs:
+  metrics:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+          cache: pip
+      - run: python -m pip install --upgrade pip
+      - run: pip install -e .
+      - name: Validate tier coverage
+        run: python scripts/supported_tlds/generate_supported_tlds.py --validate
+      - name: Generate tier metrics report
+        run: python scripts/supported_tlds/generate_supported_tlds.py --report
+      - name: Suggest tier promotions
+        run: |
+          set -uo pipefail
+          status=0
+          python scripts/supported_tlds/generate_supported_tlds.py --suggest-tiers || status=$?
+          if [ "$status" = "2" ]; then
+            echo "::notice::Tier promotions suggested; see output above for details."
+          elif [ "$status" != "0" ]; then
+            exit "$status"
+          fi
+      - uses: actions/upload-artifact@v4
+        with:
+          name: supported-tlds-report
+          path: scripts/supported_tlds/supported-tlds.report.json

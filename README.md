@@ -165,6 +165,10 @@ For multilingual registries, the simplest plug-in is [`dateparser.parse`](https:
 
 NOTE: It can cut throughput by more than half.
 
+## Supported TLD coverage
+
+The live matrix of supported TLDs, tiers (Gold/Silver/Experimental), and sample fixtures lives in [docs/supported-tlds.md](docs/supported-tlds.md). If you need to refresh that matrix or adjust tier policy thresholds, follow the commands in [docs/supported-tlds-generator.md](docs/supported-tlds-generator.md), which document every `scripts/supported_tlds/generate_supported_tlds.py` mode.
+
 ### Date parsing coverage & fallbacks
 
 We periodically re-run the parser against every sample under `tests/samples/whois`. The latest sweep (193 fixtures / 452 date fields) produced real `datetime` objects for 448 fields (99.12%) using the built-in fast formats alone. Only two TLDs still emit string timestamps:

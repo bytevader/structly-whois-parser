@@ -206,3 +206,5 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+scripts/supported_tlds/supported-tlds.report.json
+scripts/supported_tlds/supported-tlds.metrics.json
