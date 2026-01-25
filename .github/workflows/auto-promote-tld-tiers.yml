@@ -1,4 +1,4 @@
-name: Supported TLD Metrics
+name: Supported TLD Report
 
 on:
   pull_request:
@@ -14,7 +14,7 @@ permissions:
   contents: read
 
 jobs:
-  metrics:
+  tld-report:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -26,7 +26,7 @@ jobs:
       - run: pip install -e .
       - name: Validate tier coverage
         run: python scripts/supported_tlds/generate_supported_tlds.py --validate
-      - name: Generate tier metrics report
+      - name: Generate tier coverage report
         run: python scripts/supported_tlds/generate_supported_tlds.py --report
       - name: Suggest tier promotions
         run: |
