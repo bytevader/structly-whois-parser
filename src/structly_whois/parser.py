@@ -67,7 +67,7 @@ class WhoisParser:
         return self._date_parser
 
     def supported_tlds(self) -> list[str]:
-        """Return the set of TLDs backed by this parser's Structly configs."""
+        """Return supported TLDs as a deterministic, sorted list."""
         configured = {tld for tld in self._parsers if tld}
         configured.update(self._config_factory.known_tlds)
         return sorted({tld for tld in configured if tld})
