@@ -1,15 +1,1 @@
-{'abuse': {'email': None, 'telephone': None},
- 'admin': {'email': None, 'name': None, 'organization': 'Rossiya Segodnya', 'telephone': None},
- 'dnssec': None,
- 'domain': 'RIA.RU',
- 'expires_at': '2025-12-26T21:00:00Z',
- 'is_rate_limited': False,
- 'name_servers': ['ns10.rian.ru', 'ns9.rian.ru'],
- 'registered_at': '2000-12-24T21:00:00Z',
- 'registrant': {'email': None, 'name': None, 'organization': 'Rossiya Segodnya', 'telephone': None},
- 'registrar': 'RU-CENTER-RU',
- 'registrar_id': None,
- 'registrar_url': None,
- 'statuses': ['REGISTERED', 'DELEGATED', 'VERIFIED'],
- 'tech': {'email': None, 'name': None, 'organization': 'Rossiya Segodnya', 'telephone': None},
- 'updated_at': None}
+{'registrant': {'organization': 'Rossiya Segodnya', 'email': None, 'name': None, 'telephone': None}, 'admin': {'organization': 'Rossiya Segodnya', 'email': None, 'name': None, 'telephone': None}, 'tech': {'organization': 'Rossiya Segodnya', 'email': None, 'name': None, 'telephone': None}, 'abuse': {'email': None, 'telephone': None}, 'statuses': ['REGISTERED', 'DELEGATED', 'VERIFIED'], 'name_servers': ['ns10.rian.ru', 'ns9.rian.ru'], 'domain': 'RIA.RU', 'registrar': 'RU-CENTER-RU', 'registrar_id': None, 'registrar_url': None, 'dnssec': None, 'expires_at': '2025-12-26T21:00:00Z', 'registered_at': '2000-12-24T21:00:00Z', 'updated_at': None, 'is_rate_limited': False}

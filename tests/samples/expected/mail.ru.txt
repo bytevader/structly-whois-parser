@@ -1,15 +1,1 @@
-{'abuse': {'email': None, 'telephone': None},
- 'admin': {'email': None, 'name': None, 'organization': 'OBShchESTVO S OGRANIChENNOY OTVETSTVENNOSTU VK', 'telephone': None},
- 'dnssec': None,
- 'domain': 'MAIL.RU',
- 'expires_at': '2026-09-30T21:00:00Z',
- 'is_rate_limited': False,
- 'name_servers': ['ns1.mail.ru', 'ns2.mail.ru'],
- 'registered_at': '1997-09-27T14:33:26Z',
- 'registrant': {'email': None, 'name': None, 'organization': 'OBShchESTVO S OGRANIChENNOY OTVETSTVENNOSTU VK', 'telephone': None},
- 'registrar': 'RU-CENTER-RU',
- 'registrar_id': None,
- 'registrar_url': None,
- 'statuses': ['REGISTERED', 'DELEGATED', 'VERIFIED'],
- 'tech': {'email': None, 'name': None, 'organization': 'OBShchESTVO S OGRANIChENNOY OTVETSTVENNOSTU VK', 'telephone': None},
- 'updated_at': None}
+{'registrant': {'organization': 'OBShchESTVO S OGRANIChENNOY OTVETSTVENNOSTU VK', 'email': None, 'name': None, 'telephone': None}, 'admin': {'organization': 'OBShchESTVO S OGRANIChENNOY OTVETSTVENNOSTU VK', 'email': None, 'name': None, 'telephone': None}, 'tech': {'organization': 'OBShchESTVO S OGRANIChENNOY OTVETSTVENNOSTU VK', 'email': None, 'name': None, 'telephone': None}, 'abuse': {'email': None, 'telephone': None}, 'statuses': ['REGISTERED', 'DELEGATED', 'VERIFIED'], 'name_servers': ['ns1.mail.ru', 'ns2.mail.ru'], 'domain': 'MAIL.RU', 'registrar': 'RU-CENTER-RU', 'registrar_id': None, 'registrar_url': None, 'dnssec': None, 'expires_at': '2026-09-30T21:00:00Z', 'registered_at': '1997-09-27T14:33:26Z', 'updated_at': None, 'is_rate_limited': False}

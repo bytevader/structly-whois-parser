@@ -1,15 +1,1 @@
-{'abuse': {'email': None, 'telephone': None},
- 'admin': {'email': None, 'name': 'EURid vzw', 'organization': None, 'telephone': None},
- 'dnssec': None,
- 'domain': 'eurid.eu',
- 'expires_at': None,
- 'is_rate_limited': False,
- 'name_servers': ['nsx.eurid.eu', 'ns1.eurid.eu', 'ns3.eurid.eu', 'nsp.netnod.se'],
- 'registered_at': None,
- 'registrant': {'email': 'tech@eurid.eu', 'name': None, 'organization': None, 'telephone': None},
- 'registrar': None,
- 'registrar_id': None,
- 'registrar_url': 'https://www.eurid.eu',
- 'statuses': [],
- 'tech': {'email': None, 'name': None, 'organization': None, 'telephone': None},
- 'updated_at': None}
+{'registrant': {'organization': None, 'email': 'tech@eurid.eu', 'name': None, 'telephone': None}, 'admin': {'organization': None, 'email': None, 'name': 'EURid vzw', 'telephone': None}, 'tech': {'organization': None, 'email': None, 'name': None, 'telephone': None}, 'abuse': {'email': None, 'telephone': None}, 'statuses': [], 'name_servers': ['nsx.eurid.eu', 'ns1.eurid.eu', 'ns3.eurid.eu', 'nsp.netnod.se'], 'domain': 'eurid.eu', 'registrar': None, 'registrar_id': None, 'registrar_url': 'https://www.eurid.eu', 'dnssec': None, 'expires_at': None, 'registered_at': None, 'updated_at': None, 'is_rate_limited': False}

@@ -1,15 +1,1 @@
-{'abuse': {'email': None, 'telephone': None},
- 'admin': {'email': None, 'name': 'Google LLC', 'organization': None, 'telephone': None},
- 'dnssec': None,
- 'domain': 'google.lv',
- 'expires_at': None,
- 'is_rate_limited': False,
- 'name_servers': ['ns1.google.com', 'ns2.google.com', 'ns3.google.com', 'ns4.google.com'],
- 'registered_at': None,
- 'registrant': {'email': None, 'name': None, 'organization': None, 'telephone': None},
- 'registrar': None,
- 'registrar_id': None,
- 'registrar_url': None,
- 'statuses': ['active'],
- 'tech': {'email': None, 'name': None, 'organization': None, 'telephone': None},
- 'updated_at': '2025-11-24T12:12:32.658449Z'}
+{'registrant': {'organization': None, 'email': None, 'name': None, 'telephone': None}, 'admin': {'organization': None, 'email': None, 'name': 'Google LLC', 'telephone': None}, 'tech': {'organization': None, 'email': None, 'name': None, 'telephone': None}, 'abuse': {'email': None, 'telephone': None}, 'statuses': ['active'], 'name_servers': ['ns1.google.com', 'ns2.google.com', 'ns3.google.com', 'ns4.google.com'], 'domain': 'google.lv', 'registrar': None, 'registrar_id': None, 'registrar_url': None, 'dnssec': None, 'expires_at': None, 'registered_at': None, 'updated_at': '2025-11-24T12:12:32.658449Z', 'is_rate_limited': False}

@@ -1,15 +1,1 @@
-{'abuse': {'email': None, 'telephone': None},
- 'admin': {'email': None, 'name': None, 'organization': None, 'telephone': None},
- 'dnssec': 'unsigned delegation',
- 'domain': 'volvo.se',
- 'expires_at': '2026-09-25T00:00:00',
- 'is_rate_limited': False,
- 'name_servers': ['gate.volvo.se', 'gatekeeper.volvo.se', 'goalkeeper.volvo.com', 'gatekeeper.volvo.com'],
- 'registered_at': '2003-09-25T00:00:00',
- 'registrant': {'email': None, 'name': None, 'organization': None, 'telephone': None},
- 'registrar': 'CSC Corp Domains',
- 'registrar_id': None,
- 'registrar_url': None,
- 'statuses': ['active', 'ok'],
- 'tech': {'email': None, 'name': None, 'organization': None, 'telephone': None},
- 'updated_at': '2025-09-16T00:00:00'}
+{'registrant': {'organization': None, 'email': None, 'name': None, 'telephone': None}, 'admin': {'organization': None, 'email': None, 'name': None, 'telephone': None}, 'tech': {'organization': None, 'email': None, 'name': None, 'telephone': None}, 'abuse': {'email': None, 'telephone': None}, 'statuses': ['active', 'ok'], 'name_servers': ['gate.volvo.se', 'gatekeeper.volvo.se', 'goalkeeper.volvo.com', 'gatekeeper.volvo.com'], 'domain': 'volvo.se', 'registrar': 'CSC Corp Domains', 'registrar_id': None, 'registrar_url': None, 'dnssec': 'unsigned delegation', 'expires_at': '2026-09-25T00:00:00', 'registered_at': '2003-09-25T00:00:00', 'updated_at': '2025-09-16T00:00:00', 'is_rate_limited': False}

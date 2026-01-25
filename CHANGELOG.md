@@ -3,6 +3,26 @@
 All notable changes to this project will be documented here. This project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.1.0] - 2026-01-25
+
+### Added
+
+- **Schema contract documentation**: added `docs/schema.md` describing canonical `WhoisRecord` fields, type rules (including date policy), normalization behavior, and missing vs. redacted handling.
+- **Schema introspection**:
+  - `WhoisRecord.schema_version` to allow downstream compatibility checks.
+  - `WhoisParser.field_catalog(surface=...)` to enumerate available fields for record/dict/both surfaces.
+- **Supported TLD transparency**:
+  - Added/generated `docs/supported-tlds.md` matrix and generator tooling.
+  - CI checks to ensure the matrix stays up to date and that fixture-derived TLDs are represented in tiers mapping.
+
+### Changed
+
+- Improved `supported_tlds` reporting so it reflects **available configurations/overrides** (capability) rather than only currently-instantiated parsers, and filters empty labels.
+
+### Notes
+
+- The stability guarantees in `docs/schema.md` apply to the canonical `WhoisRecord` output surface (`parse_record`, `parse_many(..., to_records=True)`). Mapping output remains best-effort and may include registry-specific keys derived from Structly configurations.
+
 ## [1.0.1] - 2026-01-21
 
 ### Added

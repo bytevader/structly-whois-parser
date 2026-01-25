@@ -71,6 +71,9 @@ class ConsumeAndParseJob:
 
         self.consumer = self._build_consumer()
         self.producer = self._build_producer()
+        # To test performance with date parser use
+        # WhoisParser(date_parser=dateutil_parser.parse)
+        # WhoisParser(date_parser=dateparser_parser)
         self.parser = WhoisParser()
         self.processed = 0
         self.skipped = 0

@@ -15,12 +15,12 @@ Backends that are not installed are skipped with a warning; structly_whois alway
 
 ## Sample output (MacBook Pro, M4, Python 3.14)
 
-| backend                   | records | records/s | avg latency (ms) |
-| ------------------------- | ------- | --------- | ---------------- |
-| structly-whois            | 10,500  | 7,779     | 0.129            |
-| structly-whois + dateutil | 10,500  | 3,236     | 0.309            |
-| structly-whois + dateparser | 10,500 | 996      | 1.004            |
-| python-whois              | 10,500  | 196       | 5.096            |
-| whois-parser              | 10,500  | 17        | 58.229           |
+| backend                   |   records | records/s   |   avg latency (ms) |
+|---------------------------|-----------|-------------|--------------------|
+| structly-whois            |     18400 | 7,788       |              0.128 |
+| structly-whois+dateutil   |     18400 | 7,130       |              0.14  |
+| structly-whois+dateparser |     18400 | 804         |              1.244 |
+| whois-parser              |     18400 | 19          |             52.724 |
+| python-whois              |     18400 | 368         |              2.718 |
 
 The “dateutil” and “dateparser” rows run `WhoisParser` with `date_parser=dateutil.parser.parse` and `dateparser.parse`, respectively, highlighting the cost of heavier date coercion. See the [README](../README.md#benchmarks) for context and the comparison matrix against other libraries.

@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from collections.abc import Callable, Iterable, Iterator, Mapping, MutableMapping
 from datetime import datetime
-from typing import Any
+from typing import Any, Literal, get_type_hints
 
 from structly import StructlyParser
 
@@ -62,13 +62,45 @@ class WhoisParser:
         refresh_domain_markers(self._config_factory.base_fields, self._config_factory.tld_overrides)
 
     @property
-    def supported_tlds(self) -> tuple[str, ...]:
-        return tuple(sorted(self._parsers.keys()))
-
-    @property
     def default_date_parser(self) -> DateParser | None:
         """Return the callable used for date post-processing, if any."""
         return self._date_parser
+
+    def supported_tlds(self) -> list[str]:
+        """Return supported TLDs as a deterministic, sorted list."""
+        configured = {tld for tld in self._parsers if tld}
+        configured.update(self._config_factory.known_tlds)
+        return sorted({tld for tld in configured if tld})
+
+    def field_catalog(self, surface: Literal["record", "dict", "both"] = "record") -> dict[str, Any]:
+        """Return a deterministic mapping of known fields and their types."""
+        record_catalog = self._record_field_catalog()
+        dict_catalog = self._dict_field_catalog()
+        if surface == "record":
+            return record_catalog
+        if surface == "dict":
+            return dict_catalog
+        if surface == "both":
+            merged: dict[str, Any] = dict(dict_catalog)
+            merged.update(record_catalog)
+            return dict(sorted(merged.items()))
+        raise ValueError("surface must be one of: record, dict, both")
+
+    def _record_field_catalog(self) -> dict[str, Any]:
+        hints = get_type_hints(WhoisRecord, include_extras=True)
+        entries: list[tuple[str, Any]] = []
+        for field_name, annotation in WhoisRecord.__annotations__.items():
+            if field_name == "schema_version":
+                continue
+            field_type = hints.get(field_name, annotation)
+            entries.append((field_name, field_type))
+        return dict(sorted(entries))
+
+    def _dict_field_catalog(self) -> dict[str, Any]:
+        names = set(self._config_factory.base_fields.keys())
+        for overrides in self._config_factory.tld_overrides.values():
+            names.update(overrides.keys())
+        return {name: Any for name in sorted(names)}
 
     def _select_tld(self, explicit_tld: str | None, domain: str | None) -> str:
         target = normalise_tld(explicit_tld)

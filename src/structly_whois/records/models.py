@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from collections.abc import Callable
 from datetime import datetime
-from typing import Any, Union
+from typing import Any, ClassVar, Union
 
 import msgspec
 
@@ -41,6 +41,7 @@ class Abuse(msgspec.Struct):
 class WhoisRecord(msgspec.Struct):
     """Validated WHOIS response that can be serialized without post-processing."""
 
+    schema_version: ClassVar[str] = "1.0"
     raw_text: str
 
     registrant: Registrant

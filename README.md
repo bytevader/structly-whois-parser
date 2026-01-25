@@ -34,11 +34,22 @@ Be mindful of data handling obligations (GDPR/ICANN/etc.)
 - **Lean dependencies** – No `dateparser` or required by default. Plug in a `date_parser` callable only when locale-aware coercion is truly needed.
 - **Batched & streaming friendly** – `parse_many` and `parse_chunks` let you process millions of payloads from queues, tarballs, or S3 archives without buffering everything in memory.
 
+## Supported TLD coverage
+
+The live matrix of supported TLDs, tiers (Gold/Silver/Experimental), and sample fixtures lives in [docs/supported-tlds.md](docs/supported-tlds.md). \
+Regenerate it with `python scripts/supported_tlds/generate_supported_tlds.py`, and run `--check`/`--validate` before committing fixture or tier changes (CI runs those flags automatically). \
+See [docs/supported-tlds-generator.md](docs/supported-tlds-generator.md) for optional local-only commands such as generating coverage reports or tier suggestions.
+
+## Schema & stability
+
+`structly-whois` guarantees a stable canonical record schema that you can depend on in downstream systems. Review [docs/schema.md](docs/schema.md) for field definitions, normalization rules, and SemVer-style guarantees. Use `WhoisRecord.schema_version` together with `WhoisParser.field_catalog()` to assert compatibility in your CI pipeline.
+
 ## Installation
 
 ```bash
 pip install structly-whois               # end users
 pip install -e '.[dev]'                  # contributors (installs Ruff, pytest, etc.)
+# optional: pip install python-dateutil or dateparser if you plan to use a custom date parser hook
 ```
 
 Python 3.9+ is supported. Wheels ship `py.typed` markers for static analyzers.
@@ -92,7 +103,23 @@ structly-whois tests/samples/whois/google.com.txt \
   --date-parser tests.common.helpers:iso_to_datetime
 ```
 
-The CLI mirrors the Python API: pass `--record` to emit a structured `WhoisRecord`, `--lowercase` to normalize strings, and `--date-parser module:callable` when you want custom date coercion.
+The CLI mirrors the Python API: pass `--record` to emit a structured `WhoisRecord`, `--lowercase` to normalize strings, and `--date-parser module:callable` when you want custom date coercion. Stdin is supported out of the box:
+
+```bash
+cat tests/samples/whois/google.com.txt | structly-whois - --json
+```
+
+Need to process streams? Switch to JSONL mode. Feed newline-delimited objects that contain at least a `raw_text` field (plus optional `domain`, `tld`, or `id`) and emit JSONL on the way out:
+
+```bash
+structly-whois payloads.jsonl \
+  --input-format jsonl \
+  --jsonl \
+  --best-effort \
+  --metrics
+```
+
+`--best-effort` keeps consuming payloads even if some rows fail (while still returning a non-zero exit status), and `--metrics` prints a throughput summary to stderr when the run completes. Drop the `--jsonl` flag to pretty-print JSON instead.
 
 ## Advanced usage
 
@@ -147,6 +174,22 @@ record = parser.parse_record(raw_whois, domain="example.dev", date_parser=date_h
 For multilingual registries, the simplest plug-in is [`dateparser.parse`](https://pypi.org/project/dateparser/). 
 
 NOTE: It can cut throughput by more than half.
+
+### Date parsing coverage & fallbacks
+
+We periodically re-run the parser against every sample under `tests/samples/whois`. The latest sweep (193 fixtures / 452 date fields) produced real `datetime` objects for 448 fields (99.12%) using the built-in fast formats alone. Only two TLDs still emit string timestamps:
+
+- `.uk` (3 samples) – they literally return `"before Aug-1996"` for the creation date. No generic parser can infer a timestamp from that prose.
+- `.il` (1 sample) – the registry embeds `"registrar AT ns.il 19990605"` inside the updated date. Again, not an actual date-time.
+
+Because those strings are not parseable, hooking in `dateutil`/`dateparser` will not magically fix them. If you ever run into a registry that does return a genuine but locale-specific value, pass a fallback parser explicitly:
+
+```python
+from dateutil import parser as dateutil_parser
+parser = WhoisParser(date_parser=dateutil_parser.parse)
+```
+
+Keep in mind that locale-aware libraries are substantially slower than the Structly fast path. Parsing the 452 raw date strings directly takes roughly `0.40s` with `dateutil` and `2.08s` with `dateparser` on this machine, compared to effectively zero overhead when the builtin formats match. If you only need a fallback for a handful of problematic TLDs, wire it in conditionally rather than enabling it globally.
 
 ### Streaming from S3
 

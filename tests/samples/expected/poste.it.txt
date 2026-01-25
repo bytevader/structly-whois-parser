@@ -1,15 +1,1 @@
-{'abuse': {'email': None, 'telephone': None},
- 'admin': {'email': None, 'name': 'POSTE ITALIANE SPA', 'organization': None, 'telephone': None},
- 'dnssec': 'no',
- 'domain': 'poste.it',
- 'expires_at': '2026-07-22T00:00:00',
- 'is_rate_limited': False,
- 'name_servers': ['dns4.poste.it', 'dns5.poste.it', 'dns6.poste.it', 'dns7.poste.it'],
- 'registered_at': '2000-05-29T00:00:00',
- 'registrant': {'email': None, 'name': None, 'organization': 'POSTE ITALIANE SPA', 'telephone': None},
- 'registrar': None,
- 'registrar_id': None,
- 'registrar_url': None,
- 'statuses': ['ok'],
- 'tech': {'email': None, 'name': None, 'organization': None, 'telephone': None},
- 'updated_at': None}
+{'registrant': {'organization': 'POSTE ITALIANE SPA', 'email': None, 'name': None, 'telephone': None}, 'admin': {'organization': None, 'email': None, 'name': 'POSTE ITALIANE SPA', 'telephone': None}, 'tech': {'organization': None, 'email': None, 'name': None, 'telephone': None}, 'abuse': {'email': None, 'telephone': None}, 'statuses': ['ok'], 'name_servers': ['dns4.poste.it', 'dns5.poste.it', 'dns6.poste.it', 'dns7.poste.it'], 'domain': 'poste.it', 'registrar': None, 'registrar_id': None, 'registrar_url': None, 'dnssec': 'no', 'expires_at': '2026-07-22T00:00:00', 'registered_at': '2000-05-29T00:00:00', 'updated_at': None, 'is_rate_limited': False}

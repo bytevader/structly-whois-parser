@@ -62,3 +62,100 @@ def test_cli_default_output_uses_mapping(tmp_payload: Path, capsys: pytest.Captu
     captured = capsys.readouterr()
     assert "cli.example" in captured.out
     assert captured.err == ""
+
+
+def test_cli_jsonl_stream_best_effort(tmp_payload: Path, tmp_path: Path, capsys: pytest.CaptureFixture[str]) -> None:
+    payload_text = tmp_payload.read_text(encoding="utf-8")
+    jsonl_file = tmp_path / "payloads.jsonl"
+    jsonl_file.write_text(
+        "\n".join([
+            json.dumps({"raw_text": payload_text, "domain": "cli.example"}),
+            json.dumps({"domain": "missing-raw"}),  # invalid entry should be skipped
+            json.dumps({"raw_text": payload_text.replace("cli", "cli2"), "domain": "cli2.example"}),
+        ]),
+        encoding="utf-8",
+    )
+
+    exit_code = cli.main([
+        str(jsonl_file),
+        "--input-format",
+        "jsonl",
+        "--jsonl",
+        "--best-effort",
+        "--metrics",
+    ])
+
+    captured = capsys.readouterr()
+    lines = [json.loads(line) for line in captured.out.strip().splitlines()]
+    assert exit_code == 1  # failures were logged but parsing continued
+    assert len(lines) == 2
+    assert lines[0]["domain_name"] == "cli.example"
+    assert lines[1]["domain_name"] == "cli2.example"
+    assert "failed" in captured.err
+
+
+def test_cli_metrics_summary(tmp_payload: Path, capsys: pytest.CaptureFixture[str]) -> None:
+    exit_code = cli.main([
+        str(tmp_payload),
+        "--metrics",
+        "--json",
+    ])
+
+    captured = capsys.readouterr()
+    assert exit_code == 0
+    assert '"domain_name": "cli.example"' in captured.out
+    assert "Processed 1 payload(s); 1 succeeded / 0 failed" in captured.err
+
+
+def test_cli_jsonl_fail_fast_stops_on_first_error(
+    tmp_payload: Path, tmp_path: Path, capsys: pytest.CaptureFixture[str]
+) -> None:
+    bad_line = '{"raw_text":'
+    good_line = json.dumps({"raw_text": tmp_payload.read_text(), "domain": "cli.example"})
+    jsonl_path = tmp_path / "bad.jsonl"
+    jsonl_path.write_text(f"{bad_line}\n{good_line}\n", encoding="utf-8")
+
+    with pytest.raises(ValueError) as exc:
+        cli.main([
+            str(jsonl_path),
+            "--input-format",
+            "jsonl",
+            "--jsonl",
+            "--fail-fast",
+        ])
+
+    captured = capsys.readouterr()
+    assert captured.out == ""
+    assert "invalid JSON" in str(exc.value)
+    assert captured.err == ""
+
+
+def test_cli_jsonl_missing_raw_text_best_effort(
+    tmp_payload: Path, tmp_path: Path, capsys: pytest.CaptureFixture[str]
+) -> None:
+    missing_payload = json.dumps({"id": "broken"})
+    valid_payload = json.dumps({"raw_text": tmp_payload.read_text(), "domain": "cli.example"})
+    jsonl_path = tmp_path / "missing_raw.jsonl"
+    jsonl_path.write_text(f"{missing_payload}\n{valid_payload}\n", encoding="utf-8")
+
+    exit_code = cli.main([
+        str(jsonl_path),
+        "--input-format",
+        "jsonl",
+        "--jsonl",
+        "--best-effort",
+    ])
+
+    captured = capsys.readouterr()
+    assert exit_code == 1
+    assert json.loads(captured.out)["domain_name"] == "cli.example"
+    assert "missing raw_text" in captured.err
+
+
+def test_cli_rejects_mutually_exclusive_output_flags(tmp_payload: Path) -> None:
+    with pytest.raises(SystemExit):
+        cli.main([
+            str(tmp_payload),
+            "--json",
+            "--jsonl",
+        ])
