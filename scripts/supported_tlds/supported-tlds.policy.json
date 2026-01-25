@@ -1,0 +1,30 @@
+{
+  "tier_order": [
+    "Experimental",
+    "Silver",
+    "Gold"
+  ],
+  "core_fields": {
+    "domain": ["domain", "domain_name", "domainName"],
+    "registrar": ["registrar", "registrar_name"],
+    "nameservers": ["nameservers", "name_servers", "name_server"],
+    "statuses": ["statuses", "status"],
+    "registered_at": ["registered_at", "created_at", "creation_date", "created"],
+    "expires_at": ["expires_at", "expiry_date", "registry_expiry_date", "expires"],
+    "updated_at": ["updated_at", "updated_date", "last_updated", "updated"]
+  },
+  "thresholds": {
+    "Silver": {
+      "min_fixtures": 2,
+      "min_parse_success_rate": 0.98,
+      "min_core_field_score": 0.6,
+      "min_golden_coverage": 0.0
+    },
+    "Gold": {
+      "min_fixtures": 3,
+      "min_parse_success_rate": 1.0,
+      "min_core_field_score": 0.85,
+      "min_golden_coverage": 0.5
+    }
+  }
+}
