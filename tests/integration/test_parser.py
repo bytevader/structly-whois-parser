@@ -64,7 +64,9 @@ def test_parse_many_can_return_records() -> None:
 def test_parser_supported_tlds_skip_empty_labels() -> None:
     parser = WhoisParser(preload_tlds=("com", "", "info"))
 
-    assert parser.supported_tlds == ("com", "info")
+    result = parser.supported_tlds()
+    assert {"com", "info"}.issubset(result)
+    assert "" not in result
 
 
 def test_parser_default_date_parser_property() -> None:

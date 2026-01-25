@@ -26,10 +26,6 @@
 This library parses raw WHOIS text, it does not perform WHOIS lookups. 
 Be mindful of data handling obligations (GDPR/ICANN/etc.)
 
-## Supported TLD coverage
-
-The live matrix of supported TLDs, tiers (Gold/Silver/Experimental), and sample fixtures lives in [docs/supported-tlds.md](docs/supported-tlds.md). Regenerate it with `python scripts/supported_tlds/generate_supported_tlds.py`, and run `--check`/`--validate` before committing fixture or tier changes (CI runs those flags automatically). See [docs/supported-tlds-generator.md](docs/supported-tlds-generator.md) for optional local-only commands such as generating coverage reports or tier suggestions.
-
 ## Highlights
 
 - **Structly speed** – Per-TLD configurations are compiled by Structly, keeping parsing under a millisecond/record even on commodity hardware.
@@ -37,6 +33,16 @@ The live matrix of supported TLDs, tiers (Gold/Silver/Experimental), and sample 
 - **Configurable** – Inject your own Structly configs, register TLD overrides at runtime, or extend the base field definitions without forking.
 - **Lean dependencies** – No `dateparser` or required by default. Plug in a `date_parser` callable only when locale-aware coercion is truly needed.
 - **Batched & streaming friendly** – `parse_many` and `parse_chunks` let you process millions of payloads from queues, tarballs, or S3 archives without buffering everything in memory.
+
+## Supported TLD coverage
+
+The live matrix of supported TLDs, tiers (Gold/Silver/Experimental), and sample fixtures lives in [docs/supported-tlds.md](docs/supported-tlds.md). \
+Regenerate it with `python scripts/supported_tlds/generate_supported_tlds.py`, and run `--check`/`--validate` before committing fixture or tier changes (CI runs those flags automatically). \
+See [docs/supported-tlds-generator.md](docs/supported-tlds-generator.md) for optional local-only commands such as generating coverage reports or tier suggestions.
+
+## Schema & stability
+
+`structly-whois` guarantees a stable canonical record schema that you can depend on in downstream systems. Review [docs/schema.md](docs/schema.md) for field definitions, normalization rules, and SemVer-style guarantees. Use `WhoisRecord.schema_version` together with `WhoisParser.field_catalog()` to assert compatibility in your CI pipeline.
 
 ## Installation
 
