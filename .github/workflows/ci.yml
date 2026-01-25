@@ -27,6 +27,8 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: ${{ env.PYTHON_VERSION }}
+      - name: Check for bidirectional control characters
+        run: python scripts/check_bidi.py
       - run: python scripts/supported_tlds/generate_supported_tlds.py --validate
       - run: python scripts/supported_tlds/generate_supported_tlds.py --check
 

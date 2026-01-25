@@ -26,6 +26,10 @@
 This library parses raw WHOIS text, it does not perform WHOIS lookups. 
 Be mindful of data handling obligations (GDPR/ICANN/etc.)
 
+## Supported TLD coverage
+
+The live matrix of supported TLDs, tiers (Gold/Silver/Experimental), and sample fixtures lives in [docs/supported-tlds.md](docs/supported-tlds.md). Regenerate it with `python scripts/supported_tlds/generate_supported_tlds.py`, and run `--check`/`--validate` before committing fixture or tier changes (CI runs those flags automatically). See [docs/supported-tlds-generator.md](docs/supported-tlds-generator.md) for optional local-only commands such as generating coverage reports or tier suggestions.
+
 ## Highlights
 
 - **Structly speed** – Per-TLD configurations are compiled by Structly, keeping parsing under a millisecond/record even on commodity hardware.
@@ -164,10 +168,6 @@ record = parser.parse_record(raw_whois, domain="example.dev", date_parser=date_h
 For multilingual registries, the simplest plug-in is [`dateparser.parse`](https://pypi.org/project/dateparser/). 
 
 NOTE: It can cut throughput by more than half.
-
-## Supported TLD coverage
-
-The live matrix of supported TLDs, tiers (Gold/Silver/Experimental), and sample fixtures lives in [docs/supported-tlds.md](docs/supported-tlds.md). If you need to refresh that matrix or adjust tier policy thresholds, follow the commands in [docs/supported-tlds-generator.md](docs/supported-tlds-generator.md), which document every `scripts/supported_tlds/generate_supported_tlds.py` mode.
 
 ### Date parsing coverage & fallbacks
 

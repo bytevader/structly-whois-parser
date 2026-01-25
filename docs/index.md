@@ -45,4 +45,4 @@ structly-whois whois.txt --domain example.com --record --json \
 
 Release automation lives in GitHub Actions: pushes to `dev` publish to TestPyPI and tags `vX.Y.Z` publish to PyPI. See [CONTRIBUTING](../CONTRIBUTING.md) for the full workflow.
 
-Need to refresh the Supported TLD matrix or tier policy? Follow the commands in [Supported TLD automation](./supported-tlds-generator.md) for `scripts/supported_tlds/generate_supported_tlds.py`.
+Need to refresh the Supported TLD matrix? Use `python scripts/supported_tlds/generate_supported_tlds.py` (plus `--check`/`--validate` before pushing) and see [Supported TLD automation](./supported-tlds-generator.md) for optional local-only helpers such as coverage reports or tier suggestions.
