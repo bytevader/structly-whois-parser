@@ -304,7 +304,7 @@ BASE_FIELD_DEFINITIONS: dict[str, FieldDefinition] = {
     "dnssec": {
         "patterns": [
             sw("DNSSEC:"),
-            rx(r"(?i)^dnssec:\s*(?P<val>.+)$"),
+            rx(r"(?i)^dnssec\s*:\s*(?P<val>.+)$"),
             sw("dnssec:"),
         ]
     },
