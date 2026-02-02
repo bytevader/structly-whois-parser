@@ -159,3 +159,52 @@ def test_cli_rejects_mutually_exclusive_output_flags(tmp_payload: Path) -> None:
             "--json",
             "--jsonl",
         ])
+
+
+def test_iter_jsonl_payloads_reads_stdin_and_context(
+    tmp_payload: Path, monkeypatch: pytest.MonkeyPatch, capsys: pytest.CaptureFixture[str]
+) -> None:
+    payload_text = tmp_payload.read_text(encoding="utf-8")
+    stream = io.StringIO(
+        "\n"  # blank line should be skipped
+        "not json\n"  # invalid JSON handled best-effort
+        f"{json.dumps({'raw_text': payload_text, 'domain': 'cli.example', 'id': 'row-1'})}\n"
+    )
+    monkeypatch.setattr(cli.sys, "stdin", stream)
+    metrics = {"processed": 0, "failed": 0}
+
+    specs = list(
+        cli._iter_jsonl_payloads(
+            "-",
+            default_domain=None,
+            default_tld=None,
+            default_lowercase=False,
+            fail_fast=False,
+            metrics=metrics,
+        )
+    )
+
+    stderr = capsys.readouterr().err
+    assert specs and specs[0].context.endswith("(row-1)")
+    assert "invalid JSON" in stderr
+    assert metrics == {"processed": 2, "failed": 1}
+
+
+def test_iter_jsonl_payloads_fail_fast_on_missing_raw_text(tmp_path: Path) -> None:
+    jsonl_path = tmp_path / "missing_raw.jsonl"
+    jsonl_path.write_text('{"domain": "cli.example"}\n', encoding="utf-8")
+    metrics = {"processed": 0, "failed": 0}
+
+    iterator = cli._iter_jsonl_payloads(
+        str(jsonl_path),
+        default_domain=None,
+        default_tld=None,
+        default_lowercase=False,
+        fail_fast=True,
+        metrics=metrics,
+    )
+
+    with pytest.raises(ValueError) as exc:
+        next(iterator)
+
+    assert "missing raw_text field" in str(exc.value)

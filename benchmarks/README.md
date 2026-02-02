@@ -4,6 +4,8 @@
 
 Grouping by TLD keeps the hot parser cached, eliminates per-payload parser selection, and lets Structly amortize normalization plus parsing across the batch. In practice this means more CPU time is spent inside the Rust parser and less on Python bookkeeping or Kafka round-trips, making `parse_many` the fastest path when you already know which TLD parser to apply.
 
+The `make bench` target runs `benchmarks/run_benchmarks.py`, which now includes a `structly-whois.parse_many` backend. That backend feeds each sample batch plus its per-row domain hints directly into `WhoisParser.parse_many(..., to_records=True)` so you can compare its throughput against the traditional `parse_record` path.
+
 ## Benchmarking Environment
 
 Follow these steps to spin up Kafka/Redpanda plus the constrained WHOIS consumer, then publish the 1M-record workload:

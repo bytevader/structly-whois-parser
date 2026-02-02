@@ -223,6 +223,8 @@ for chunk in parser.parse_chunks(payloads, chunk_size=512):
 
 Need to process live WHOIS feeds? `benchmarks/scripts/consume_and_parse.py` shows how to wire `WhoisParser` into a Kafka consumer, group messages by TLD, and issue `parse_many` calls per bucket. Grouping domains ensures each batch uses the right Structly override and minimizes parser cache churn, so `.com.br` payloads never run through `.com` rules while still keeping throughput high.
 
+`WhoisParser.parse_many` now performs that grouping automatically whenever you pass per-row `domain` or `tld` hints. Manual bucketing is still useful for chunking or back-pressure, but you get the fast-path Structly reuse even if you hand the parser a single mixed batch. If every row resolves to the same TLD the parser detects it and stays on the single-parser fast path, so you only pay the grouping cost when it actually reduces churn.
+
 ### Performance tip: pass `domain=` or `tld=` when you know it
 
 Inference keeps things convenient, but the fastest path is to tell the parser what you already know:
