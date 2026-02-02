@@ -4,22 +4,47 @@ import argparse
 import importlib
 import sys
 import time
-from collections.abc import Callable
+from collections.abc import Callable, Iterable
 from dataclasses import dataclass
 from pathlib import Path
+from types import ModuleType
 
 from dateparser import parse as dateparser_parse
 from dateutil import parser as dateutil_parser
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
+SRC_ROOT = PROJECT_ROOT / "src"
+if str(SRC_ROOT) not in sys.path:
+    sys.path.insert(0, str(SRC_ROOT))
 if str(PROJECT_ROOT) not in sys.path:
-    sys.path.insert(0, str(PROJECT_ROOT))
+    sys.path.append(str(PROJECT_ROOT))
 
 DEFAULT_OUTPUT = PROJECT_ROOT / "benchmarks" / "results.md"
-ITERATIONS_DEFAULT = 100
+ITERATIONS_DEFAULT = 10
 from tests.common.sample_utils import SKIPPED_SAMPLES, WHOIS_ROOT  # noqa: E402
 
+_STRUCTLY_MODULE: ModuleType | None = None
+
+
+def _structly_module() -> ModuleType:
+    """Load the local structly_whois package, evicting any installed version once."""
+    global _STRUCTLY_MODULE
+    if _STRUCTLY_MODULE is None:
+        for key in list(sys.modules):
+            if key == "structly_whois" or key.startswith("structly_whois."):
+                sys.modules.pop(key)
+        _STRUCTLY_MODULE = importlib.import_module("structly_whois")
+    return _STRUCTLY_MODULE
+
+
 ParseFunc = Callable[[str, str], object]
+BatchFunc = Callable[[Iterable[str], list[str]], list[object]]
+
+
+@dataclass(frozen=True)
+class BackendSpec:
+    loader: Callable[[], ParseFunc | BatchFunc]
+    is_batch: bool = False
 
 
 @dataclass
@@ -52,25 +77,30 @@ def _load_payloads(*, domains: set[str] | None, include_skipped: bool) -> list[t
     return payloads
 
 
-def _load_structly() -> ParseFunc:
-    from structly_whois import WhoisParser
+def _structly_parse_record_factory(*, date_parser: Callable[[str], object] | None = None) -> ParseFunc:
+    module = _structly_module()
+    parser = module.WhoisParser(date_parser=date_parser)
 
-    parser = WhoisParser()
-    return lambda text, domain: parser.parse_record(text, domain=domain, lowercase=True)
+    def _parse(text: str, domain: str) -> object:
+        return parser.parse_record(text, domain=domain, lowercase=True)
 
-
-def _load_structly_with_dateutil() -> ParseFunc:
-    from structly_whois import WhoisParser
-
-    parser = WhoisParser(date_parser=dateutil_parser.parse)
-    return lambda text, domain: parser.parse_record(text, domain=domain, lowercase=True)
+    return _parse
 
 
-def _load_structly_with_dateparser() -> ParseFunc:
-    from structly_whois import WhoisParser
+def _structly_parse_many_factory() -> BatchFunc:
+    module = _structly_module()
+    parser = module.WhoisParser()
 
-    parser = WhoisParser(date_parser=dateparser_parse)
-    return lambda text, domain: parser.parse_record(text, domain=domain, lowercase=True)
+    def _parse_batch(texts: Iterable[str], domains: list[str]) -> list[object]:
+        return parser.parse_many(texts, domain=domains, to_records=True)
+
+    return _parse_batch
+
+
+def _materialize_batch_inputs(payloads: list[tuple[str, str]]) -> tuple[list[str], list[str]]:
+    texts = [text for _, text in payloads]
+    domains = [domain for domain, _ in payloads]
+    return texts, domains
 
 
 def _load_whois_parser_backend() -> ParseFunc:
@@ -116,12 +146,17 @@ def _load_python_whois_backend() -> ParseFunc:
     return _parse
 
 
-BACKENDS: dict[str, Callable[[], ParseFunc]] = {
-    "structly-whois": _load_structly,
-    "structly-whois+dateutil": _load_structly_with_dateutil,
-    "structly-whois+dateparser": _load_structly_with_dateparser,
-    "whois-parser": _load_whois_parser_backend,
-    "python-whois": _load_python_whois_backend,
+BACKENDS: dict[str, BackendSpec] = {
+    "structly-whois": BackendSpec(loader=_structly_parse_record_factory),
+    "structly-whois+dateutil": BackendSpec(
+        loader=lambda: _structly_parse_record_factory(date_parser=dateutil_parser.parse)
+    ),
+    "structly-whois+dateparser": BackendSpec(
+        loader=lambda: _structly_parse_record_factory(date_parser=dateparser_parse)
+    ),
+    "structly-whois.parse_many": BackendSpec(loader=_structly_parse_many_factory, is_batch=True),
+    "whois-parser": BackendSpec(loader=_load_whois_parser_backend),
+    "python-whois": BackendSpec(loader=_load_python_whois_backend),
 }
 
 
@@ -137,6 +172,26 @@ def run_backend(name: str, parser_fn: ParseFunc, payloads: list[tuple[str, str]]
         backend=name,
         iterations=iterations,
         records=count,
+        elapsed=elapsed,
+    )
+
+
+def run_batch_backend(
+    name: str,
+    parser_fn: BatchFunc,
+    batch_inputs: tuple[list[str], list[str]],
+    iterations: int,
+) -> BenchmarkResult:
+    texts, domains = batch_inputs
+    start = time.perf_counter()
+    for _ in range(iterations):
+        parser_fn(texts, domains)
+    elapsed = time.perf_counter() - start
+    total_records = len(texts) * iterations
+    return BenchmarkResult(
+        backend=name,
+        iterations=iterations,
+        records=total_records,
         elapsed=elapsed,
     )
 
@@ -168,7 +223,7 @@ def main(argv: list[str] | None = None) -> int:
     parser.add_argument("--iterations", type=int, default=ITERATIONS_DEFAULT, help="Parse iterations per sample.")
     parser.add_argument(
         "--backends",
-        default="structly-whois,structly-whois+dateutil,structly-whois+dateparser,whois-parser,python-whois",
+        default="structly-whois,structly-whois.parse_many,structly-whois+dateutil,structly-whois+dateparser,whois-parser,python-whois",
         help="Comma-separated list of backends to run.",
     )
     parser.add_argument(
@@ -194,20 +249,24 @@ def main(argv: list[str] | None = None) -> int:
     else:
         domain_filter = None
     payloads = _load_payloads(domains=domain_filter, include_skipped=args.include_skipped)
+    batch_inputs = _materialize_batch_inputs(payloads)
     requested = [name.strip() for name in args.backends.split(",") if name.strip()]
 
     results: list[BenchmarkResult] = []
     for name in requested:
-        loader = BACKENDS.get(name)
-        if not loader:
+        spec = BACKENDS.get(name)
+        if not spec:
             print(f"[skip] unknown backend '{name}'", file=sys.stderr)
             continue
         try:
-            parse_fn = loader()
+            target = spec.loader()
         except ImportError:
             print(f"[skip] backend '{name}' not installed", file=sys.stderr)
             continue
-        result = run_backend(name, parse_fn, payloads, args.iterations)
+        if spec.is_batch:
+            result = run_batch_backend(name, target, batch_inputs, args.iterations)  # type: ignore[arg-type]
+        else:
+            result = run_backend(name, target, payloads, args.iterations)  # type: ignore[arg-type]
         results.append(result)
 
     if not results:
