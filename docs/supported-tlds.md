@@ -125,6 +125,7 @@ We classify TLD parsing confidence into three tiers:
 | om | Experimental | [tests/samples/whois/omantel.om.txt](../tests/samples/whois/omantel.om.txt) |
 | on.ca | Experimental | [tests/samples/whois/tdsb.on.ca.txt](../tests/samples/whois/tdsb.on.ca.txt) |
 | or.jp | Experimental | [tests/samples/whois/nhk.or.jp.txt](../tests/samples/whois/nhk.or.jp.txt) |
+| or.kr | Silver | [tests/samples/whois/nic.or.kr.txt](../tests/samples/whois/nic.or.kr.txt) |
 | org | Silver | [tests/samples/whois/archive.org.txt](../tests/samples/whois/archive.org.txt)<br>[tests/samples/whois/icann.org.txt](../tests/samples/whois/icann.org.txt)<br>[tests/samples/whois/wikipedia.org.txt](../tests/samples/whois/wikipedia.org.txt) |
 | org.hk | Experimental | [tests/samples/whois/sbc.org.hk.txt](../tests/samples/whois/sbc.org.hk.txt) |
 | paris | Experimental | [tests/samples/whois/bienvenue.paris.txt](../tests/samples/whois/bienvenue.paris.txt) |

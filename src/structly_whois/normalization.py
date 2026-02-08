@@ -1,7 +1,15 @@
 from __future__ import annotations
 
 import re
-from collections.abc import Iterable, Mapping
+from collections.abc import Iterable, MutableMapping
+from typing import Any
+
+from .normalizers import CORE_NORMALIZERS, CORE_TEXT_NORMALIZERS, Normalizer, TextNormalizer
+
+
+class NormalizerPluginError(RuntimeError):
+    """Raised when plugin discovery fails or returns invalid normalizers."""
+
 
 _COLLAPSIBLE_HEADERS = {
     "domain name:",
@@ -59,7 +67,7 @@ def _slice_from_last_domain(text: str) -> str:
     return text[last_start:]
 
 
-def normalize_raw_text(raw_text: str) -> str:
+def normalize_raw_text(raw_text: str, *, domain: str | None = None, tld: str | None = None) -> str:
     """Fast path for trimming WHOIS chatter and keeping the latest response only."""
     if not raw_text:
         return ""
@@ -71,110 +79,105 @@ def normalize_raw_text(raw_text: str) -> str:
     sliced = _slice_from_last_domain(collapsed_text)
     if not sliced.endswith("\n"):
         sliced = f"{sliced}\n"
-    return _inject_afnic_contacts(sliced)
+    return run_text_normalizers(sliced, domain=domain, tld=tld)
 
 
-def _is_afnic_payload(lines: list[str]) -> bool:
-    """Detect AFNIC WHOIS payloads that need contact normalization."""
-    marker = "this is the afnic whois server"
-    return any(marker in line.lower() for line in lines)
+_RegistryEntry = tuple[int, int, Normalizer]
+_normalizer_registry: list[_RegistryEntry] = []
+_insertion_counter = 0
+_TextRegistryEntry = tuple[int, int, TextNormalizer]
+_text_normalizer_registry: list[_TextRegistryEntry] = []
+_text_insertion_counter = 0
 
 
-def _extract_afnic_handles(lines: list[str]) -> dict[str, str]:
-    """Collect holder/admin/tech handles from the header section."""
-    handles: dict[str, str] = {}
-    for line in lines:
-        lower = line.lower()
-        if lower.startswith("holder-c:"):
-            handles["holder"] = line.split(":", 1)[1].strip()
-        elif lower.startswith("admin-c:"):
-            handles["admin"] = line.split(":", 1)[1].strip()
-        elif lower.startswith("tech-c:"):
-            handles["tech"] = line.split(":", 1)[1].strip()
-    return handles
+def register_normalizer(normalizer: Normalizer, priority: int = 0) -> None:
+    """Register a Normalizer that runs after Structly parses the payload."""
+    if not isinstance(normalizer, Normalizer):
+        raise TypeError("normalizer must implement the Normalizer protocol")
+    global _insertion_counter
+    entry = (priority, _insertion_counter, normalizer)
+    _normalizer_registry.append(entry)
+    _normalizer_registry.sort(key=lambda item: (-item[0], item[1]))
+    _insertion_counter += 1
 
 
-def _extract_afnic_contact_blocks(lines: list[str]) -> dict[str, dict[str, str]]:
-    """Parse nic-hdl sections into a mapping keyed by handle."""
-    blocks: dict[str, dict[str, str]] = {}
-    idx = 0
-    total = len(lines)
-    while idx < total:
-        line = lines[idx]
-        lower = line.lower()
-        if lower.startswith("nic-hdl:"):
-            handle = line.split(":", 1)[1].strip()
-            idx += 1
-            attrs: dict[str, str] = {}
-            while idx < total:
-                current = lines[idx]
-                current_lower = current.lower()
-                if not current:
-                    idx += 1
-                    continue
-                if current_lower.startswith("nic-hdl:"):
-                    break
-                parts = current.split(":", 1)
-                if len(parts) == 2:
-                    key = parts[0].strip().lower()
-                    value = parts[1].strip()
-                    attrs.setdefault(key, value)
-                if current_lower.startswith("source:"):
-                    idx += 1
-                    break
-                idx += 1
-            blocks[handle] = attrs
+def clear_normalizers() -> None:
+    """Remove all registered normalizers (used in tests)."""
+    global _normalizer_registry, _insertion_counter
+    _normalizer_registry = []
+    _insertion_counter = 0
+
+
+def register_text_normalizer(normalizer: TextNormalizer, priority: int = 0) -> None:
+    """Register a raw-text normalizer that runs before Structly parses the payload."""
+    if not isinstance(normalizer, TextNormalizer):
+        raise TypeError("text normalizer must implement the TextNormalizer protocol")
+    global _text_insertion_counter
+    entry = (priority, _text_insertion_counter, normalizer)
+    _text_normalizer_registry.append(entry)
+    _text_normalizer_registry.sort(key=lambda item: (-item[0], item[1]))
+    _text_insertion_counter += 1
+
+
+def clear_text_normalizers() -> None:
+    """Remove all registered text normalizers (used in tests)."""
+    global _text_normalizer_registry, _text_insertion_counter
+    _text_normalizer_registry = []
+    _text_insertion_counter = 0
+
+
+def run_normalizers(
+    tld: str | None,
+    domain: str | None,
+    parsed: MutableMapping[str, Any],
+    raw_text: str,
+) -> MutableMapping[str, Any]:
+    """Apply registered post-parse normalizers deterministically."""
+    current: MutableMapping[str, Any] = parsed
+    for _priority, _, normalizer in _normalizer_registry:
+        if not normalizer.applicable(tld, domain, current):
             continue
-        idx += 1
-    return blocks
-
-
-def _build_afnic_contact_lines(label: str, attrs: Mapping[str, str]) -> list[str]:
-    """Produce canonical contact lines (Registrant/Admin/Tech) from a block."""
-    lines: list[str] = []
-    contact = attrs.get("contact")
-    contact_type = (attrs.get("type") or "").lower()
-    if contact:
-        if contact_type == "organization":
-            lines.append(f"{label} Organization: {contact}")
-            lines.append(f"{label} Name: {contact}")
-        elif contact_type == "person":
-            lines.append(f"{label} Name: {contact}")
-        else:
-            lines.append(f"{label} Name: {contact}")
-    email = attrs.get("e-mail")
-    if email:
-        lines.append(f"{label} Email: {email}")
-    phone = attrs.get("phone")
-    if phone:
-        lines.append(f"{label} Phone: {phone}")
-    return lines
-
-
-def _inject_afnic_contacts(text: str) -> str:
-    """Append canonical contact labels for AFNIC payloads."""
-    lines = text.splitlines()
-    if not _is_afnic_payload(lines):
-        return text
-    handles = _extract_afnic_handles(lines)
-    if not handles:
-        return text
-    blocks = _extract_afnic_contact_blocks(lines)
-    role_labels = {
-        "holder": "Registrant",
-        "admin": "Admin",
-        "tech": "Tech",
-    }
-    extras: list[str] = []
-    for role, label in role_labels.items():
-        handle = handles.get(role)
-        if not handle:
+        updated = normalizer.normalize(current, raw_text)
+        if updated is current:
             continue
-        attrs = blocks.get(handle)
-        if not attrs:
+        current = updated if isinstance(updated, MutableMapping) else dict(updated)
+    return current
+
+
+def run_text_normalizers(raw_text: str, *, tld: str | None, domain: str | None) -> str:
+    """Apply registered pre-parse text normalizers deterministically."""
+    current = raw_text
+    for _priority, _, normalizer in _text_normalizer_registry:
+        if not normalizer.applicable(current, tld, domain):
             continue
-        extras.extend(_build_afnic_contact_lines(label, attrs))
-    if not extras:
-        return text
-    extra_text = "\n".join(extras)
-    return f"{text}\n{extra_text}\n"
+        updated = normalizer.normalize(current, tld, domain)
+        if not isinstance(updated, str):
+            raise TypeError("text normalizer must return a string")
+        current = updated
+    return current
+
+
+def _initialize_core_normalizers() -> None:
+    for core in CORE_NORMALIZERS:
+        register_normalizer(core)
+
+
+def _initialize_core_text_normalizers() -> None:
+    for core in CORE_TEXT_NORMALIZERS:
+        register_text_normalizer(core)
+
+
+_initialize_core_normalizers()
+_initialize_core_text_normalizers()
+
+
+__all__ = [
+    "NormalizerPluginError",
+    "normalize_raw_text",
+    "register_normalizer",
+    "clear_normalizers",
+    "run_normalizers",
+    "register_text_normalizer",
+    "clear_text_normalizers",
+    "run_text_normalizers",
+]

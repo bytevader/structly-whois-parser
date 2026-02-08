@@ -4,7 +4,6 @@ import logging
 import socket
 import sys
 import time
-from collections import defaultdict
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
@@ -62,7 +61,7 @@ class ConsumeAndParseJob:
     GROUP_ID = "whois-parser"
     IDLE_TIMEOUT = 15.0
     LINGER_MS = 5
-    BATCH_SIZE = 500
+    BATCH_SIZE = 5000
     MAX_POLL_INTERVAL_MS = 300000
 
     def __init__(self) -> None:
@@ -102,8 +101,8 @@ class ConsumeAndParseJob:
                 if self.batch_timer_start is None:
                     self.batch_timer_start = now
 
-                grouped, fallback = self._partition_payloads(messages, now)
-                self._process_grouped_payloads(grouped, fallback)
+                batchable, fallback = self._partition_payloads(messages, now)
+                self._process_batch_payloads(batchable, fallback)
                 self._process_fallback_payloads(fallback)
                 self.producer.poll(0)
 
@@ -139,8 +138,8 @@ class ConsumeAndParseJob:
         self,
         messages: list[Message | None],
         now: float,
-    ) -> tuple[dict[str, list[PendingPayload]], list[PendingPayload]]:
-        grouped_payloads: dict[str, list[PendingPayload]] = defaultdict(list)
+    ) -> tuple[list[PendingPayload], list[PendingPayload]]:
+        batchable_payloads: list[PendingPayload] = []
         fallback_payloads: list[PendingPayload] = []
 
         for message in messages:
@@ -172,35 +171,33 @@ class ConsumeAndParseJob:
 
             payload = PendingPayload(message=message, raw_text=raw_text, domain=domain)
             if domain:
-                tld_hint = self._safe_select_tld(domain)
-                if tld_hint:
-                    grouped_payloads[tld_hint].append(payload)
-                    continue
-            fallback_payloads.append(payload)
+                batchable_payloads.append(payload)
+            else:
+                fallback_payloads.append(payload)
 
-        return grouped_payloads, fallback_payloads
+        return batchable_payloads, fallback_payloads
 
-    def _process_grouped_payloads(
+    def _process_batch_payloads(
         self,
-        grouped: dict[str, list[PendingPayload]],
+        payloads: list[PendingPayload],
         fallback_payloads: list[PendingPayload],
     ) -> None:
-        for tld_hint, payloads in grouped.items():
-            try:
-                domain_hints = [payload.domain or "" for payload in payloads]
-                parsed_records = self.parser.parse_many(
-                    (payload.raw_text for payload in payloads),
-                    domain=domain_hints,
-                    tld=tld_hint,
-                    to_records=True,
-                )
-            except Exception as exc:  # pragma: no cover - defensive logging
-                self.logger.warning("parse_many failed for TLD '%s': %s", tld_hint, exc)
-                fallback_payloads.extend(payloads)
-                continue
+        if not payloads:
+            return
+        try:
+            domain_hints = [payload.domain or "" for payload in payloads]
+            parsed_records = self.parser.parse_many(
+                (payload.raw_text for payload in payloads),
+                domain=domain_hints,
+                to_records=True,
+            )
+        except Exception as exc:  # pragma: no cover - defensive logging
+            self.logger.warning("parse_many failed for batch: %s", exc)
+            fallback_payloads.extend(payloads)
+            return
 
-            for payload, parsed_record in zip(payloads, parsed_records):
-                self._handle_parsed_record(parsed_record, payload)
+        for payload, parsed_record in zip(payloads, parsed_records):
+            self._handle_parsed_record(parsed_record, payload)
 
     def _process_fallback_payloads(self, payloads: list[PendingPayload]) -> None:
         for payload in payloads:
@@ -239,7 +236,7 @@ class ConsumeAndParseJob:
             "consumed_at": time.time(),
         })
         key = parsed_payload.get("domain") or payload.domain or ""
-        key_bytes = key.encode("utf-8") if key else None
+        key_bytes = key.lower().encode("utf-8") if key else None
         value_bytes = orjson.dumps(parsed_payload, default=str)
         while True:
             try:
@@ -272,12 +269,6 @@ class ConsumeAndParseJob:
             self.consumer.commit(message=self.last_message_in_batch, asynchronous=not synchronous)
         except KafkaException as exc:  # pragma: no cover - defensive logging
             self.logger.warning("Commit failed: %s", exc)
-
-    def _safe_select_tld(self, domain: str) -> str:
-        try:
-            return self.parser._select_tld(None, domain)
-        except Exception:  # pragma: no cover - defensive fallback
-            return ""
 
     def _build_consumer(self) -> Consumer:
         config = {

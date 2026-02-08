@@ -6,7 +6,7 @@ from datetime import datetime, timezone
 import pytest
 
 from structly_whois.records import apply_timezone, build_whois_record, parse_datetime, prepare_list
-from structly_whois.records.utils import _parse_date_field, _tzinfo_from_offset
+from structly_whois.records.utils import _extract_trailing_timezone, _parse_date_field, _tzinfo_from_offset
 
 BASE_PAYLOAD = {
     "admin_email": None,
@@ -147,6 +147,18 @@ def test_apply_timezone_handles_named_offsets() -> None:
 def test_apply_timezone_handles_invalid_numeric_offset() -> None:
     dt = datetime(2024, 1, 1, tzinfo=timezone.utc)
     assert apply_timezone(dt, "+9999") is dt
+
+
+def test_extract_trailing_timezone_detects_abbreviation() -> None:
+    stripped, tz = _extract_trailing_timezone("2024-01-01 00:00:00 UTC")
+
+    assert stripped == "2024-01-01 00:00:00"
+    assert tz == "UTC"
+
+
+def test_parse_datetime_handles_trailing_timezone_word() -> None:
+    result = parse_datetime("2024-01-01 00:00:00 UTC")
+    assert isinstance(result, datetime)
 
 
 def test_prepare_list_deduplicates_and_lowercases() -> None:

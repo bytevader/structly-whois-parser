@@ -1,8 +1,11 @@
 from __future__ import annotations
 
-from collections.abc import Callable, Iterable, Iterator, Mapping, MutableMapping
+from collections.abc import Callable, Collection, Iterable, Iterator, Mapping, MutableMapping
+from dataclasses import dataclass
 from datetime import datetime
-from typing import Any, Literal, get_type_hints
+from importlib import metadata
+from itertools import islice, tee
+from typing import Any, ClassVar, Literal, get_type_hints
 
 from structly import StructlyParser
 
@@ -19,18 +22,57 @@ from .domain_inference import (
     refresh_domain_markers,
     split_domain,
 )
-from .normalization import normalize_raw_text
+from .normalization import (
+    NormalizerPluginError,
+    normalize_raw_text,
+    register_normalizer,
+    register_text_normalizer,
+    run_normalizers,
+)
+from .normalizers import Normalizer, TextNormalizer
 from .records import RecordBuilder, WhoisRecord, is_rate_limited_payload
 
 TLDS_REQUIRING_DOMAIN_HINT = frozenset({"info", "za", "jobs", "live"})
+_NORMALIZER_PLUGIN_GROUP = "structly_whois.normalizers"
+
+
+def _effective_tld_for_domain(domain: str | None, known_tlds: Collection[str]) -> str:
+    """Return the longest matching override TLD for a domain (fallback to final label)."""
+    labels = split_domain(domain)
+    if not labels:
+        return ""
+    for start in range(len(labels)):
+        candidate = ".".join(labels[start:])
+        if candidate in known_tlds:
+            return candidate
+    return labels[-1]
+
 
 refresh_domain_markers(DEFAULT_CONFIG_FACTORY.base_fields, DEFAULT_CONFIG_FACTORY.tld_overrides)
 
 DateParser = Callable[[str], datetime]
 
 
+@dataclass(frozen=True)
+class _DomainInputs:
+    selection_hint: str | None
+    hints: list[str] | None
+    effective_tlds: list[str] | None
+    unique_tld_count: int
+
+
+@dataclass(frozen=True)
+class _TldInputs:
+    selection_hint: str | None
+    per_row: list[str] | None
+    unique_tld_count: int
+    allow_domain_grouping: bool
+
+
 class WhoisParser:
     """High-level WHOIS parser built on top of Structly."""
+
+    _loaded_normalizer_entry_points: ClassVar[set[str]] = set()
 
     def __init__(
         self,
@@ -41,6 +83,7 @@ class WhoisParser:
         extra_tld_overrides: Mapping[str, Mapping[str, FieldOverride]] | None = None,
         date_parser: DateParser | None = None,
         record_builder: RecordBuilder | None = None,
+        enable_plugins: bool = False,
     ) -> None:
         self._config_factory = config_factory or StructlyConfigFactory()
         if extra_tld_overrides:
@@ -60,6 +103,9 @@ class WhoisParser:
             self._parsers[tld] = self._build_structly_parser(tld)
         self._default = self._build_structly_parser(None)
         refresh_domain_markers(self._config_factory.base_fields, self._config_factory.tld_overrides)
+        self._known_tld_suffixes: set[str] = set(self._config_factory.known_tlds)
+        if enable_plugins:
+            self._load_normalizer_entry_points()
 
     @property
     def default_date_parser(self) -> DateParser | None:
@@ -86,7 +132,9 @@ class WhoisParser:
             return dict(sorted(merged.items()))
         raise ValueError("surface must be one of: record, dict, both")
 
-    def _record_field_catalog(self) -> dict[str, Any]:
+    @staticmethod
+    def _record_field_catalog() -> dict[str, Any]:
+        """Return Record surface metadata derived from WhoisRecord annotations."""
         hints = get_type_hints(WhoisRecord, include_extras=True)
         entries: list[tuple[str, Any]] = []
         for field_name, annotation in WhoisRecord.__annotations__.items():
@@ -97,12 +145,14 @@ class WhoisParser:
         return dict(sorted(entries))
 
     def _dict_field_catalog(self) -> dict[str, Any]:
+        """Return the dictionary field catalog derived from Structly overrides."""
         names = set(self._config_factory.base_fields.keys())
         for overrides in self._config_factory.tld_overrides.values():
             names.update(overrides.keys())
         return {name: Any for name in sorted(names)}
 
     def _select_tld(self, explicit_tld: str | None, domain: str | None) -> str:
+        """Return the normalized TLD override to use based on hints and known parsers."""
         target = normalise_tld(explicit_tld)
         if target:
             return target
@@ -118,12 +168,14 @@ class WhoisParser:
         return labels[-1]
 
     def _build_structly_parser(self, tld: str | None) -> StructlyParser:
+        """Instantiate a Structly parser for the requested TLD."""
         return StructlyParser(
             build_structly_config_for_tld(tld, factory=self._config_factory),
             rayon_policy=self._rayon_policy,
         )
 
     def _get_parser_for_tld(self, tld: str) -> StructlyParser:
+        """Return a cached Structly parser, creating it lazily when needed."""
         if not tld:
             return self._default
         if tld not in self._parsers:
@@ -163,11 +215,62 @@ class WhoisParser:
         if not normalized:
             raise ValueError("TLD label cannot be empty")
         self._config_factory.register_tld(normalized, overrides, replace=replace)
+        self._known_tld_suffixes.add(normalized)
         if preload:
             self._parsers[normalized] = self._build_structly_parser(normalized)
         elif normalized in self._parsers:
             del self._parsers[normalized]
         refresh_domain_markers(self._config_factory.base_fields, self._config_factory.tld_overrides)
+
+    @staticmethod
+    def register_normalizer(normalizer: Normalizer, priority: int = 0) -> None:
+        """Register a post-parse normalizer that mutates parsed mappings."""
+        register_normalizer(normalizer, priority=priority)
+
+    @staticmethod
+    def register_text_normalizer(normalizer: TextNormalizer, priority: int = 0) -> None:
+        """Register a pre-parse raw-text normalizer."""
+        register_text_normalizer(normalizer, priority=priority)
+
+    def _load_normalizer_entry_points(self) -> None:
+        """Load third-party normalizers registered via entry points."""
+        try:
+            entries = metadata.entry_points()
+        except Exception as exc:  # pragma: no cover - defensive
+            raise NormalizerPluginError("Failed to load normalizer entry points") from exc
+        group_entries = (
+            entries.select(group=_NORMALIZER_PLUGIN_GROUP)
+            if hasattr(entries, "select")
+            else entries.get(_NORMALIZER_PLUGIN_GROUP, [])
+        )
+        for entry in group_entries:
+            if entry.name in self._loaded_normalizer_entry_points:
+                continue
+            try:
+                loaded = entry.load()
+            except Exception as exc:  # pragma: no cover - defensive
+                raise NormalizerPluginError(f"Failed to load normalizer entry '{entry.name}'") from exc
+            normalizer = self._resolve_entry_point_normalizer(loaded, entry.name)
+            if isinstance(normalizer, TextNormalizer):
+                register_text_normalizer(normalizer)
+            else:
+                register_normalizer(normalizer)
+            self._loaded_normalizer_entry_points.add(entry.name)
+
+    @staticmethod
+    def _resolve_entry_point_normalizer(candidate: Any, entry_name: str) -> Normalizer | TextNormalizer:
+        if isinstance(candidate, (Normalizer, TextNormalizer)):
+            return candidate
+        if callable(candidate):
+            try:
+                produced = candidate()
+            except Exception as exc:  # pragma: no cover - defensive
+                raise NormalizerPluginError(f"Normalizer factory '{entry_name}' raised an exception") from exc
+            if isinstance(produced, (Normalizer, TextNormalizer)):
+                return produced
+        raise NormalizerPluginError(
+            f"Entry point '{entry_name}' did not return a TextNormalizer or Normalizer instance"
+        )
 
     def refresh_default_parser(self) -> None:
         """Rebuild the default Structly parser."""
@@ -181,7 +284,7 @@ class WhoisParser:
         tld: str | None = None,
     ) -> MutableMapping[str, Any]:
         """Parse a WHOIS payload into a mapping of canonical fields."""
-        text = normalize_raw_text(raw_text)
+        text = normalize_raw_text(raw_text, domain=domain, tld=tld)
         inferred_domain = domain
         default_parsed: MutableMapping[str, str] | None = None
         if not inferred_domain and not tld:
@@ -197,6 +300,7 @@ class WhoisParser:
             return default_parsed
         parsed = parser.parse(text)
         self._apply_domain_hint(parsed, domain_hint=domain, target_tld=target_tld)
+        parsed = run_normalizers(target_tld or None, inferred_domain, parsed, text)
         return parsed
 
     def parse_record(
@@ -224,66 +328,407 @@ class WhoisParser:
             date_parser=date_parser or self._date_parser,
         )
 
-    def parse_many(
-        self,
+    @staticmethod
+    def _materialize_payloads(
         payloads: Iterable[str],
         *,
-        domain: str | Iterable[str] | None = None,
-        tld: str | None = None,
-        to_records: bool = False,
-        lowercase: bool = False,
-        date_parser: DateParser | None = None,
-    ) -> Iterable[MutableMapping[str, str]] | list[WhoisRecord]:
-        domain_hints: list[str] | None = None
-        domain_hint_for_selection: str | None
-        if isinstance(domain, str) or domain is None:
-            domain_hint_for_selection = domain
-        else:
-            domain_hints = list(domain)
-            domain_hint_for_selection = domain_hints[0] if domain_hints else None
+        to_records: bool,
+    ) -> tuple[list[str], list[str] | None]:
+        """Normalize payload strings and optionally capture their original form."""
+        normalized_payloads: list[str] = []
+        raw_payloads: list[str] | None = [] if to_records else None
+        for text in payloads:
+            normalized_payloads.append(normalize_raw_text(text))
+            if raw_payloads is not None:
+                raw_payloads.append(text)
+        return normalized_payloads, raw_payloads
 
-        target_tld = self._select_tld(tld, domain_hint_for_selection)
-        parser = self._get_parser_for_tld(target_tld)
-        parser_input: Iterable[str]
+    @staticmethod
+    def _build_parser_input(
+        payloads: Iterable[str],
+        *,
+        to_records: bool,
+    ) -> tuple[Iterable[str], Iterable[str], list[str] | None]:
+        """Yield normalized payloads alongside a duplicate stream for normalizers."""
         if to_records:
             raw_payloads = list(payloads)
-            parser_input = (normalize_raw_text(text) for text in raw_payloads)
+            normalized_source = (normalize_raw_text(text) for text in raw_payloads)
         else:
             raw_payloads = None
-            parser_input = (normalize_raw_text(text) for text in payloads)
-        parsed_payloads = parser.parse_many(parser_input)
-        parsed_sequence: Iterable[MutableMapping[str, str]] = parsed_payloads
-        if target_tld in TLDS_REQUIRING_DOMAIN_HINT:
-            if domain_hints is not None:
-                parsed_list_for_hint = list(parsed_sequence)
-                if len(parsed_list_for_hint) != len(domain_hints):
-                    raise ValueError("domain hint count does not match payload count")
-                for parsed, hint in zip(parsed_list_for_hint, domain_hints):
-                    self._apply_domain_hint(parsed, domain_hint=hint, target_tld=target_tld)
-                parsed_sequence = parsed_list_for_hint
-            elif domain_hint_for_selection:
-                parsed_list_for_hint = list(parsed_sequence)
-                for parsed in parsed_list_for_hint:
-                    self._apply_domain_hint(parsed, domain_hint=domain_hint_for_selection, target_tld=target_tld)
-                parsed_sequence = parsed_list_for_hint
-        if not to_records:
-            return parsed_sequence
-        records: list[WhoisRecord] = []
+            normalized_source = (normalize_raw_text(text) for text in payloads)
+        parser_input, normalizer_input = tee(normalized_source)
+        return parser_input, normalizer_input, raw_payloads
+
+    def _apply_domain_hints_if_required(
+        self,
+        parsed_results: list[MutableMapping[str, Any]],
+        *,
+        domain_hints: list[str] | None,
+        domain_hint_for_selection: str | None,
+        target_tld: str,
+    ) -> None:
+        """Mutate parsed mappings so domain_name honors user hints for special TLDs."""
+        if target_tld not in TLDS_REQUIRING_DOMAIN_HINT:
+            return
+        if domain_hints is not None:
+            if len(parsed_results) != len(domain_hints):
+                raise ValueError("domain hint count does not match payload count")
+            for parsed, hint in zip(parsed_results, domain_hints):
+                self._apply_domain_hint(parsed, domain_hint=hint, target_tld=target_tld)
+            return
+        if domain_hint_for_selection:
+            for parsed in parsed_results:
+                self._apply_domain_hint(parsed, domain_hint=domain_hint_for_selection, target_tld=target_tld)
+
+    @staticmethod
+    def _slice_domain_hints(domain_hints: list[str] | None, indices: Iterable[int]) -> list[str] | None:
+        """Return a new list containing domain hints that align with group indices."""
+        if domain_hints is None:
+            return None
+        return [domain_hints[index] for index in indices]
+
+    @staticmethod
+    def _domain_hint_for_index(
+        hints: list[str] | None,
+        fallback: str | None,
+        index: int,
+    ) -> str | None:
+        if not hints:
+            return fallback
+        if 0 <= index < len(hints):
+            return hints[index]
+        return fallback
+
+    def _apply_normalizers_to_parsed_list(
+        self,
+        parsed_list: list[MutableMapping[str, Any]],
+        *,
+        normalized_payloads: list[str],
+        row_tlds: list[str],
+        domain_hints: list[str] | None,
+        domain_hint_for_selection: str | None,
+    ) -> list[MutableMapping[str, Any]]:
+        total = len(parsed_list)
+        if total != len(normalized_payloads) or total != len(row_tlds):
+            raise RuntimeError("Normalized payload metadata does not align with parsed output")
+        for idx, parsed in enumerate(parsed_list):
+            domain_hint = self._domain_hint_for_index(domain_hints, domain_hint_for_selection, idx)
+            tld_value = row_tlds[idx] if idx < len(row_tlds) else ""
+            parsed_list[idx] = run_normalizers(tld_value or None, domain_hint, parsed, normalized_payloads[idx])
+        return parsed_list
+
+    def _build_records_from_parsed(
+        self,
+        raw_payloads: list[str] | None,
+        parsed_list: list[MutableMapping[str, Any]],
+        *,
+        lowercase: bool,
+        date_parser: DateParser | None,
+    ) -> list[WhoisRecord]:
         if raw_payloads is None:
-            return records
-        parsed_list = list(parsed_sequence)
+            return []
         if len(parsed_list) != len(raw_payloads):
             raise RuntimeError("Structly returned an unexpected number of results")
+        records: list[WhoisRecord] = []
         for raw_text, parsed in zip(raw_payloads, parsed_list):
             records.append(
                 self._record_builder.build(
                     raw_text,
                     parsed,
                     lowercase=lowercase,
-                    date_parser=date_parser or self._date_parser,
+                    date_parser=date_parser,
                 )
             )
         return records
+
+    def _finalize_parsed_sequence(
+        self,
+        parsed_iterable: Iterable[MutableMapping[str, str]],
+        *,
+        normalized_payloads: Iterable[str],
+        target_tld: str,
+        domain_hints: list[str] | None,
+        domain_hint_for_selection: str | None,
+        to_records: bool,
+        lowercase: bool,
+        date_parser: DateParser | None,
+        raw_payloads: list[str] | None,
+        materialize: bool = False,
+    ) -> Iterable[MutableMapping[str, str]] | list[WhoisRecord]:
+        """Finalize Structly output, optionally applying hints and building WhoisRecord objects."""
+        parsed_sequence: Iterable[MutableMapping[str, str]] = parsed_iterable
+        needs_hint = target_tld in TLDS_REQUIRING_DOMAIN_HINT and (
+            domain_hints is not None or domain_hint_for_selection
+        )
+        parsed_list: list[MutableMapping[str, Any]] | None = None
+        normalized_iter = iter(normalized_payloads)
+        if needs_hint or to_records or materialize:
+            parsed_list = list(parsed_sequence)
+            normalized_list = list(islice(normalized_iter, len(parsed_list)))
+            if len(normalized_list) != len(parsed_list):
+                raise RuntimeError("Normalized payload count does not match parsed results")
+            if needs_hint:
+                self._apply_domain_hints_if_required(
+                    parsed_list,
+                    domain_hints=domain_hints,
+                    domain_hint_for_selection=domain_hint_for_selection,
+                    target_tld=target_tld,
+                )
+            parsed_sequence = self._apply_normalizers_to_parsed_list(
+                parsed_list,
+                normalized_payloads=normalized_list,
+                row_tlds=[target_tld] * len(parsed_list),
+                domain_hints=domain_hints,
+                domain_hint_for_selection=domain_hint_for_selection,
+            )
+            if next(normalized_iter, None) is not None:
+                raise RuntimeError("Normalized payload iterator contained extra entries")
+        else:
+            source_iter = parsed_sequence
+
+            def _normalized_stream() -> Iterator[MutableMapping[str, str]]:
+                for idx, parsed in enumerate(source_iter):
+                    try:
+                        text = next(normalized_iter)
+                    except StopIteration as exc:  # pragma: no cover - defensive
+                        raise RuntimeError("Normalized payload iterator was exhausted early") from exc
+                    domain_hint = self._domain_hint_for_index(domain_hints, domain_hint_for_selection, idx)
+                    yield run_normalizers(target_tld or None, domain_hint, parsed, text)
+                if next(normalized_iter, None) is not None:
+                    raise RuntimeError("Normalized payload iterator contained extra entries")
+
+            parsed_sequence = _normalized_stream()
+        if not to_records:
+            if isinstance(parsed_sequence, list):
+                return parsed_sequence
+            return list(parsed_sequence)
+        if raw_payloads is None:
+            return []
+        parsed_list = parsed_list or list(parsed_sequence)
+        return self._build_records_from_parsed(
+            raw_payloads,
+            parsed_list,
+            lowercase=lowercase,
+            date_parser=date_parser,
+        )
+
+    def _prepare_domain_inputs(self, domain: str | Iterable[str] | None) -> _DomainInputs:
+        """Build per-row domain hints and statistics used for grouping decisions."""
+        if isinstance(domain, str) or domain is None:
+            return _DomainInputs(
+                selection_hint=domain,
+                hints=None,
+                effective_tlds=None,
+                unique_tld_count=0,
+            )
+        domain_hints = list(domain)
+        effective_tlds = [_effective_tld_for_domain(hint, self._known_tld_suffixes) for hint in domain_hints]
+        unique_count = len(set(effective_tlds)) if effective_tlds else 0
+        return _DomainInputs(
+            selection_hint=domain_hints[0] if domain_hints else None,
+            hints=domain_hints,
+            effective_tlds=effective_tlds,
+            unique_tld_count=unique_count,
+        )
+
+    @staticmethod
+    def _prepare_tld_inputs(tld: str | Iterable[str] | None) -> _TldInputs:
+        """Build per-row TLD hints and statistics used for grouping decisions."""
+        if isinstance(tld, str) or tld is None:
+            return _TldInputs(
+                selection_hint=tld,
+                per_row=None,
+                unique_tld_count=1 if isinstance(tld, str) and tld else 0,
+                allow_domain_grouping=tld is None,
+            )
+        tld_sequence = [normalise_tld(entry) for entry in tld]
+        unique_values = set(tld_sequence)
+        selection = tld_sequence[0] if tld_sequence else None
+        if len(unique_values) <= 1:
+            scalar = next(iter(unique_values), None)
+            return _TldInputs(
+                selection_hint=scalar or selection,
+                per_row=None,
+                unique_tld_count=len(unique_values),
+                allow_domain_grouping=False,
+            )
+        return _TldInputs(
+            selection_hint=selection,
+            per_row=tld_sequence,
+            unique_tld_count=len(unique_values),
+            allow_domain_grouping=False,
+        )
+
+    @staticmethod
+    def _should_group_batches(domain_info: _DomainInputs, tld_inputs: _TldInputs) -> bool:
+        if tld_inputs.per_row is not None:
+            return tld_inputs.unique_tld_count > 1
+        if tld_inputs.allow_domain_grouping:
+            return domain_info.unique_tld_count > 1
+        return False
+
+    def _parse_grouped_payloads(
+        self,
+        normalized_payloads: list[str],
+        *,
+        domain_info: _DomainInputs,
+        tld_inputs: _TldInputs,
+    ) -> tuple[list[MutableMapping[str, str]], list[str]] | None:
+        total = len(normalized_payloads)
+        if total == 0:
+            return [], []
+        row_tlds = self._resolve_row_tlds(total, domain_info=domain_info, tld_inputs=tld_inputs)
+        if row_tlds is None:
+            return None
+        unique_tlds = set(row_tlds)
+        if len(unique_tlds) == 1:
+            parsed = self._parse_single_group(
+                normalized_payloads,
+                target_tld=row_tlds[0],
+                domain_info=domain_info,
+            )
+            return parsed, row_tlds
+        return self._parse_multi_group(
+            normalized_payloads,
+            row_tlds=row_tlds,
+            domain_info=domain_info,
+        ), row_tlds
+
+    @staticmethod
+    def _resolve_row_tlds(
+        total_rows: int,
+        *,
+        domain_info: _DomainInputs,
+        tld_inputs: _TldInputs,
+    ) -> list[str] | None:
+        if tld_inputs.per_row is not None:
+            if len(tld_inputs.per_row) != total_rows:
+                return None
+            return tld_inputs.per_row
+        if tld_inputs.allow_domain_grouping and domain_info.effective_tlds is not None:
+            if len(domain_info.effective_tlds) != total_rows:
+                return None
+            return domain_info.effective_tlds
+        return None
+
+    def _parse_single_group(
+        self,
+        normalized_payloads: list[str],
+        *,
+        target_tld: str,
+        domain_info: _DomainInputs,
+    ) -> list[MutableMapping[str, str]]:
+        parser = self._get_parser_for_tld(target_tld)
+        parsed_iter = parser.parse_many(iter(normalized_payloads))
+        parsed_list = list(parsed_iter)
+        self._apply_domain_hints_if_required(
+            parsed_list,
+            domain_hints=domain_info.hints,
+            domain_hint_for_selection=domain_info.selection_hint,
+            target_tld=target_tld,
+        )
+        return parsed_list
+
+    def _parse_multi_group(
+        self,
+        normalized_payloads: list[str],
+        *,
+        row_tlds: list[str],
+        domain_info: _DomainInputs,
+    ) -> list[MutableMapping[str, str]]:
+        buckets: dict[str, list[int]] = {}
+        for idx, tld_value in enumerate(row_tlds):
+            buckets.setdefault(tld_value, []).append(idx)
+        ordered_results: list[MutableMapping[str, str] | None] = [None] * len(normalized_payloads)
+        for target_tld, indices in buckets.items():
+            bucket_payloads = [normalized_payloads[i] for i in indices]
+            parser = self._get_parser_for_tld(target_tld)
+            parsed_iter = parser.parse_many(bucket_payloads)
+            bucket_results = list(parsed_iter)
+            if len(bucket_results) != len(indices):
+                raise RuntimeError("Structly returned an unexpected number of results")
+            bucket_domain_hints = self._slice_domain_hints(domain_info.hints, indices)
+            self._apply_domain_hints_if_required(
+                bucket_results,
+                domain_hints=bucket_domain_hints,
+                domain_hint_for_selection=domain_info.selection_hint,
+                target_tld=target_tld,
+            )
+            for position, parsed in zip(indices, bucket_results):
+                ordered_results[position] = parsed
+        finalized_results: list[MutableMapping[str, str]] = []
+        for parsed in ordered_results:
+            if parsed is None:
+                raise RuntimeError("Structly returned an unexpected number of results")
+            finalized_results.append(parsed)
+        return finalized_results
+
+    def parse_many(
+        self,
+        payloads: Iterable[str],
+        *,
+        domain: str | Iterable[str] | None = None,
+        tld: str | Iterable[str] | None = None,
+        to_records: bool = False,
+        lowercase: bool = False,
+        date_parser: DateParser | None = None,
+    ) -> Iterable[MutableMapping[str, str]] | list[WhoisRecord]:
+        """Parse an iterable of WHOIS payloads, optionally returning WhoisRecord objects."""
+        domain_info = self._prepare_domain_inputs(domain)
+        tld_inputs = self._prepare_tld_inputs(tld)
+        selected_date_parser = date_parser or self._date_parser
+        if self._should_group_batches(domain_info, tld_inputs):
+            normalized_payloads, raw_payloads = self._materialize_payloads(payloads, to_records=to_records)
+            grouped_result = self._parse_grouped_payloads(
+                normalized_payloads,
+                domain_info=domain_info,
+                tld_inputs=tld_inputs,
+            )
+            if grouped_result is not None:
+                parsed_rows, row_tlds = grouped_result
+                parsed_rows = self._apply_normalizers_to_parsed_list(
+                    parsed_rows,
+                    normalized_payloads=normalized_payloads,
+                    row_tlds=row_tlds,
+                    domain_hints=domain_info.hints,
+                    domain_hint_for_selection=domain_info.selection_hint,
+                )
+                if not to_records:
+                    return parsed_rows
+                return self._build_records_from_parsed(
+                    raw_payloads,
+                    parsed_rows,
+                    lowercase=lowercase,
+                    date_parser=selected_date_parser,
+                )
+            target_tld = self._select_tld(tld_inputs.selection_hint, domain_info.selection_hint)
+            parser = self._get_parser_for_tld(target_tld)
+            return self._finalize_parsed_sequence(
+                parser.parse_many(iter(normalized_payloads)),
+                normalized_payloads=normalized_payloads,
+                target_tld=target_tld,
+                domain_hints=domain_info.hints,
+                domain_hint_for_selection=domain_info.selection_hint,
+                to_records=to_records,
+                lowercase=lowercase,
+                date_parser=selected_date_parser,
+                raw_payloads=raw_payloads,
+                materialize=True,
+            )
+        target_tld = self._select_tld(tld_inputs.selection_hint, domain_info.selection_hint)
+        parser = self._get_parser_for_tld(target_tld)
+        parser_input, normalizer_payloads, raw_payloads = self._build_parser_input(payloads, to_records=to_records)
+        return self._finalize_parsed_sequence(
+            parser.parse_many(parser_input),
+            normalized_payloads=normalizer_payloads,
+            target_tld=target_tld,
+            domain_hints=domain_info.hints,
+            domain_hint_for_selection=domain_info.selection_hint,
+            to_records=to_records,
+            lowercase=lowercase,
+            date_parser=selected_date_parser,
+            raw_payloads=raw_payloads,
+        )
 
     def parse_chunks(
         self,
@@ -293,17 +738,27 @@ class WhoisParser:
         tld: str | None = None,
         chunk_size: int = 512,
     ) -> Iterator[list[MutableMapping[str, Any]]]:
+        """Yield parsed WHOIS payloads in chunks, applying domain hints when required."""
         target_tld = self._select_tld(tld, domain)
         parser = self._get_parser_for_tld(target_tld)
         normalized_inputs = (normalize_raw_text(text) for text in payloads)
-        chunks = parser.parse_chunks(normalized_inputs, chunk_size=chunk_size)
-        if not domain or target_tld not in TLDS_REQUIRING_DOMAIN_HINT:
-            return chunks
+        parser_inputs, normalizer_inputs = tee(normalized_inputs)
+        chunks = parser.parse_chunks(parser_inputs, chunk_size=chunk_size)
 
-        def _apply_hint() -> Iterator[list[MutableMapping[str, Any]]]:
+        def _apply() -> Iterator[list[MutableMapping[str, Any]]]:
+            normalized_iter = iter(normalizer_inputs)
             for chunk in chunks:
+                processed_chunk: list[MutableMapping[str, Any]] = []
                 for parsed in chunk:
-                    self._apply_domain_hint(parsed, domain_hint=domain, target_tld=target_tld)
-                yield chunk
+                    if domain and target_tld in TLDS_REQUIRING_DOMAIN_HINT:
+                        self._apply_domain_hint(parsed, domain_hint=domain, target_tld=target_tld)
+                    try:
+                        text = next(normalized_iter)
+                    except StopIteration as exc:  # pragma: no cover - defensive
+                        raise RuntimeError("Normalized payload iterator was exhausted early") from exc
+                    processed_chunk.append(run_normalizers(target_tld or None, domain, parsed, text))
+                yield processed_chunk
+            if next(normalized_iter, None) is not None:
+                raise RuntimeError("Normalized payload iterator contained extra entries")
 
-        return _apply_hint()
+        return _apply()

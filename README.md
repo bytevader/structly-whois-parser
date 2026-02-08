@@ -4,6 +4,7 @@
     <img src="https://github.com/bytevader/structly-whois-parser/raw/main/docs/structly_whois.svg" alt="structly_whois" width="320">
   </picture>
 </p>
+
 <p align="center">
     <em>Structly-powered WHOIS parsing.</em>
 </p>
@@ -175,6 +176,73 @@ For multilingual registries, the simplest plug-in is [`dateparser.parse`](https:
 
 NOTE: It can cut throughput by more than half.
 
+### Custom normalizers
+
+Some registries need raw-text rewrites **before** Structly parses anything (e.g., AFNIC contact injection). Implement a lightweight text normalizer and register it at runtime:
+
+```python
+from structly_whois import WhoisParser
+from structly_whois.normalizers import TextNormalizer
+
+
+class ExampleTextNormalizer(TextNormalizer):
+    def applicable(self, raw_text: str, tld: str | None, domain: str | None) -> bool:
+        return "registry xyz" in raw_text.lower()
+
+    def normalize(self, raw_text: str, tld: str | None, domain: str | None) -> str:
+        return raw_text.replace("Registry XYZ :", "Registrar:")
+
+
+parser = WhoisParser()
+parser.register_text_normalizer(ExampleTextNormalizer(), priority=5)
+```
+
+Need to mutate the parsed mapping instead? Register a field normalizer that runs **after** Structly produces the dict:
+
+```python
+from collections.abc import Mapping
+from typing import Any
+
+from structly_whois import WhoisParser
+from structly_whois.normalizers import Normalizer
+
+
+class ExampleNormalizer(Normalizer):
+    def applicable(self, tld: str | None, domain: str | None, parsed: Mapping[str, Any]) -> bool:
+        return True  # run for all payloads
+
+    def normalize(self, parsed: Mapping[str, Any], raw_text: str) -> Mapping[str, Any]:
+        parsed = dict(parsed)
+        domain = parsed.get("domain_name")
+        if isinstance(domain, str):
+            parsed["domain_name"] = domain.lower()
+        name_servers = parsed.get("name_servers")
+        if isinstance(name_servers, list):
+            parsed["name_servers"] = [entry.lower() for entry in name_servers]
+        return parsed
+
+
+parser = WhoisParser()
+parser.register_normalizer(ExampleNormalizer(), priority=5)
+```
+
+Both registries are deterministic (higher priority wins, ties fall back to insertion order). You can also register either type globally via `structly_whois.normalization.register_text_normalizer` / `register_normalizer`.
+
+To let third parties extend your deployment without code changes, enable plugin discovery:
+
+```python
+parser = WhoisParser(enable_plugins=True)
+```
+
+Packages can publish a normalizer instance or a factory under the `structly_whois.normalizers` entry-point group:
+
+```toml
+[project.entry-points."structly_whois.normalizers"]
+my_extension = "my_pkg.normalizers:create_normalizer"  # instance or factory
+```
+
+Each key becomes the plugin name, and the value points to either an existing normalizer instance (`"pkg.module:OBJECT"`) or a callable that returns one (`"pkg.module:create_normalizer"`). When `enable_plugins=True`, the parser resolves the entry points exactly once, expects either a `TextNormalizer` or `Normalizer`, and raises `NormalizerPluginError` immediately if a plugin fails to load or returns the wrong type.
+
 ### Date parsing coverage & fallbacks
 
 We periodically re-run the parser against every sample under `tests/samples/whois`. The latest sweep (193 fixtures / 452 date fields) produced real `datetime` objects for 448 fields (99.12%) using the built-in fast formats alone. Only two TLDs still emit string timestamps:
@@ -221,6 +289,8 @@ for chunk in parser.parse_chunks(payloads, chunk_size=512):
 ### Kafka batch ingestion
 
 Need to process live WHOIS feeds? `benchmarks/scripts/consume_and_parse.py` shows how to wire `WhoisParser` into a Kafka consumer, group messages by TLD, and issue `parse_many` calls per bucket. Grouping domains ensures each batch uses the right Structly override and minimizes parser cache churn, so `.com.br` payloads never run through `.com` rules while still keeping throughput high.
+
+`WhoisParser.parse_many` now performs that grouping automatically whenever you pass per-row `domain` or `tld` hints. Manual bucketing is still useful for chunking or back-pressure, but you get the fast-path Structly reuse even if you hand the parser a single mixed batch. If every row resolves to the same TLD the parser detects it and stays on the single-parser fast path, so you only pay the grouping cost when it actually reduces churn.
 
 ### Performance tip: pass `domain=` or `tld=` when you know it
 

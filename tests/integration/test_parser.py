@@ -219,6 +219,85 @@ def test_parse_many_to_records_applies_domain_hint() -> None:
     assert records[0].domain == "example.info"
 
 
+def test_parse_many_groups_mixed_tlds_preserves_order(monkeypatch: pytest.MonkeyPatch) -> None:
+    parser = WhoisParser()
+    com_payload = _read_sample("google.com")
+    com_br_payload = _read_sample("google.com.br")
+    payloads = [com_payload, com_br_payload, com_payload, com_br_payload]
+    domains = ["google.com", "google.com.br", "google.com", "google.com.br"]
+    requested_tlds: list[str] = []
+    original_get_parser = parser._get_parser_for_tld  # type: ignore[attr-defined]
+
+    def _tracking_get_parser(tld: str):
+        requested_tlds.append(tld)
+        return original_get_parser(tld)
+
+    monkeypatch.setattr(parser, "_get_parser_for_tld", _tracking_get_parser)  # type: ignore[attr-defined]
+
+    results = parser.parse_many(payloads, domain=domains)
+
+    returned_domains = [entry["domain_name"] for entry in results]
+    assert returned_domains == [domain.lower() for domain in domains]
+    assert requested_tlds.count("com") >= 1
+    assert requested_tlds.count("com.br") >= 1
+
+
+def test_parse_many_single_tld_batch_keeps_fast_path(monkeypatch: pytest.MonkeyPatch) -> None:
+    parser = WhoisParser()
+    requested_tlds: list[str] = []
+    original_get_parser = parser._get_parser_for_tld  # type: ignore[attr-defined]
+
+    def _tracking_get_parser(tld: str):
+        requested_tlds.append(tld)
+        return original_get_parser(tld)
+
+    monkeypatch.setattr(parser, "_get_parser_for_tld", _tracking_get_parser)  # type: ignore[attr-defined]
+
+    payloads = [_read_sample("google.com"), _read_sample("google.com")]
+    domains = ["google.com", "google.com"]
+
+    parser.parse_many(payloads, domain=domains)
+
+    assert requested_tlds == ["com"]
+
+
+def test_parse_many_tld_sequence_groups_without_domain(monkeypatch: pytest.MonkeyPatch) -> None:
+    parser = WhoisParser()
+    payloads = [_read_sample("google.com"), _read_sample("google.com.br")]
+    tlds = ["com", "com.br"]
+    requested_tlds: list[str] = []
+    original_get_parser = parser._get_parser_for_tld  # type: ignore[attr-defined]
+
+    def _tracking_get_parser(tld: str):
+        requested_tlds.append(tld)
+        return original_get_parser(tld)
+
+    monkeypatch.setattr(parser, "_get_parser_for_tld", _tracking_get_parser)  # type: ignore[attr-defined]
+
+    results = parser.parse_many(payloads, tld=tlds)
+
+    assert [entry["domain_name"] for entry in results] == ["google.com", "google.com.br"]
+    assert requested_tlds.count("com") == 1
+    assert requested_tlds.count("com.br") == 1
+
+
+def test_parse_many_tld_sequence_single_value_keeps_fast_path(monkeypatch: pytest.MonkeyPatch) -> None:
+    parser = WhoisParser()
+    payloads = [_read_sample("google.com"), _read_sample("google.com")]
+    requested_tlds: list[str] = []
+    original_get_parser = parser._get_parser_for_tld  # type: ignore[attr-defined]
+
+    def _tracking_get_parser(tld: str):
+        requested_tlds.append(tld)
+        return original_get_parser(tld)
+
+    monkeypatch.setattr(parser, "_get_parser_for_tld", _tracking_get_parser)  # type: ignore[attr-defined]
+
+    parser.parse_many(payloads, tld=["com", "com"])
+
+    assert requested_tlds == ["com"]
+
+
 def test_parse_chunks_apply_domain_hint_for_info_domains() -> None:
     parser = WhoisParser(preload_tlds=("info",))
     chunks = list(parser.parse_chunks([INFO_WHOIS], domain="example.info", tld="info", chunk_size=1))

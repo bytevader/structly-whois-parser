@@ -1,0 +1,119 @@
+% IANA WHOIS server
+% for more information on IANA, visit http://www.iana.org
+% This query returned 1 object
+
+refer:        whois.kr
+
+domain:       KR
+
+organisation: Korea Internet & Security Agency (KISA)
+address:      9, Jinheung-gil
+address:      Naju-si Jeollanam-do 58324
+address:      Korea (the Republic of)
+
+contact:      administrative
+name:         Kilnam Chon
+organisation: Korea Network Information Center (KRNIC)
+address:      9, Jinheung-gil
+address:      Naju-si Jeollanam-do 58324
+address:      Korea (the Republic of)
+phone:        +82 10 8581 3514
+fax-no:       +82 61 820 2611
+e-mail:       chonkn@gmail.com
+
+contact:      technical
+name:         KRNIC Tech Team Manager
+organisation: Korea Internet & Security Agency (KISA)
+address:      9, Jinheung-gil
+address:      Naju-si Jeollanam-do 58324
+address:      Korea (the Republic of)
+phone:        +82 61 820 1734
+fax-no:       +82 61 820 2611
+e-mail:       techc@kisa.or.kr
+
+nserver:      B.DNS.KR 210.101.60.1
+nserver:      C.DNS.KR 210.101.61.1
+nserver:      D.DNS.KR 2001:dcc:4:0:0:0:0:1 203.83.159.1
+nserver:      E.DNS.KR 2001:dcc:5:0:0:0:0:100 202.30.124.100
+nserver:      F.DNS.KR 2001:dcc:6:0:0:0:0:1 210.101.62.1
+nserver:      G.DNS.KR 2001:dc5:a:0:0:0:0:1 202.31.190.1
+ds-rdata:     61615 8 2 ed570aadc88713ce2775fb8affb2ad782d056ea21d0677e147f2fb7bf54404da
+
+whois:        whois.kr
+
+status:       ACTIVE
+remarks:      Registration information: http://www.nic.or.kr/
+
+created:      1986-09-29
+changed:      2026-01-07
+source:       IANA
+
+# whois.kr
+
+query : nic.or.kr
+
+
+# KOREAN(UTF8)
+
+도메인이름                  : nic.or.kr
+등록인                      : 한국인터넷진흥원
+등록인 주소                 : 전라남도 나주시 진흥길 9(빛가람동) 한국인터넷진흥원
+등록인 우편번호             : 58324
+책임자                      : 도메인관리자
+책임자 전자우편             : domain-manager@nic.or.kr
+책임자 전화번호             : 02-405-5118
+등록일                      : 1999. 06. 07.
+최근 정보 변경일            : 2024. 04. 17.
+사용 종료일                 : 9999. 12. 31.
+정보공개여부                : Y
+등록대행자                  : 한국인터넷진흥원(http://www.kisa.or.kr)
+DNSSEC                      : 미서명
+등록정보 보호               : serverDeleteProhibited
+등록정보 보호               : serverTransferProhibited
+등록정보 보호               : serverUpdateProhibited
+
+1차 네임서버 정보
+   호스트이름               : ns0.nic.or.kr
+   IP 주소                  : 49.8.14.114
+
+2차 네임서버 정보
+   호스트이름               : ns2.nic.or.kr
+   IP 주소                  : 49.8.15.224
+   호스트이름               : ns0.nic.or.kr
+   IP 주소                  : 2001:c98:e01:0:49:8:14:114
+
+네임서버 이름이 .kr이 아닌 경우는 IP주소가 보이지 않습니다.
+
+
+# ENGLISH
+
+Domain Name                 : nic.or.kr
+Registrant                  : Korea Internet &amp; Security Agency
+Registrant Address          : KISA, 9, Jinheung-gil, Naju-si, Jeollanam-do
+Registrant Zip Code         : 58324
+Administrative Contact(AC)  : Domain Manager
+AC E-Mail                   : domain-manager@nic.or.kr
+AC Phone Number             : 02-405-5118
+Registered Date             : 1999. 06. 07.
+Last Updated Date           : 2024. 04. 17.
+Expiration Date             : 9999. 12. 31.
+Publishes                   : Y
+Authorized Agency           : KISA(http://www.kisa.or.kr)
+DNSSEC                      : unsigned
+Domain Status               : serverDeleteProhibited
+Domain Status               : serverTransferProhibited
+Domain Status               : serverUpdateProhibited
+
+Primary Name Server
+   Host Name                : ns0.nic.or.kr
+   IP Address               : 49.8.14.114
+
+Secondary Name Server
+   Host Name                : ns2.nic.or.kr
+   IP Address               : 49.8.15.224
+   Host Name                : ns0.nic.or.kr
+   IP Address               : 2001:c98:e01:0:49:8:14:114
+
+
+- KISA/KRNIC WHOIS Service -
+

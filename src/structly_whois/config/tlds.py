@@ -167,30 +167,69 @@ TLD_OVERRIDES: dict[str, dict[str, FieldOverride]] = {
     "kr": {
         "domain_name": {
             "extend_patterns": [
-                rx(r"^도메인이름\s*:\s*(?P<val>.+)$"),
+                rx(r"^\s*도메인이름\s*:\s*(?P<val>.+)$"),
             ]
         },
         "creation_date": {
             "extend_patterns": [
-                rx(r"^등록일\s*:\s*(?P<val>.+)$"),
-                rx(r"^registered date\s*:\s*(?P<val>.+)$"),
+                rx(r"^\s*등록일\s*:\s*(?P<val>.+)$"),
+                rx(r"(?i)^\s*registered\s+date\s*:\s*(?P<val>.+)$"),
             ]
         },
         "updated_date": {
             "extend_patterns": [
-                rx(r"^최근 정보 변경일\s*:\s*(?P<val>.+)$"),
-                rx(r"^last updated date\s*:\s*(?P<val>.+)$"),
+                rx(r"^\s*최근\s+정보\s+변경일\s*:\s*(?P<val>.+)$"),
+                rx(r"(?i)^\s*last\s+updated\s+date\s*:\s*(?P<val>.+)$"),
             ]
         },
         "expiration_date": {
             "extend_patterns": [
-                rx(r"^사용 종료일\s*:\s*(?P<val>.+)$"),
-                rx(r"^expiration date\s*:\s*(?P<val>.+)$"),
+                rx(r"^\s*사용\s+종료일\s*:\s*(?P<val>.+)$"),
+                rx(r"(?i)^\s*expiration\s+date\s*:\s*(?P<val>.+)$"),
+            ]
+        },
+        "registrant_organization": {
+            "extend_patterns": [
+                rx(r"^\s*등록인\s*:\s*(?P<val>.+)$"),
+                rx(r"(?i)^\s*registrant\s*:\s*(?P<val>.+)$"),
+            ]
+        },
+        "admin_name": {
+            "extend_patterns": [
+                rx(r"^\s*책임자\s*:\s*(?P<val>.+)$"),
+                rx(r"(?i)^\s*administrative\s+contact.*:\s*(?P<val>.+)$"),
+            ]
+        },
+        "admin_email": {
+            "patterns": [
+                rx(r"^\s*책임자\s+전자우편\s*:\s*(?P<val>.+)$"),
+                rx(r"(?i)^\s*ac\s+e-?mail\s*:\s*(?P<val>.+)$"),
+                sw("Admin Email:"),
+                sw("Admin Contact Email:"),
+                sw("Administrative Contact Email:"),
+                rx(r"(?i)^admin(?:istrative)?(?:\s+contact)?\s+email:\s*(?P<val>.+)$"),
+            ]
+        },
+        "admin_telephone": {
+            "extend_patterns": [
+                rx(r"^\s*책임자\s+전화번호\s*:\s*(?P<val>.+)$"),
+                rx(r"(?i)^\s*ac\s+phone\s+number\s*:\s*(?P<val>.+)$"),
+            ]
+        },
+        "registrar": {
+            "extend_patterns": [
+                rx(r"^\s*등록대행자\s*:\s*(?P<val>.+)$"),
+                rx(r"(?i)^\s*authorized\s+agency\s*:\s*(?P<val>.+)$"),
+            ]
+        },
+        "status": {
+            "extend_patterns": [
+                rx(r"^\s*등록정보\s+보호\s*:\s*(?P<val>.+)$"),
             ]
         },
         "name_servers": {
             "extend_patterns": [
-                rx(r"^호스트이름\s*:\s*(?P<val>.+)$"),
+                rx(r"^\s*호스트이름\s*:\s*(?P<val>.+)$"),
             ]
         },
     },

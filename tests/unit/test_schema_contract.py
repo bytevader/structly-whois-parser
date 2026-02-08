@@ -14,11 +14,12 @@ def test_schema_version_exposed() -> None:
     assert re.match(r"^\d+(\.\d+)*$", WhoisRecord.schema_version)
 
 
-def test_supported_tlds_returns_set() -> None:
+def test_supported_tlds_returns_sorted_list() -> None:
     parser = WhoisParser()
     result = parser.supported_tlds()
-    assert isinstance(result, set)
+    assert isinstance(result, list)
     assert result  # we ship built-in overrides
+    assert result == sorted(result)
     assert all(isinstance(item, str) for item in result)
 
 

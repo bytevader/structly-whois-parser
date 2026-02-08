@@ -43,6 +43,13 @@ def test_domain_pattern_registry_infer_uses_lastindex_and_group_zero() -> None:
     assert registry.infer("stuff\nNO-NAME\n") == "NO-NAME"
 
 
+def test_domain_pattern_registry_prefers_named_groups() -> None:
+    registry = DomainPatternRegistry()
+    registry.regexes = (re.compile(r"(?i)^domain:\s*(?P<domain>[a-z0-9.-]+)$", re.MULTILINE),)
+
+    assert registry.infer("Domain: Named.example") == "Named.example"
+
+
 def test_domain_pattern_registry_infer_prefix_trims_suffix() -> None:
     registry = DomainPatternRegistry(prefixes=("Domain Name:",), regexes=())
     payload = "Domain Name: trailing.example. \n"
@@ -83,3 +90,9 @@ def test_split_domain_and_normalise_tld_helpers() -> None:
     assert split_domain(" Sub.Domain.CO.UK. ") == ["sub", "domain", "co", "uk"]
     assert normalise_tld(None) == ""
     assert normalise_tld(".INFO ") == "info"
+
+
+def test_domain_pattern_registry_returns_none_when_no_match() -> None:
+    registry = DomainPatternRegistry(prefixes=("Domain Name:",), regexes=(re.compile(r"(?i)domain:", re.MULTILINE),))
+
+    assert registry.infer("No hits anywhere") is None
