@@ -2,15 +2,10 @@ name: CI
 
 on:
   push:
-    branches:
-      - main
-      - dev
-    tags:
-      - v*
+    branches: [main, dev]
+    tags: ["v*"]
   pull_request:
-    branches:
-      - main
-      - dev
+    branches: [main, dev]
 
 env:
   PYTHON_VERSION: "3.10"
@@ -29,8 +24,10 @@ jobs:
           python-version: ${{ env.PYTHON_VERSION }}
       - name: Check for bidirectional control characters
         run: python scripts/check_bidi.py
-      - run: python scripts/supported_tlds/generate_supported_tlds.py --validate
-      - run: python scripts/supported_tlds/generate_supported_tlds.py --check
+      - name: Validate supported TLDs generator
+        run: python scripts/supported_tlds/generate_supported_tlds.py --validate
+      - name: Check supported TLDs are up-to-date
+        run: python scripts/supported_tlds/generate_supported_tlds.py --check
 
   lint:
     runs-on: ubuntu-latest
@@ -42,7 +39,7 @@ jobs:
           python-version: ${{ env.PYTHON_VERSION }}
           cache: pip
       - run: python -m pip install --upgrade pip
-      - run: pip install .[dev]
+      - run: pip install ".[dev]"
       - run: make lint
 
   test:
@@ -54,16 +51,24 @@ jobs:
         with:
           python-version: ${{ env.PYTHON_VERSION }}
           cache: pip
-      - run: python -m pip install --upgrade pip
-      - run: pip install .[dev]
-      - run: python -m pip install coverage-badge
+      - name: Install dependencies
+        run: |
+          set -euo pipefail
+          python -m pip install --upgrade pip
+          pip install ".[dev]"
+          python -m pip install coverage-badge
       - name: Run tests with coverage
-        run: make cov
+        run: |
+          set -euo pipefail
+          coverage erase
+          make cov
         env:
           PYTEST_ADDOPTS: ""
           PYTHON: python
-      - name: Generate coverage badge
-        run: coverage-badge -f -o coverage.svg
+      - name: Generate coverage badge (from current run)
+        run: |
+          set -euo pipefail
+          coverage-badge -f -o coverage.svg
       - uses: actions/upload-artifact@v4
         with:
           name: coverage
@@ -81,24 +86,22 @@ jobs:
             const fs = require('fs');
             const xml = fs.readFileSync('coverage.xml', 'utf8');
             const match = xml.match(/line-rate="([\d.]+)"/);
-            if (!match) {
-              core.setFailed('coverage.xml missing line-rate attribute');
-            } else {
-              const pct = (Number(match[1]) * 100).toFixed(2);
-              await github.rest.repos.createCommitStatus({
-                owner: context.repo.owner,
-                repo: context.repo.repo,
-                sha: context.sha,
-                state: 'success',
-                target_url: `https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`,
-                description: `coverage ${pct}%`,
-                context: 'coverage',
-              });
-              core.info(`coverage status published: ${pct}%`);
-            }
+            if (!match) core.setFailed('coverage.xml missing line-rate attribute');
+            const pct = (Number(match[1]) * 100).toFixed(2);
+            await github.rest.repos.createCommitStatus({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              sha: context.sha,
+              state: 'success',
+              target_url: `https://github.com/${context.repo.owner}/${context.repo.repo}/actions/runs/${context.runId}`,
+              description: `coverage ${pct}%`,
+              context: 'coverage',
+            });
+            core.info(`coverage status published: ${pct}%`);
 
   build:
     runs-on: ubuntu-latest
+    needs: [lint, test]
     if: >
       github.event_name == 'push' && (
         (github.ref == 'refs/heads/dev' &&
@@ -106,9 +109,6 @@ jobs:
          startsWith(github.event.head_commit.message, 'release-dev:')) ||
         startsWith(github.ref, 'refs/tags/v')
       )
-    needs:
-      - lint
-      - test
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -116,7 +116,7 @@ jobs:
           python-version: ${{ env.PYTHON_VERSION }}
           cache: pip
       - run: python -m pip install --upgrade pip
-      - run: pip install .[dev]
+      - run: pip install ".[dev]"
       - run: make build
       - uses: actions/upload-artifact@v4
         with:
@@ -139,8 +139,10 @@ jobs:
           cache: pip
       - run: python -m pip install --upgrade pip maturin
       - env:
-          TEST_PYPI_API_TOKEN: ${{ secrets.TEST_PYPI_API_TOKEN }}
-        run: python -m maturin upload -r testpypi --username __token__ --password "$TEST_PYPI_API_TOKEN" dist/*
+          MATURIN_REPOSITORY_URL: https://test.pypi.org/legacy/
+          MATURIN_USERNAME: __token__
+          MATURIN_PASSWORD: ${{ secrets.TEST_PYPI_API_TOKEN }}
+        run: python -m maturin upload -r testpypi dist/*
 
   publish-pypi:
     runs-on: ubuntu-latest
@@ -158,5 +160,6 @@ jobs:
           cache: pip
       - run: python -m pip install --upgrade pip maturin
       - env:
-          PYPI_API_TOKEN: ${{ secrets.PYPI_API_TOKEN }}
-        run: python -m maturin upload --username __token__ --password "$PYPI_API_TOKEN" dist/*
+          MATURIN_USERNAME: __token__
+          MATURIN_PASSWORD: ${{ secrets.PYPI_API_TOKEN }}
+        run: python -m maturin upload dist/*

@@ -236,7 +236,7 @@ class ConsumeAndParseJob:
             "consumed_at": time.time(),
         })
         key = parsed_payload.get("domain") or payload.domain or ""
-        key_bytes = key.encode("utf-8") if key else None
+        key_bytes = key.lower().encode("utf-8") if key else None
         value_bytes = orjson.dumps(parsed_payload, default=str)
         while True:
             try:

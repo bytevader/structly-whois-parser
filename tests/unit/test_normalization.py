@@ -1,11 +1,7 @@
 from __future__ import annotations
 
 from structly_whois.normalization import (
-    _build_afnic_contact_lines,
     _collapse_wrapped_fields,
-    _extract_afnic_contact_blocks,
-    _extract_afnic_handles,
-    _inject_afnic_contacts,
     _slice_from_last_domain,
     _slice_latest_section,
     normalize_raw_text,
@@ -36,88 +32,6 @@ def test_slice_from_last_domain_without_leading_newline() -> None:
     assert result.startswith("Domain Name: lone.example")
 
 
-def test_afnic_handle_extraction_and_blocks() -> None:
-    lines = [
-        "holder-c: AA123",
-        "admin-c: BB123",
-        "tech-c: BB123",
-        "nic-hdl: AA123",
-        "contact: Holder Org",
-        "type: ORGANIZATION",
-        "e-mail: holder@example.com",
-        "phone: +33.1",
-        "source: FRNIC",
-        "",
-        "nic-hdl: BB123",
-        "contact: Admin Person",
-        "type: PERSON",
-        "source: FRNIC",
-    ]
-    handles = _extract_afnic_handles(lines)
-    assert handles == {"holder": "AA123", "admin": "BB123", "tech": "BB123"}
-    blocks = _extract_afnic_contact_blocks(lines)
-    assert "AA123" in blocks and blocks["AA123"]["contact"] == "Holder Org"
-
-
-def test_build_afnic_contact_lines_respects_contact_type() -> None:
-    org_attrs = {"contact": "Org Name", "type": "ORGANIZATION", "e-mail": "org@example.com"}
-    person_attrs = {"contact": "Alice", "type": "PERSON", "phone": "+33.2"}
-    default_attrs = {"contact": "Unknown"}
-    org_lines = _build_afnic_contact_lines("Registrant", org_attrs)
-    assert "Registrant Organization: Org Name" in org_lines
-    assert "Registrant Email: org@example.com" in org_lines
-    person_lines = _build_afnic_contact_lines("Admin", person_attrs)
-    assert person_lines == ["Admin Name: Alice", "Admin Phone: +33.2"]
-    default_lines = _build_afnic_contact_lines("Tech", default_attrs)
-    assert default_lines == ["Tech Name: Unknown"]
-
-
-def test_inject_afnic_contacts_appends_contacts() -> None:
-    payload = """\
-% This is the AFNIC Whois server.
-holder-c: AA123
-admin-c: BB123
-tech-c: BB123
-
-nic-hdl: AA123
-type: ORGANIZATION
-contact: Holder Org
-e-mail: holder@example.com
-source: FRNIC
-
-nic-hdl: BB123
-type: PERSON
-contact: Admin Person
-source: FRNIC
-"""
-    normalized = _inject_afnic_contacts(payload)
-    assert "Registrant Organization: Holder Org" in normalized
-    assert "Admin Name: Admin Person" in normalized
-
-
-def test_extract_afnic_contact_blocks_breaks_on_new_handle() -> None:
-    lines = [
-        "nic-hdl: AA123",
-        "contact: Holder Org",
-        "nic-hdl: BB123",
-        "contact: Admin Person",
-        "source: FRNIC",
-    ]
-    blocks = _extract_afnic_contact_blocks(lines)
-    assert blocks["AA123"]["contact"] == "Holder Org"
-    assert blocks["BB123"]["contact"] == "Admin Person"
-
-
-def test_inject_afnic_contacts_returns_text_when_handles_missing() -> None:
-    payload = """\
-% This is the AFNIC Whois server.
-nic-hdl: AA123
-source: FRNIC
-"""
-    result = _inject_afnic_contacts(payload)
-    assert result == payload
-
-
 def test_normalize_raw_text_handles_empty_and_enforces_newline() -> None:
     assert normalize_raw_text("") == ""
     result = normalize_raw_text("Domain Name: example.dev")
@@ -128,33 +42,3 @@ def test_normalize_raw_text_preserves_existing_newline() -> None:
     payload = "Domain Name: foo.example\nRegistrar: Example\n"
     result = normalize_raw_text(payload)
     assert result == payload
-
-
-def test_extract_afnic_contact_blocks_handles_blank_and_invalid_lines() -> None:
-    lines = [
-        "nic-hdl: AA123",
-        "",
-        "invalid line without colon",
-        "contact: Holder Org",
-        "source: FRNIC",
-        "nic-hdl: BB123",
-        "contact: Admin Person",
-        "source: FRNIC",
-    ]
-    blocks = _extract_afnic_contact_blocks(lines)
-    assert blocks["AA123"]["contact"] == "Holder Org"
-    assert "invalid line without colon" not in blocks["AA123"]
-
-
-def test_build_afnic_contact_lines_returns_empty_when_contact_missing() -> None:
-    assert _build_afnic_contact_lines("Registrant", {}) == []
-
-
-def test_inject_afnic_contacts_skips_unknown_handles() -> None:
-    payload = """\
-% This is the AFNIC Whois server.
-holder-c: AA123
-nic-hdl: AA123
-source: FRNIC
-"""
-    assert _inject_afnic_contacts(payload) == payload

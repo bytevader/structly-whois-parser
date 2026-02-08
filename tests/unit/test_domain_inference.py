@@ -90,3 +90,9 @@ def test_split_domain_and_normalise_tld_helpers() -> None:
     assert split_domain(" Sub.Domain.CO.UK. ") == ["sub", "domain", "co", "uk"]
     assert normalise_tld(None) == ""
     assert normalise_tld(".INFO ") == "info"
+
+
+def test_domain_pattern_registry_returns_none_when_no_match() -> None:
+    registry = DomainPatternRegistry(prefixes=("Domain Name:",), regexes=(re.compile(r"(?i)domain:", re.MULTILINE),))
+
+    assert registry.infer("No hits anywhere") is None
