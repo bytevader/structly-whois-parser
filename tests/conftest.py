@@ -4,6 +4,9 @@ from pathlib import Path
 
 import pytest
 
+import structly_whois.normalization as normalization
+from structly_whois.normalizers import CORE_NORMALIZERS, CORE_TEXT_NORMALIZERS
+
 RATE_LIMIT = "WHOIS LIMIT EXCEEDED"
 
 
@@ -128,3 +131,21 @@ def tmp_payload(tmp_path_factory: pytest.TempPathFactory) -> Path:
         encoding="utf-8",
     )
     return path
+
+
+@pytest.fixture
+def normalizer_registry():
+    """Yield a normalization module with only the core normalizers registered."""
+    normalization.clear_normalizers()
+    normalization.clear_text_normalizers()
+    for normalizer in CORE_NORMALIZERS:
+        normalization.register_normalizer(normalizer)
+    for normalizer in CORE_TEXT_NORMALIZERS:
+        normalization.register_text_normalizer(normalizer)
+    yield normalization
+    normalization.clear_normalizers()
+    normalization.clear_text_normalizers()
+    for normalizer in CORE_NORMALIZERS:
+        normalization.register_normalizer(normalizer)
+    for normalizer in CORE_TEXT_NORMALIZERS:
+        normalization.register_text_normalizer(normalizer)
