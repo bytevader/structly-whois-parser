@@ -3,6 +3,26 @@
 All notable changes to this project will be documented here. This project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.2.0] - 2026-02-08
+
+### Added
+
+- **Pluggable normalization pipeline**:
+  - Introduced `TextNormalizer`/`Normalizer` registries so raw WHOIS text can be rewritten before Structly parses it and parsed mappings can be enriched afterwards.
+  - Added `structly_whois.normalizers` package with the AFNIC contact injector as a text normalizer.
+  - `WhoisParser` now exposes `register_text_normalizer`/`register_normalizer` plus optional entry-point discovery via `enable_plugins=True`. Misbehaving plugins raise `NormalizerPluginError`.
+  - README gained sections describing runtime registration, plugin packaging, and usage examples.
+- **Testing & tooling**: new unit suites covering the registries, AFNIC helpers, plugin error paths, and Kafka key handling.
+
+### Changed
+
+- Parser automatically runs text normalizers prior to Structly and record normalizers afterwards, keeping `.fr` behavior identical while enabling future extensions.
+- `benchmarks/scripts/consume_and_parse.py` now lowercases Kafka keys so downstream consumers get stable partitioning.
+
+### Fixed
+
+- Plugin discovery no longer silently logs and ignores failures—errors propagate via `NormalizerPluginError` so misconfigured entry points are surfaced immediately.
+
 ## [1.1.0] - 2026-01-25
 
 ### Added
